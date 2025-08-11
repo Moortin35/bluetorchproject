@@ -1,4 +1,4 @@
-# bluetorchproject
+# Blue Torch Project
 
 ## Proyecto de Videojuego side-scroller 2D para la diplomatura de videojuegos de la UNQ
 
