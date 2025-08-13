@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k4g74dcb4yh7"
-path="res://.godot/imported/coin.png-19d480aac0c67db73f838aa0aa84b26f.ctex"
+uid="uid://cxq2rvwwnyu84"
+path="res://.godot/imported/idle_shield_maiden.png-29235e8df482d455907e5b5535847a02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/coin.png"
-dest_files=["res://.godot/imported/coin.png-19d480aac0c67db73f838aa0aa84b26f.ctex"]
+source_file="res://_assets/sprites/idle_shield_maiden.png"
+dest_files=["res://.godot/imported/idle_shield_maiden.png-29235e8df482d455907e5b5535847a02.ctex"]
 
 [params]
 

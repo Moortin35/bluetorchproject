@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4a24n6ncpcx1"
-path="res://.godot/imported/slime_purple.png-71290e0d33fe797f04c93f104e6ae308.ctex"
+uid="uid://tyvaul6xkl1r"
+path="res://.godot/imported/Dungeon_Tile_Set.png-3e24ccb15d6fc7fde807e7c433228ab9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-71290e0d33fe797f04c93f104e6ae308.ctex"]
+source_file="res://_assets/sprites/Dungeon_Tile_Set.png"
+dest_files=["res://.godot/imported/Dungeon_Tile_Set.png-3e24ccb15d6fc7fde807e7c433228ab9.ctex"]
 
 [params]
 
