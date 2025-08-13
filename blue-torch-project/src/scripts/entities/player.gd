@@ -37,11 +37,10 @@ func _physics_process(delta: float) -> void:
 		if on_floor:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = true
-			play_anim("jump")
 		elif can_double_jump:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
-			play_anim("jump")
+
 
 	if not is_dashing:
 		if direction != 0:
@@ -49,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if direction != 0:
+	if direction != 0 and !is_dashing:
 		animated_sprite_2d.flip_h = direction < 0
 			
 
@@ -65,7 +64,6 @@ func start_dash(direction : float) -> void:
 		dash_timer = DASH_DURATION
 		velocity.x = direction * DASH_SPEED
 		velocity.y = 0
-		play_anim("dash")
 		
 func play_anim(name : String) -> void:
 	if animated_sprite_2d.animation != name:
@@ -75,7 +73,10 @@ func update_animation(on_floor : bool, direction : float) -> void:
 	if is_dashing:
 		play_anim("dash")
 	elif not on_floor:
-		play_anim("jump")
+		if can_double_jump:
+			play_anim("jump")
+		else:
+			play_anim("doble_jump")
 	elif abs(velocity.x) > 10:
 		play_anim("walk")
 	else:
