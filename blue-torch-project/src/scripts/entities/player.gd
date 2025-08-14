@@ -4,8 +4,11 @@ class_name Player
 
 const SPEED = 100
 const JUMP_VELOCITY = -300.0
+#representa la fuerza del salto, es en negativo porque en Godot,
+										# el "eje Y" hacia arriba es negativo
 const DASH_SPEED = 200
-const DASH_DURATION = 0.5
+const DASH_DURATION = 0.3
+
 
 var is_dashing := false
 var dash_timer := 0.0
@@ -13,12 +16,15 @@ var can_double_jump := true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+#al iniciar realiza la animación de idle
 func _ready() -> void:
 	play_anim("idle")
 
 
+#verifica en todo momento, trabaja la logica de fisica por frame
 func _physics_process(delta: float) -> void:
 	var on_floor := is_on_floor()
+	#en este caso obtiene la direccion de entrada (vale -1 izq, 1 der, 0 ninguna)
 	var direction := Input.get_axis("ui_left", "ui_right")
 
 	if Input.is_action_just_pressed("dash") and not is_dashing:
@@ -33,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not is_dashing:
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and !is_dashing :
 		if on_floor:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = true

@@ -382,23 +382,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jmbg"]
-size = Vector2(11, 28.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ucdj"]
+radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rds41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_2q6vc")
-animation = &"doble_jump"
+animation = &"dash"
 autoplay = "idle"
-frame = 6
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.75)
-shape = SubResource("RectangleShape2D_6jmbg")
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_7ucdj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
