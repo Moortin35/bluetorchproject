@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not is_dashing:
 		velocity += get_gravity() * delta
 
+	#cuando se presiona la tecla espacio
 	if Input.is_action_just_pressed("ui_accept") and !is_dashing :
 		if on_floor:
 			velocity.y = JUMP_VELOCITY
@@ -47,13 +48,14 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
 
-
+	#desplazamiento horizontal mientras no se esta dasheando
 	if not is_dashing:
 		if direction != 0:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+	#para que se flipeen las animaciones, quitando la de dash
 	if direction != 0 and !is_dashing:
 		animated_sprite_2d.flip_h = direction < 0
 			
@@ -65,7 +67,6 @@ func _physics_process(delta: float) -> void:
 func start_dash(direction : float) -> void:
 		if direction == 0:
 			return
-			
 		is_dashing = true
 		dash_timer = DASH_DURATION
 		velocity.x = direction * DASH_SPEED

@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4ht5nop5g0df"]
+[gd_scene load_steps=6 format=3 uid="uid://c4ht5nop5g0df"]
 
-[ext_resource type="PackedScene" uid="uid://3wgdj6qxre0q" path="res://src/scenes/levels/level_test.tscn" id="1_kkvs4"]
-[ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player.tscn" id="2_rr2wm"]
+[ext_resource type="Script" uid="uid://cx8crwwor4lj" path="res://src/scripts/main.gd" id="1_5dlwx"]
+[ext_resource type="PackedScene" uid="uid://dn6jhou77r6nf" path="res://src/scenes/ui/main_menu.tscn" id="1_32aa5"]
+[ext_resource type="PackedScene" uid="uid://3wgdj6qxre0q" path="res://src/scenes/levels/level_00.tscn" id="1_kkvs4"]
+[ext_resource type="Script" uid="uid://dx5mncd2gf2ih" path="res://src/scripts/classes/level_data.gd" id="2_o81g6"]
+
+[sub_resource type="Resource" id="Resource_dbro3"]
+script = ExtResource("2_o81g6")
+level_id = 0
+level_name = "test"
+level_completed = false
+level_unlocked = false
+level_path = "levels/level_00"
+metadata/_custom_type_script = "uid://dx5mncd2gf2ih"
 
 [node name="Main" type="Node"]
+script = ExtResource("1_5dlwx")
+levels_available = Array[ExtResource("2_o81g6")]([SubResource("Resource_dbro3")])
+
+[node name="UIMain" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="UIMain" instance=ExtResource("1_32aa5")]
 
 [node name="2DScene" type="Node2D" parent="."]
 
 [node name="Level" parent="2DScene" instance=ExtResource("1_kkvs4")]
-
-[node name="Player" parent="2DScene" instance=ExtResource("2_rr2wm")]
-position = Vector2(255, 579)

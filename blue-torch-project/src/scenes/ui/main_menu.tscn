@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn6jhou77r6nf"]
+
+[ext_resource type="Script" uid="uid://yjlyxc7f03e2" path="res://src/scripts/ui/main_menu.gd" id="1_ttmq8"]
+[ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_loxbe"]
+[ext_resource type="Texture2D" uid="uid://68brmcpcwtrp" path="res://_assets/img/Background_Main_Menu.png" id="2_ttmq8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttmq8"]
+font = ExtResource("2_loxbe")
+font_size = 128
+font_color = Color(0, 0.0110781, 0.176115, 1)
+outline_size = 24
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ttmq8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ttmq8")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Blue Torch"
+label_settings = SubResource("LabelSettings_ttmq8")
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_loxbe")
+theme_override_font_sizes/font_size = 72
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_loxbe")
+theme_override_font_sizes/font_size = 72
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
