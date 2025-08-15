@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 class_name Player
 
+@onready var dash_cooldown: Timer = $dashCooldown
+
+@onready var point_light_2d: PointLight2D = $PointLight2D
+
 const SPEED = 100
 const JUMP_VELOCITY = -300.0
 #representa la fuerza del salto, es en negativo porque en Godot,
@@ -13,21 +17,26 @@ const DASH_DURATION = 0.3
 var is_dashing := false
 var dash_timer := 0.0
 var can_double_jump := true
+var can_dash := true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #al iniciar realiza la animación de idle
 func _ready() -> void:
 	play_anim("idle")
+	dash_cooldown.timeout.connect(on_timer_timeout)
 
-
+func on_timer_timeout():
+	can_dash = true
+	point_light_2d.texture_scale = 1
+		
 #verifica en todo momento, trabaja la logica de fisica por frame
 func _physics_process(delta: float) -> void:
 	var on_floor := is_on_floor()
 	#en este caso obtiene la direccion de entrada (vale -1 izq, 1 der, 0 ninguna)
 	var direction := Input.get_axis("ui_left", "ui_right")
 
-	if Input.is_action_just_pressed("dash") and not is_dashing:
+	if Input.is_action_just_pressed("dash") and not is_dashing and can_dash:
 		start_dash(direction)
 	
 	if is_dashing:
@@ -71,6 +80,9 @@ func start_dash(direction : float) -> void:
 		dash_timer = DASH_DURATION
 		velocity.x = direction * DASH_SPEED
 		velocity.y = 0
+		point_light_2d.texture_scale = 0.5
+		can_dash = false
+		dash_cooldown.start()
 		
 func play_anim(name : String) -> void:
 	if animated_sprite_2d.animation != name:
