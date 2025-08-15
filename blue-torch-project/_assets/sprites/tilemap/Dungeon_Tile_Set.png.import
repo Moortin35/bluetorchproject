@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjhmvr82aqb5h"
-path="res://.godot/imported/dash.png-d1bc299d43641d4d1d864453bb71fd82.ctex"
+uid="uid://bon5aqy2a578r"
+path="res://.godot/imported/Dungeon_Tile_Set.png-185799d5c1d5083f47faed2a3590609b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/dash.png"
-dest_files=["res://.godot/imported/dash.png-d1bc299d43641d4d1d864453bb71fd82.ctex"]
+source_file="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png"
+dest_files=["res://.godot/imported/Dungeon_Tile_Set.png-185799d5c1d5083f47faed2a3590609b.ctex"]
 
 [params]
 

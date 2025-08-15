@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxq2rvwwnyu84"
-path="res://.godot/imported/idle_shield_maiden.png-29235e8df482d455907e5b5535847a02.ctex"
+uid="uid://ct0t6eovycli8"
+path="res://.godot/imported/player air spin 48x48.png-1b119b2a9bf34799f8fb5905501c7454.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/idle_shield_maiden.png"
-dest_files=["res://.godot/imported/idle_shield_maiden.png-29235e8df482d455907e5b5535847a02.ctex"]
+source_file="res://_assets/sprites/player/player air spin 48x48.png"
+dest_files=["res://.godot/imported/player air spin 48x48.png-1b119b2a9bf34799f8fb5905501c7454.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct0t6eovycli8"
-path="res://.godot/imported/player air spin 48x48.png-48ac5b7eeee92b070659e05ca56d670f.ctex"
+uid="uid://cjhmvr82aqb5h"
+path="res://.godot/imported/dash.png-5e11a28890baef3a7dde7c4670e6181d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/player air spin 48x48.png"
-dest_files=["res://.godot/imported/player air spin 48x48.png-48ac5b7eeee92b070659e05ca56d670f.ctex"]
+source_file="res://_assets/sprites/player/dash.png"
+dest_files=["res://.godot/imported/dash.png-5e11a28890baef3a7dde7c4670e6181d.ctex"]
 
 [params]
 

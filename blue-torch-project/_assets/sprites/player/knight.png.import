@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3kh1bc1fx4rg"
-path="res://.godot/imported/player jump left 48x48-sheet.png-76220b2e17c12271e9391c1a2e960b25.ctex"
+uid="uid://d1n1i6cbvmxxw"
+path="res://.godot/imported/knight.png-e44bcd93abdf8d39a7319df796e4b4a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/player jump left 48x48-sheet.png"
-dest_files=["res://.godot/imported/player jump left 48x48-sheet.png-76220b2e17c12271e9391c1a2e960b25.ctex"]
+source_file="res://_assets/sprites/player/knight.png"
+dest_files=["res://.godot/imported/knight.png-e44bcd93abdf8d39a7319df796e4b4a7.ctex"]
 
 [params]
 
