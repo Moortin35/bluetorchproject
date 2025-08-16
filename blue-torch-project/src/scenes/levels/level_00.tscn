@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=4 uid="uid://3wgdj6qxre0q"]
+[gd_scene load_steps=48 format=4 uid="uid://3wgdj6qxre0q"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level.gd" id="1_fg8s7"]
 [ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png" id="2_jh75y"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player.tscn" id="3_jh75y"]
+[ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/entities/torch.tscn" id="4_5n0ma"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n0ma"]
 texture = ExtResource("2_jh75y")
@@ -813,4 +814,14 @@ tile_set = SubResource("TileSet_uhna7")
 position = Vector2(24, 639)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+
+[node name="torch" parent="." instance=ExtResource("4_5n0ma")]
+position = Vector2(319, 622)
+
+[node name="torch2" parent="." instance=ExtResource("4_5n0ma")]
+position = Vector2(239, 382)
+
+[node name="torch3" parent="." instance=ExtResource("4_5n0ma")]
+position = Vector2(1135, 143)
