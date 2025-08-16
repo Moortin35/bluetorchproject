@@ -1,6 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://btuyl2ejyb18v"]
 
 [ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png" id="1_4vs3t"]
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="2_4vs3t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5n0ma"]
 atlas = ExtResource("1_4vs3t")
@@ -66,9 +67,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d2anq"]
-load_path = "res://.godot/imported/160x160 textures (1).png-93c0072c642fb5740a0281eddefe6ecb.ctex"
-
 [node name="antorcha" type="Node2D"]
 
 [node name="torch" type="AnimatedSprite2D" parent="."]
@@ -78,4 +76,4 @@ sprite_frames = SubResource("SpriteFrames_wxyjw")
 position = Vector2(0, 2)
 color = Color(0.776471, 0.756863, 0.172549, 1)
 energy = 2.73
-texture = SubResource("CompressedTexture2D_d2anq")
+texture = ExtResource("2_4vs3t")

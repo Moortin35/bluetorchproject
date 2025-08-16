@@ -411,6 +411,7 @@ limit_bottom = 736
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(1.7625, 1.775)
 color = Color(1, 1, 1, 0.921569)
+energy = 0.5
 shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("8_1hd0g")
@@ -418,7 +419,6 @@ texture = ExtResource("8_1hd0g")
 [node name="PointLight2D3" type="PointLight2D" parent="."]
 position = Vector2(1, 3)
 scale = Vector2(1.15, 1.0625)
-energy = 0.5
 texture = ExtResource("9_qh5pu")
 texture_scale = 0.5
 
