@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c3kh1bc1fx4rg" path="res://_assets/sprites/player/player jump left 48x48-sheet.png" id="5_d2anq"]
 [ext_resource type="Texture2D" uid="uid://dyakuf6jk364e" path="res://_assets/sprites/player/player run 48x48.png" id="6_1hd0g"]
 [ext_resource type="Texture2D" uid="uid://k2kk1jy5m85w" path="res://_assets/sprites/player/Gerda Idle Sprite.png" id="6_7ucdj"]
-[ext_resource type="Texture2D" uid="uid://t2m0lo5wfwsv" path="res://_assets/effects/288x288 textures (4).png" id="8_1hd0g"]
-[ext_resource type="Texture2D" uid="uid://d2815trv3aqxg" path="res://_assets/effects/160x160 textures (1).png" id="9_1hd0g"]
+[ext_resource type="Texture2D" uid="uid://os8ngbl0du2a" path="res://_assets/effects/luz_2.png" id="8_1hd0g"]
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="9_qh5pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh5pu"]
 atlas = ExtResource("2_lvvd8")
@@ -412,12 +412,14 @@ limit_bottom = 736
 scale = Vector2(1.7625, 1.775)
 color = Color(1, 1, 1, 0.921569)
 shadow_enabled = true
+shadow_filter = 2
 texture = ExtResource("8_1hd0g")
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
 position = Vector2(1, 3)
 scale = Vector2(1.15, 1.0625)
 energy = 0.5
-texture = ExtResource("9_1hd0g")
+texture = ExtResource("9_qh5pu")
+texture_scale = 0.5
 
 [node name="dashCooldown" type="Timer" parent="."]
