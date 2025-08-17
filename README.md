@@ -4,6 +4,10 @@
 
 *De momento está en desarrollo, e iremos agregando información y cambios por aquí.*
 
+**Profesor**
+
+* Tobias Quimey Moscatelli
+
 **Integrantes**
 
 * Delgado, Martín Nicolás
