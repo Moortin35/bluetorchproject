@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct0t6eovycli8"
-path="res://.godot/imported/player air spin 48x48.png-1b119b2a9bf34799f8fb5905501c7454.ctex"
+uid="uid://bbo6n3fxktp1v"
+path="res://.godot/imported/death.png-b8bda1a0ab15441af569327f59e496ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/player/player air spin 48x48.png"
-dest_files=["res://.godot/imported/player air spin 48x48.png-1b119b2a9bf34799f8fb5905501c7454.ctex"]
+source_file="res://_assets/sprites/player/death.png"
+dest_files=["res://.godot/imported/death.png-b8bda1a0ab15441af569327f59e496ae.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3kh1bc1fx4rg"
-path="res://.godot/imported/player jump left 48x48-sheet.png-6763265af645a0ea32f64abc8a76e19c.ctex"
+uid="uid://bmuudcxbvs1dn"
+path="res://.godot/imported/hurt.png-6693721bf44bf71559aab2453b214a24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/player/player jump left 48x48-sheet.png"
-dest_files=["res://.godot/imported/player jump left 48x48-sheet.png-6763265af645a0ea32f64abc8a76e19c.ctex"]
+source_file="res://_assets/sprites/player/hurt.png"
+dest_files=["res://.godot/imported/hurt.png-6693721bf44bf71559aab2453b214a24.ctex"]
 
 [params]
 
