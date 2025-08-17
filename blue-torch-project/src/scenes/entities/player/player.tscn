@@ -1,6 +1,6 @@
 [gd_scene load_steps=66 format=3 uid="uid://432fmegl2y15"]
 
-[ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player.gd" id="1_rds41"]
+[ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
 [ext_resource type="Texture2D" uid="uid://cjhmvr82aqb5h" path="res://_assets/sprites/player/dash.png" id="2_lvvd8"]
 [ext_resource type="Texture2D" uid="uid://bbo6n3fxktp1v" path="res://_assets/sprites/player/death.png" id="3_qh5pu"]
 [ext_resource type="Texture2D" uid="uid://dtd5u25yghiy6" path="res://_assets/sprites/player/double_jump.png" id="4_qh5pu"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://diqmeqx16y6kj" path="res://_assets/sprites/player/jump.png" id="7_qh5pu"]
 [ext_resource type="Texture2D" uid="uid://os8ngbl0du2a" path="res://_assets/effects/luz_2.png" id="8_1hd0g"]
 [ext_resource type="Texture2D" uid="uid://dyakuf6jk364e" path="res://_assets/sprites/player/run.png" id="8_qh5pu"]
-[ext_resource type="Script" uid="uid://cpcnmrat71jim" path="res://src/scenes/entities/antorcha.gd" id="9_ddkw8"]
+[ext_resource type="Script" uid="uid://cpcnmrat71jim" path="res://src/scripts/entities/player/blue_torch.gd" id="9_ddkw8"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="9_qh5pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh5pu"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://btuyl2ejyb18v"]
 
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="1_137ti"]
-[ext_resource type="Script" uid="uid://sxcc7qrqmpcd" path="res://src/scripts/entities/torch.gd" id="1_bfogg"]
+[ext_resource type="Script" uid="uid://sxcc7qrqmpcd" path="res://src/scripts/entities/enviroment/enviroment_torch.gd" id="1_bfogg"]
 [ext_resource type="Texture2D" uid="uid://cbrl3vornqlqq" path="res://_assets/sprites/tilemap/torch-sprite.png" id="1_i5t8t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfogg"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level.gd" id="1_fg8s7"]
 [ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png" id="2_jh75y"]
-[ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player.tscn" id="3_jh75y"]
-[ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/entities/torch.tscn" id="4_5n0ma"]
+[ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
+[ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/entities/enviroment/enviroment_torch.tscn" id="4_5n0ma"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n0ma"]
 texture = ExtResource("2_jh75y")
