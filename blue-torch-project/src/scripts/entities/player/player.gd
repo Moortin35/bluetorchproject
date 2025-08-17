@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = direction < 0
 			
 
-	update_animation(on_floor, direction)
+	update_animation(on_floor)
 	move_and_slide()
 	point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
 	point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 5 * delta)
@@ -101,11 +101,11 @@ func start_dash(direction : float) -> void:
 		dash_cooldown.start()
 
 		
-func play_anim(name : String) -> void:
-	if animated_sprite_2d.animation != name:
-		animated_sprite_2d.play(name)
+func play_anim(animated_name : String) -> void:
+	if animated_sprite_2d.animation != animated_name:
+		animated_sprite_2d.play(animated_name)
 
-func update_animation(on_floor : bool, direction : float) -> void:
+func update_animation(on_floor : bool) -> void:
 	if is_dashing:
 		play_anim("dash")
 	elif not on_floor:
