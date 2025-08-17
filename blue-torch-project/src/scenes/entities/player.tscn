@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://432fmegl2y15"]
+[gd_scene load_steps=67 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player.gd" id="1_rds41"]
 [ext_resource type="Texture2D" uid="uid://cjhmvr82aqb5h" path="res://_assets/sprites/player/dash.png" id="2_lvvd8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://diqmeqx16y6kj" path="res://_assets/sprites/player/jump.png" id="7_qh5pu"]
 [ext_resource type="Texture2D" uid="uid://os8ngbl0du2a" path="res://_assets/effects/luz_2.png" id="8_1hd0g"]
 [ext_resource type="Texture2D" uid="uid://dyakuf6jk364e" path="res://_assets/sprites/player/run.png" id="8_qh5pu"]
+[ext_resource type="Script" uid="uid://cpcnmrat71jim" path="res://src/scenes/entities/antorcha.gd" id="9_ddkw8"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="9_qh5pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh5pu"]
@@ -444,7 +445,10 @@ limit_top = -16
 limit_right = 1296
 limit_bottom = 736
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="antorcha" type="Node2D" parent="."]
+script = ExtResource("9_ddkw8")
+
+[node name="PointLight2D" type="PointLight2D" parent="antorcha"]
 scale = Vector2(1.7625, 1.775)
 color = Color(1, 1, 1, 0.921569)
 energy = 0.5
@@ -452,10 +456,12 @@ shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("8_1hd0g")
 
-[node name="PointLight2D3" type="PointLight2D" parent="."]
+[node name="PointLight2D3" type="PointLight2D" parent="antorcha"]
 position = Vector2(1, 3)
 scale = Vector2(1.15, 1.0625)
 texture = ExtResource("9_qh5pu")
 texture_scale = 0.5
+
+[node name="FlickerTimer" type="Timer" parent="antorcha"]
 
 [node name="dashCooldown" type="Timer" parent="."]

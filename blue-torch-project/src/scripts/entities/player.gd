@@ -3,8 +3,9 @@ extends CharacterBody2D
 class_name Player
 
 @onready var dash_cooldown: Timer = $dashCooldown
+@onready var point_light_2d: PointLight2D = $antorcha/PointLight2D
+@onready var antorcha: Node2D = $antorcha
 
-@onready var point_light_2d: PointLight2D = $PointLight2D
 
 const SPEED = 100
 const JUMP_VELOCITY = -300.0
@@ -19,6 +20,11 @@ var dash_timer := 0.0
 var can_double_jump := true
 var can_dash := true
 
+var normal_color: Color = Color(1, 1, 1)
+var dash_color: Color = Color(1, 3, 3)
+var target_color: Color = normal_color
+
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #al iniciar realiza la animación de idle
@@ -28,7 +34,7 @@ func _ready() -> void:
 
 func on_timer_timeout():
 	can_dash = true
-	point_light_2d.texture_scale = 1
+	target_color = normal_color
 		
 #verifica en todo momento, trabaja la logica de fisica por frame
 func _physics_process(delta: float) -> void:
@@ -71,6 +77,7 @@ func _physics_process(delta: float) -> void:
 
 	update_animation(on_floor, direction)
 	move_and_slide()
+	point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
 
 	
 func start_dash(direction : float) -> void:
@@ -80,7 +87,7 @@ func start_dash(direction : float) -> void:
 		dash_timer = DASH_DURATION
 		velocity.x = direction * DASH_SPEED
 		velocity.y = 0
-		point_light_2d.texture_scale = 0.5
+		target_color = dash_color
 		can_dash = false
 		dash_cooldown.start()
 		

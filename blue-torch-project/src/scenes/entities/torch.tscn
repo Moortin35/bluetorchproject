@@ -71,12 +71,14 @@ animations = [{
 [node name="torch" type="Node2D"]
 script = ExtResource("1_bfogg")
 
-[node name="torch" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ndsvy")
-frame_progress = 0.700073
-
-[node name="PointLight2D" type="PointLight2D" parent="torch"]
+[node name="Light" type="PointLight2D" parent="."]
 position = Vector2(0, 2)
 color = Color(0.776471, 0.756863, 0.172549, 1)
 texture = ExtResource("1_137ti")
 texture_scale = 0.3
+
+[node name="AnimationTorch" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ndsvy")
+frame_progress = 0.700073
+
+[node name="FlickerTimer" type="Timer" parent="."]
