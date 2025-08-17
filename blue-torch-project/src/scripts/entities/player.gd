@@ -4,6 +4,7 @@ class_name Player
 
 @onready var dash_cooldown: Timer = $dashCooldown
 @onready var point_light_2d: PointLight2D = $antorcha/PointLight2D
+@onready var point_light_2d_3: PointLight2D = $antorcha/PointLight2D3
 @onready var antorcha: Node2D = $antorcha
 
 
@@ -21,8 +22,12 @@ var can_double_jump := true
 var can_dash := true
 
 var normal_color: Color = Color(1, 1, 1)
-var dash_color: Color = Color(1, 3, 3)
+var dash_color: Color = Color(3, 3, 1)
 var target_color: Color = normal_color
+
+var normal_escala: float = 0.5
+var dash_escala: float = 0.3
+var target_escala: float = normal_escala
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -35,6 +40,7 @@ func _ready() -> void:
 func on_timer_timeout():
 	can_dash = true
 	target_color = normal_color
+	target_escala = normal_escala
 		
 #verifica en todo momento, trabaja la logica de fisica por frame
 func _physics_process(delta: float) -> void:
@@ -78,7 +84,8 @@ func _physics_process(delta: float) -> void:
 	update_animation(on_floor, direction)
 	move_and_slide()
 	point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
-
+	point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 5 * delta)
+	point_light_2d_3.texture_scale = lerp(point_light_2d_3.texture_scale, target_escala, 5 * delta)
 	
 func start_dash(direction : float) -> void:
 		if direction == 0:
@@ -88,8 +95,10 @@ func start_dash(direction : float) -> void:
 		velocity.x = direction * DASH_SPEED
 		velocity.y = 0
 		target_color = dash_color
+		target_escala = dash_escala
 		can_dash = false
 		dash_cooldown.start()
+
 		
 func play_anim(name : String) -> void:
 	if animated_sprite_2d.animation != name:

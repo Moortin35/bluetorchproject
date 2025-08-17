@@ -74,8 +74,9 @@ script = ExtResource("1_bfogg")
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(0, 2)
 color = Color(0.776471, 0.756863, 0.172549, 1)
+energy = 1.5
 texture = ExtResource("1_137ti")
-texture_scale = 0.3
+texture_scale = 0.5
 
 [node name="AnimationTorch" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ndsvy")
