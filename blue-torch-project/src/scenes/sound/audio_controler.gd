@@ -12,3 +12,4 @@ func play_music():
 		
 func stop_music():
 		$Music.stop()
+	

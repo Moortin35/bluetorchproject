@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbqyd8yml2hkn"]
+[gd_scene load_steps=5 format=3 uid="uid://cbqyd8yml2hkn"]
 
 [ext_resource type="Script" uid="uid://c74g011afpn5e" path="res://src/scenes/sound/audio_controler.gd" id="1_y7a78"]
-[ext_resource type="AudioStream" uid="uid://cqplrgnl1jmxb" path="res://_assets/media/main theme.mp3" id="2_8tmch"]
+[ext_resource type="AudioStream" uid="uid://cqplrgnl1jmxb" path="res://_assets/media/music/main theme.mp3" id="2_8tmch"]
+[ext_resource type="AudioStream" uid="uid://bvsf0cqqqjr4b" path="res://_assets/media/effects/step 1.wav" id="3_ydqou"]
+[ext_resource type="AudioStream" uid="uid://dwit2rh8su8im" path="res://_assets/media/effects/step 2.wav" id="4_ner2v"]
 
 [node name="AudioControler" type="Node2D"]
 script = ExtResource("1_y7a78")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_8tmch")
-parameters/looping = false
+
+[node name="Step2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ydqou")
+
+[node name="Step1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ner2v")
