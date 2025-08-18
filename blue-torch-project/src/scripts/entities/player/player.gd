@@ -15,12 +15,13 @@ const JUMP_VELOCITY = -300.0
 										# el "eje Y" hacia arriba es negativo
 const DASH_SPEED = 200
 const DASH_DURATION = 0.3
-
+const START_POS_LEVEL_00 = Vector2(26.0, 640.0)
 
 var is_dashing := false
 var dash_timer := 0.0
 var can_double_jump := true
 var can_dash := true
+var can_control := true
 
 var normal_color: Color = Color(0.8, 0.8, 1)
 var dash_color: Color = Color(1, 3, 3)
@@ -45,6 +46,9 @@ func on_timer_timeout():
 		
 #verifica en todo momento, trabaja la logica de fisica por frame
 func _physics_process(delta: float) -> void:
+	if not can_control:
+		return
+		
 	var on_floor := is_on_floor()
 	#en este caso obtiene la direccion de entrada (vale -1 izq, 1 der, 0 ninguna)
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -117,3 +121,16 @@ func update_animation(on_floor : bool) -> void:
 		play_anim("walk")
 	else:
 		play_anim("idle")
+		
+func handle_danger() -> void:
+	print("Jugador muere")
+	can_control = false
+	animated_sprite_2d.play("hit")
+	if is_on_floor():
+		animated_sprite_2d.play("death")
+	await get_tree().create_timer(1.5).timeout
+	reset_player()
+	
+func reset_player() -> void:
+	global_position = START_POS_LEVEL_00
+	can_control = true
