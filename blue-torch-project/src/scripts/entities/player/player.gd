@@ -123,7 +123,6 @@ func update_animation(on_floor : bool) -> void:
 		play_anim("idle")
 		
 func handle_danger() -> void:
-	print("Jugador muere")
 	can_control = false
 	animated_sprite_2d.play("hit")
 	if is_on_floor():

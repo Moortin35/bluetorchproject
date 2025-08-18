@@ -782,7 +782,6 @@ tile_set = SubResource("TileSet_uhna7")
 position = Vector2(24, 640)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="torch" parent="." instance=ExtResource("4_5n0ma")]
