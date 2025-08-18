@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn51wahv32b84"]
+
+[sub_resource type="SystemFont" id="SystemFont_xhlh7"]
+font_names = PackedStringArray("Jacquard 12")
+oversampling = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mr4ol"]
+font = SubResource("SystemFont_xhlh7")
+font_size = 52
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_m12ob"]
+font_names = PackedStringArray("Jacquard 12")
+oversampling = 3.0
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="finish_level" type="Label" parent="MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gracias por probar este avance de Blue Torch
+Dejanos tus comentarios."
+label_settings = SubResource("LabelSettings_mr4ol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit_button" type="Button" parent="MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_m12ob")
+theme_override_font_sizes/font_size = 48
+text = "Salir al Menú"
