@@ -8,8 +8,13 @@ func _ready():
 		
 func play_music():
 	if not mute:
-		$Music.play()
+		$Main_Theme.play()
 		
 func stop_music():
-		$Music.stop()
-	
+		$Main_Theme.stop()
+		
+func play_lvl1():
+	$lvl_1_theme.play()
+
+func stop_lvl1():
+	$lvl_1_theme.stop()
