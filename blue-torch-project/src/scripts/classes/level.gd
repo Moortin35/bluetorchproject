@@ -4,7 +4,6 @@ class_name Level
 
 @export var level_id : int
 
-
 var level_data : LevelData
 
 func _ready() -> void:
