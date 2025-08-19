@@ -22,6 +22,7 @@ var dash_timer := 0.0
 var can_double_jump := true
 var can_dash := true
 var can_control := true
+var is_dead := false
 
 var normal_color: Color = Color(0.8, 0.8, 1)
 var dash_color: Color = Color(1, 3, 3)
@@ -46,12 +47,17 @@ func on_timer_timeout():
 		
 #verifica en todo momento, trabaja la logica de fisica por frame
 func _physics_process(delta: float) -> void:
+	#si muere, solo se aplica gravedad
+	if is_dead:
+		velocity += get_gravity() * delta
+		move_and_slide()
+		return
 	if not can_control:
 		return
 		
 	var on_floor := is_on_floor()
-	#en este caso obtiene la direccion de entrada (vale -1 izq, 1 der, 0 ninguna)
 	var direction := Input.get_axis("ui_left", "ui_right")
+	#en este caso obtiene la direccion de entrada (vale -1 izq, 1 der, 0 ninguna)
 
 	if Input.is_action_just_pressed("dash") and not is_dashing and can_dash:
 		start_dash(direction)
@@ -123,13 +129,19 @@ func update_animation(on_floor : bool) -> void:
 		play_anim("idle")
 		
 func handle_danger() -> void:
+	is_dead = true
 	can_control = false
-	animated_sprite_2d.play("hit")
+	velocity.y = 0
+	velocity.x = 0
+	if not is_on_floor():
+		animated_sprite_2d.play("hit")
+		await get_tree().create_timer(0.5).timeout
 	if is_on_floor():
 		animated_sprite_2d.play("death")
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	reset_player()
 	
 func reset_player() -> void:
 	global_position = START_POS_LEVEL_00
+	is_dead = false
 	can_control = true

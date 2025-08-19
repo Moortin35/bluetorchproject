@@ -1,25 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn51wahv32b84"]
+[gd_scene load_steps=4 format=3 uid="uid://bn51wahv32b84"]
 
 [ext_resource type="Script" uid="uid://clix4q0les2b5" path="res://src/scripts/ui/hud.gd" id="1_mr4ol"]
+[ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_m12ob"]
 
-[sub_resource type="SystemFont" id="SystemFont_xhlh7"]
-font_names = PackedStringArray("Jacquard 12")
-subpixel_positioning = 0
-oversampling = 3.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_mr4ol"]
-font = SubResource("SystemFont_xhlh7")
-font_size = 52
-outline_size = 12
+[sub_resource type="LabelSettings" id="LabelSettings_q3cwv"]
+font = ExtResource("2_m12ob")
+font_size = 64
+outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_m12ob"]
-font_names = PackedStringArray("Jacquard 12")
-subpixel_positioning = 0
-oversampling = 3.0
-
 [node name="Hud" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_mr4ol")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -44,7 +34,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Gracias por probar este avance de Blue Torch
 Dejanos tus comentarios."
-label_settings = SubResource("LabelSettings_mr4ol")
+label_settings = SubResource("LabelSettings_q3cwv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -53,8 +43,8 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_constants/outline_size = 12
-theme_override_fonts/font = SubResource("SystemFont_m12ob")
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("2_m12ob")
+theme_override_font_sizes/font_size = 64
 text = "Salir al Menú"
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/PanelContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

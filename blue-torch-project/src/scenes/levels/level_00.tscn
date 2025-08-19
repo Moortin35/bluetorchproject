@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://3wgdj6qxre0q"]
+[gd_scene load_steps=51 format=4 uid="uid://3wgdj6qxre0q"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level.gd" id="1_fg8s7"]
 [ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png" id="2_jh75y"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dv48h0epmk1r0" path="res://src/scenes/entities/enviroment/next_level.tscn" id="3_uhna7"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/entities/enviroment/enviroment_torch.tscn" id="4_5n0ma"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/entities/obstacles/danger_zone.tscn" id="5_ft08a"]
-[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/hud.tscn" id="7_tuy8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n0ma"]
 texture = ExtResource("2_jh75y")
@@ -898,5 +897,3 @@ position = Vector2(1176, 160)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
 position = Vector2(26, 640)
-
-[node name="Hud" parent="." instance=ExtResource("7_tuy8k")]
