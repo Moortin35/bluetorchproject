@@ -6,22 +6,25 @@ class_name Player
 @onready var blue_torch: Node2D = $blue_torch
 @onready var point_light_2d: PointLight2D = $blue_torch/PointLight2D
 @onready var point_light_2d_2: PointLight2D = $blue_torch/PointLight2D_2
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-
-
-const SPEED = 100
-const JUMP_VELOCITY = -300.0
-#representa la fuerza del salto, es en negativo porque en Godot,
-										# el "eje Y" hacia arriba es negativo
-const DASH_SPEED = 200
-const DASH_DURATION = 0.3
 const START_POS_LEVEL_00 = Vector2(26.0, 640.0)
 
+const SPEED = 100
+
+const JUMP_VELOCITY = -300.0
+var can_double_jump := true
+var direction = 0
+
+const DASH_SPEED = 200
+const DASH_DURATION = 0.3
 var is_dashing := false
 var dash_timer := 0.0
-var can_double_jump := true
 var can_dash := true
+var direction_dash = 1
+
 var can_control := true
+
 var is_dead := false
 
 var normal_color: Color = Color(0.8, 0.8, 1)
@@ -29,93 +32,87 @@ var dash_color: Color = Color(1, 3, 3)
 var target_color: Color = normal_color
 
 var normal_escala: float = 0.5
-var dash_escala: float = 0.3
+var scaled_dash_cooldown: float = 0.3
 var target_escala: float = normal_escala
 
-
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
-#al iniciar realiza la animación de idle
+#Se llama una vez cuando el nodo y sus hijos están en el árbol de la escena, usado para inicialización.
 func _ready() -> void:
-	play_anim("idle")
 	dash_cooldown.timeout.connect(on_timer_timeout)
-
-func on_timer_timeout():
-	can_dash = true
-	target_color = normal_color
-	target_escala = normal_escala
-		
-#verifica en todo momento, trabaja la logica de fisica por frame
+	
+#Se ejecuta durante la física del bucle principal. delta es el tiempo entre pasos de física (en segundos).
 func _physics_process(delta: float) -> void:
-	#si muere, solo se aplica gravedad
+	
 	if is_dead:
 		velocity += get_gravity() * delta
 		move_and_slide()
 		return
+		
 	if not can_control:
 		return
-		
-	var on_floor := is_on_floor()
-	var direction := Input.get_axis("ui_left", "ui_right")
-	#en este caso obtiene la direccion de entrada (vale -1 izq, 1 der, 0 ninguna)
 
-	if Input.is_action_just_pressed("dash") and not is_dashing and can_dash:
-		start_dash(direction)
+	# agregamos gravedad
+	if not is_on_floor() and not is_dashing:
+		velocity += get_gravity() * delta
 	
+	#cuando se presiona la tecla sifht
+	handle_dash(delta)
+	#cuando se presiona la tecla espacio
+	handle_jump()
+	#cuando se presionan las teclas flecha izquiera, flecha derecha
+	handle_movement()
+	update_animation_player(is_on_floor())
+	update_animation_torch(delta)
+
+
+func handle_dash(delta:float):
+	if direction != 0:
+		direction_dash = direction
+	if Input.is_action_just_pressed("dash") and not is_dashing and can_dash:
+		start_dash()
 	if is_dashing:
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
-
-	# Add the gravity.
-	if not is_on_floor() and not is_dashing:
-		velocity += get_gravity() * delta
-
-	#cuando se presiona la tecla espacio
+			
+func handle_jump():
 	if Input.is_action_just_pressed("ui_accept") and !is_dashing :
-		if on_floor:
+		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = true
 		elif can_double_jump:
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
-
-	#desplazamiento horizontal mientras no se esta dasheando
+			
+func handle_movement():
+	direction = Input.get_axis("ui_left", "ui_right")
 	if not is_dashing:
 		if direction != 0:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+	move_and_slide()
 	
+func start_dash() -> void:
+		is_dashing = true
+		can_dash = false
+		velocity.x = direction_dash * DASH_SPEED
+		velocity.y = 0
+		cambiar_color_y_tamanio_luz_antorcha(dash_color ,scaled_dash_cooldown)
+		dash_timer = DASH_DURATION
+		dash_cooldown.start()
+
+func on_timer_timeout():
+	can_dash = true
+	cambiar_color_y_tamanio_luz_antorcha(normal_color,normal_escala)
+
+func cambiar_color_y_tamanio_luz_antorcha(color : Color ,escala :float):
+	target_color = color
+	target_escala = escala
+		
+func update_animation_player(on_floor : bool) -> void:
 	#para que se flipeen las animaciones, quitando la de dash
 	if direction != 0 and !is_dashing:
 		animated_sprite_2d.flip_h = direction < 0
-			
-
-	update_animation(on_floor)
-	move_and_slide()
-	point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
-	point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 5 * delta)
-	point_light_2d_2.texture_scale = lerp(point_light_2d_2.texture_scale, target_escala, 5 * delta)
-	
-func start_dash(direction : float) -> void:
-		if direction == 0:
-			return
-		is_dashing = true
-		dash_timer = DASH_DURATION
-		velocity.x = direction * DASH_SPEED
-		velocity.y = 0
-		target_color = dash_color
-		target_escala = dash_escala
-		can_dash = false
-		dash_cooldown.start()
-
-		
-func play_anim(animated_name : String) -> void:
-	if animated_sprite_2d.animation != animated_name:
-		animated_sprite_2d.play(animated_name)
-
-func update_animation(on_floor : bool) -> void:
 	if is_dashing:
 		play_anim("dash")
 	elif not on_floor:
@@ -127,7 +124,16 @@ func update_animation(on_floor : bool) -> void:
 		play_anim("walk")
 	else:
 		play_anim("idle")
-		
+
+func play_anim(animated_name : String) -> void:
+	if animated_sprite_2d.animation != animated_name:
+		animated_sprite_2d.play(animated_name)
+
+func update_animation_torch(delta:float):
+	point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
+	point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 5 * delta)
+	point_light_2d_2.texture_scale = lerp(point_light_2d_2.texture_scale, target_escala, 5 * delta)
+			
 func handle_danger() -> void:
 	is_dead = true
 	can_control = false
