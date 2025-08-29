@@ -415,20 +415,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddkw8"]
-size = Vector2(11, 27)
+size = Vector2(18, 27)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 10
 collision_mask = 7
+floor_max_angle = 1.0472
+floor_snap_length = 10.0
 script = ExtResource("1_rds41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")
-animation = &"dash"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 2.5)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ddkw8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
