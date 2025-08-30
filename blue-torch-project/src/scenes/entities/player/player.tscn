@@ -420,8 +420,7 @@ size = Vector2(18, 27)
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 10
 collision_mask = 7
-floor_max_angle = 1.0472
-floor_snap_length = 10.0
+floor_snap_length = 2.0
 script = ExtResource("1_rds41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
