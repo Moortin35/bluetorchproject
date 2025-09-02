@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var mute: bool = false
-@onready var sfx_player: AudioStreamPlayer2D = $sfx_player
+@onready var sfx_player: AudioStreamPlayer = $sfx_player
 
 
 

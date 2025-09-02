@@ -94,7 +94,6 @@ func handle_dash(delta:float):
 func handle_jump():
 	
 	if Input.is_action_just_pressed("ui_accept") and !is_dashing :
-		var en_el_aire = true
 		if is_on_floor():
 			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
 			velocity.y = JUMP_VELOCITY
