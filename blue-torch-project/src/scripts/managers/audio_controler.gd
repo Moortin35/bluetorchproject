@@ -1,6 +1,9 @@
 extends Node2D
 
 @export var mute: bool = false
+@onready var sfx_player: AudioStreamPlayer2D = $sfx_player
+
+
 
 func _ready():
 	if not mute:
@@ -18,3 +21,8 @@ func play_lvl1():
 
 func stop_lvl1():
 	$lvl_1_theme.stop()
+	
+func play_sfx(stream: AudioStream):
+	if not mute:
+		sfx_player.stream = stream
+		sfx_player.play()

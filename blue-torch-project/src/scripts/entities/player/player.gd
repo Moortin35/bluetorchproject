@@ -35,10 +35,19 @@ var normal_escala: float = 0.5
 var scaled_dash_cooldown: float = 0.3
 var target_escala: float = normal_escala
 
+var step_sounds: Array[AudioStream] = [
+	preload("res://_assets/media/effects/walk-01.mp3"),
+	preload("res://_assets/media/effects/walk-02.mp3")
+]
+
+var step_interval := 0.5
+var step_timer := 0.0
+
 #Se llama una vez cuando el nodo y sus hijos están en el árbol de la escena, usado para inicialización.
 func _ready() -> void:
 	dash_cooldown.timeout.connect(on_timer_timeout)
 	
+
 #Se ejecuta durante la física del bucle principal. delta es el tiempo entre pasos de física (en segundos).
 func _physics_process(delta: float) -> void:
 	
@@ -62,6 +71,14 @@ func _physics_process(delta: float) -> void:
 	handle_movement()
 	update_animation_player(is_on_floor())
 	update_animation_torch(delta)
+	
+	if is_on_floor() and abs(velocity.x) > 10 and animated_sprite_2d.animation == "walk":
+		step_timer -= delta
+		if step_timer <= 0.0:
+			play_step_sound()
+			step_timer = step_interval
+	else:
+		step_timer = 0.0
 
 
 func handle_dash(delta:float):
@@ -75,11 +92,15 @@ func handle_dash(delta:float):
 			is_dashing = false
 			
 func handle_jump():
+	
 	if Input.is_action_just_pressed("ui_accept") and !is_dashing :
+		var en_el_aire = true
 		if is_on_floor():
+			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = true
 		elif can_double_jump:
+			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
 			
@@ -93,6 +114,7 @@ func handle_movement():
 	move_and_slide()
 	
 func start_dash() -> void:
+		AudioControler.play_sfx(preload("res://_assets/media/effects/dash-01.mp3"))
 		is_dashing = true
 		can_dash = false
 		velocity.x = direction_dash * DASH_SPEED
@@ -151,3 +173,9 @@ func reset_player() -> void:
 	global_position = START_POS_LEVEL_00
 	is_dead = false
 	can_control = true
+	
+func play_step_sound():
+	if is_on_floor() and abs(velocity.x) > 10:
+		var sound = step_sounds[randi() % step_sounds.size()]
+		AudioControler.play_sfx(sound)
+		
