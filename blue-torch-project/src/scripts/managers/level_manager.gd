@@ -7,7 +7,6 @@ var loaded_level : Level = null
 func unload_level() -> void:
 	if is_instance_valid(loaded_level):
 		loaded_level.queue_free()
-		
 	loaded_level = null
 
 
