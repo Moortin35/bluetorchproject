@@ -1,11 +1,12 @@
-[gd_scene load_steps=51 format=4 uid="uid://3wgdj6qxre0q"]
+[gd_scene load_steps=53 format=4 uid="uid://3wgdj6qxre0q"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level.gd" id="1_fg8s7"]
 [ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png" id="2_jh75y"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
-[ext_resource type="PackedScene" uid="uid://dv48h0epmk1r0" path="res://src/scenes/entities/enviroment/next_level.tscn" id="3_uhna7"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/entities/enviroment/enviroment_torch.tscn" id="4_5n0ma"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/entities/obstacles/danger_zone.tscn" id="5_ft08a"]
+[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/hud.tscn" id="6_tuy8k"]
+[ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/entities/enviroment/exit_door.tscn" id="7_38pcr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhna7"]
 texture = ExtResource("2_jh75y")
@@ -786,6 +787,9 @@ radius = 20.025
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38pcr"]
 size = Vector2(63, 5)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuy8k"]
+radius = 7.0
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fg8s7")
 
@@ -819,6 +823,7 @@ position = Vector2(239, 382)
 position = Vector2(1135, 142)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment"]
+visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="Obstacles" type="Node2D" parent="."]
@@ -892,8 +897,18 @@ position = Vector2(178, 4)
 position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_38pcr")
 
-[node name="Next Level" parent="." instance=ExtResource("3_uhna7")]
-position = Vector2(1176, 160)
+[node name="ExitDoor" parent="." instance=ExtResource("7_38pcr")]
+position = Vector2(90, 640)
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitDoor"]
+texture = ExtResource("2_jh75y")
+region_enabled = true
+region_rect = Rect2(208, 161, 16, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor"]
+shape = SubResource("CapsuleShape2D_tuy8k")
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
 position = Vector2(26, 640)
+
+[node name="Hud" parent="." instance=ExtResource("6_tuy8k")]
