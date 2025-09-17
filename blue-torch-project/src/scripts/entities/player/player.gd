@@ -165,7 +165,7 @@ func handle_danger() -> void:
 		await get_tree().create_timer(0.5).timeout
 	if is_on_floor():
 		animated_sprite_2d.play("death")
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	reset_player()
 	
 func reset_player() -> void:

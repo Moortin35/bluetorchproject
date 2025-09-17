@@ -681,7 +681,6 @@ position = Vector2(239, 382)
 position = Vector2(1135, 142)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment"]
-visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="Obstacles" type="Node2D" parent="."]
