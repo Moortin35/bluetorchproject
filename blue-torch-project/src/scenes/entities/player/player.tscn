@@ -1,6 +1,7 @@
-[gd_scene load_steps=66 format=3 uid="uid://432fmegl2y15"]
+[gd_scene load_steps=67 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
+[ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_k7lkm"]
 [ext_resource type="Texture2D" uid="uid://cjhmvr82aqb5h" path="res://_assets/sprites/player/dash.png" id="2_lvvd8"]
 [ext_resource type="Texture2D" uid="uid://bbo6n3fxktp1v" path="res://_assets/sprites/player/death.png" id="3_qh5pu"]
 [ext_resource type="Texture2D" uid="uid://c5bltr70jqdtu" path="res://_assets/sprites/player/double_jump.png" id="4_qh5pu"]
@@ -422,6 +423,7 @@ collision_layer = 10
 collision_mask = 7
 floor_snap_length = 2.0
 script = ExtResource("1_rds41")
+jump_particles = ExtResource("2_k7lkm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")

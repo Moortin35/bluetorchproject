@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 class_name Player
-
+@export var jump_particles : PackedScene
 @onready var dash_cooldown: Timer = $dashCooldown
 @onready var blue_torch: Node2D = $blue_torch
 @onready var point_light_2d: PointLight2D = $blue_torch/PointLight2D
@@ -96,13 +96,23 @@ func handle_jump():
 	if Input.is_action_just_pressed("ui_accept") and !is_dashing :
 		if is_on_floor():
 			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
+			spawn_jump_particles()
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = true
 		elif can_double_jump:
 			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
+			spawn_jump_particles()
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = false
 			
+func spawn_jump_particles():
+	if jump_particles:
+		var instance = jump_particles.instantiate()
+		get_parent().add_child(instance) 
+		instance.global_position = global_position + Vector2(0, 16)
+		instance.emitting = true 
+
+
 func handle_movement():
 	direction = Input.get_axis("ui_left", "ui_right")
 	if not is_dashing:
