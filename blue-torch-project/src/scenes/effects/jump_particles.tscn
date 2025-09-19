@@ -7,8 +7,10 @@ _data = [Vector2(0.0170455, 0.0674158), 0.0, -0.198699, 0, 0, Vector2(0.544643, 
 point_count = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
 amount = 10
 texture = ExtResource("1_mei2u")
+one_shot = true
 explosiveness = 1.0
 fixed_fps = 30
 draw_order = 1
