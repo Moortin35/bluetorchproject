@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dthamkn7pai3h"]
+
+[ext_resource type="Texture2D" uid="uid://fege01wswegc" path="res://_assets/effects/dust_jump.png" id="1_6ddoh"]
+
+[sub_resource type="Curve" id="Curve_8wj3t"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 230.562), 0.0, 0.0, 0, 0, Vector2(0.738636, -335.73), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_h4idw"]
+_data = [Vector2(0.0113636, 0.191011), 0.0, 0.0, 0, 0, Vector2(1, 0.011236), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+texture = ExtResource("1_6ddoh")
+lifetime = 1.5
+one_shot = true
+speed_scale = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(-10, 0)
+angular_velocity_curve = SubResource("Curve_8wj3t")
+scale_amount_curve = SubResource("Curve_h4idw")

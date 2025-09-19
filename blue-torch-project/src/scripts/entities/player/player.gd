@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 class_name Player
 @export var jump_particles : PackedScene
+@export var dash_particles : PackedScene
+@export var torch_particles : PackedScene
+var particle_timer := 0.0
+var particle_interval := 0.5
 @onready var dash_cooldown: Timer = $dashCooldown
 @onready var blue_torch: Node2D = $blue_torch
 @onready var point_light_2d: PointLight2D = $blue_torch/PointLight2D
@@ -50,7 +54,7 @@ func _ready() -> void:
 
 #Se ejecuta durante la física del bucle principal. delta es el tiempo entre pasos de física (en segundos).
 func _physics_process(delta: float) -> void:
-	
+	spawn_torch_particles(delta)
 	if is_dead:
 		velocity += get_gravity() * delta
 		move_and_slide()
@@ -85,6 +89,7 @@ func handle_dash(delta:float):
 	if direction != 0:
 		direction_dash = direction
 	if Input.is_action_just_pressed("dash") and not is_dashing and can_dash:
+		spawn_dash_particles()
 		start_dash()
 	if is_dashing:
 		dash_timer -= delta
@@ -110,7 +115,25 @@ func spawn_jump_particles():
 		var instance = jump_particles.instantiate()
 		get_parent().add_child(instance) 
 		instance.global_position = global_position + Vector2(0, 16)
+		instance.emitting = true
+		
+func spawn_dash_particles():
+	if dash_particles:
+		var instance = dash_particles.instantiate()
+		get_parent().add_child(instance) 
+		instance.global_position = global_position + Vector2(0, 0)
+		instance.gravity =  Vector2(direction_dash * instance.gravity.x , 0)
+		instance.emitting = true
+
+func spawn_torch_particles(delta):
+	particle_timer -= delta
+	if particle_timer <= 0.0:
+		var instance = torch_particles.instantiate()
+		get_parent().add_child(instance) 
+		instance.global_position = global_position + Vector2(direction_dash * 9, -3)
+		instance.direction = Vector2(-direction, -1)
 		instance.emitting = true 
+		particle_timer = particle_interval
 
 
 func handle_movement():
