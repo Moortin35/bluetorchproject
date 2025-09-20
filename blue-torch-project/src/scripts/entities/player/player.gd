@@ -193,6 +193,7 @@ func update_animation_torch(delta:float):
 func handle_danger() -> void:
 	is_dead = true
 	AudioControler.play_sfx(preload("res://_assets/media/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
+	AudioControler.stop_lvl1()
 	can_control = false
 	velocity.y = 0
 	velocity.x = 0
@@ -205,6 +206,7 @@ func handle_danger() -> void:
 	reset_player()
 	
 func reset_player() -> void:
+	AudioControler.play_lvl1()
 	global_position = START_POS_LEVEL_00
 	is_dead = false
 	can_control = true
