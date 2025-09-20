@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://5lrb25judgcp"]
+
+[ext_resource type="Texture2D" uid="uid://bfiwum2kia51h" path="res://_assets/img/Maiden_Busto.png" id="1_lg1tg"]
+[ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_bvqib"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvqib"]
+font = ExtResource("2_bvqib")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
+
+[node name="Text Box" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1264.0
+offset_bottom = 672.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(179, 179)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_lg1tg")
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(816, 179)
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "
+"
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 0
+text = "Hola, soy la maiden, jeje :)"
+label_settings = SubResource("LabelSettings_bvqib")
