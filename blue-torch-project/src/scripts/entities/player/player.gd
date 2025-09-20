@@ -5,7 +5,7 @@ class_name Player
 @export var dash_particles : PackedScene
 @export var torch_particles : PackedScene
 var particle_timer := 0.0
-var particle_interval := 0.5
+var particle_interval := 0.9
 @onready var dash_cooldown: Timer = $dashCooldown
 @onready var blue_torch: Node2D = $blue_torch
 @onready var point_light_2d: PointLight2D = $blue_torch/PointLight2D
@@ -44,6 +44,7 @@ var step_sounds: Array[AudioStream] = [
 	preload("res://_assets/media/effects/walk-02.mp3")
 ]
 
+
 var step_interval := 0.5
 var step_timer := 0.0
 
@@ -56,6 +57,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	spawn_torch_particles(delta)
 	if is_dead:
+		
 		velocity += get_gravity() * delta
 		move_and_slide()
 		return
@@ -190,6 +192,7 @@ func update_animation_torch(delta:float):
 			
 func handle_danger() -> void:
 	is_dead = true
+	AudioControler.play_sfx(preload("res://_assets/media/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
 	can_control = false
 	velocity.y = 0
 	velocity.x = 0
