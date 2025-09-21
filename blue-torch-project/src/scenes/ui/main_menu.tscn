@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn6jhou77r6nf"]
+[gd_scene load_steps=6 format=3 uid="uid://dn6jhou77r6nf"]
 
 [ext_resource type="Script" uid="uid://yjlyxc7f03e2" path="res://src/scripts/ui/main_menu.gd" id="1_ttmq8"]
+[ext_resource type="VideoStream" uid="uid://cpgdcyeslnn3g" path="res://_assets/video/new_menu.ogv" id="2_f5lm1"]
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_loxbe"]
 [ext_resource type="Texture2D" uid="uid://68brmcpcwtrp" path="res://_assets/img/Background_Main_Menu.png" id="2_ttmq8"]
 
@@ -20,7 +21,19 @@ grow_vertical = 2
 script = ExtResource("1_ttmq8")
 metadata/_edit_use_anchors_ = true
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+offset_right = 1728.0
+offset_bottom = 972.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(120, 60)
+stream = ExtResource("2_f5lm1")
+autoplay = true
+loop = true
+buffering_msec = 200
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
