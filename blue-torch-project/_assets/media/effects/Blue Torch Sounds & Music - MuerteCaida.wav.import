@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pnb2tcw8cqqq"
+path="res://.godot/imported/Blue Torch Sounds & Music - MuerteCaida.wav-bfb70b797f3191f4130d3ae70a4a1522.sample"
+
+[deps]
+
+source_file="res://_assets/media/effects/Blue Torch Sounds & Music - MuerteCaida.wav"
+dest_files=["res://.godot/imported/Blue Torch Sounds & Music - MuerteCaida.wav-bfb70b797f3191f4130d3ae70a4a1522.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
