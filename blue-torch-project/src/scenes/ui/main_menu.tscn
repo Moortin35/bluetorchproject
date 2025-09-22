@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn6jhou77r6nf"]
+[gd_scene load_steps=7 format=3 uid="uid://dn6jhou77r6nf"]
 
 [ext_resource type="Script" uid="uid://yjlyxc7f03e2" path="res://src/scripts/ui/main_menu.gd" id="1_ttmq8"]
 [ext_resource type="VideoStream" uid="uid://cpgdcyeslnn3g" path="res://_assets/video/new_menu.ogv" id="2_f5lm1"]
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_loxbe"]
 [ext_resource type="Texture2D" uid="uid://68brmcpcwtrp" path="res://_assets/img/Background_Main_Menu.png" id="2_ttmq8"]
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="5_x2oeq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ttmq8"]
 font = ExtResource("2_loxbe")
@@ -31,6 +32,14 @@ stream = ExtResource("2_f5lm1")
 autoplay = true
 loop = true
 buffering_msec = 200
+
+[node name="PointLight2D" type="PointLight2D" parent="VideoStreamPlayer"]
+position = Vector2(1482.67, 189.333)
+scale = Vector2(1.33333, 1.33333)
+color = Color(5.82382e-05, 0.239889, 0.717071, 1)
+energy = 7.95
+texture = ExtResource("5_x2oeq")
+texture_scale = 1.45
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
