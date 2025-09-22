@@ -18,14 +18,15 @@ func load_level(level_id : int) -> void:
 	if not level_data:
 		return
 		
-	var level_path = "res://src/scenes/%s.tscn" %level_data.level_path
+	var level_path = "res://src/scenes/%s.tscn" % level_data.level_path
+	print("Cargando nivel desde:", level_path)
 	var level_res = load(level_path)
-	
 	if level_res:
+		print("Escena cargada:", level_res)
 		loaded_level = level_res.instantiate()
 		main_scene.add_child(loaded_level)
 	else:
-		print("Nivel Inexistente")
+		push_error("Nivel inexistente en: " + str(level_path))
 
 func get_level_by_id(level_id : int) -> LevelData :
 	var level_returning : LevelData = null
