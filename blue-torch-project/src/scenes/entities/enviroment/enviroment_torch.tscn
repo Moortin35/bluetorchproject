@@ -2,66 +2,66 @@
 
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="1_137ti"]
 [ext_resource type="Script" uid="uid://sxcc7qrqmpcd" path="res://src/scripts/entities/enviroment/enviroment_torch.gd" id="1_bfogg"]
-[ext_resource type="Texture2D" uid="uid://cbrl3vornqlqq" path="res://_assets/sprites/tilemap/torch-sprite.png" id="1_i5t8t"]
+[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/sprites/tilemap/new_dungeon_tile_map.png" id="3_x58px"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bfogg"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir0ui"]
+atlas = ExtResource("3_x58px")
+region = Rect2(48, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2tksg"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gvew"]
+atlas = ExtResource("3_x58px")
+region = Rect2(64, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_83yer"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0im5"]
+atlas = ExtResource("3_x58px")
+region = Rect2(80, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r6fc8"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnri3"]
+atlas = ExtResource("3_x58px")
+region = Rect2(96, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hynml"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(64, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sdeh"]
+atlas = ExtResource("3_x58px")
+region = Rect2(112, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qyfjf"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(80, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiohu"]
+atlas = ExtResource("3_x58px")
+region = Rect2(128, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cs5f"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(96, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec8wd"]
+atlas = ExtResource("3_x58px")
+region = Rect2(144, 304, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvlww"]
-atlas = ExtResource("1_i5t8t")
-region = Rect2(112, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wtg1"]
+atlas = ExtResource("3_x58px")
+region = Rect2(160, 304, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ndsvy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_48ru1"]
 animations = [{
 "frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_bfogg")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir0ui")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_2tksg")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gvew")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_83yer")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0im5")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_r6fc8")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnri3")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_hynml")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sdeh")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_qyfjf")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiohu")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_5cs5f")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec8wd")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_wvlww")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wtg1")
 }],
 "loop": true,
 "name": &"default",
@@ -72,14 +72,14 @@ animations = [{
 script = ExtResource("1_bfogg")
 
 [node name="Light" type="PointLight2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, -7)
 color = Color(0.776471, 0.756863, 0.172549, 1)
 energy = 1.5
 texture = ExtResource("1_137ti")
 texture_scale = 0.5
 
 [node name="AnimationTorch" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ndsvy")
-frame_progress = 0.700073
+sprite_frames = SubResource("SpriteFrames_48ru1")
+frame_progress = 0.849448
 
 [node name="FlickerTimer" type="Timer" parent="."]

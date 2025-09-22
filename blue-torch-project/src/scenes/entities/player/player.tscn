@@ -444,6 +444,7 @@ limit_left = -16
 limit_top = -16
 limit_right = 1296
 limit_bottom = 736
+limit_smoothed = true
 
 [node name="blue_torch" type="Node2D" parent="."]
 script = ExtResource("9_ddkw8")
