@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://os6t8vie50h5"]
+[gd_scene load_steps=6 format=3 uid="uid://os6t8vie50h5"]
 
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="1_glk6x"]
 [ext_resource type="Script" uid="uid://b0dfdxgo225hw" path="res://src/scripts/ui/pause_menu.gd" id="1_x5dnn"]
+[ext_resource type="Shader" uid="uid://boinv5odsv5wr" path="res://src/scenes/shaders/pause_menu.gdshader" id="2_3lwag"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynf13"]
+shader = ExtResource("2_3lwag")
+shader_parameter/lod = 0.8
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5dnn"]
 font = ExtResource("1_glk6x")
@@ -10,10 +15,18 @@ outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_x5dnn")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ynf13")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,12 +48,13 @@ theme_override_constants/margin_bottom = 32
 
 [node name="BoxContainer" type="BoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 32
+size_flags_vertical = 4
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
-theme_override_constants/separation = 72
+theme_override_constants/separation = 48
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -55,12 +69,17 @@ theme_override_fonts/font = ExtResource("1_glk6x")
 theme_override_font_sizes/font_size = 72
 text = "Continuar"
 
+[node name="ButtonRestart" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_glk6x")
+theme_override_font_sizes/font_size = 72
+text = "Reiniciar"
+
 [node name="ButtonExit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_glk6x")
 theme_override_font_sizes/font_size = 72
 text = "Salir"
 
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonContinue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

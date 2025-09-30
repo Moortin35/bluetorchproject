@@ -85,7 +85,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
-text = "Start"
+text = "Iniciar"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
@@ -94,7 +94,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
-text = "Quit"
+text = "Salir
+"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1119,5 +1119,6 @@ visible = false
 [node name="Hud" parent="." instance=ExtResource("6_tuy8k")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
+visible = false
 
 [connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]
