@@ -4,6 +4,8 @@ class_name Level
 
 @export var level_id : int
 
+@onready var pause_menu: CanvasLayer = $PauseMenu
+
 var level_data : LevelData
 
 func _ready() -> void:
@@ -12,4 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	delta = delta #para que no salte el error del depurador
 	if Input.is_action_just_pressed("salir_menu"):
-		get_tree().reload_current_scene()
+		pause_menu._on_visibility_changed()
+
+func _on_pause_menu_visibility_changed() -> void:
+	pass # Replace with function body.

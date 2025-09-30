@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=96 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level.gd" id="1_fg8s7"]
 [ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/sprites/tilemap/Dungeon_Tile_Set.png" id="2_jh75y"]
@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://dd75evj7wmeb8" path="res://_assets/sprites/tilemap/frame_Tile_Set.png" id="3_vjvdn"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/entities/enviroment/enviroment_torch.tscn" id="4_5n0ma"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/entities/obstacles/danger_zone.tscn" id="5_ft08a"]
-[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/hud.tscn" id="6_tuy8k"]
+[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/end_test.tscn" id="6_tuy8k"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/entities/enviroment/exit_door.tscn" id="7_38pcr"]
 [ext_resource type="PackedScene" uid="uid://5lrb25judgcp" path="res://src/scenes/ui/text_box.tscn" id="9_lbvuf"]
 [ext_resource type="Texture2D" uid="uid://byonh4eknqji4" path="res://_assets/sprites/parallax/level01/parallax_bg_level01.png" id="10_n0kxv"]
 [ext_resource type="Texture2D" uid="uid://dn3wjblbki3ia" path="res://_assets/sprites/parallax/level01/parallax_jailsbg_level01.png" id="11_mc7rl"]
 [ext_resource type="Texture2D" uid="uid://3rgoirw1vqcy" path="res://_assets/sprites/parallax/level01/parallax_jailsmg_level01.png" id="12_vjvdn"]
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/sprites/parallax/level01/parallax_jailsfg_level01.png" id="13_1xr25"]
+[ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="16_1xr25"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhna7"]
 texture = ExtResource("2_jh75y")
@@ -1116,3 +1117,7 @@ position = Vector2(26, 640)
 visible = false
 
 [node name="Hud" parent="." instance=ExtResource("6_tuy8k")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
+
+[connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]

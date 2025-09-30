@@ -8,7 +8,3 @@ func _on_exit_button_pressed() -> void:
 
 func mostrar_menu():
 	margin_container.show()
-	set_process(false)
-	set_process_unhandled_input(false)
-	set_process_input(false)
-	set_physics_process(false)

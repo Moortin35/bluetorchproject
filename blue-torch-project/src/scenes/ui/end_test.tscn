@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bn51wahv32b84"]
 
-[ext_resource type="Script" uid="uid://clix4q0les2b5" path="res://src/scripts/ui/hud.gd" id="1_mr4ol"]
+[ext_resource type="Script" uid="uid://clix4q0les2b5" path="res://src/scripts/ui/end_test.gd" id="1_co0xy"]
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_m12ob"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q3cwv"]
@@ -9,8 +9,8 @@ font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Hud" type="CanvasLayer"]
-script = ExtResource("1_mr4ol")
+[node name="EndTestUI" type="CanvasLayer"]
+script = ExtResource("1_co0xy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
