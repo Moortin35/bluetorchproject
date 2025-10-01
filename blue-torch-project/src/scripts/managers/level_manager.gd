@@ -9,7 +9,6 @@ func unload_level() -> void:
 		loaded_level.queue_free()
 	loaded_level = null
 
-
 func load_level(level_id : int) -> void:
 	unload_level()
 	

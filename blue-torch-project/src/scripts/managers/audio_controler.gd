@@ -4,7 +4,6 @@ extends Node2D
 @onready var sfx_player: AudioStreamPlayer = $sfx_player
 
 
-
 func _ready():
 	if not mute:
 		play_music()
