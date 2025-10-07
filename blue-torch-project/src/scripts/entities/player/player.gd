@@ -8,6 +8,7 @@ class_name Player
 @onready var idle: Idle = $"state_set/Idle" as Idle
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blue_torch: Node2D = $BlueTorch 
+@onready var wall_land: Node = $state_set/wall_land as WallLand
 
 var direction = 0
 var last_direction = 1
@@ -19,12 +20,14 @@ var can_control := true
 
 var is_dead := false
 
+
 func _ready() -> void:
 	movement.setup(self)
 	jump.setup(self)
 	dash.setup(self)
 	idle.setup(self)
 	blue_torch.setup(self)
+	wall_land.setup(self)
 	
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -34,14 +37,14 @@ func _physics_process(delta: float) -> void:
 	if not can_control:
 		return
 	idle.update()
-	direction = Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		last_direction = direction
 	if(!dash.is_dashing):
 		movement.update(delta,velocity)
-		velocity += get_gravity() * delta
+		#velocity += get_gravity() * delta
 		jump.update()
 	dash.update(delta)
+	wall_land.update()
 	move_and_slide()
 	
 	blue_torch.update(delta)

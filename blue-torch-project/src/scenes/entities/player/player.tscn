@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://432fmegl2y15"]
+[gd_scene load_steps=79 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
 [ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_k7lkm"]
@@ -12,12 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://diqmeqx16y6kj" path="res://_assets/sprites/player/jump.png" id="7_qh5pu"]
 [ext_resource type="Texture2D" uid="uid://os8ngbl0du2a" path="res://_assets/effects/luz_2.png" id="8_1hd0g"]
 [ext_resource type="Texture2D" uid="uid://dyakuf6jk364e" path="res://_assets/sprites/player/run.png" id="8_qh5pu"]
+[ext_resource type="Texture2D" uid="uid://cf68osy1p0ffw" path="res://_assets/sprites/player/wall_land.png" id="9_30a0n"]
 [ext_resource type="Script" uid="uid://cpcnmrat71jim" path="res://src/scripts/entities/player/blue_torch.gd" id="9_ddkw8"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="9_qh5pu"]
 [ext_resource type="Script" uid="uid://doiumbw0yno5n" path="res://src/scripts/entities/player/movement.gd" id="15_lgfv5"]
 [ext_resource type="Script" uid="uid://dj87gqlepj207" path="res://src/scenes/entities/player/jump.gd" id="16_cmfkv"]
 [ext_resource type="Script" uid="uid://dd2vogeb5diji" path="res://src/scenes/entities/player/dash.gd" id="17_n5fdq"]
 [ext_resource type="Script" uid="uid://baismalaitpj1" path="res://src/scenes/entities/player/idle.gd" id="18_4qdib"]
+[ext_resource type="Script" uid="uid://cey1htxk4c1u4" path="res://src/scenes/entities/player/wall_land.gd" id="20_iahkn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh5pu"]
 atlas = ExtResource("2_lvvd8")
@@ -227,31 +229,47 @@ region = Rect2(288, 0, 48, 48)
 atlas = ExtResource("8_qh5pu")
 region = Rect2(336, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oknxn"]
+atlas = ExtResource("9_30a0n")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ims5k"]
+atlas = ExtResource("9_30a0n")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jasd0"]
+atlas = ExtResource("9_30a0n")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdsf3"]
+atlas = ExtResource("9_30a0n")
+region = Rect2(144, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2q6vc"]
 animations = [{
 "frames": [{
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_qh5pu")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_ddkw8")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_xd88a")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_wihep")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_m8i6c")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_v7mgf")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_o7rlg")
 }, {
-"duration": 0.6,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_o11cf")
 }],
 "loop": false,
@@ -419,10 +437,27 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_oknxn")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ims5k")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jasd0")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_sdsf3")
+}],
+"loop": false,
+"name": &"wall_land",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddkw8"]
-size = Vector2(18, 27)
+size = Vector2(13, 30)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 10
@@ -432,14 +467,15 @@ script = ExtResource("1_rds41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")
-animation = &"walk"
+animation = &"dash"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_ddkw8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 zoom = Vector2(4, 4)
 limit_left = -16
 limit_top = -16
@@ -448,10 +484,12 @@ limit_bottom = 736
 limit_smoothed = true
 
 [node name="BlueTorch" type="Node2D" parent="."]
+visible = false
 script = ExtResource("9_ddkw8")
 torch_particles = ExtResource("4_d28hy")
 
 [node name="PointLight2D" type="PointLight2D" parent="BlueTorch"]
+visible = false
 scale = Vector2(1.7625, 1.775)
 color = Color(1, 1, 1, 0.921569)
 energy = 0.5
@@ -460,7 +498,7 @@ shadow_filter = 2
 texture = ExtResource("8_1hd0g")
 
 [node name="PointLight2D_2" type="PointLight2D" parent="BlueTorch"]
-position = Vector2(1, 3)
+visible = false
 scale = Vector2(1.15, 1.0625)
 texture = ExtResource("9_qh5pu")
 texture_scale = 0.5
@@ -484,3 +522,6 @@ dash_particles = ExtResource("3_3vwgm")
 
 [node name="Idle" type="Node" parent="state_set"]
 script = ExtResource("18_4qdib")
+
+[node name="wall_land" type="Node" parent="state_set"]
+script = ExtResource("20_iahkn")

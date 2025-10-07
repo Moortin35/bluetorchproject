@@ -1,6 +1,12 @@
 extends Node
 class_name Movement
 
+@export var acceleration = 1200.0
+@export var freccion = 1200.0
+
+@export var acceleracion_en_el_aire = 1200
+@export var friccion_en_el_aire = 250
+
 #logica
 var speed: float = 100.0
 var max_speed: float = 100.0
@@ -14,25 +20,40 @@ var step_sounds: Array[AudioStream] = [
 	preload("res://_assets/media/effects/walk-02.mp3")
 ]
 
-var character: CharacterBody2D
+var player: CharacterBody2D
 
 func setup(character2D: CharacterBody2D):
-	character = character2D
+	player = character2D
 	
 func update(delta,velocity):
 	#logica
+	if not player.is_on_floor():
+		player.velocity += player.get_gravity() * delta
+		player.velocity.y += clampf(player.velocity.y, -2,2)
+		
+		
 	direction = Input.get_axis("ui_left", "ui_right")
+	player.direction = direction
 	if direction != 0:
-		character.velocity.x = direction * speed
-	else:
-		character.velocity.x = move_toward(character.velocity.x, 0, speed)
+		#player.velocity.x = direction * speed
+		if player.is_on_floor():
+			player.velocity.x = move_toward(player.velocity.x, player.direction * speed,acceleration * delta)
+		else:
+			player.velocity.x = move_toward(player.velocity.x, player.direction * speed,acceleracion_en_el_aire * delta)
+	elif direction == 0:
+		if player.is_on_floor():
+			player.velocity.x = move_toward(player.velocity.x, 0.0 ,freccion * delta)
+		else:
+			player.velocity.x = move_toward(player.velocity.x,0 ,friccion_en_el_aire * delta)
+	
+	print(direction)
 	
 	# animacion
-	if character.is_on_floor() and direction != 0 and !character.dash.is_dashing:
-		character.state = self
+	if player.is_on_floor() and direction != 0 and !player.dash.is_dashing:
+		player.state = self
 	
 	#sonido
-	if character.is_on_floor() and abs(velocity.x) > 10 and character.animated_sprite_2d.animation == "walk":
+	if player.is_on_floor() and abs(velocity.x) > 10 and player.animated_sprite_2d.animation == "walk":
 		step_timer -= delta
 		if step_timer <= 0.0:
 			play_step_sound(velocity)
@@ -41,12 +62,16 @@ func update(delta,velocity):
 		step_timer = 0.0
 	
 func stop_movement():
-	character.velocity = Vector2.ZERO
+	player.velocity = Vector2.ZERO
 
 func play_step_sound(velocity):
-	if character.is_on_floor() and abs(velocity.x) > 10:
+	if player.is_on_floor() and abs(velocity.x) > 10:
 		var sound = step_sounds[randi() % step_sounds.size()]
 		AudioControler.play_sfx(sound)
 		
 func animation():
-	character.play_anim("walk")
+	player.play_anim("walk")	
+		
+func is_facing_wall():
+	return player.get_wall_normal().x == player.velocity.x
+		
