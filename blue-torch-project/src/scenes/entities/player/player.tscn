@@ -15,9 +15,9 @@
 [ext_resource type="Script" uid="uid://cpcnmrat71jim" path="res://src/scripts/entities/player/blue_torch.gd" id="9_ddkw8"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="9_qh5pu"]
 [ext_resource type="Script" uid="uid://doiumbw0yno5n" path="res://src/scripts/entities/player/movement.gd" id="15_lgfv5"]
-[ext_resource type="Script" uid="uid://dj87gqlepj207" path="res://src/scenes/entities/player/jump.gd" id="16_cmfkv"]
-[ext_resource type="Script" uid="uid://dd2vogeb5diji" path="res://src/scenes/entities/player/dash.gd" id="17_n5fdq"]
-[ext_resource type="Script" uid="uid://baismalaitpj1" path="res://src/scenes/entities/player/idle.gd" id="18_4qdib"]
+[ext_resource type="Script" uid="uid://dj87gqlepj207" path="res://src/scripts/entities/player/jump.gd" id="16_cmfkv"]
+[ext_resource type="Script" uid="uid://dd2vogeb5diji" path="res://src/scripts/entities/player/dash.gd" id="17_n5fdq"]
+[ext_resource type="Script" uid="uid://baismalaitpj1" path="res://src/scripts/entities/player/idle.gd" id="18_4qdib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh5pu"]
 atlas = ExtResource("2_lvvd8")
@@ -432,7 +432,7 @@ script = ExtResource("1_rds41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")
-animation = &"walk"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
