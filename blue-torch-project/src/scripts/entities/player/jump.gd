@@ -16,12 +16,12 @@ func update():
 	if Input.is_action_just_pressed("ui_accept"):
 		character.state = self
 		if character.is_on_floor():
-			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
+			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
 			can_double_jump = true
 		elif can_double_jump:
-			AudioControler.play_sfx(preload("res://_assets/media/effects/jump-01.mp3"))
+			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
 			can_double_jump = false

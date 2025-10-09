@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://5lrb25judgcp"]
 
-[ext_resource type="Texture2D" uid="uid://bfiwum2kia51h" path="res://_assets/img/Maiden_Busto.png" id="1_lg1tg"]
+[ext_resource type="Texture2D" uid="uid://bfiwum2kia51h" path="res://_assets/images/portraits/maiden_portrait.png" id="1_lg1tg"]
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_bvqib"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvqib"]

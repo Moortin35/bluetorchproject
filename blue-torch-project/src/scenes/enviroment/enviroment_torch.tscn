@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://btuyl2ejyb18v"]
+
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="1_137ti"]
+[ext_resource type="Script" uid="uid://sxcc7qrqmpcd" path="res://src/scripts/enviroment/enviroment_torch.gd" id="1_bfogg"]
+[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/new_dungeon_tile_map.png" id="3_x58px"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir0ui"]
+atlas = ExtResource("3_x58px")
+region = Rect2(48, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gvew"]
+atlas = ExtResource("3_x58px")
+region = Rect2(64, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0im5"]
+atlas = ExtResource("3_x58px")
+region = Rect2(80, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnri3"]
+atlas = ExtResource("3_x58px")
+region = Rect2(96, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sdeh"]
+atlas = ExtResource("3_x58px")
+region = Rect2(112, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiohu"]
+atlas = ExtResource("3_x58px")
+region = Rect2(128, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec8wd"]
+atlas = ExtResource("3_x58px")
+region = Rect2(144, 304, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wtg1"]
+atlas = ExtResource("3_x58px")
+region = Rect2(160, 304, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48ru1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir0ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gvew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0im5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnri3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sdeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiohu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec8wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wtg1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="torch" type="Node2D"]
+script = ExtResource("1_bfogg")
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(0, -7)
+color = Color(0.776471, 0.756863, 0.172549, 1)
+energy = 1.5
+texture = ExtResource("1_137ti")
+texture_scale = 0.5
+
+[node name="AnimationTorch" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_48ru1")
+frame_progress = 0.849448
+
+[node name="FlickerTimer" type="Timer" parent="."]

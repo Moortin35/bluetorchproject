@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="1_glk6x"]
 [ext_resource type="Script" uid="uid://b0dfdxgo225hw" path="res://src/scripts/ui/pause_menu.gd" id="1_x5dnn"]
-[ext_resource type="Shader" uid="uid://boinv5odsv5wr" path="res://src/scenes/shaders/pause_menu.gdshader" id="2_3lwag"]
+[ext_resource type="Shader" uid="uid://boinv5odsv5wr" path="res://src/shaders/pause_menu.gdshader" id="2_3lwag"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynf13"]
 shader = ExtResource("2_3lwag")

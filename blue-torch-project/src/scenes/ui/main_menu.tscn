@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn6jhou77r6nf"]
+[gd_scene load_steps=6 format=3 uid="uid://dn6jhou77r6nf"]
 
 [ext_resource type="Script" uid="uid://yjlyxc7f03e2" path="res://src/scripts/ui/main_menu.gd" id="1_ttmq8"]
 [ext_resource type="VideoStream" uid="uid://cpgdcyeslnn3g" path="res://_assets/video/new_menu.ogv" id="2_f5lm1"]
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_loxbe"]
-[ext_resource type="Texture2D" uid="uid://68brmcpcwtrp" path="res://_assets/img/Background_Main_Menu.png" id="2_ttmq8"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="5_x2oeq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ttmq8"]
@@ -40,19 +39,6 @@ color = Color(5.82382e-05, 0.239889, 0.717071, 1)
 energy = 7.95
 texture = ExtResource("5_x2oeq")
 texture_scale = 1.45
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_ttmq8")
-expand_mode = 1
-stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

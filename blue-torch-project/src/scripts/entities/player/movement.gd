@@ -10,8 +10,8 @@ var direction: float = 0
 var step_interval := 0.5
 var step_timer := 0.0
 var step_sounds: Array[AudioStream] = [
-	preload("res://_assets/media/effects/walk-01.mp3"),
-	preload("res://_assets/media/effects/walk-02.mp3")
+	preload("res://_assets/sounds/effects/walk-01.mp3"),
+	preload("res://_assets/sounds/effects/walk-02.mp3")
 ]
 
 var character: CharacterBody2D

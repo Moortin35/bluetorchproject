@@ -58,7 +58,7 @@ func update_animation_player() -> void:
 
 func handle_danger() -> void:
 	is_dead = true
-	AudioControler.play_sfx(preload("res://_assets/media/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
+	AudioControler.play_sfx(preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
 	AudioControler.stop_lvl1()
 	can_control = false
 	velocity.y = 0

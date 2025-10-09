@@ -27,7 +27,7 @@ func update(delta):
 			
 func start_dash() -> void:
 	spawn_dash_particles()
-	AudioControler.play_sfx(preload("res://_assets/media/effects/dash-01.mp3"))
+	AudioControler.play_sfx(preload("res://_assets/sounds/effects/dash-01.mp3"))
 	is_dashing = true
 	can_dash = false
 	character.velocity.x = character.last_direction * DASH_SPEED
