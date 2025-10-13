@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4y1mdxe4chqb"]
+
+[ext_resource type="Script" uid="uid://8n8hpib3ya2x" path="res://src/scenes/objets/saw.gd" id="1_4vvku"]
+[ext_resource type="Texture2D" uid="uid://dkdo0tjpxllej" path="res://_assets/sprites/objets/saw.png" id="1_v53y0"]
+[ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/enviroment/obstacles/danger_zone.tscn" id="2_4vvku"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6os6"]
+atlas = ExtResource("1_v53y0")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g4j7"]
+atlas = ExtResource("1_v53y0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v687"]
+atlas = ExtResource("1_v53y0")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vytf"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_q6os6")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_2g4j7")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_2v687")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2peju"]
+radius = 24.0208
+
+[node name="Saw" type="Node2D"]
+script = ExtResource("1_4vvku")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1vytf")
+frame_progress = 0.176493
+
+[node name="DangerZone" parent="." instance=ExtResource("2_4vvku")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+shape = SubResource("CircleShape2D_2peju")
