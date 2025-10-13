@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://x4wkxi64sqa4"]
+
+[ext_resource type="Script" uid="uid://bnt1sva4y3sjn" path="res://spike.gd" id="1_a1ks0"]
+[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/new_dungeon_tile_map.png" id="2_vedj8"]
+[ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/enviroment/obstacles/danger_zone.tscn" id="3_pdbas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88wpe"]
+size = Vector2(20, 8)
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("1_a1ks0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 0)
+scale = Vector2(1.087, 1)
+texture = ExtResource("2_vedj8")
+region_enabled = true
+region_rect = Rect2(64, 272, 96, 16)
+
+[node name="DangerZone" parent="." instance=ExtResource("3_pdbas")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_88wpe")
