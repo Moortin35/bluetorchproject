@@ -1056,6 +1056,7 @@ color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 position = Vector2(1256, 162)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
+position = Vector2(26, 640)
 
 [node name="Text Box" parent="." instance=ExtResource("9_lbvuf")]
 visible = false
