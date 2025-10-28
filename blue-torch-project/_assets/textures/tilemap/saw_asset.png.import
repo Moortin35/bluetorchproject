@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd75evj7wmeb8"
-path="res://.godot/imported/frame_Tile_Set.png-709bcd9b4bb40f99054e41e0d7f450c3.ctex"
+uid="uid://dt0xei3w2q1k1"
+path="res://.godot/imported/saw_asset.png-59c8380b62c0f4a161eefc18951d804d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/textures/tilemap/frame_Tile_Set.png"
-dest_files=["res://.godot/imported/frame_Tile_Set.png-709bcd9b4bb40f99054e41e0d7f450c3.ctex"]
+source_file="res://_assets/textures/tilemap/saw_asset.png"
+dest_files=["res://.godot/imported/saw_asset.png-59c8380b62c0f4a161eefc18951d804d.ctex"]
 
 [params]
 

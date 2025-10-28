@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhmv8gex1muvr"]
 
-[ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/textures/tilemap/Dungeon_Tile_Set.png" id="1_4lpyb"]
+[ext_resource type="Texture2D" uid="uid://bon5aqy2a578r" path="res://_assets/textures/tilemap/dungeon_tile_set.png" id="1_4lpyb"]
 [ext_resource type="Script" uid="uid://ck1x4mkm5xlrd" path="res://src/scripts/enviroment/cofre.gd" id="1_cxfpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfpq"]

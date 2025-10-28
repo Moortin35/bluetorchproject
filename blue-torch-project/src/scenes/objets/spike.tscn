@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://x4wkxi64sqa4"]
 
 [ext_resource type="Script" uid="uid://bnt1sva4y3sjn" path="res://spike.gd" id="1_a1ks0"]
-[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/new_dungeon_tile_map.png" id="2_vedj8"]
+[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="2_vedj8"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/enviroment/obstacles/danger_zone.tscn" id="3_pdbas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88wpe"]
