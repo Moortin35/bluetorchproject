@@ -8,6 +8,7 @@ class_name Player
 @onready var idle: Idle = $"state_set/Idle" as Idle
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blue_torch: Node2D = $BlueTorch 
+@onready var camera_2d: Camera2D = $Camera2D
 
 var direction = 0
 var last_direction = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=64 format=4 uid="uid://bom54ocao6cya"]
 
-[ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level.gd" id="1_fg8s7"]
+[ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="3_mc7rl"]
 [ext_resource type="Texture2D" uid="uid://dd75evj7wmeb8" path="res://_assets/textures/tilemap/frame_tileset.png" id="3_vjvdn"]
@@ -779,7 +779,6 @@ sources/1 = SubResource("TileSetAtlasSource_bcxre")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fg8s7")
-level_id = 1
 
 [node name="Background" type="TileMapLayer" parent="."]
 visible = false
