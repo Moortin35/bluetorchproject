@@ -788,17 +788,76 @@ tile_set = SubResource("TileSet_bcxre")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Spike4" parent="Obstacles" instance=ExtResource("18_lyywh")]
-position = Vector2(713, 408)
-size = 18
+[node name="spikes_2" type="Node2D" parent="Obstacles"]
+position = Vector2(734, 392)
 
-[node name="Spike2" parent="Obstacles" instance=ExtResource("18_lyywh")]
-position = Vector2(10, 408)
-size = 4
+[node name="Spike7" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(79, 16)
 
-[node name="Spike" parent="Obstacles" instance=ExtResource("18_lyywh")]
-position = Vector2(201, 712)
-size = 4
+[node name="Spike8" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(96, 16)
+
+[node name="Spike4" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(62, 16)
+
+[node name="Spike2" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(45, 16)
+
+[node name="Spike5" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(28, 16)
+
+[node name="Spike6" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(11, 16)
+
+[node name="Spike9" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(215, 16)
+
+[node name="Spike17" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(249, 16)
+
+[node name="Spike10" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(232, 16)
+
+[node name="Spike11" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(198, 16)
+
+[node name="Spike12" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(181, 16)
+
+[node name="Spike13" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(164, 16)
+
+[node name="Spike14" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(147, 16)
+
+[node name="Spike15" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(130, 16)
+
+[node name="Spike16" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(113, 16)
+
+[node name="Spike3" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(-6, 16)
+
+[node name="Spike1" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
+position = Vector2(-23, 16)
+
+[node name="spikes_1" type="Node2D" parent="Obstacles"]
+position = Vector2(224, 696)
+
+[node name="Spike6" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
+position = Vector2(11, 16)
+
+[node name="Spike5" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
+position = Vector2(28, 16)
+nro_spike = 2
+
+[node name="Spike3" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
+position = Vector2(-6, 16)
+
+[node name="Spike" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
+position = Vector2(-23, 16)
+nro_spike = 1
 
 [node name="Saw4" parent="Obstacles" instance=ExtResource("5_vs2nq")]
 position = Vector2(328, 320)
@@ -843,6 +902,7 @@ tile_map_data = PackedByteArray("AAAAACkAAQAMAAQAAAABACkAAQAMAAQAAAACACkAAQAMAAQ
 tile_set = SubResource("TileSet_8bfcq")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer_BG" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1, 0)
@@ -880,6 +940,7 @@ texture = ExtResource("13_1xr25")
 color = Color(0.195545, 0.195545, 0.195545, 1)
 
 [node name="Enviroment" type="Node2D" parent="."]
+visible = false
 
 [node name="torch" parent="Enviroment" instance=ExtResource("4_5n0ma")]
 position = Vector2(321, 640)
@@ -897,12 +958,14 @@ color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 position = Vector2(1256, 162)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-position = Vector2(1209, 149)
+visible = false
+position = Vector2(868, 343)
 
 [node name="TextBox" parent="." instance=ExtResource("9_lbvuf")]
 visible = false
 
 [node name="EndTest" parent="." instance=ExtResource("6_tuy8k")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false

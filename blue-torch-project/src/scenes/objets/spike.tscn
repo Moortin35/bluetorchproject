@@ -5,20 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/enviroment/obstacles/danger_zone.tscn" id="3_pdbas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88wpe"]
-size = Vector2(20, 8)
+size = Vector2(17, 10)
 
 [node name="Spike" type="Node2D"]
 script = ExtResource("1_a1ks0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(42, 0)
+[node name="sprite" type="Sprite2D" parent="."]
 scale = Vector2(1.087, 1)
 texture = ExtResource("2_vedj8")
 region_enabled = true
-region_rect = Rect2(64, 272, 96, 16)
+region_rect = Rect2(64, 272, 16, 16)
 
 [node name="DangerZone" parent="." instance=ExtResource("3_pdbas")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_88wpe")
