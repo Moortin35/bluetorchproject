@@ -779,6 +779,7 @@ sources/1 = SubResource("TileSetAtlasSource_bcxre")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fg8s7")
+level_id = 1
 
 [node name="Background" type="TileMapLayer" parent="."]
 visible = false
@@ -896,7 +897,7 @@ color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 position = Vector2(1256, 162)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-position = Vector2(26, 640)
+position = Vector2(1209, 149)
 
 [node name="TextBox" parent="." instance=ExtResource("9_lbvuf")]
 visible = false
