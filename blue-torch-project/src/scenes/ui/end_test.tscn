@@ -15,7 +15,6 @@ script = ExtResource("1_co0xy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,8 +34,10 @@ layout_mode = 2
 
 [node name="finish_level" type="Label" parent="MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Gracias por probar este avance de Blue Torch
-Dejanos tus comentarios."
+text = "La Doncella de la Antorcha Azul, 
+logra encontrar una salida, 
+pero la torre es inmensa, 
+y aún debe seguir avanzando."
 label_settings = SubResource("LabelSettings_q3cwv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -48,6 +49,6 @@ size_flags_stretch_ratio = 0.0
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("2_m12ob")
 theme_override_font_sizes/font_size = 64
-text = "Salir al Menú"
+text = "Continuar"
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/PanelContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

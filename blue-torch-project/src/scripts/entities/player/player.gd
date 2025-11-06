@@ -14,7 +14,8 @@ var direction = 0
 var last_direction = 1
 var state = idle
 
-const START_POS_LEVEL_00 = Vector2(26.0, 640.0)
+const START_POS_LEVEL_01 = Vector2(26.0, 640.0)
+const START_POS_LEVEL_02 = Vector2(644.0, 364.0)
 
 var can_control := true
 
@@ -74,6 +75,6 @@ func handle_danger() -> void:
 	
 func reset_player() -> void:
 	AudioControler.play_lvl1()
-	global_position = START_POS_LEVEL_00
+	global_position = START_POS_LEVEL_01
 	is_dead = false
 	can_control = true
