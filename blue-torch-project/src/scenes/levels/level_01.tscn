@@ -957,7 +957,7 @@ color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 position = Vector2(1256, 162)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-position = Vector2(26, 640)
+position = Vector2(27, 640)
 
 [node name="TextBox" parent="." instance=ExtResource("9_lbvuf")]
 visible = false
@@ -968,7 +968,7 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
 
-[node name="NPC" parent="." instance=ExtResource("17_vs2nq")]
-position = Vector2(152, 600)
+[node name="hood_guy" parent="." instance=ExtResource("17_vs2nq")]
+position = Vector2(151, 600)
 
 [connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]

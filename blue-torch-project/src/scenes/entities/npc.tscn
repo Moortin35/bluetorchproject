@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw06x6b7cbgtv"]
+[gd_scene load_steps=10 format=3 uid="uid://cw06x6b7cbgtv"]
 
-[ext_resource type="Script" uid="uid://cutqihj1ks1k3" path="res://src/scripts/entities/npc.gd" id="1_arw11"]
+[ext_resource type="Script" uid="uid://dmiesgqr0vbuc" path="res://src/scenes/entities/npc.gd" id="1_arw11"]
 [ext_resource type="Texture2D" uid="uid://ra7utot7d0g4" path="res://_assets/sprites/npc1/npc.png" id="1_y1ppy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_arw11"]
@@ -40,10 +40,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk28n"]
-size = Vector2(30, 48)
+size = Vector2(100, 93)
 
-[node name="NPC" type="StaticBody2D"]
-collision_mask = 9
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arw11"]
+size = Vector2(34, 48)
+
+[node name="hood_guy" type="Area2D"]
+collision_mask = 8
 script = ExtResource("1_arw11")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -54,3 +57,11 @@ frame_progress = 0.923692
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tk28n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_arw11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
