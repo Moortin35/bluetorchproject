@@ -963,6 +963,7 @@ position = Vector2(26, 640)
 visible = false
 
 [node name="EndTest" parent="." instance=ExtResource("6_tuy8k")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
