@@ -906,6 +906,7 @@ tile_set = SubResource("TileSet_8bfcq")
 [node name="ParallaxLayer_BG" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1, 0)
 motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(0, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_BG"]
 position = Vector2(640, 360)
@@ -913,7 +914,7 @@ texture = ExtResource("10_n0kxv")
 
 [node name="ParallaxLayer_PBG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
-motion_mirroring = Vector2(1280, 0)
+motion_mirroring = Vector2(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PBG"]
 position = Vector2(640, 360)
@@ -921,7 +922,7 @@ texture = ExtResource("11_mc7rl")
 
 [node name="ParallaxLayer_PMG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
-motion_mirroring = Vector2(1280, 0)
+motion_mirroring = Vector2(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PMG"]
 position = Vector2(640, 360)
@@ -929,7 +930,7 @@ texture = ExtResource("12_vjvdn")
 
 [node name="ParallaxLayer_PFG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
-motion_mirroring = Vector2(1280, 0)
+motion_mirroring = Vector2(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PFG"]
 position = Vector2(640, 360)
