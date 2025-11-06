@@ -8,6 +8,7 @@ extends CanvasLayer
 @export var skip_action: StringName = &"ui_cancel"
 
 @onready var texture_rect: TextureRect = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel/TextureRect
+@onready var panel: Panel = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -99,8 +100,13 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	var pj_portrait = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_") + "_portrait.png"
-	texture_rect.texture = load("res://_assets/images/portraits/" + pj_portrait)
+	var pj_portrait_file = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_") + "_portrait.png"
+	var path_portrait = "res://_assets/images/portraits/" + pj_portrait_file
+	if ResourceLoader.exists(path_portrait):
+		panel.show()
+		texture_rect.texture = load(path_portrait)
+	else:
+		panel.hide()
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
