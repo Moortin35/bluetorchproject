@@ -9,6 +9,8 @@ class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blue_torch: Node2D = $BlueTorch 
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var interactions: AnimatedSprite2D = $interactions
+
 
 var direction = 0
 var last_direction = 1
@@ -27,6 +29,7 @@ func _ready() -> void:
 	dash.setup(self)
 	idle.setup(self)
 	blue_torch.setup(self)
+	interactions.play()
 	
 func _physics_process(delta: float) -> void:
 	if is_dead:

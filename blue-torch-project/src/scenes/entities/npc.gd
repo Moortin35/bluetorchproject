@@ -11,9 +11,11 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("holis")
+		body.interactions.play("mouth")
+		body.interactions.show()
+		
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
-		print("chauchis")
+		body.interactions.hide()
