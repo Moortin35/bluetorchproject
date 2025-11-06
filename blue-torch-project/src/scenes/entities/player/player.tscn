@@ -479,13 +479,13 @@ position = Vector2(0, -19)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ppq54")
 animation = &"mouth"
-frame_progress = 0.483493
+frame_progress = 0.530132
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.329037
+frame_progress = 0.515041
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)

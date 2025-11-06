@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://3rgoirw1vqcy" path="res://_assets/textures/parallax/level01/parallax_jailsmg_level01.png" id="12_vjvdn"]
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/textures/parallax/level01/parallax_jailsfg_level01.png" id="13_1xr25"]
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="16_1xr25"]
-[ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/npc.tscn" id="17_vs2nq"]
+[ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/hood_guy.tscn" id="17_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/objets/spike.tscn" id="18_lyywh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8w1q"]
