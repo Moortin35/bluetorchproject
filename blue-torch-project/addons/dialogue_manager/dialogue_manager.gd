@@ -67,6 +67,8 @@ var _dotnet_dialogue_manager: RefCounted
 
 var _expression_parser: DMExpressionParser = DMExpressionParser.new()
 
+var is_dialoge_active = false
+
 
 func _ready() -> void:
 	# Cache the known Node2D properties

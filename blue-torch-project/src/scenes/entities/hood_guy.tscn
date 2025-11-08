@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk28n"]
-size = Vector2(100, 93)
+size = Vector2(72, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arw11"]
 size = Vector2(34, 48)
@@ -56,6 +56,7 @@ autoplay = "idle"
 frame_progress = 0.923692
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, 0)
 shape = SubResource("RectangleShape2D_tk28n")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

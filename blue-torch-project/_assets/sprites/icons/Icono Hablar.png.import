@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0bu43mgij120"
-path="res://.godot/imported/Icono Boca.png-1198d41deb2657087cec7a83d27dca0b.ctex"
+uid="uid://blhptqrya3m46"
+path="res://.godot/imported/Icono Hablar.png-4db4bd710f4683132f6b8af1d8406dba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/images/iconos/Icono Boca.png"
-dest_files=["res://.godot/imported/Icono Boca.png-1198d41deb2657087cec7a83d27dca0b.ctex"]
+source_file="res://_assets/sprites/icons/Icono Hablar.png"
+dest_files=["res://.godot/imported/Icono Hablar.png-4db4bd710f4683132f6b8af1d8406dba.ctex"]
 
 [params]
 

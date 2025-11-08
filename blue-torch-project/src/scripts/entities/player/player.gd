@@ -11,6 +11,8 @@ class_name Player
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interactions: AnimatedSprite2D = $interactions
 
+var fade_tween: Tween
+var base_pos: Vector2
 
 var direction = 0
 var last_direction = 1
@@ -30,8 +32,16 @@ func _ready() -> void:
 	idle.setup(self)
 	blue_torch.setup(self)
 	interactions.play()
+	base_pos = interactions.position
 	
 func _physics_process(delta: float) -> void:
+	if DialogueManager.is_dialoge_active:
+		velocity += get_gravity() * delta
+		velocity.x = 0
+		if is_on_floor():
+			play_anim("idle")
+		move_and_slide()
+		return
 	if is_dead:
 		velocity += get_gravity() * delta
 		move_and_slide()
@@ -82,9 +92,36 @@ func reset_player() -> void:
 	is_dead = false
 	can_control = true
 	
-func play_icon(icon):
+func play_icon(icon: String) -> void:
+	if fade_tween and fade_tween.is_running():
+		fade_tween.kill()
+
 	interactions.show()
 	interactions.play(icon)
+
+	interactions.position = base_pos + Vector2(0, 10)
+	interactions.modulate.a = 0.0
+
+	fade_tween = get_tree().create_tween()
+	fade_tween.set_trans(Tween.TRANS_SINE)
+	fade_tween.set_ease(Tween.EASE_OUT)
+
+	fade_tween.tween_property(interactions, "modulate:a", 1.0, 0.35)
+	fade_tween.parallel().tween_property(interactions, "position", base_pos, 0.35)
 	
-func stop_icon():
-	interactions.hide()
+func stop_icon() -> void:
+	if fade_tween and fade_tween.is_running():
+		fade_tween.kill()
+
+	fade_tween = get_tree().create_tween()
+	fade_tween.set_trans(Tween.TRANS_SINE)
+	fade_tween.set_ease(Tween.EASE_IN)
+
+	fade_tween.tween_property(interactions, "modulate:a", 0.0, 0.3)
+	fade_tween.parallel().tween_property(interactions, "position", base_pos + Vector2(0, 10), 0.3)
+
+	fade_tween.finished.connect(func():
+		interactions.hide()
+		interactions.position = base_pos
+	)
+	
