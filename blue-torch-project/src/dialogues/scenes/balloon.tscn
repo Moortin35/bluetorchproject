@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://cis5d2hhv0deo"]
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/dialogues/scripts/balloon.gd" id="1_36de5"]
-[ext_resource type="Texture2D" uid="uid://bfiwum2kia51h" path="res://_assets/images/portraits/maiden_portrait.png" id="2_08lx0"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_pprdg"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://dcslh3hikkw5j" path="res://_assets/images/portraits/hood_guy_portrait.png" id="4_08lx0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -74,10 +74,6 @@ border_width_bottom = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kj6u"]
 bg_color = Color(0.0164273, 0.0518658, 0.162443, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
 
 [sub_resource type="Theme" id="Theme_3c1ei"]
 default_font = ExtResource("2_pprdg")
@@ -132,15 +128,6 @@ custom_minimum_size = Vector2(172, 172)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0kj6u")
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 10.0
-offset_right = 209.0
-offset_bottom = 229.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_08lx0")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -165,6 +152,16 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_5qeb6")
 text = "Dialogue..."
+
+[node name="TextureRect" type="TextureRect" parent="Balloon"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 455.0
+offset_right = 354.0
+offset_bottom = 828.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_08lx0")
+flip_h = true
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true

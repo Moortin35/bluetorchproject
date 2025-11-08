@@ -81,3 +81,10 @@ func reset_player() -> void:
 	global_position = START_POS_LEVEL_01
 	is_dead = false
 	can_control = true
+	
+func play_icon(icon):
+	interactions.show()
+	interactions.play(icon)
+	
+func stop_icon():
+	interactions.hide()
