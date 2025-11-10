@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs56lflb8t6j5"]
+
+[ext_resource type="Texture2D" uid="uid://dvlb3ai2a6mde" path="res://_assets/sprites/npcs/engla/engla_idle.png" id="1_8c5vl"]
+[ext_resource type="Script" uid="uid://dr1ryrpkahu2s" path="res://src/scripts/entities/engla.gd" id="1_nysbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nysbh"]
+atlas = ExtResource("1_8c5vl")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwkyy"]
+atlas = ExtResource("1_8c5vl")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqxgv"]
+atlas = ExtResource("1_8c5vl")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjicn"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_nysbh")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_jwkyy")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_nqxgv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nysbh"]
+size = Vector2(13, 25)
+
+[node name="Engla" type="CharacterBody2D"]
+script = ExtResource("1_nysbh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mjicn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.992701
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_nysbh")
