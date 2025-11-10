@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-const HOOD_GUY = preload("res://src/dialogues/dialogues_text/hood_guy.dialogue")
+const ODD_MAN = preload("res://src/dialogues/dialogues_text/odd_man.dialogue")
 var is_player_close = false
 
 
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if is_player_close and Input.is_action_just_pressed("interact") and !DialogueManager.is_dialoge_active :
-		DialogueManager.show_dialogue_balloon(HOOD_GUY)
+		DialogueManager.show_dialogue_balloon(ODD_MAN)
 
 
 func _on_body_entered(body: Node2D) -> void:

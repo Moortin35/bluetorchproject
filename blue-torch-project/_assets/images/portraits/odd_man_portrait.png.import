@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ra7utot7d0g4"
-path="res://.godot/imported/hood_guy.png-712ad4fc6382a0cfb0cbdd1a7202d012.ctex"
+uid="uid://dcslh3hikkw5j"
+path="res://.godot/imported/odd_man_portrait.png-6b5ef57d1792fa4490f742e95551b142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/npc1/hood_guy.png"
-dest_files=["res://.godot/imported/hood_guy.png-712ad4fc6382a0cfb0cbdd1a7202d012.ctex"]
+source_file="res://_assets/images/portraits/odd_man_portrait.png"
+dest_files=["res://.godot/imported/odd_man_portrait.png-6b5ef57d1792fa4490f742e95551b142.ctex"]
 
 [params]
 
