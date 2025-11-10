@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ra7utot7d0g4"
-path="res://.godot/imported/odd_man.png-15292484d77f7cc3d3dbda4941c10302.ctex"
+uid="uid://blhptqrya3m46"
+path="res://.godot/imported/talk_icon.png-4f778864b13eb07e27a6f2866d9c4cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/npc1/odd_man.png"
-dest_files=["res://.godot/imported/odd_man.png-15292484d77f7cc3d3dbda4941c10302.ctex"]
+source_file="res://_assets/sprites/icons/talk_icon.png"
+dest_files=["res://.godot/imported/talk_icon.png-4f778864b13eb07e27a6f2866d9c4cd6.ctex"]
 
 [params]
 

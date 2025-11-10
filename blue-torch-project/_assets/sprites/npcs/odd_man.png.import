@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blhptqrya3m46"
-path="res://.godot/imported/Icono Hablar.png-4db4bd710f4683132f6b8af1d8406dba.ctex"
+uid="uid://ra7utot7d0g4"
+path="res://.godot/imported/odd_man.png-15090567f9511236fe337fc31e4f0981.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/icons/Icono Hablar.png"
-dest_files=["res://.godot/imported/Icono Hablar.png-4db4bd710f4683132f6b8af1d8406dba.ctex"]
+source_file="res://_assets/sprites/npcs/odd_man.png"
+dest_files=["res://.godot/imported/odd_man.png-15090567f9511236fe337fc31e4f0981.ctex"]
 
 [params]
 

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ddrc7j4ryfbfh" path="res://_assets/textures/tilemap/background_tileset.png" id="5_srko8"]
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/objets/saw.tscn" id="5_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/enviroment/obstacles/danger_zone.tscn" id="6_a8w1q"]
-[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/end_test.tscn" id="6_tuy8k"]
+[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/next_level.tscn" id="6_tuy8k"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/enviroment/exit_door.tscn" id="7_38pcr"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="8_jxedu"]
 [ext_resource type="PackedScene" uid="uid://5lrb25judgcp" path="res://src/scenes/ui/text_box.tscn" id="9_lbvuf"]

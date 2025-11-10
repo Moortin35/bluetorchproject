@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0bu43mgij120"
-path="res://.godot/imported/Icono Boca.png-7067a32abfaaa399c1a557cc3ea63155.ctex"
+uid="uid://dpbmok0jg0547"
+path="res://.godot/imported/hand_icon.png-2ea9ea5c8f48a7d88cf24be0e2a53504.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/icons/Icono Boca.png"
-dest_files=["res://.godot/imported/Icono Boca.png-7067a32abfaaa399c1a557cc3ea63155.ctex"]
+source_file="res://_assets/sprites/icons/hand_icon.png"
+dest_files=["res://.godot/imported/hand_icon.png-2ea9ea5c8f48a7d88cf24be0e2a53504.ctex"]
 
 [params]
 

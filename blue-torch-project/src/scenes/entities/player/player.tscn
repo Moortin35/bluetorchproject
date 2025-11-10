@@ -1,11 +1,11 @@
 [gd_scene load_steps=82 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
-[ext_resource type="Texture2D" uid="uid://dpbmok0jg0547" path="res://_assets/sprites/icons/Icono mano.png" id="2_30a0n"]
+[ext_resource type="Texture2D" uid="uid://dpbmok0jg0547" path="res://_assets/sprites/icons/hand_icon.png" id="2_30a0n"]
 [ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_k7lkm"]
 [ext_resource type="Texture2D" uid="uid://cjhmvr82aqb5h" path="res://_assets/sprites/player/dash.png" id="2_lvvd8"]
 [ext_resource type="PackedScene" uid="uid://dthamkn7pai3h" path="res://src/scenes/effects/dash_particles.tscn" id="3_3vwgm"]
-[ext_resource type="Texture2D" uid="uid://blhptqrya3m46" path="res://_assets/sprites/icons/Icono Hablar.png" id="3_30a0n"]
+[ext_resource type="Texture2D" uid="uid://blhptqrya3m46" path="res://_assets/sprites/icons/talk_icon.png" id="3_30a0n"]
 [ext_resource type="Texture2D" uid="uid://bbo6n3fxktp1v" path="res://_assets/sprites/player/death.png" id="3_qh5pu"]
 [ext_resource type="PackedScene" uid="uid://0takh7kwuq5a" path="res://src/scenes/effects/torch_particles.tscn" id="4_d28hy"]
 [ext_resource type="Texture2D" uid="uid://c5bltr70jqdtu" path="res://_assets/sprites/player/double_jump.png" id="4_qh5pu"]
