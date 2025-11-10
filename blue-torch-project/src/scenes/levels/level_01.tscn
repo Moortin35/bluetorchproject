@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=65 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="16_1xr25"]
 [ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/odd_man.tscn" id="17_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/objets/spike.tscn" id="18_lyywh"]
+[ext_resource type="PackedScene" uid="uid://l7yyv1dfyrhi" path="res://src/scenes/entities/enemies/skeleton.tscn" id="20_srko8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8w1q"]
 texture = ExtResource("5_srko8")
@@ -905,36 +906,36 @@ tile_set = SubResource("TileSet_8bfcq")
 offset = Vector2(0, 48)
 transform = Transform2D(1, 0, 0, 1, 0, 48)
 
-[node name="ParallaxLayer_BG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayerBG" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1, 0)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(0, 720)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_BG"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerBG"]
 position = Vector2(640, 360)
 texture = ExtResource("10_n0kxv")
 
-[node name="ParallaxLayer_PBG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayerPBG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(1280, 720)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PBG"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerPBG"]
 position = Vector2(640, 360)
 texture = ExtResource("11_mc7rl")
 
-[node name="ParallaxLayer_PMG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayerPMG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1280, 720)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PMG"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerPMG"]
 position = Vector2(640, 360)
 texture = ExtResource("12_vjvdn")
 
-[node name="ParallaxLayer_PFG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayerPFG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1280, 720)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PFG"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerPFG"]
 position = Vector2(640, 360)
 texture = ExtResource("13_1xr25")
 
@@ -959,7 +960,7 @@ color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 position = Vector2(1256, 162)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-position = Vector2(27, 640)
+position = Vector2(26, 640)
 
 [node name="TextBox" parent="." instance=ExtResource("9_lbvuf")]
 visible = false
@@ -969,7 +970,10 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
 
-[node name="hood_guy" parent="." instance=ExtResource("17_vs2nq")]
+[node name="OddMan" parent="." instance=ExtResource("17_vs2nq")]
 position = Vector2(151, 600)
+
+[node name="Skeleton" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(58, 640)
 
 [connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]
