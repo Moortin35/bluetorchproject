@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cis5d2hhv0deo"]
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/dialogues/scripts/balloon.gd" id="1_36de5"]
-[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_pprdg"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/Gerda Retrato.png" id="4_08lx0"]

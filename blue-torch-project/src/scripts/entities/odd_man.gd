@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-const ODD_MAN = preload("res://src/dialogues/dialogues_text/odd_man.dialogue")
+const ODD_MAN = preload("res://src/dialogues/dialogues_text/es/odd_man.dialogue")
 var is_player_close = false
 
 

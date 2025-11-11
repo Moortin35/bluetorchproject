@@ -781,6 +781,7 @@ sources/1 = SubResource("TileSetAtlasSource_bcxre")
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fg8s7")
 level_id = 1
+START_POS_LEVEL = Vector2(26, 640)
 
 [node name="Background" type="TileMapLayer" parent="."]
 visible = false
