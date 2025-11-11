@@ -6,7 +6,7 @@ extends CanvasLayer
 
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
-@onready var texture_rect: TextureRect = $Balloon/TextureRect
+@onready var animated_portraits: AnimatedSprite2D = $Balloon/AnimatedPortraits
 
 @onready var panel: Panel = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel
 
@@ -100,14 +100,13 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	var pj_portrait_file = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_") + "_portrait.png"
-	var path_portrait = "res://_assets/images/portraits/" + pj_portrait_file
-	if ResourceLoader.exists(path_portrait):
+	var pj_portrait = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_")
+	if animated_portraits.sprite_frames.has_animation(pj_portrait) :
 		panel.show()
-		texture_rect.show()
-		texture_rect.texture = load(path_portrait)
+		animated_portraits.show()
+		animated_portraits.play(pj_portrait)
 	else:
-		texture_rect.hide()
+		animated_portraits.hide()
 		panel.hide()
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

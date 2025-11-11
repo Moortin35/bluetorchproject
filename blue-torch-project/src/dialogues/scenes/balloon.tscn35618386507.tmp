@@ -133,7 +133,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ub7rg")
 }],
 "loop": true,
-"name": &"maiden",
+"name": &"gerda",
 "speed": 5.0
 }, {
 "frames": [{
@@ -219,7 +219,7 @@ text = "Dialogue..."
 position = Vector2(164.4, 575.4)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_jxja2")
-animation = &"maiden"
+animation = &"odd_man"
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
