@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=64 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/next_level.tscn" id="6_tuy8k"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/enviroment/exit_door.tscn" id="7_38pcr"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="8_jxedu"]
-[ext_resource type="PackedScene" uid="uid://5lrb25judgcp" path="res://src/scenes/ui/text_box.tscn" id="9_lbvuf"]
 [ext_resource type="Texture2D" uid="uid://byonh4eknqji4" path="res://_assets/textures/parallax/level01/parallax_bg_level01.png" id="10_n0kxv"]
 [ext_resource type="Texture2D" uid="uid://dn3wjblbki3ia" path="res://_assets/textures/parallax/level01/parallax_jailsbg_level01.png" id="11_mc7rl"]
 [ext_resource type="Texture2D" uid="uid://3rgoirw1vqcy" path="res://_assets/textures/parallax/level01/parallax_jailsmg_level01.png" id="12_vjvdn"]
@@ -962,9 +961,6 @@ position = Vector2(1256, 162)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
 position = Vector2(26, 640)
-
-[node name="TextBox" parent="." instance=ExtResource("9_lbvuf")]
-visible = false
 
 [node name="EndTest" parent="." instance=ExtResource("6_tuy8k")]
 

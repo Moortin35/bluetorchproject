@@ -1,12 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://cis5d2hhv0deo"]
 
-[ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/dialogues/scripts/balloon.gd" id="1_36de5"]
-[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_pprdg"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/Gerda Retrato.png" id="4_08lx0"]
-[ext_resource type="Texture2D" uid="uid://b5giasihachky" path="res://_assets/images/portraits/engla_portrait.png" id="4_nxhwb"]
-[ext_resource type="Texture2D" uid="uid://dcslh3hikkw5j" path="res://_assets/images/portraits/odd_man_portrait.png" id="5_fcvi8"]
+[ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
+[ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_2ej3a"]
+[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
+[ext_resource type="Texture2D" uid="uid://b5giasihachky" path="res://_assets/images/portraits/engla_portrait.png" id="4_s4bk5"]
+[ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/Gerda Retrato.png" id="5_v8wqk"]
+[ext_resource type="Texture2D" uid="uid://dcslh3hikkw5j" path="res://_assets/images/portraits/odd_man_portrait.png" id="6_qf3dx"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="7_e3jod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -75,38 +75,38 @@ border_width_right = 4
 border_width_bottom = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kj6u"]
-bg_color = Color(0.0164273, 0.0518658, 0.162443, 1)
+bg_color = Color(0, 0.0431373, 0.196078, 1)
 
 [sub_resource type="Theme" id="Theme_3c1ei"]
-default_font = ExtResource("2_pprdg")
+default_font = ExtResource("2_2ej3a")
 default_font_size = 30
 
 [sub_resource type="Theme" id="Theme_5qeb6"]
-default_font = ExtResource("2_pprdg")
+default_font = ExtResource("2_2ej3a")
 default_font_size = 25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csua0"]
-atlas = ExtResource("4_nxhwb")
+atlas = ExtResource("4_s4bk5")
 region = Rect2(0, 0, 155, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcvi8"]
-atlas = ExtResource("4_08lx0")
+atlas = ExtResource("5_v8wqk")
 region = Rect2(0, 0, 179, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxhwb"]
-atlas = ExtResource("4_08lx0")
+atlas = ExtResource("5_v8wqk")
 region = Rect2(179, 0, 179, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l46v"]
-atlas = ExtResource("4_08lx0")
+atlas = ExtResource("5_v8wqk")
 region = Rect2(358, 0, 179, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ub7rg"]
-atlas = ExtResource("4_08lx0")
+atlas = ExtResource("5_v8wqk")
 region = Rect2(537, 0, 179, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jxja2"]
-atlas = ExtResource("5_fcvi8")
+atlas = ExtResource("6_qf3dx")
 region = Rect2(0, 0, 179, 179)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxja2"]
@@ -133,7 +133,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ub7rg")
 }],
 "loop": true,
-"name": &"gerda",
+"name": &"maiden",
 "speed": 5.0
 }, {
 "frames": [{
@@ -147,7 +147,7 @@ animations = [{
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
-script = ExtResource("1_36de5")
+script = ExtResource("1_7sbj5")
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -208,7 +208,7 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_f3q3a")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -216,10 +216,11 @@ theme = SubResource("Theme_5qeb6")
 text = "Dialogue..."
 
 [node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon"]
+visible = false
 position = Vector2(164.4, 575.4)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_jxja2")
-animation = &"odd_man"
+animation = &"maiden"
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
@@ -239,7 +240,7 @@ grow_vertical = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 2
 alignment = 1
-script = ExtResource("3_72ixx")
+script = ExtResource("7_e3jod")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://blj27d63837ee"
+path="res://.godot/imported/odd_man.dialogue-8a8dfbce3d7a00eb829acd1801a0e8e0.tres"
+
+[deps]
+
+source_file="res://src/dialogues/es/odd_man.dialogue"
+dest_files=["res://.godot/imported/odd_man.dialogue-8a8dfbce3d7a00eb829acd1801a0e8e0.tres"]
+
+[params]
+
+defaults=true

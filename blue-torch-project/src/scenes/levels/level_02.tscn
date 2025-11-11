@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/textures/parallax/level01/parallax_jailsfg_level01.png" id="8_wbvwm"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="9_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="11_kpnwg"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/engla.tscn" id="12_7u1p2"]
+[ext_resource type="PackedScene" uid="uid://cs56lflb8t6j5" path="res://src/scenes/entities/engla.tscn" id="12_7u1p2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_883it"]
 texture = ExtResource("1_a1u7t")
