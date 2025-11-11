@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=63 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="16_1xr25"]
 [ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/odd_man.tscn" id="17_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/objets/spike.tscn" id="18_lyywh"]
-[ext_resource type="PackedScene" uid="uid://l7yyv1dfyrhi" path="res://src/scenes/entities/enemies/skeleton.tscn" id="20_srko8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8w1q"]
 texture = ExtResource("5_srko8")
@@ -969,8 +968,5 @@ visible = false
 
 [node name="OddMan" parent="." instance=ExtResource("17_vs2nq")]
 position = Vector2(151, 600)
-
-[node name="Skeleton" parent="." instance=ExtResource("20_srko8")]
-position = Vector2(58, 640)
 
 [connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]

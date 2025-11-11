@@ -120,16 +120,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 20.0,
 "texture": SubResource("AtlasTexture_fcvi8")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_nxhwb")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_3l46v")
 }, {
-"duration": 10.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_ub7rg")
 }],
 "loop": true,
@@ -216,7 +216,6 @@ theme = SubResource("Theme_5qeb6")
 text = "Dialogue..."
 
 [node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon"]
-visible = false
 position = Vector2(164.4, 575.4)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_jxja2")
