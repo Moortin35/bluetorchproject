@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var margin_container: MarginContainer = $MarginContainer
 
+func _ready():
+	layer = 1000
 
 func resume():
 	get_tree().paused = false
