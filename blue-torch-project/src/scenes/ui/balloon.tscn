@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
 [ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_2ej3a"]
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
+[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
 [ext_resource type="Texture2D" uid="uid://b5giasihachky" path="res://_assets/images/portraits/engla_portrait.png" id="4_s4bk5"]
 [ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/Gerda Retrato.png" id="5_v8wqk"]
 [ext_resource type="Texture2D" uid="uid://dcslh3hikkw5j" path="res://_assets/images/portraits/odd_man_portrait.png" id="6_qf3dx"]
-[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="7_e3jod"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="7_e3jod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -146,7 +146,7 @@ animations = [{
 }]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
-layer = 5
+layer = 15
 script = ExtResource("1_7sbj5")
 
 [node name="Balloon" type="Control" parent="."]
