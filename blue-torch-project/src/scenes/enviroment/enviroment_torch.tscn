@@ -72,9 +72,12 @@ animations = [{
 script = ExtResource("1_bfogg")
 
 [node name="Light" type="PointLight2D" parent="."]
+z_index = 5
 position = Vector2(0, -7)
 color = Color(0.776471, 0.756863, 0.172549, 1)
 energy = 1.5
+range_layer_min = -1
+range_layer_max = 10
 texture = ExtResource("1_137ti")
 texture_scale = 0.5
 
