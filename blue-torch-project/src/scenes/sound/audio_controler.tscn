@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://cbqyd8yml2hkn"]
+[gd_scene load_steps=9 format=4 uid="uid://cbqyd8yml2hkn"]
 
 [ext_resource type="Script" uid="uid://c74g011afpn5e" path="res://src/scripts/managers/audio_controler.gd" id="1_y7a78"]
 [ext_resource type="AudioStream" uid="uid://bpcqjp0uu6a2d" path="res://_assets/sounds/music/main_theme.mp3" id="2_8tmch"]
+[ext_resource type="AudioStream" uid="uid://b5bakln2vn3g8" path="res://_assets/sounds/effects/walk-01.mp3" id="4_ner2v"]
+[ext_resource type="AudioStream" uid="uid://drm5webfkqe2n" path="res://_assets/sounds/effects/landing-01.mp3" id="4_ydqou"]
+[ext_resource type="AudioStream" uid="uid://ddfk0vwuolwjj" path="res://_assets/sounds/effects/walk-02.mp3" id="5_iul6b"]
 [ext_resource type="AudioStream" uid="uid://davyyl2fk50t2" path="res://_assets/sounds/music/level_1_theme.mp3" id="5_ner2v"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_8tmch"]
@@ -32,3 +35,20 @@ stream = SubResource("AudioStreamWAV_ydqou")
 
 [node name="lvl_1_theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ner2v")
+
+[node name="land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ner2v")
+volume_db = 1.147
+pitch_scale = 0.81
+max_polyphony = 4
+
+[node name="land2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ydqou")
+volume_db = 7.553
+pitch_scale = 1.49
+
+[node name="land3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iul6b")
+volume_db = -0.581
+pitch_scale = 0.39
+max_polyphony = 4

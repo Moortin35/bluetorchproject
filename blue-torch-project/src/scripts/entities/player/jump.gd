@@ -8,12 +8,17 @@ class_name Jump
 const JUMP_VELOCITY = -300.0
 var can_double_jump := true
 var character: CharacterBody2D
+var can_play_sound = false 
 
 func setup(character2D: CharacterBody2D):
 	character = character2D
 	
 func update():
+	if can_play_sound and character.is_on_floor():
+		can_play_sound = false
+		AudioControler.play_land()
 	if Input.is_action_just_pressed("ui_accept"):
+		can_play_sound = true
 		character.state = self
 		if character.is_on_floor():
 			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))

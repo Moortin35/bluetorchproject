@@ -25,3 +25,7 @@ func play_sfx(stream: AudioStream):
 	if not mute:
 		sfx_player.stream = stream
 		sfx_player.play()
+		
+func play_land():
+	$land.play()
+	$land2.play()
