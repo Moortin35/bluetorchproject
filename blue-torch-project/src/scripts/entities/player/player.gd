@@ -11,6 +11,9 @@ class_name Player
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interactions: AnimatedSprite2D = $interactions
 
+@export var max_health : float = 3.0
+var health : float
+
 var fade_tween: Tween
 var base_pos: Vector2
 
@@ -18,8 +21,9 @@ var direction = 0
 var last_direction = 1
 var state = idle
 var can_control := true
-
 var is_dead := false
+var invulnerable := false
+var hit_timer : Timer
 
 func _ready() -> void:
 	movement.setup(self)
@@ -61,6 +65,26 @@ func _physics_process(delta: float) -> void:
 	blue_torch.update(delta)
 	update_animation_player()
 
+func take_damage(amount : float, source : Node2D = null) -> void:
+	if invulnerable:
+		return
+		
+	invulnerable = true
+	health -= amount
+	animated_sprite_2d.stop()
+	animated_sprite_2d.play("hit")
+	print("player hit, health: ", health)
+	if source:
+		var knockback_dir = sign(global_position.x - source.global_position.x)
+		velocity.x = 200 * knockback_dir
+		velocity.y = -100
+	else:
+		print("Vacio")
+	if health <= 0:
+		handle_danger()
+	
+	invulnerable = false	
+	
 func play_anim(animated_name : String) -> void:
 	if animated_sprite_2d.animation != animated_name:
 		animated_sprite_2d.play(animated_name)

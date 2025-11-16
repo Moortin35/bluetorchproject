@@ -3,10 +3,12 @@ extends CharacterBody2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_field: Area2D = $DetectionField
+@onready var hitbox: Area2D = $Hitbox
 
 
 @export var walk_speed: float = -25.0
 @export var chase_speed: float = -80.0
+@export var damage: float = 1.0
 var current_speed: float = 0.0
 var facing_right: bool = false
 var player: Node2D = null
@@ -14,6 +16,8 @@ var player: Node2D = null
 func _ready() -> void:
 	animated_sprite.play("walk")
 	current_speed = walk_speed
+	hitbox.body_entered.connect(_on_hitbox_body_entered)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -68,3 +72,10 @@ func _on_detection_field_body_entered(body: Node2D) -> void:
 func _on_detection_field_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		animated_sprite.play("attack_1")
+		body.take_damage(damage, self)
+		print("Enemy hit player! Damage: ", damage)
