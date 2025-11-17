@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=65 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/classes/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/odd_man.tscn" id="17_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/objets/spike.tscn" id="18_lyywh"]
 [ext_resource type="PackedScene" uid="uid://l7yyv1dfyrhi" path="res://src/scenes/entities/enemies/skeleton.tscn" id="19_a8w1q"]
+[ext_resource type="PackedScene" uid="uid://d0owjv6fv37bb" path="res://src/scenes/objets/key.tscn" id="20_srko8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8w1q"]
 texture = ExtResource("5_srko8")
@@ -978,5 +979,29 @@ position = Vector2(151, 600)
 
 [node name="Skeleton" parent="." instance=ExtResource("19_a8w1q")]
 position = Vector2(311, 639)
+
+[node name="key2" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(69, 627)
+
+[node name="key" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(48, 618)
+
+[node name="key3" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(68, 605)
+
+[node name="key4" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(86, 632)
+
+[node name="key5" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(87, 612)
+
+[node name="key6" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(109, 634)
+
+[node name="key7" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(128, 635)
+
+[node name="key8" parent="." instance=ExtResource("20_srko8")]
+position = Vector2(146, 636)
 
 [connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]

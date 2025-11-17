@@ -29,3 +29,6 @@ func play_sfx(stream: AudioStream):
 func play_land():
 	$land.play()
 	$land2.play()
+
+func play_cichin():
+	$pick_key.play()
