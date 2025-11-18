@@ -10,6 +10,7 @@ class_name Player
 @onready var blue_torch: Node2D = $BlueTorch 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interactions: AnimatedSprite2D = $interactions
+@onready var invulnerability_timer: Timer = $InvulnerabilityTimer
 
 @export var max_health : float = 3.0
 var health : float
@@ -17,13 +18,15 @@ var health : float
 var fade_tween: Tween
 var base_pos: Vector2
 
+const KNOCKBACK_DURATION = 0.2 
+
 var direction = 0
 var last_direction = 1
 var state = idle
 var can_control := true
 var is_dead := false
 var invulnerable := false
-var hit_timer : Timer
+var knockback_timer := 0.0
 
 func _ready() -> void:
 	movement.setup(self)
@@ -33,6 +36,7 @@ func _ready() -> void:
 	blue_torch.setup(self)
 	interactions.play()
 	base_pos = interactions.position
+	invulnerability_timer.timeout.connect(_on_invulnerability_timeout)
 	
 	
 func _physics_process(delta: float) -> void:
@@ -78,12 +82,15 @@ func take_damage(amount : float, source : Node2D = null) -> void:
 		var knockback_dir = sign(global_position.x - source.global_position.x)
 		velocity.x = 200 * knockback_dir
 		velocity.y = -100
+		knockback_timer = KNOCKBACK_DURATION
 	else:
 		print("Vacio")
+	invulnerability_timer.start()
+	invulnerable = false
 	if health <= 0:
 		handle_danger()
 	
-	invulnerable = false	
+	
 	
 func play_anim(animated_name : String) -> void:
 	if animated_sprite_2d.animation != animated_name:
@@ -108,7 +115,10 @@ func handle_danger() -> void:
 		animated_sprite_2d.play("death")
 	await get_tree().create_timer(2.5).timeout
 	reset_player()
-	
+
+func _on_invulnerability_timeout():
+	invulnerable = false
+
 func reset_player() -> void:
 	AudioControler.play_lvl1()
 	global_position = LevelManager.loaded_level.START_POS_LEVEL

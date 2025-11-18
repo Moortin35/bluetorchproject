@@ -553,3 +553,5 @@ dash_particles = ExtResource("3_3vwgm")
 
 [node name="Idle" type="Node" parent="state_set"]
 script = ExtResource("18_4qdib")
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]

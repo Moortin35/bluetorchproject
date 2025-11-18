@@ -9,9 +9,20 @@ extends CharacterBody2D
 @export var walk_speed: float = -25.0
 @export var chase_speed: float = -80.0
 @export var damage: float = 1.0
+
+@export var knockback_strength_hit : float = 4.0
+@export var knockback_strength_attack : float = 4.0
+@export var knockback_upward : float = -120.0
+@export var hit_stun_duration : float = 0.18
+@export var attack_stun_duration : float = 0.8
+
+
+
 var current_speed: float = 0.0
 var facing_right: bool = false
 var player: Node2D = null
+var knockback_timer : float = 0.0
+
 
 func _ready() -> void:
 	animated_sprite.play("walk")
@@ -24,11 +35,15 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if player == null :
-		patrol_mode()
-	else:
-		chase_mode()
-		
+	if knockback_timer > 0.0:
+		knockback_timer -= delta
+		velocity.x = move_toward(velocity.x, 0, 1200 * delta)
+	else:	
+		if player == null :
+			patrol_mode()
+		else:
+			chase_mode()
+				
 	move_and_slide()
 
 
@@ -63,19 +78,21 @@ func chase_mode():
 		velocity.x = 0
 
 
-
-func _on_detection_field_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		player = body
-	
-
-func _on_detection_field_body_exited(body: Node2D) -> void:
-	if body == player:
-		player = null
-
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		animated_sprite.play("attack_1")
 		body.take_damage(damage, self)
 		print("Enemy hit player! Damage: ", damage)
+		var dir = sign(global_position.x - body.global_position.x)
+		velocity.x = knockback_strength_attack * dir
+		velocity.y  = knockback_upward * 0.5
+		knockback_timer = attack_stun_duration
+
+
+func _on_detection_field_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player = body
+	
+func _on_detection_field_body_exited(body: Node2D) -> void:
+	if body == player:
+		player = null
