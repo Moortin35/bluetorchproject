@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://xwq6ff0yyvta"]
+
+[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_cl3r7"]
+[ext_resource type="Script" uid="uid://d31ipbpvafq61" path="res://src/scripts/enviroment/prison_door.gd" id="1_eodtd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eodtd"]
+atlas = ExtResource("1_cl3r7")
+region = Rect2(304, 240, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oalpc"]
+atlas = ExtResource("1_cl3r7")
+region = Rect2(304, 192, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yeod5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eodtd")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oalpc")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ryx0"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nusxi"]
+size = Vector2(16, 14)
+
+[node name="Prison_Door" type="Node2D"]
+script = ExtResource("1_eodtd")
+
+[node name="DoorSprites" type="AnimatedSprite2D" parent="."]
+z_index = 9
+sprite_frames = SubResource("SpriteFrames_yeod5")
+animation = &"open"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShapeClose" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_3ryx0")
+
+[node name="CollisionShapeOpen" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_nusxi")
+
+[node name="OpenDoor" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(13, 6)
+texture = ExtResource("1_cl3r7")
+region_enabled = true
+region_rect = Rect2(320, 207, 10, 29)

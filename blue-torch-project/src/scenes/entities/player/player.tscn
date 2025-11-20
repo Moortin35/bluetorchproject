@@ -482,6 +482,7 @@ animations = [{
 size = Vector2(18, 27)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 8
 collision_layer = 10
 collision_mask = 7
 floor_snap_length = 2.0
