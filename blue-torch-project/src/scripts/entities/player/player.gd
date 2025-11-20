@@ -11,9 +11,9 @@ class_name Player
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interactions: AnimatedSprite2D = $interactions
 @onready var invulnerability_timer: Timer = $InvulnerabilityTimer
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-@export var max_health : float = 3.0
-var health : float
+@export var health : float = 3.0
 
 var fade_tween: Tween
 var base_pos: Vector2
@@ -36,7 +36,7 @@ func _ready() -> void:
 	blue_torch.setup(self)
 	interactions.play()
 	base_pos = interactions.position
-	invulnerability_timer.timeout.connect(_on_invulnerability_timeout)
+	invulnerability_timer.timeout.connect(_on_invulnerability_timer_timeout)
 	
 	
 func _physics_process(delta: float) -> void:
@@ -49,48 +49,54 @@ func _physics_process(delta: float) -> void:
 			play_anim("idle")
 		move_and_slide()
 		return
+		
 	if is_dead:
 		velocity += get_gravity() * delta
 		move_and_slide()
 		return
 	if not can_control:
 		return
-	idle.update()
-	direction = Input.get_axis("ui_left", "ui_right")
-	if direction != 0:
-		last_direction = direction
-	if(!dash.is_dashing):
-		movement.update(delta,velocity)
-		velocity += get_gravity() * delta
-		jump.update()
-	dash.update(delta)
+	if knockback_timer > 0:
+		velocity.x = move_toward(velocity.x, 0, delta * 800)
+		knockback_timer -= delta
+	else:
+		idle.update()
+		direction = Input.get_axis("ui_left", "ui_right")
+		if direction != 0:
+			last_direction = direction
+		if(!dash.is_dashing):
+			movement.update(delta,velocity)
+			velocity += get_gravity() * delta
+			jump.update()
+		dash.update(delta)
 	move_and_slide()
 	
 	blue_torch.update(delta)
 	update_animation_player()
 
 func take_damage(amount : float, source : Node2D = null) -> void:
-	if invulnerable:
-		return
+	if !is_dead:
+		if invulnerable:
+			return
+			
+		invulnerable = true
+		health -= amount
+		animated_sprite_2d.stop()
+		animated_sprite_2d.play("hit")
+		print("player hit, health: ", health)
+		if source:
+			var knockback_dir = sign(global_position.x - source.global_position.x)
+			velocity.x = 200 * knockback_dir
+			velocity.y = -100
+			knockback_timer = KNOCKBACK_DURATION
+		else:
+			print("Vacio")
+			
+		invulnerability_timer.start()
+		invulnerable = false
 		
-	invulnerable = true
-	health -= amount
-	animated_sprite_2d.stop()
-	animated_sprite_2d.play("hit")
-	print("player hit, health: ", health)
-	if source:
-		var knockback_dir = sign(global_position.x - source.global_position.x)
-		velocity.x = 200 * knockback_dir
-		velocity.y = -100
-		knockback_timer = KNOCKBACK_DURATION
-	else:
-		print("Vacio")
-	invulnerability_timer.start()
-	invulnerable = false
-	if health <= 0:
-		handle_danger()
-	
-	
+		if health <= 0:
+			handle_danger()
 	
 func play_anim(animated_name : String) -> void:
 	if animated_sprite_2d.animation != animated_name:
@@ -102,6 +108,7 @@ func update_animation_player() -> void:
 	state.animation()
 
 func handle_danger() -> void:
+
 	is_dead = true
 	AudioControler.play_sfx(preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
 	AudioControler.stop_lvl1()
@@ -113,16 +120,19 @@ func handle_danger() -> void:
 		await get_tree().create_timer(0.5).timeout
 	if is_on_floor():
 		animated_sprite_2d.play("death")
+
 	await get_tree().create_timer(2.5).timeout
 	reset_player()
 
-func _on_invulnerability_timeout():
+func _on_invulnerability_timer_timeout():
 	invulnerable = false
 
 func reset_player() -> void:
 	AudioControler.play_lvl1()
+	collision_shape_2d.disabled = false
 	global_position = LevelManager.loaded_level.START_POS_LEVEL
 	is_dead = false
+	health = 3.0
 	can_control = true
 	
 func play_icon(icon: String) -> void:

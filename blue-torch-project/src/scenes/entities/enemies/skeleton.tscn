@@ -384,11 +384,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq1sk"]
-size = Vector2(12, 26)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpf0g"]
+size = Vector2(10, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghv56"]
-size = Vector2(12, 26)
+size = Vector2(10, 27)
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_ghv56"]
 length = 90.0
@@ -404,15 +404,16 @@ frame_progress = 0.830987
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_wq1sk")
+position = Vector2(-5.96046e-08, 3)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_fpf0g")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 3)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ghv56")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
