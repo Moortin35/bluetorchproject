@@ -1,7 +1,8 @@
-[gd_scene load_steps=82 format=3 uid="uid://432fmegl2y15"]
+[gd_scene load_steps=83 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
 [ext_resource type="Texture2D" uid="uid://dpbmok0jg0547" path="res://_assets/sprites/icons/hand_icon.png" id="2_30a0n"]
+[ext_resource type="Script" uid="uid://chahtkahip7i2" path="res://src/scripts/entities/player/inventario.gd" id="2_iahkn"]
 [ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_k7lkm"]
 [ext_resource type="Texture2D" uid="uid://cjhmvr82aqb5h" path="res://_assets/sprites/player/dash.png" id="2_lvvd8"]
 [ext_resource type="PackedScene" uid="uid://dthamkn7pai3h" path="res://src/scenes/effects/dash_particles.tscn" id="3_3vwgm"]
@@ -488,6 +489,9 @@ collision_mask = 7
 floor_snap_length = 2.0
 script = ExtResource("1_rds41")
 
+[node name="inventario" type="Node2D" parent="."]
+script = ExtResource("2_iahkn")
+
 [node name="interactions" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(0, -19)
@@ -539,6 +543,8 @@ texture_scale = 0.5
 
 [node name="dashCooldown" type="Timer" parent="."]
 
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+
 [node name="state_set" type="Node" parent="."]
 
 [node name="Movement" type="Node" parent="state_set"]
@@ -554,5 +560,3 @@ dash_particles = ExtResource("3_3vwgm")
 
 [node name="Idle" type="Node" parent="state_set"]
 script = ExtResource("18_4qdib")
-
-[node name="InvulnerabilityTimer" type="Timer" parent="."]

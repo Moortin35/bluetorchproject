@@ -12,6 +12,8 @@ class_name Player
 @onready var interactions: AnimatedSprite2D = $interactions
 @onready var invulnerability_timer: Timer = $InvulnerabilityTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var inventario: inventario = $inventario
+
 
 @export var health : float = 3.0
 

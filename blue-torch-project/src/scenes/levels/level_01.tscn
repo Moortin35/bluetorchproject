@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/odd_man.tscn" id="17_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/objets/spike.tscn" id="18_lyywh"]
 [ext_resource type="PackedScene" uid="uid://l7yyv1dfyrhi" path="res://src/scenes/entities/enemies/skeleton.tscn" id="19_a8w1q"]
-[ext_resource type="PackedScene" path="res://src/scenes/objets/key.tscn" id="20_srko8"]
+[ext_resource type="PackedScene" uid="uid://d0owjv6fv37bb" path="res://src/scenes/objets/key.tscn" id="20_srko8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8w1q"]
 texture = ExtResource("5_srko8")
@@ -789,7 +789,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAFAAkAAAAAAAEAAAAFAAkAAAAAAAIAAAAFAAk
 tile_set = SubResource("TileSet_bcxre")
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-z_index = 8
 position = Vector2(26, 640)
 
 [node name="Obstacles" type="Node2D" parent="."]

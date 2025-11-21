@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c4y1mdxe4chqb"]
 
-[ext_resource type="Script" uid="uid://8n8hpib3ya2x" path="res://src/scenes/objets/saw.gd" id="1_4vvku"]
+[ext_resource type="Script" uid="uid://8n8hpib3ya2x" path="res://src/scripts/enviroment/obstacles/saw.gd" id="1_4vvku"]
 [ext_resource type="Texture2D" uid="uid://dkdo0tjpxllej" path="res://_assets/sprites/objets/saw.png" id="1_v53y0"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/enviroment/obstacles/danger_zone.tscn" id="2_4vvku"]
 
