@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://xwq6ff0yyvta"]
 
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_cl3r7"]
-[ext_resource type="Script" uid="uid://bsvp67hnmhlnd" path="res://src/scenes/objets/prison_door.gd" id="1_eodtd"]
+[ext_resource type="Script" uid="uid://bsvp67hnmhlnd" path="res://src/scripts/enviroment/prison_door.gd" id="1_eodtd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oalpc"]
 size = Vector2(68, 48)
@@ -43,7 +43,7 @@ size = Vector2(16, 14)
 collision_mask = 8
 script = ExtResource("1_eodtd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="InteractiveArea" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_oalpc")
 
 [node name="DoorSprites" type="AnimatedSprite2D" parent="."]

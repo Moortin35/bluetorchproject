@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://432fmegl2y15"]
+[gd_scene load_steps=88 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
 [ext_resource type="Texture2D" uid="uid://dpbmok0jg0547" path="res://_assets/sprites/icons/hand_icon.png" id="2_30a0n"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://blhptqrya3m46" path="res://_assets/sprites/icons/talk_icon.png" id="3_30a0n"]
 [ext_resource type="Texture2D" uid="uid://bbo6n3fxktp1v" path="res://_assets/sprites/player/death.png" id="3_qh5pu"]
 [ext_resource type="PackedScene" uid="uid://0takh7kwuq5a" path="res://src/scenes/effects/torch_particles.tscn" id="4_d28hy"]
+[ext_resource type="Texture2D" uid="uid://db0q4r38mg5ku" path="res://_assets/sprites/icons/sprite_key.png" id="4_oknxn"]
 [ext_resource type="Texture2D" uid="uid://c5bltr70jqdtu" path="res://_assets/sprites/player/double_jump.png" id="4_qh5pu"]
 [ext_resource type="Texture2D" uid="uid://bmuudcxbvs1dn" path="res://_assets/sprites/player/hurt.png" id="6_ddkw8"]
 [ext_resource type="Texture2D" uid="uid://k2kk1jy5m85w" path="res://_assets/sprites/player/idle.png" id="7_ddkw8"]
@@ -29,6 +30,22 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ims5k"]
 atlas = ExtResource("2_30a0n")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7265o"]
+atlas = ExtResource("4_oknxn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aomop"]
+atlas = ExtResource("4_oknxn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aevd"]
+atlas = ExtResource("4_oknxn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf154"]
+atlas = ExtResource("4_oknxn")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iahkn"]
 atlas = ExtResource("3_30a0n")
@@ -57,6 +74,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"interact",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_7265o")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_aomop")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_0aevd")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_gf154")
+}],
+"loop": true,
+"name": &"key",
 "speed": 5.0
 }, {
 "frames": [{
@@ -497,7 +531,8 @@ visible = false
 position = Vector2(0, -19)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ppq54")
-animation = &"talk"
+animation = &"key"
+frame_progress = 0.903585
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cw06x6b7cbgtv"]
 
-[ext_resource type="Script" uid="uid://dmiesgqr0vbuc" path="res://src/scripts/entities/odd_man.gd" id="1_arw11"]
+[ext_resource type="Script" uid="uid://dmiesgqr0vbuc" path="res://src/scripts/entities/npcs/odd_man.gd" id="1_arw11"]
 [ext_resource type="Texture2D" uid="uid://ra7utot7d0g4" path="res://_assets/sprites/npcs/odd_man/odd_man.png" id="1_y1ppy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_arw11"]
@@ -55,7 +55,7 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.923692
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="InteractiveArea" type="CollisionShape2D" parent="."]
 position = Vector2(-14, 0)
 shape = SubResource("RectangleShape2D_tk28n")
 
