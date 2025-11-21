@@ -32,3 +32,9 @@ func play_land():
 
 func play_cichin():
 	$pick_key.play()
+	
+func play_open_dor():
+	$open_door.play()
+	
+func play_aaa():
+	$aaa.play()

@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs56lflb8t6j5"]
+[gd_scene load_steps=9 format=3 uid="uid://cq4jea30n37x4"]
 
 [ext_resource type="Texture2D" uid="uid://dvlb3ai2a6mde" path="res://_assets/sprites/npcs/engla/engla_idle.png" id="1_8c5vl"]
-[ext_resource type="Script" uid="uid://dr1ryrpkahu2s" path="res://src/scripts/entities/engla.gd" id="1_nysbh"]
+[ext_resource type="Script" uid="uid://dr1ryrpkahu2s" path="res://src/scripts/entities/npcs/engla.gd" id="1_nysbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nysbh"]
+size = Vector2(31, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nysbh"]
 atlas = ExtResource("1_8c5vl")
@@ -32,11 +35,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nysbh"]
-size = Vector2(13, 25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwkyy"]
+size = Vector2(15, 27)
 
-[node name="Engla" type="CharacterBody2D"]
+[node name="Area2D" type="Area2D"]
+collision_mask = 8
 script = ExtResource("1_nysbh")
+
+[node name="Interactive_area" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_nysbh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mjicn")
@@ -44,6 +52,11 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.992701
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.5, 3.5)
-shape = SubResource("RectangleShape2D_nysbh")
+shape = SubResource("RectangleShape2D_jwkyy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

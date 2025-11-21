@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/textures/parallax/level01/parallax_jailsfg_level01.png" id="8_wbvwm"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="9_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="11_kpnwg"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/engla.tscn" id="12_7u1p2"]
+[ext_resource type="PackedScene" uid="uid://cq4jea30n37x4" path="res://src/scenes/entities/engla.tscn" id="12_7u1p2"]
 [ext_resource type="PackedScene" uid="uid://xwq6ff0yyvta" path="res://src/scenes/objets/prison_door.tscn" id="13_0afxd"]
 [ext_resource type="PackedScene" uid="uid://d0owjv6fv37bb" path="res://src/scenes/objets/key.tscn" id="14_ctanu"]
 

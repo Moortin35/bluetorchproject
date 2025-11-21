@@ -30,6 +30,7 @@ func o_door():
 	interactive_area.disabled = true
 	collision_shape_close.disabled = true
 	open_door.show()
+	AudioControler.play_open_dor()
 	
 func c_door():
 	door_sprites.play("close")

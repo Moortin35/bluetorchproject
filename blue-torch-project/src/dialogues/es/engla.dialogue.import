@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://doj8ge7wlannb"
+path="res://.godot/imported/engla.dialogue-e196387b1d33412f94caac05e1731fce.tres"
+
+[deps]
+
+source_file="res://src/dialogues/es/engla.dialogue"
+dest_files=["res://.godot/imported/engla.dialogue-e196387b1d33412f94caac05e1731fce.tres"]
+
+[params]
+
+defaults=true
