@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var end_test: CanvasLayer = $"../EndTest"
+@onready var next_level: CanvasLayer = $"../NextLevel"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		end_test.mostrar_menu()
+		next_level.mostrar_menu()

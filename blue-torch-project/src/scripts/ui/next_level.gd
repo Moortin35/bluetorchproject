@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var margin_container: MarginContainer = %MarginContainer
+@onready var next_level: CanvasLayer = $"."
 
 
 func _on_exit_button_pressed() -> void:
@@ -10,5 +10,5 @@ func _on_exit_button_pressed() -> void:
 	AudioControler.play_lvl1()
 
 func mostrar_menu():
-	margin_container.show()
+	next_level.show()
 	get_tree().paused = true

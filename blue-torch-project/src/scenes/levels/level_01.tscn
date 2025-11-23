@@ -967,7 +967,7 @@ color = Color(0, 0, 0, 1)
 z_index = 7
 position = Vector2(1256, 162)
 
-[node name="EndTest" parent="." instance=ExtResource("6_tuy8k")]
+[node name="NextLevel" parent="." instance=ExtResource("6_tuy8k")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
