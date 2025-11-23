@@ -37,10 +37,11 @@ size = Vector2(16, 48)
 size = Vector2(16, 3.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olhef"]
-size = Vector2(44, 48)
+size = Vector2(47, 69)
 
 [node name="BreakableWall" type="Area2D"]
 z_index = 5
+collision_mask = 8
 script = ExtResource("1_olhef")
 broken = true
 
@@ -67,5 +68,8 @@ region_enabled = true
 region_rect = Rect2(64, 41, 16, 7)
 
 [node name="InteractiveArea" type="CollisionShape2D" parent="."]
-position = Vector2(14, 0)
+position = Vector2(15.5, 10.5)
 shape = SubResource("RectangleShape2D_olhef")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

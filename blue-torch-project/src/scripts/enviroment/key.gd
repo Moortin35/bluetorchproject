@@ -10,4 +10,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.inventario.add_a_key()
 		AudioControler.play_cichin()
+		get_parent().npc.queue_free()
 		queue_free()

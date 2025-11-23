@@ -7,6 +7,7 @@ func _ready() -> void:
 	super._ready()
 	icon = "talk"
 	animated_sprite_2d.play("idle")
+	get_parent().npc = self
 	
 func _process(_delta: float) -> void:
 	if can_i_interact():

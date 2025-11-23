@@ -9,7 +9,7 @@ extends interactive
 
 func _ready():
 	super._ready()
-	icon = "hand"
+	icon = "interact"
 	if broken:
 		broken_wall()
 	else:
