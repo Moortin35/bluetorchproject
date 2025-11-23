@@ -405,7 +405,6 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.96046e-08, 3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_fpf0g")
 
 [node name="Hitbox" type="Area2D" parent="."]

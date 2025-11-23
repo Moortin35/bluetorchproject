@@ -54,11 +54,9 @@ animation = &"open"
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShapeClose" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 shape = SubResource("RectangleShape2D_3ryx0")
 
 [node name="CollisionShapeOpen" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_nusxi")
 

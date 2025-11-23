@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://dffar240roj74"]
+
+[ext_resource type="Texture2D" uid="uid://cs5asa4uo5gva" path="res://_assets/textures/objects/Muro derrumbado.png" id="1_ftfmi"]
+[ext_resource type="Script" uid="uid://ihnqohwsrml8" path="res://src/scripts/enviroment/breakable_wall.gd" id="1_olhef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olhef"]
+atlas = ExtResource("1_ftfmi")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sde6m"]
+atlas = ExtResource("1_ftfmi")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7kcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olhef")
+}],
+"loop": true,
+"name": &"collapsed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sde6m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p6ri"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bijg"]
+size = Vector2(16, 3.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olhef"]
+size = Vector2(44, 48)
+
+[node name="BreakableWall" type="Area2D"]
+z_index = 5
+script = ExtResource("1_olhef")
+broken = true
+
+[node name="WallSprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l7kcf")
+animation = &"collapsed"
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShapeDefault" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_2p6ri")
+
+[node name="CollisionShapeCollapsed" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 21.875)
+shape = SubResource("RectangleShape2D_6bijg")
+
+[node name="DebrisSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, 35)
+texture = ExtResource("1_ftfmi")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(64, 41, 16, 7)
+
+[node name="InteractiveArea" type="CollisionShape2D" parent="."]
+position = Vector2(14, 0)
+shape = SubResource("RectangleShape2D_olhef")
