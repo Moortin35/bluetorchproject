@@ -394,6 +394,7 @@ size = Vector2(10, 27)
 length = 90.0
 
 [node name="Skeleton" type="CharacterBody2D"]
+z_index = 8
 script = ExtResource("1_ghv56")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
