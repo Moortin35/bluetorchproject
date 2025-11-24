@@ -865,6 +865,7 @@ color = Color(0.195545, 0.195545, 0.195545, 1)
 visible = false
 
 [node name="Engla" parent="." instance=ExtResource("12_7u1p2")]
+visible = false
 z_index = 8
 position = Vector2(320, 368)
 
