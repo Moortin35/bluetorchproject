@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=69 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/lvl/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/next_level.tscn" id="6_tuy8k"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/enviroment/exit_door.tscn" id="7_38pcr"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="8_jxedu"]
+[ext_resource type="Shader" uid="uid://byr1d4l24nqqh" path="res://src/shaders/blur.gdshader" id="10_a8w1q"]
 [ext_resource type="Texture2D" uid="uid://byonh4eknqji4" path="res://_assets/textures/parallax/level01/parallax_bg_level01.png" id="10_n0kxv"]
 [ext_resource type="Texture2D" uid="uid://dn3wjblbki3ia" path="res://_assets/textures/parallax/level01/parallax_jailsbg_level01.png" id="11_mc7rl"]
 [ext_resource type="Texture2D" uid="uid://3rgoirw1vqcy" path="res://_assets/textures/parallax/level01/parallax_jailsmg_level01.png" id="12_vjvdn"]
@@ -780,6 +781,46 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_bcxre")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srko8"]
+shader = ExtResource("10_a8w1q")
+shader_parameter/amount = 0.86
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxedu"]
+shader = ExtResource("10_a8w1q")
+shader_parameter/amount = 0.9
+
+[sub_resource type="Shader" id="Shader_lyywh"]
+code = "shader_type canvas_item;
+
+uniform float amount : hint_range(0.0, 1.0) = 0.1;
+
+void fragment() {
+    vec4 base = texture(TEXTURE, UV);
+    vec4 modulate_color = COLOR; // color del nodo (modulate)
+
+    vec4 blurred = vec4(0.0);
+
+    blurred += texture(TEXTURE, UV + vec2(TEXTURE_PIXEL_SIZE.x, 0.0));
+    blurred += texture(TEXTURE, UV + vec2(-TEXTURE_PIXEL_SIZE.x, 0.0));
+    blurred += texture(TEXTURE, UV + vec2(0.0, TEXTURE_PIXEL_SIZE.y));
+    blurred += texture(TEXTURE, UV + vec2(0.0, -TEXTURE_PIXEL_SIZE.y));
+
+    blurred /= 4.0;
+
+    vec4 final_color = mix(base, blurred, amount);
+
+    COLOR = final_color * modulate_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8w1q"]
+shader = SubResource("Shader_lyywh")
+shader_parameter/amount = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bcxre"]
+shader = ExtResource("10_a8w1q")
+shader_parameter/amount = 0.4
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fg8s7")
 level_id = 1
@@ -922,6 +963,7 @@ motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(0, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerBG"]
+material = SubResource("ShaderMaterial_srko8")
 position = Vector2(640, 360)
 texture = ExtResource("10_n0kxv")
 
@@ -930,6 +972,7 @@ motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerPBG"]
+material = SubResource("ShaderMaterial_jxedu")
 position = Vector2(640, 360)
 texture = ExtResource("11_mc7rl")
 
@@ -938,6 +981,7 @@ motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerPMG"]
+material = SubResource("ShaderMaterial_a8w1q")
 position = Vector2(640, 360)
 texture = ExtResource("12_vjvdn")
 
@@ -946,6 +990,7 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerPFG"]
+material = SubResource("ShaderMaterial_bcxre")
 position = Vector2(640, 360)
 texture = ExtResource("13_1xr25")
 
@@ -971,6 +1016,7 @@ z_index = 7
 position = Vector2(1240, 162)
 
 [node name="NextLevel" parent="." instance=ExtResource("6_tuy8k")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
