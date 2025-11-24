@@ -24,10 +24,17 @@ var player: Node2D = null
 
 var knockback_timer : float = 0.0
 
+@onready var interactions: AnimatedSprite2D = $interactions
+var fade_tween: Tween
+var base_pos: Vector2
+
+var confused = false
 
 func _ready() -> void:
 	current_speed = walk_speed
-	hitbox.body_entered.connect(_on_hitbox_body_entered)
+	interactions.play()
+	base_pos = interactions.position
+#	hitbox.body_entered.connect(_on_hitbox_body_entered)
 	
 
 func _physics_process(delta: float) -> void:
@@ -43,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		knockback_timer -= delta
 		velocity.x = move_toward(velocity.x, 0, 1200 * delta)
 	else:	
-		if can_patrol:
+		if can_patrol and !confused:
 			if player == null:
 				animated_sprite.play("walk")
 				patrol_mode()
@@ -60,7 +67,8 @@ func _physics_process(delta: float) -> void:
 func patrol_mode():
 	
 	if not ray_cast.is_colliding() and is_on_floor():
-		flip()	
+		flip()
+		interactions.scale.x *= -1
 	velocity.x = walk_speed	
 
 
@@ -78,7 +86,7 @@ func chase_mode():
 		var direction = sign(player.global_position.x - global_position.x)
 		
 		if(direction > 0  and facing_right) or (direction < 0 and not facing_right):
-			animated_sprite.play("walk")
+			animated_sprite.play("run")
 			velocity.x = abs(chase_speed) * (1 if facing_right else -1)
 		else:
 			animated_sprite.play("idle")
@@ -102,7 +110,48 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 func _on_detection_field_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
+		confused = false
+		stop_icon()
 	
 func _on_detection_field_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
+	confused = true
+	play_icon("lose track")
+	await get_tree().create_timer(1).timeout
+	stop_icon()
+	confused = false
+	
+		
+func play_icon(icon: String) -> void:
+	if fade_tween and fade_tween.is_running():
+		fade_tween.kill()
+
+	interactions.show()
+	interactions.play(icon)
+
+	interactions.position = base_pos + Vector2(0, 10)
+	interactions.modulate.a = 0.0
+
+	fade_tween = get_tree().create_tween()
+	fade_tween.set_trans(Tween.TRANS_SINE)
+	fade_tween.set_ease(Tween.EASE_OUT)
+
+	fade_tween.tween_property(interactions, "modulate:a", 1.0, 0.35)
+	fade_tween.parallel().tween_property(interactions, "position", base_pos, 0.35)
+	
+func stop_icon() -> void:
+	if fade_tween and fade_tween.is_running():
+		fade_tween.kill()
+
+	fade_tween = get_tree().create_tween()
+	fade_tween.set_trans(Tween.TRANS_SINE)
+	fade_tween.set_ease(Tween.EASE_IN)
+
+	fade_tween.tween_property(interactions, "modulate:a", 0.0, 0.3)
+	fade_tween.parallel().tween_property(interactions, "position", base_pos + Vector2(0, 10), 0.3)
+
+	fade_tween.finished.connect(func():
+		interactions.hide()
+		interactions.position = base_pos
+	)

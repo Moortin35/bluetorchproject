@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name inventario
+class_name inventory
 
 @onready var keys : int = 0
 

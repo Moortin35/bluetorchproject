@@ -9,14 +9,14 @@ class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var blue_torch: Node2D = $BlueTorch 
 @onready var camera_2d: Camera2D = $Camera2D
-@onready var interactions: AnimatedSprite2D = $interactions
 @onready var invulnerability_timer: Timer = $InvulnerabilityTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var inventario: inventario = $inventario
+@onready var player_inventory: inventory = $inventory
 
 
 @export var health : float = 3.0
 
+@onready var interactions: AnimatedSprite2D = $interactions
 var fade_tween: Tween
 var base_pos: Vector2
 

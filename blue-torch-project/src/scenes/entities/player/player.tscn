@@ -523,7 +523,7 @@ collision_mask = 7
 floor_snap_length = 2.0
 script = ExtResource("1_rds41")
 
-[node name="inventario" type="Node2D" parent="."]
+[node name="inventory" type="Node2D" parent="."]
 script = ExtResource("2_iahkn")
 
 [node name="interactions" type="AnimatedSprite2D" parent="."]
