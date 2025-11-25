@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://chui18j8t1w84" path="res://src/scripts/enviroment/exit_door.gd" id="1_vk3cm"]
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="2_iwswa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ngomq"]
-radius = 7.0
-height = 26.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd22w"]
+size = Vector2(20, 28)
 
 [node name="ExitDoor" type="Area2D"]
 collision_mask = 8
@@ -18,6 +17,7 @@ region_enabled = true
 region_rect = Rect2(289, 149, 14, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ngomq")
+shape = SubResource("RectangleShape2D_hd22w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

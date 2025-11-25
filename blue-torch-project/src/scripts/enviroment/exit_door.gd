@@ -1,7 +1,11 @@
-extends Area2D
+extends interactive
 
 @onready var next_level: CanvasLayer = $"../NextLevel"
 
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+func _ready() -> void:
+	super._ready()
+	icon = "interact"
+
+func _process(_delta: float) -> void:
+	if can_i_interact():
 		next_level.mostrar_menu()
