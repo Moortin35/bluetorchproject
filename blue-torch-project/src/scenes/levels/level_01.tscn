@@ -811,7 +811,6 @@ z_index = 7
 position = Vector2(1240, 162)
 
 [node name="NextLevel" parent="." instance=ExtResource("6_tuy8k")]
-visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
