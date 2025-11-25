@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://56lusswsfrwy"]
+
+[ext_resource type="Texture2D" uid="uid://c8xdtao8d381u" path="res://_assets/sprites/objets/fireball.png" id="1_767fg"]
+[ext_resource type="Script" uid="uid://cvnrypt16w0wc" path="res://src/scripts/obstacles/fireball.gd" id="1_vrmy1"]
+[ext_resource type="PackedScene" uid="uid://behbluvl72ya1" path="res://src/scenes/effects/fuego.tscn" id="2_uyx1c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vrmy1"]
+radius = 3.16228
+
+[sub_resource type="Gradient" id="Gradient_uyx1c"]
+offsets = PackedFloat32Array(0.321678, 0.926573)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[node name="fireball" type="Node2D"]
+script = ExtResource("1_vrmy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_767fg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vrmy1")
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("2_uyx1c")]
+amount = 5
+lifetime = 0.5
+angular_velocity_min = -301.8
+angular_velocity_max = 457.01
+color_ramp = SubResource("Gradient_uyx1c")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

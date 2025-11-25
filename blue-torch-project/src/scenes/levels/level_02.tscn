@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=64 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="2_flerx"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="17_883it"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="18_xwimy"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
+[ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
+[ext_resource type="PackedScene" uid="uid://56lusswsfrwy" path="res://src/scenes/obstacles/fireball.tscn" id="21_sxj84"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaiti"]
 texture = ExtResource("2_flerx")
@@ -619,7 +621,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(644, 364)
+position = Vector2(-1301, -108)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 
@@ -639,10 +641,12 @@ tile_map_data = PackedByteArray("AAAoABgAAQAMAAQAAAAnABgAAQAMAAQAAAAmABgAAQAMAAQ
 tile_set = SubResource("TileSet_53222")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
+visible = false
 offset = Vector2(-1440, -832)
 transform = Transform2D(1, 0, 0, 1, -1440, -832)
 
@@ -758,3 +762,33 @@ position = Vector2(1009, 368)
 z_index = 8
 position = Vector2(968, 584)
 broken = false
+
+[node name="fireball_trap" parent="." instance=ExtResource("20_s325v")]
+position = Vector2(-1416, -90)
+max_distance = 1800.0
+fire_rate = 2.8
+fireball_speed = 230.0
+fireball_scene = ExtResource("21_sxj84")
+
+[node name="fireball_trap2" parent="." instance=ExtResource("20_s325v")]
+position = Vector2(-1416, -109)
+max_distance = 1800.0
+fire_rate = 2.8
+fireball_speed = 230.0
+fireball_scene = ExtResource("21_sxj84")
+
+[node name="fireball_trap3" parent="." instance=ExtResource("20_s325v")]
+position = Vector2(-1416, -147)
+max_distance = 1800.0
+fire_rate = 2.8
+fireball_speed = 230.0
+fireball_scene = ExtResource("21_sxj84")
+fire_offset = 1.0
+
+[node name="fireball_trap4" parent="." instance=ExtResource("20_s325v")]
+position = Vector2(-1416, -167)
+max_distance = 1800.0
+fire_rate = 2.8
+fireball_speed = 230.0
+fireball_scene = ExtResource("21_sxj84")
+fire_offset = 1.0

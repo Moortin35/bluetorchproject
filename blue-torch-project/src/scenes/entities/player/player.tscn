@@ -540,6 +540,7 @@ autoplay = "idle"
 frame_progress = 0.515041
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ddkw8")
 
@@ -552,6 +553,7 @@ limit_bottom = 736
 limit_smoothed = true
 
 [node name="BlueTorch" type="Node2D" parent="."]
+visible = false
 script = ExtResource("9_ddkw8")
 torch_particles = ExtResource("4_d28hy")
 

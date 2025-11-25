@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfmvj4ru26snn"]
+
+[ext_resource type="Script" uid="uid://bamtec3dqih2s" path="res://src/scripts/obstacles/fireball_trap.gd" id="1_4gvpj"]
+[ext_resource type="Texture2D" uid="uid://biyflpw4cu28f" path="res://_assets/sprites/objets/fireball trap.png" id="2_jg7jb"]
+
+[node name="fireball_trap" type="Node2D"]
+script = ExtResource("1_4gvpj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jg7jb")

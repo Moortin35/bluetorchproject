@@ -77,11 +77,9 @@ func _physics_process(delta: float) -> void:
 	update_animation_player()
 
 func take_damage(amount : float, source : Node2D = null) -> void:
-	if !is_dead:
-		if invulnerable:
-			return
-			
+	if !is_dead and !invulnerable:
 		invulnerable = true
+		
 		health -= amount
 		animated_sprite_2d.stop()
 		animated_sprite_2d.play("hit")
@@ -93,13 +91,22 @@ func take_damage(amount : float, source : Node2D = null) -> void:
 			knockback_timer = KNOCKBACK_DURATION
 		else:
 			print("Vacio")
-			
+
 		invulnerability_timer.start()
-		invulnerable = false
-		
+
 		if health <= 0:
 			handle_danger()
-	
+		else:
+			start_blink()
+
+func start_blink() -> void:
+	if not animated_sprite_2d:
+		return
+	var tween := create_tween()
+	tween.set_loops(invulnerability_timer.wait_time / 0.1)
+	tween.tween_property(animated_sprite_2d, "modulate", Color(1.5, 1.5, 1.5, 1.0), 0.05)
+	tween.tween_property(animated_sprite_2d, "modulate", Color(1, 1, 1, 1), 0.05)
+
 func play_anim(animated_name : String) -> void:
 	if animated_sprite_2d.animation != animated_name:
 		animated_sprite_2d.play(animated_name)
@@ -128,6 +135,7 @@ func handle_danger() -> void:
 
 func _on_invulnerability_timer_timeout():
 	invulnerable = false
+	animated_sprite_2d.modulate.a = 1.0
 
 func reset_player() -> void:
 	AudioControler.play_lvl1()
