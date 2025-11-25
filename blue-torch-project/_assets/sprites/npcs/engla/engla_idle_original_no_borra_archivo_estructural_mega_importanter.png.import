@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du778gy5a82jl"
-path="res://.godot/imported/engla_idle.png-75457681fd285559ef6bc7258776182c.ctex"
+uid="uid://dvlb3ai2a6mde"
+path="res://.godot/imported/engla_idle_original_no_borra_archivo_estructural_mega_importanter.png-712bb6f33d9ee6ecc5e36b955719360a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/npcs/engla/engla_idle.png"
-dest_files=["res://.godot/imported/engla_idle.png-75457681fd285559ef6bc7258776182c.ctex"]
+source_file="res://_assets/sprites/npcs/engla/engla_idle_original_no_borra_archivo_estructural_mega_importanter.png"
+dest_files=["res://.godot/imported/engla_idle_original_no_borra_archivo_estructural_mega_importanter.png-712bb6f33d9ee6ecc5e36b955719360a.ctex"]
 
 [params]
 
