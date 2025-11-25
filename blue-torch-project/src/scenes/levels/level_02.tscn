@@ -641,12 +641,10 @@ tile_map_data = PackedByteArray("AAAoABgAAQAMAAQAAAAnABgAAQAMAAQAAAAmABgAAQAMAAQ
 tile_set = SubResource("TileSet_53222")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
-visible = false
 offset = Vector2(-1440, -832)
 transform = Transform2D(1, 0, 0, 1, -1440, -832)
 
