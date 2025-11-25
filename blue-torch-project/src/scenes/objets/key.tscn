@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0owjv6fv37bb"]
 
-[ext_resource type="Script" uid="uid://bhcfjla5uxw36" path="res://src/scripts/enviroment/key.gd" id="1_wvcru"]
+[ext_resource type="Script" uid="uid://bhcfjla5uxw36" path="res://src/scripts/objects/key.gd" id="1_wvcru"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="2_wvcru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvcru"]

@@ -1,7 +1,8 @@
 extends Control
 
 class_name MainMenu
- 
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+
 
 func _ready() -> void:
 	AudioControler.stop_lvl1()
@@ -19,6 +20,7 @@ func _on_quit_button_pressed() -> void:
 
 func deactivate() -> void:
 	hide()
+	canvas_layer.hide()
 	set_process(false)
 	set_process_unhandled_input(false)
 	set_process_input(false)

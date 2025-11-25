@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cj4cm77h7bws1" path="res://src/scripts/entities/enemies/skeleton.gd" id="1_ghv56"]
 [ext_resource type="Texture2D" uid="uid://pwrpgn8kduai" path="res://_assets/sprites/enemies/skeleton/skeleton_attack_1.png" id="1_q0b1p"]
 [ext_resource type="Texture2D" uid="uid://bli3556dk5le5" path="res://_assets/sprites/enemies/skeleton/skeleton_attack_2.png" id="2_ghv56"]
-[ext_resource type="Texture2D" uid="uid://ckevq02xlwq2t" path="res://_assets/sprites/icons/question mark.png" id="2_ytehd"]
+[ext_resource type="Texture2D" uid="uid://ckevq02xlwq2t" path="res://_assets/sprites/icons/question_mark.png" id="2_ytehd"]
 [ext_resource type="Texture2D" uid="uid://dkrove5qqintd" path="res://_assets/sprites/enemies/skeleton/skeleton_death.png" id="3_fpf0g"]
 [ext_resource type="Texture2D" uid="uid://doptmljc3n0kr" path="res://_assets/sprites/enemies/skeleton/skeleton_hit.png" id="4_ytehd"]
 [ext_resource type="Texture2D" uid="uid://bpk2la8k57l6q" path="res://_assets/sprites/enemies/skeleton/skeleton_idle.png" id="5_nwhh0"]

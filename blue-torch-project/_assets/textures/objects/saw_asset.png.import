@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbrl3vornqlqq"
-path="res://.godot/imported/torch_sprite.png-6375107e82f9c00f848c6a06e574f6f4.ctex"
+uid="uid://dt0xei3w2q1k1"
+path="res://.godot/imported/saw_asset.png-a43c33e7787d1e8cad9f4cfe32974d59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/textures/tilemap/torch_sprite.png"
-dest_files=["res://.godot/imported/torch_sprite.png-6375107e82f9c00f848c6a06e574f6f4.ctex"]
+source_file="res://_assets/textures/objects/saw_asset.png"
+dest_files=["res://.godot/imported/saw_asset.png-a43c33e7787d1e8cad9f4cfe32974d59.ctex"]
 
 [params]
 

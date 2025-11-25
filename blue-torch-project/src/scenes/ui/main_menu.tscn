@@ -5,7 +5,7 @@
 [ext_resource type="VideoStream" uid="uid://cpgdcyeslnn3g" path="res://_assets/video/new_menu.ogv" id="2_f5lm1"]
 [ext_resource type="FontFile" uid="uid://bq3erw8t7s7ek" path="res://_assets/fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_loxbe"]
 [ext_resource type="FontFile" uid="uid://bmucgu0cc26ru" path="res://_assets/fonts/Jacquard_24/Jacquard24-Regular.ttf" id="4_x2oeq"]
-[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/luz_1.png" id="5_x2oeq"]
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="5_x2oeq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ttmq8"]
 font = ExtResource("4_x2oeq")
@@ -20,16 +20,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_ttmq8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(624, 400)
+position = Vector2(639, 354)
 scale = Vector2(1.42187, 0.945313)
 texture = ExtResource("2_6trx7")
 
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(315.078, -112.132)
+scale = Vector2(0.703297, 1.05785)
+color = Color(0.239861, 0.492031, 1, 1)
+energy = 4.0
+range_layer_min = -1
+range_layer_max = 10
+shadow_enabled = true
+texture = ExtResource("5_x2oeq")
+texture_scale = 3.19
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Sprite2D"]
+color = Color(0, 0, 0, 1)
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-visible = false
 layout_mode = 1
 offset_right = 1728.0
 offset_bottom = 972.0
@@ -40,16 +55,9 @@ autoplay = true
 loop = true
 buffering_msec = 200
 
-[node name="PointLight2D" type="PointLight2D" parent="VideoStreamPlayer"]
-position = Vector2(1482.67, 189.333)
-scale = Vector2(1.33333, 1.33333)
-color = Color(5.82382e-05, 0.239889, 0.717071, 1)
-energy = 7.95
-texture = ExtResource("5_x2oeq")
-texture_scale = 1.45
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -60,19 +68,19 @@ theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 32
 
-[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Titulo" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Blue Torch"
 label_settings = SubResource("LabelSettings_ttmq8")
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -81,7 +89,7 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Iniciar"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -91,5 +99,5 @@ theme_override_font_sizes/font_size = 72
 text = "Salir
 "
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dffar240roj74"]
 
-[ext_resource type="Texture2D" uid="uid://cs5asa4uo5gva" path="res://_assets/textures/objects/Muro derrumbado.png" id="1_ftfmi"]
-[ext_resource type="Script" uid="uid://ihnqohwsrml8" path="res://src/scripts/enviroment/breakable_wall.gd" id="1_olhef"]
+[ext_resource type="Texture2D" uid="uid://cs5asa4uo5gva" path="res://_assets/textures/objects/broken_wall.png" id="1_ftfmi"]
+[ext_resource type="Script" uid="uid://ihnqohwsrml8" path="res://src/scripts/objects/breakable_wall.gd" id="1_olhef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olhef"]
 atlas = ExtResource("1_ftfmi")

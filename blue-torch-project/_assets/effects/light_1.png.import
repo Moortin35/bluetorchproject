@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3jj3hidnj58a"
-path="res://.godot/imported/Gerda Retrato.png-cf75e7aa580bcb27742f18a9ccfbc98c.ctex"
+uid="uid://drh4blynxm1fq"
+path="res://.godot/imported/light_1.png-949478b11d51943415939e4c09a41666.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/images/portraits/Gerda Retrato.png"
-dest_files=["res://.godot/imported/Gerda Retrato.png-cf75e7aa580bcb27742f18a9ccfbc98c.ctex"]
+source_file="res://_assets/effects/light_1.png"
+dest_files=["res://.godot/imported/light_1.png-949478b11d51943415939e4c09a41666.ctex"]
 
 [params]
 

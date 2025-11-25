@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs5asa4uo5gva"
-path="res://.godot/imported/Muro derrumbado.png-42b5fe1acd571593a5070720793311c8.ctex"
+uid="uid://cbrl3vornqlqq"
+path="res://.godot/imported/torch_sprite.png-cb46ac2d5582ebddf34ac60f648ac0cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/textures/objects/Muro derrumbado.png"
-dest_files=["res://.godot/imported/Muro derrumbado.png-42b5fe1acd571593a5070720793311c8.ctex"]
+source_file="res://_assets/textures/objects/torch_sprite.png"
+dest_files=["res://.godot/imported/torch_sprite.png-cb46ac2d5582ebddf34ac60f648ac0cc.ctex"]
 
 [params]
 

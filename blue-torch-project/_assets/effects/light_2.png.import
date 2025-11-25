@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckevq02xlwq2t"
-path="res://.godot/imported/question mark.png-2e26d2a7f1ad08779e1aeb53235a3f9f.ctex"
+uid="uid://os8ngbl0du2a"
+path="res://.godot/imported/light_2.png-ef3b7793bf2cc9e33ad3a4808b0ce477.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/sprites/icons/question mark.png"
-dest_files=["res://.godot/imported/question mark.png-2e26d2a7f1ad08779e1aeb53235a3f9f.ctex"]
+source_file="res://_assets/effects/light_2.png"
+dest_files=["res://.godot/imported/light_2.png-ef3b7793bf2cc9e33ad3a4808b0ce477.ctex"]
 
 [params]
 

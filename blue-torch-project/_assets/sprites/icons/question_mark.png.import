@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0xei3w2q1k1"
-path="res://.godot/imported/saw_asset.png-59c8380b62c0f4a161eefc18951d804d.ctex"
+uid="uid://ckevq02xlwq2t"
+path="res://.godot/imported/question_mark.png-47b3aacfb61e1a61e413be8436300385.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/textures/tilemap/saw_asset.png"
-dest_files=["res://.godot/imported/saw_asset.png-59c8380b62c0f4a161eefc18951d804d.ctex"]
+source_file="res://_assets/sprites/icons/question_mark.png"
+dest_files=["res://.godot/imported/question_mark.png-47b3aacfb61e1a61e413be8436300385.ctex"]
 
 [params]
 

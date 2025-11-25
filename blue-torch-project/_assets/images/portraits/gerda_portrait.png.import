@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfiwum2kia51h"
-path="res://.godot/imported/maiden_portrait.png-a1ab5da5dff15adab47181ae5a47c4e8.ctex"
+uid="uid://b3jj3hidnj58a"
+path="res://.godot/imported/gerda_portrait.png-2ec6c389a0e2f5dd401c851b9944ce8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/images/portraits/maiden_portrait.png"
-dest_files=["res://.godot/imported/maiden_portrait.png-a1ab5da5dff15adab47181ae5a47c4e8.ctex"]
+source_file="res://_assets/images/portraits/gerda_portrait.png"
+dest_files=["res://.godot/imported/gerda_portrait.png-2ec6c389a0e2f5dd401c851b9944ce8b.ctex"]
 
 [params]
 

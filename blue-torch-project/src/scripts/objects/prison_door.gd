@@ -19,8 +19,8 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	if can_i_interact() and player != null: 
-		if player.inventario.do_i_have_keys():
-			player.inventario.remove_a_key()
+		if player.player_inventory.do_i_have_keys():
+			player.player_inventory.remove_a_key()
 			o_door()
 		else:
 			DialogueManager.show_dialogue_balloon(CLOSE_DOOR)	
