@@ -2,11 +2,13 @@ extends Control
 
 class_name MainMenu
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var animated_torch: AnimatedSprite2D = $AnimatedTorch
 
 
 func _ready() -> void:
 	AudioControler.stop_lvl1()
 	AudioControler.play_music()
+	animated_torch.play()
 
 func _on_play_button_pressed() -> void:
 	LevelManager.load_level(1)
