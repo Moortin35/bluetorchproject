@@ -110,21 +110,21 @@ func update_animation_player() -> void:
 	state.animation()
 
 func handle_danger() -> void:
+	if !is_dead:
+		is_dead = true
+		AudioControler.play_sfx(preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
+		AudioControler.stop_lvl1()
+		can_control = false
+		velocity.y = 0
+		velocity.x = 0
+		if not is_on_floor():
+			animated_sprite_2d.play("hit")
+			await get_tree().create_timer(0.5).timeout
+		if is_on_floor():
+			animated_sprite_2d.play("death")
 
-	is_dead = true
-	AudioControler.play_sfx(preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
-	AudioControler.stop_lvl1()
-	can_control = false
-	velocity.y = 0
-	velocity.x = 0
-	if not is_on_floor():
-		animated_sprite_2d.play("hit")
-		await get_tree().create_timer(0.5).timeout
-	if is_on_floor():
-		animated_sprite_2d.play("death")
-
-	await get_tree().create_timer(2.5).timeout
-	reset_player()
+		await get_tree().create_timer(2.5).timeout
+		reset_player()
 
 func _on_invulnerability_timer_timeout():
 	invulnerable = false

@@ -469,6 +469,7 @@ size = Vector2(10, 26)
 size = Vector2(10, 27)
 
 [node name="Skeleton" type="CharacterBody2D"]
+z_index = 8
 floor_snap_length = 2.0
 script = ExtResource("1_ghv56")
 
