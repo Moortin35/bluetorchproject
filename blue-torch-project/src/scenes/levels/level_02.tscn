@@ -621,7 +621,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(641, 355)
+position = Vector2(648, 368)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -777,29 +777,29 @@ broken = false
 [node name="fireball_trap" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -90)
 max_distance = 1800.0
-fire_rate = 2.8
+fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 
 [node name="fireball_trap2" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -109)
 max_distance = 1800.0
-fire_rate = 2.8
+fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 
 [node name="fireball_trap3" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -147)
 max_distance = 1800.0
-fire_rate = 2.8
+fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
-fire_offset = 1.0
+fire_offset = 1.5
 
 [node name="fireball_trap4" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -167)
 max_distance = 1800.0
-fire_rate = 2.8
+fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
-fire_offset = 1.0
+fire_offset = 1.5

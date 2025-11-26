@@ -102,11 +102,23 @@ func take_damage(amount : float, source : Node2D = null) -> void:
 func start_blink() -> void:
 	if not animated_sprite_2d:
 		return
-	var tween := create_tween()
-	tween.set_loops(invulnerability_timer.wait_time / 0.1)
-	tween.tween_property(animated_sprite_2d, "modulate", Color(1.5, 1.5, 1.5, 1.0), 0.05)
-	tween.tween_property(animated_sprite_2d, "modulate", Color(1, 1, 1, 1), 0.05)
 
+	var tween := create_tween()
+
+	# Más lento → cada blink dura 0.2 s
+	var blink_duration := 0.2	# antes 0.05
+
+	# Recalcula loops para que dure lo mismo (convertido a entero)
+	tween.set_loops(int(invulnerability_timer.wait_time / (blink_duration * 2)))
+
+	# Más blanco → usa valores RGB mayores que 1
+	tween.tween_property(animated_sprite_2d, "modulate",
+		Color(7.0, 7.0, 7.0, 1.0), blink_duration)
+
+	tween.tween_property(animated_sprite_2d, "modulate",
+		Color(1, 1, 1, 1), blink_duration)
+
+		
 func play_anim(animated_name : String) -> void:
 	if animated_sprite_2d.animation != animated_name:
 		animated_sprite_2d.play(animated_name)
