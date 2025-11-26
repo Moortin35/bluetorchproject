@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var animated_portraits: AnimatedSprite2D = $Balloon/AnimatedPortraits
 
 @onready var panel: Panel = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel
+@onready var talk_sound: AudioStreamPlayer = $TalkSound
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -184,3 +185,9 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if not letter in ["."," "]:
+		talk_sound.pitch_scale = randf_range(0.9,1.1)
+		talk_sound.play()

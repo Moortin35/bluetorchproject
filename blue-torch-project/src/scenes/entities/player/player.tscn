@@ -525,6 +525,7 @@ script = ExtResource("1_rds41")
 
 [node name="inventory" type="Node2D" parent="."]
 script = ExtResource("2_iahkn")
+metadata/_edit_lock_ = true
 
 [node name="interactions" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -532,6 +533,7 @@ position = Vector2(0, -19)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ppq54")
 animation = &"interact"
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2q6vc")
@@ -550,10 +552,12 @@ limit_top = -16
 limit_right = 1296
 limit_bottom = 736
 limit_smoothed = true
+metadata/_edit_lock_ = true
 
 [node name="BlueTorch" type="Node2D" parent="."]
 script = ExtResource("9_ddkw8")
 torch_particles = ExtResource("4_d28hy")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="BlueTorch"]
 scale = Vector2(1.7625, 1.775)
@@ -564,6 +568,7 @@ range_layer_max = 10
 shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("8_1hd0g")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D_2" type="PointLight2D" parent="BlueTorch"]
 position = Vector2(1, 3)
@@ -572,6 +577,7 @@ range_layer_min = -1
 range_layer_max = 10
 texture = ExtResource("9_qh5pu")
 texture_scale = 0.5
+metadata/_edit_lock_ = true
 
 [node name="FlickerTimer" type="Timer" parent="BlueTorch"]
 

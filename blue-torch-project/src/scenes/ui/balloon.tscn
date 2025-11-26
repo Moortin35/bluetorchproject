@@ -1,12 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://cis5d2hhv0deo"]
+[gd_scene load_steps=25 format=3 uid="uid://cis5d2hhv0deo"]
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
 [ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_2ej3a"]
-[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
 [ext_resource type="Texture2D" uid="uid://b5giasihachky" path="res://_assets/images/portraits/engla_portrait.png" id="4_s4bk5"]
 [ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/gerda_portrait.png" id="5_v8wqk"]
 [ext_resource type="Texture2D" uid="uid://dcslh3hikkw5j" path="res://_assets/images/portraits/odd_man_portrait.png" id="6_qf3dx"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="7_e3jod"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="7_e3jod"]
+[ext_resource type="AudioStream" uid="uid://81nuhuue2rgk" path="res://_assets/sounds/effects/Blue Torch Sounds & Music - BlaBla 01.wav" id="8_2ej3a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -214,6 +215,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_5qeb6")
 text = "Dialogue..."
+seconds_per_step = 0.04
 
 [node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon"]
 position = Vector2(164.4, 575.4)
@@ -246,5 +248,9 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
+[node name="TalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2ej3a")
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
