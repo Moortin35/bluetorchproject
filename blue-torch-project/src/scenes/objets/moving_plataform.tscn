@@ -1,0 +1,244 @@
+[gd_scene load_steps=8 format=4 uid="uid://b6po4c8kkyxmp"]
+
+[ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_kie7b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxvwg"]
+texture = ExtResource("1_kie7b")
+14:3/0 = 0
+15:3/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+15:8/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+17:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+4:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+13:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+8:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+16:20/0 = 0
+17:20/0 = 0
+18:20/0 = 0
+19:20/0 = 0
+20:20/0 = 0
+11:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+19:21/0 = 0
+20:21/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f0vn2"]
+sources/0 = SubResource("TileSetAtlasSource_sxvwg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kie7b"]
+size = Vector2(48, 4)
+
+[sub_resource type="Animation" id="Animation_kie7b"]
+resource_name = "first_elevator"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 296), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sxvwg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f0vn2"]
+_data = {
+&"RESET": SubResource("Animation_sxvwg"),
+&"first_elevator": SubResource("Animation_kie7b")
+}
+
+[node name="MovingPlataform" type="Node2D"]
+
+[node name="Plataform" type="AnimatableBody2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Plataform"]
+tile_map_data = PackedByteArray("AAD+/9//AAAEAA8AAAD+/+D/AAAEAA8AAAD+/+H/AAAEAA8AAAD+/+L/AAAEAA8AAAD+/+P/AAAEAA8AAAD+/+T/AAAEAA8AAAD+/+X/AAAEAA8AAAD+/+b/AAAEAA8AAAD+/+f/AAAEAA8AAAD+/+j/AAAEAA8AAAD+/+n/AAAEAA8AAAD+/+r/AAAEAA8AAAD+/+v/AAAEAA8AAAD+/+z/AAAEAA8AAAD+/+3/AAAEAA8AAAD+/+7/AAAEAA8AAAD+/+//AAAEAA8AAAD+//D/AAAEAA8AAAD+//H/AAAEAA8AAAD+//L/AAAEAA8AAAD+//P/AAAEAA8AAAD+//T/AAAEAA8AAAD+//X/AAAEAA8AAAD+//b/AAAEAA8AAAD+//f/AAAEAA8AAAD+//j/AAAEAA8AAAD+//n/AAAEAA8AAAD+//r/AAAEAA8AAAD+//v/AAAEAA8AAAD+//z/AAAEAA8AAAD+//3/AAAEAA8AAAD+//7/AAAEAA8AAAD+////AAAEAA8AAAD+/wAAAAAEAA0AAAAAAN//AAAEAA8AAAAAAOD/AAAEAA8AAAAAAOH/AAAEAA8AAAAAAOL/AAAEAA8AAAAAAOP/AAAEAA8AAAAAAOT/AAAEAA8AAAAAAOX/AAAEAA8AAAAAAOb/AAAEAA8AAAAAAOf/AAAEAA8AAAAAAOj/AAAEAA8AAAAAAOn/AAAEAA8AAAAAAOr/AAAEAA8AAAAAAOv/AAAEAA8AAAAAAOz/AAAEAA8AAAAAAO3/AAAEAA8AAAAAAO7/AAAEAA8AAAAAAO//AAAEAA8AAAAAAPD/AAAEAA8AAAAAAPH/AAAEAA8AAAAAAPL/AAAEAA8AAAAAAPP/AAAEAA8AAAAAAPT/AAAEAA8AAAAAAPX/AAAEAA8AAAAAAPb/AAAEAA8AAAAAAPf/AAAEAA8AAAAAAPj/AAAEAA8AAAAAAPn/AAAEAA8AAAAAAPr/AAAEAA8AAAAAAPv/AAAEAA8AAAAAAPz/AAAEAA8AAAAAAP3/AAAEAA8AAAAAAP7/AAAEAA8AAAAAAP//AAAEAA8AAAAAAAAAAAAGAA0AAAD+/93/AAAEAA8AAAD+/97/AAAEAA8AAAD//wAAAAAFAA0AAAAAAN3/AAAEAA8AAAAAAN7/AAAEAA8AAAAAANz/AAAEAA8AAAAAANv/AAAEAA8AAAAAANr/AAAEAA8AAAAAANn/AAAEAA8AAAAAANj/AAAEAA8AAAAAANf/AAAEAA8AAAAAANb/AAAEAA8AAAAAANX/AAAEAA8AAAAAANT/AAAEAA8AAAAAANP/AAAEAA8AAAAAANL/AAAEAA8AAAAAANH/AAAEAA8AAAAAAND/AAAEAA8AAAAAAM//AAAEAA8AAAAAAM7/AAAEAA8AAAAAAM3/AAAEAA8AAAAAAMz/AAAEAA8AAAAAAMv/AAAEAA8AAAAAAMr/AAAEAA8AAAAAAMn/AAAEAA8AAAD+/9z/AAAEAA8AAAD+/9v/AAAEAA8AAAD+/9r/AAAEAA8AAAD+/9n/AAAEAA8AAAD+/9j/AAAEAA8AAAD+/9f/AAAEAA8AAAD+/9b/AAAEAA8AAAD+/9X/AAAEAA8AAAD+/9T/AAAEAA8AAAD+/9P/AAAEAA8AAAD+/9L/AAAEAA8AAAD+/9H/AAAEAA8AAAD+/9D/AAAEAA8AAAD+/8//AAAEAA8AAAD+/87/AAAEAA8AAAD+/83/AAAEAA8AAAD+/8z/AAAEAA8AAAD+/8v/AAAEAA8AAAD+/8r/AAAEAA8AAAD+/8n/AAAEAA8AAAD+/8j/AAAEAA8AAAAAAMj/AAAEAA8AAAAAAMf/AAAEAA8AAAAAAMb/AAAEAA8AAAD+/8f/AAAEAA8AAAD+/8b/AAAEAA8AAAA=")
+tile_set = SubResource("TileSet_f0vn2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataform"]
+position = Vector2(-8, 3)
+shape = SubResource("RectangleShape2D_kie7b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataform"]
+libraries = {
+&"": SubResource("AnimationLibrary_f0vn2")
+}
+autoplay = "first_elevator"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=65 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="2_flerx"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
 [ext_resource type="PackedScene" uid="uid://56lusswsfrwy" path="res://src/scenes/obstacles/fireball.tscn" id="21_sxj84"]
+[ext_resource type="PackedScene" uid="uid://b6po4c8kkyxmp" path="res://src/scenes/objets/moving_plataform.tscn" id="22_sxj84"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaiti"]
 texture = ExtResource("2_flerx")
@@ -621,7 +622,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(648, 368)
+position = Vector2(176, 384)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -803,3 +804,7 @@ fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 fire_offset = 1.5
+
+[node name="MovingPlataform" parent="." instance=ExtResource("22_sxj84")]
+z_index = 8
+position = Vector2(274, 400)
