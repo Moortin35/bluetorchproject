@@ -17,6 +17,7 @@ func update():
 	if can_play_sound and character.is_on_floor():
 		can_play_sound = false
 		AudioControler.play_land()
+		can_double_jump = true
 	if Input.is_action_just_pressed("ui_accept"):
 		can_play_sound = true
 		character.state = self
@@ -24,7 +25,6 @@ func update():
 			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
-			can_double_jump = true
 		elif can_double_jump:
 			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))
 			spawn_jump_particles()
