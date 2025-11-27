@@ -624,7 +624,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(157, 379)
+position = Vector2(644, 364)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -648,12 +648,10 @@ tile_set = SubResource("TileSet_53222")
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
-visible = false
 offset = Vector2(-1440, -832)
 transform = Transform2D(1, 0, 0, 1, -1440, -832)
 
