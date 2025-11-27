@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="3_mc7rl"]
 [ext_resource type="Texture2D" uid="uid://dd75evj7wmeb8" path="res://_assets/textures/tilemap/frame_tileset.png" id="3_vjvdn"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="4_5n0ma"]
+[ext_resource type="PackedScene" uid="uid://d0unqqvb1goyg" path="res://src/scenes/obstacles/4_spikes.tscn" id="5_lyywh"]
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="5_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="6_a8w1q"]
 [ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/next_level.tscn" id="6_tuy8k"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/textures/parallax/level01/parallax_jailsfg_level01.png" id="13_1xr25"]
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="16_1xr25"]
 [ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/npcs/odd_man.tscn" id="17_vs2nq"]
-[ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/obstacles/spike.tscn" id="18_lyywh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srko8"]
 size = Vector2(178, 12)
@@ -633,104 +633,40 @@ position = Vector2(26, 640)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="spikes_2" type="Node2D" parent="Obstacles"]
-position = Vector2(734, 392)
+[node name="Saws" type="Node2D" parent="Obstacles"]
 
-[node name="Spike7" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(79, 16)
-
-[node name="Spike8" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(96, 16)
-
-[node name="Spike4" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(62, 16)
-
-[node name="Spike2" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(45, 16)
-
-[node name="Spike5" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(28, 16)
-
-[node name="Spike6" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(11, 16)
-
-[node name="Spike9" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(215, 16)
-
-[node name="Spike17" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(249, 16)
-
-[node name="Spike10" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(232, 16)
-
-[node name="Spike11" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(198, 16)
-
-[node name="Spike12" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(181, 16)
-
-[node name="Spike13" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(164, 16)
-
-[node name="Spike14" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(147, 16)
-
-[node name="Spike15" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(130, 16)
-
-[node name="Spike16" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(113, 16)
-
-[node name="Spike3" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(-6, 16)
-
-[node name="Spike1" parent="Obstacles/spikes_2" instance=ExtResource("18_lyywh")]
-position = Vector2(-23, 16)
-
-[node name="spikes_1" type="Node2D" parent="Obstacles"]
-position = Vector2(270, 696)
-
-[node name="Spike6" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
-position = Vector2(11, 16)
-
-[node name="Spike5" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
-position = Vector2(28, 16)
-nro_spike = 2
-
-[node name="Spike3" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
-position = Vector2(-6, 16)
-
-[node name="Spike" parent="Obstacles/spikes_1" instance=ExtResource("18_lyywh")]
-position = Vector2(-23, 16)
-nro_spike = 1
-
-[node name="Saw4" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw4" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(328, 320)
 
-[node name="Saw3" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw3" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(328, 268)
 
-[node name="Saw7" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw7" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(177, -7)
 
-[node name="Saw6" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw6" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(-7, 265)
 
-[node name="Saw5" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw5" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(136, 184)
 
-[node name="Saw2" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw2" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(680, 423)
 
-[node name="Saw" parent="Obstacles" instance=ExtResource("5_vs2nq")]
+[node name="Saw" parent="Obstacles/Saws" instance=ExtResource("5_vs2nq")]
 position = Vector2(1015, 423)
 
-[node name="caida" parent="Obstacles" instance=ExtResource("6_a8w1q")]
+[node name="FallArea" parent="Obstacles" instance=ExtResource("6_a8w1q")]
 position = Vector2(487, 761)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/caida"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/FallArea"]
 position = Vector2(79, 4)
 shape = SubResource("RectangleShape2D_srko8")
+
+[node name="Spikes" type="Node2D" parent="Obstacles"]
+
+[node name="4Spikes" parent="Obstacles/Spikes" instance=ExtResource("5_lyywh")]
+position = Vector2(272, 712)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 
@@ -751,6 +687,8 @@ tile_set = SubResource("TileSet_8bfcq")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
+offset = Vector2(0, -912)
+transform = Transform2D(1, 0, 0, 1, 0, -912)
 
 [node name="ParallaxLayerBG" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1, 0)
@@ -811,6 +749,7 @@ z_index = 7
 position = Vector2(1240, 162)
 
 [node name="NextLevel" parent="." instance=ExtResource("6_tuy8k")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false
