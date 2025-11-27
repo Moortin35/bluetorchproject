@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://432fmegl2y15"]
+[gd_scene load_steps=89 format=3 uid="uid://432fmegl2y15"]
 
 [ext_resource type="Script" uid="uid://bbeay6rpth71n" path="res://src/scripts/entities/player/player.gd" id="1_rds41"]
 [ext_resource type="Texture2D" uid="uid://dpbmok0jg0547" path="res://_assets/sprites/icons/hand_icon.png" id="2_30a0n"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://dj87gqlepj207" path="res://src/scripts/entities/player/jump.gd" id="16_cmfkv"]
 [ext_resource type="Script" uid="uid://dd2vogeb5diji" path="res://src/scripts/entities/player/dash.gd" id="17_n5fdq"]
 [ext_resource type="Script" uid="uid://baismalaitpj1" path="res://src/scripts/entities/player/idle.gd" id="18_4qdib"]
+[ext_resource type="PackedScene" uid="uid://0rbbwn13eylp" path="res://src/scenes/ui/health_bar.tscn" id="23_ims5k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oknxn"]
 atlas = ExtResource("2_30a0n")
@@ -600,3 +601,5 @@ dash_particles = ExtResource("3_3vwgm")
 
 [node name="Idle" type="Node" parent="state_set"]
 script = ExtResource("18_4qdib")
+
+[node name="HealthBar" parent="." instance=ExtResource("23_ims5k")]
