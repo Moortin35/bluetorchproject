@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0unqqvb1goyg"]
+
+[ext_resource type="PackedScene" uid="uid://vpt2ketr6iqi" path="res://src/scenes/obstacles/2_spikes.tscn" id="1_dkm8s"]
+
+[node name="4Spikes" type="Node2D"]
+
+[node name="2Spikes" parent="." instance=ExtResource("1_dkm8s")]
+position = Vector2(-16, 0)
+
+[node name="2Spikes2" parent="." instance=ExtResource("1_dkm8s")]
+position = Vector2(16, 0)

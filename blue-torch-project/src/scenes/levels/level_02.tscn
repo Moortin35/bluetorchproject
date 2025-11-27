@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/obstacles/spike.tscn" id="16_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://dffar240roj74" path="res://src/scenes/objets/breakable_wall.tscn" id="17_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="17_883it"]
+[ext_resource type="PackedScene" uid="uid://d0unqqvb1goyg" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="18_xwimy"]
+[ext_resource type="PackedScene" uid="uid://b1tkip4u2piot" path="res://src/scenes/obstacles/6_spikes.tscn" id="19_ck20o"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
 [ext_resource type="PackedScene" uid="uid://56lusswsfrwy" path="res://src/scenes/obstacles/fireball.tscn" id="21_sxj84"]
@@ -624,7 +626,8 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(155, 372)
+
+position = Vector2(644, 364)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -648,7 +651,6 @@ tile_set = SubResource("TileSet_53222")
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -723,205 +725,65 @@ position = Vector2(1430, 527)
 [node name="Obstacles" type="Node2D" parent="."]
 z_index = 5
 
-[node name="Group1" type="Node2D" parent="Obstacles"]
-
-[node name="Spike" parent="Obstacles/Group1" instance=ExtResource("16_6xe2p")]
-position = Vector2(1704, 568)
-nro_spike = 4
-
-[node name="Spike2" parent="Obstacles/Group1" instance=ExtResource("16_6xe2p")]
-position = Vector2(1721, 568)
-nro_spike = 4
-
-[node name="Spike3" parent="Obstacles/Group1" instance=ExtResource("16_6xe2p")]
-position = Vector2(1738, 568)
-
-[node name="Spike4" parent="Obstacles/Group1" instance=ExtResource("16_6xe2p")]
-position = Vector2(1755, 568)
-
-[node name="Spike5" parent="Obstacles/Group1" instance=ExtResource("16_6xe2p")]
-position = Vector2(1772, 568)
-
-[node name="Group2" type="Node2D" parent="Obstacles"]
-
-[node name="Spike6" parent="Obstacles/Group2" instance=ExtResource("16_6xe2p")]
-position = Vector2(1367, 375)
-
-[node name="Spike7" parent="Obstacles/Group2" instance=ExtResource("16_6xe2p")]
-position = Vector2(1384, 375)
-
-[node name="Spike8" parent="Obstacles/Group2" instance=ExtResource("16_6xe2p")]
-position = Vector2(1401, 375)
-
-[node name="Spike9" parent="Obstacles/Group2" instance=ExtResource("16_6xe2p")]
-position = Vector2(1418, 375)
-
-[node name="Spike10" parent="Obstacles/Group2" instance=ExtResource("16_6xe2p")]
-position = Vector2(1435, 375)
-
-[node name="Group3" type="Node2D" parent="Obstacles"]
-
-[node name="Spike11" parent="Obstacles/Group3" instance=ExtResource("16_6xe2p")]
-position = Vector2(-497, 712)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3" instance=ExtResource("16_6xe2p")]
-position = Vector2(-446, 712)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3" instance=ExtResource("16_6xe2p")]
-position = Vector2(-429, 712)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13" instance=ExtResource("16_6xe2p")]
-position = Vector2(58, -1)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13" instance=ExtResource("16_6xe2p")]
-position = Vector2(109, -1)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13" instance=ExtResource("16_6xe2p")]
-position = Vector2(126, -1)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13" instance=ExtResource("16_6xe2p")]
-position = Vector2(92, -1)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13" instance=ExtResource("16_6xe2p")]
-position = Vector2(75, -1)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(113, 0)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(164, 0)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(181, 0)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(147, 0)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(130, 0)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(118, 0)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(169, 0)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(186, 0)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(152, 0)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(135, 0)
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(367, 0)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(384, 0)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(350, 0)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(333, 0)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-870, 0)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-819, 0)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-802, 0)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-836, 0)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-853, 0)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-146, 0)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-95, 0)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-78, 0)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-112, 0)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-129, 0)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-146, 0)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-95, 0)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-78, 0)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-112, 0)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-129, 0)
-
-[node name="Spike11" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-159, 1)
-nro_spike = 4
-
-[node name="Spike12" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-108, 1)
-nro_spike = 4
-
-[node name="Spike13" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-91, 1)
-
-[node name="Spike14" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-125, 1)
-
-[node name="Spike15" parent="Obstacles/Group3/Spike13/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15/Spike15" instance=ExtResource("16_6xe2p")]
-position = Vector2(-142, 1)
-
-[node name="Spike14" parent="Obstacles/Group3" instance=ExtResource("16_6xe2p")]
-position = Vector2(-463, 712)
-
-[node name="Spike15" parent="Obstacles/Group3" instance=ExtResource("16_6xe2p")]
-position = Vector2(-480, 712)
-
 [node name="Saw" parent="Obstacles" instance=ExtResource("17_883it")]
 position = Vector2(1184, 431)
 
 [node name="Saw2" parent="Obstacles" instance=ExtResource("17_883it")]
 position = Vector2(1233, 477)
 
-[node name="DangerZone" parent="Obstacles" instance=ExtResource("18_xwimy")]
+[node name="FallZone" parent="Obstacles" instance=ExtResource("18_xwimy")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/DangerZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/FallZone"]
 position = Vector2(918, 890)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vaiti")
+
+[node name="Spikes" type="Node2D" parent="Obstacles"]
+
+[node name="Group1" type="Node2D" parent="Obstacles/Spikes"]
+
+[node name="4Spikes" parent="Obstacles/Spikes/Group1" instance=ExtResource("17_ril6c")]
+position = Vector2(1393, 376)
+
+[node name="Spike" parent="Obstacles/Spikes/Group1" instance=ExtResource("16_6xe2p")]
+position = Vector2(1433, 376)
+
+[node name="Group2" type="Node2D" parent="Obstacles/Spikes"]
+
+[node name="4Spikes" parent="Obstacles/Spikes/Group2" instance=ExtResource("17_ril6c")]
+position = Vector2(1729, 568)
+
+[node name="Spike" parent="Obstacles/Spikes/Group2" instance=ExtResource("16_6xe2p")]
+position = Vector2(1769, 568)
+
+[node name="Group3" type="Node2D" parent="Obstacles/Spikes"]
+
+[node name="4Spikes" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(264, 712)
+
+[node name="6Spikes" parent="Obstacles/Spikes/Group3" instance=ExtResource("19_ck20o")]
+position = Vector2(-72, 712)
+
+[node name="4Spikes2" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(-336, 712)
+
+[node name="4Spikes3" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(-208, 712)
+
+[node name="4Spikes4" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(-464, 712)
+
+[node name="4Spikes5" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(-592, 712)
+
+[node name="4Spikes6" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(-720, 712)
+
+[node name="4Spikes7" parent="Obstacles/Spikes/Group3" instance=ExtResource("17_ril6c")]
+position = Vector2(-849, 712)
+
+[node name="6Spikes2" parent="Obstacles/Spikes/Group3" instance=ExtResource("19_ck20o")]
+position = Vector2(-992, 712)
 
 [node name="Enviroment" type="Node2D" parent="."]
 
