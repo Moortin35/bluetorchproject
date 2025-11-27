@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://behbluvl72ya1"]
 
-[ext_resource type="Texture2D" uid="uid://fege01wswegc" path="res://_assets/effects/dust_jump.png" id="1_qftga"]
+[ext_resource type="Texture2D" uid="uid://bwjlqsa76cite" path="res://_assets/effects/particle.png" id="1_3vbpm"]
 
 [sub_resource type="Curve" id="Curve_2dcv3"]
-_data = [Vector2(0, 0.110968), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_r50n3"]
@@ -12,7 +12,7 @@ point_count = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 amount = 1
-texture = ExtResource("1_qftga")
+texture = ExtResource("1_3vbpm")
 preprocess = 0.97
 speed_scale = 4.45
 gravity = Vector2(0, 0)

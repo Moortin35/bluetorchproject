@@ -1,24 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbtu0t0s03k7s"]
 
-[ext_resource type="Texture2D" uid="uid://fege01wswegc" path="res://_assets/effects/dust_jump.png" id="1_mei2u"]
+[ext_resource type="Texture2D" uid="uid://bwjlqsa76cite" path="res://_assets/effects/particle.png" id="1_mei2u"]
 
 [sub_resource type="Curve" id="Curve_74rsq"]
-_data = [Vector2(0.0170455, 0.0674158), 0.0, -0.198699, 0, 0, Vector2(0.544643, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.00471698, 0.842697), 0.0, -0.198699, 0, 0, Vector2(0.636792, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 emitting = false
-amount = 10
+amount = 30
 texture = ExtResource("1_mei2u")
+lifetime = 0.7
 one_shot = true
 explosiveness = 1.0
+randomness = 1.0
 fixed_fps = 30
 draw_order = 1
 direction = Vector2(3, 300)
 spread = 90.0
 gravity = Vector2(0, 0)
 initial_velocity_max = 30.0
-angle_max = 360.0
+scale_amount_min = 3.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_74rsq")
 color = Color(0.550298, 0.68021, 0.720003, 1)

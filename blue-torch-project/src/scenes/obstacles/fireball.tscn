@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://56lusswsfrwy"]
+[gd_scene load_steps=8 format=3 uid="uid://56lusswsfrwy"]
 
 [ext_resource type="Texture2D" uid="uid://c8xdtao8d381u" path="res://_assets/sprites/objets/fireball.png" id="1_767fg"]
 [ext_resource type="Script" uid="uid://cvnrypt16w0wc" path="res://src/scripts/obstacles/fireball.gd" id="1_vrmy1"]
@@ -7,6 +7,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrmy1"]
 radius = 3.16228
+
+[sub_resource type="Curve" id="Curve_7abl2"]
+_data = [Vector2(0, 0.58427), 0.0, 0.0, 0, 0, Vector2(0.976415, 0.202247), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_uyx1c"]
 offsets = PackedFloat32Array(0.321678, 0.926573)
@@ -26,13 +30,15 @@ shape = SubResource("CircleShape2D_vrmy1")
 
 [node name="CPUParticles2D" parent="." instance=ExtResource("2_uyx1c")]
 amount = 40
-lifetime = 0.5
-angular_velocity_min = -301.8
-angular_velocity_max = 457.01
+emission_shape = 3
+emission_rect_extents = Vector2(0, 4)
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+scale_amount_curve = SubResource("Curve_7abl2")
+split_scale = false
 color_ramp = SubResource("Gradient_uyx1c")
 
 [node name="Light" type="PointLight2D" parent="."]
-visible = false
 z_index = 5
 position = Vector2(-9.53674e-07, 0.999999)
 scale = Vector2(0.371094, 0.349609)
