@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://0rbbwn13eylp"]
+
+[ext_resource type="Script" uid="uid://b1by8v8o1tobc" path="res://src/scripts/ui/health_bar.gd" id="1_sc5gu"]
+
+[node name="HealthBar" type="CanvasLayer"]
+script = ExtResource("1_sc5gu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Hearts" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 8

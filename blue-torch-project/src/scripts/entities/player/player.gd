@@ -12,6 +12,7 @@ class_name Player
 @onready var invulnerability_timer: Timer = $InvulnerabilityTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var player_inventory: inventory = $inventory
+@onready var health_bar: Hud = $HealthBar
 
 
 @export var health : float = 3.0
@@ -39,6 +40,7 @@ func _ready() -> void:
 	interactions.play()
 	base_pos = interactions.position
 	invulnerability_timer.timeout.connect(_on_invulnerability_timer_timeout)
+	health_bar.create_hearts(health)
 	
 	
 func _physics_process(delta: float) -> void:
@@ -81,6 +83,7 @@ func take_damage(amount : float, source : Node2D = null) -> void:
 		invulnerable = true
 		
 		health -= amount
+		health_bar.lose_heart()
 		animated_sprite_2d.stop()
 		animated_sprite_2d.play("hit")
 		print("player hit, health: ", health)
@@ -141,7 +144,8 @@ func handle_danger() -> void:
 			await get_tree().create_timer(0.5).timeout
 		if is_on_floor():
 			animated_sprite_2d.play("death")
-
+		for i in health:
+			health_bar.lose_heart()
 		await get_tree().create_timer(2.5).timeout
 		reset_player()
 
@@ -155,6 +159,7 @@ func reset_player() -> void:
 	global_position = LevelManager.loaded_level.START_POS_LEVEL
 	is_dead = false
 	health = 3.0
+	health_bar.create_hearts(health)
 	can_control = true
 	
 func play_icon(icon: String) -> void:

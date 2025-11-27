@@ -8,3 +8,5 @@ func _ready() -> void:
 	player.camera_2d.limit_bottom =736
 	player.camera_2d.limit_left = -1440
 	player.camera_2d.limit_top = -240
+
+	
