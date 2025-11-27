@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://b6po4c8kkyxmp"]
+[gd_scene load_steps=10 format=4 uid="uid://b6po4c8kkyxmp"]
 
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_kie7b"]
+[ext_resource type="Script" uid="uid://ciff5irptsq2q" path="res://src/scripts/objects/moving_plataform.gd" id="1_sxvwg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxvwg"]
 texture = ExtResource("1_kie7b")
@@ -219,13 +220,32 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 296), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_f0vn2"]
+resource_name = "second_elevator"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -548), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f0vn2"]
 _data = {
 &"RESET": SubResource("Animation_sxvwg"),
-&"first_elevator": SubResource("Animation_kie7b")
+&"first_elevator": SubResource("Animation_kie7b"),
+&"second_elevator": SubResource("Animation_f0vn2")
 }
 
 [node name="MovingPlataform" type="Node2D"]
+script = ExtResource("1_sxvwg")
 
 [node name="Plataform" type="AnimatableBody2D" parent="."]
 
@@ -241,4 +261,3 @@ shape = SubResource("RectangleShape2D_kie7b")
 libraries = {
 &"": SubResource("AnimationLibrary_f0vn2")
 }
-autoplay = "first_elevator"

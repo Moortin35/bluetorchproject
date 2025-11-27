@@ -62,6 +62,7 @@ position = Vector2(0, -23)
 shape = SubResource("RectangleShape2D_nusxi")
 
 [node name="OpenDoor" type="Sprite2D" parent="."]
+z_index = 7
 position = Vector2(16, 0)
 texture = ExtResource("1_cl3r7")
 region_enabled = true
