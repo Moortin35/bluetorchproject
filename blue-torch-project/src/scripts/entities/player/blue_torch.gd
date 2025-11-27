@@ -9,11 +9,13 @@ class_name BlueTorch
 #color de luz
 var normal_color: Color = Color(0.8, 0.8, 1)
 var dash_color: Color = Color(1, 3, 3)
+var dead_color: Color = Color(1, 2, 10)
 var target_color: Color = normal_color
 
 #tamaño de luz
 var normal_escala: float = 0.5
 var scaled_dash_cooldown: float = 0.3
+var dead_escala = 0
 var target_escala: float = normal_escala
 
 
@@ -44,16 +46,23 @@ func _on_flicker_timer_timeout() -> void:
 	point_light_2d.energy = clamp(base_energy + random_energy, 0.0, 1.0)
 
 func update(delta:float):
-	point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
-	point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 5 * delta)
-	point_light_2d_2.texture_scale = lerp(point_light_2d_2.texture_scale, target_escala, 5 * delta)
-	
-	#tamaño y color de antorcha
-	if(character.dash.can_dash):
-		cambiar_color_y_tamanio_luz_antorcha(normal_color,normal_escala)
+	if(character.is_dead):
+		cambiar_color_y_tamanio_luz_antorcha(dead_color,dead_escala)
+		point_light_2d.color = point_light_2d.color.lerp(target_color, 3 * delta)
+		point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 3 * delta)
+		point_light_2d_2.texture_scale = lerp(point_light_2d_2.texture_scale, target_escala, 3 * delta)
 	else:
-		cambiar_color_y_tamanio_luz_antorcha(dash_color ,scaled_dash_cooldown)
+		point_light_2d.color = point_light_2d.color.lerp(target_color, 5 * delta)
+		point_light_2d.texture_scale = lerp(point_light_2d.texture_scale, target_escala, 5 * delta)
+		point_light_2d_2.texture_scale = lerp(point_light_2d_2.texture_scale, target_escala, 5 * delta)
+	#tamaño y color de antorcha
+		if(character.dash.can_dash):
+			cambiar_color_y_tamanio_luz_antorcha(normal_color,normal_escala)
+		else:
+			cambiar_color_y_tamanio_luz_antorcha(dash_color ,scaled_dash_cooldown)
 	
+
+
 	#particulas antorcha
 	spawn_torch_particles(delta)
 	

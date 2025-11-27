@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="3_pdbas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88wpe"]
-size = Vector2(17, 10)
+size = Vector2(12, 7)
 
 [node name="Spike" type="Node2D"]
 script = ExtResource("1_a1ks0")
@@ -19,5 +19,5 @@ region_rect = Rect2(64, 272, 16, 16)
 [node name="DangerZone" parent="." instance=ExtResource("3_pdbas")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
-position = Vector2(0, 3)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_88wpe")

@@ -46,6 +46,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed("interact"):
 	#	AudioControler.play_land()
+	blue_torch.update(delta)
 	if DialogueManager.is_dialoge_active:
 		velocity += get_gravity() * delta
 		velocity.x = 0
@@ -75,7 +76,6 @@ func _physics_process(delta: float) -> void:
 		dash.update(delta)
 	move_and_slide()
 	
-	blue_torch.update(delta)
 	update_animation_player()
 
 func take_damage(amount : float, source : Node2D = null) -> void:
