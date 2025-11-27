@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=67 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="2_flerx"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
 [ext_resource type="PackedScene" uid="uid://56lusswsfrwy" path="res://src/scenes/obstacles/fireball.tscn" id="21_sxj84"]
 [ext_resource type="PackedScene" uid="uid://b6po4c8kkyxmp" path="res://src/scenes/objets/moving_plataform.tscn" id="22_sxj84"]
+[ext_resource type="PackedScene" uid="uid://calqybio8yhng" path="res://src/scenes/objets/lever.tscn" id="23_ril6c"]
+[ext_resource type="PackedScene" uid="uid://cqtku1pf3731h" path="res://src/scenes/objets/stick_lever.tscn" id="24_ck20o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaiti"]
 texture = ExtResource("2_flerx")
@@ -622,7 +624,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(157, 379)
+position = Vector2(155, 372)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -711,7 +713,7 @@ position = Vector2(368, 360)
 
 [node name="key" parent="." instance=ExtResource("14_ctanu")]
 z_index = 8
-position = Vector2(1078, 606)
+position = Vector2(1048, 604)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -926,6 +928,7 @@ shape = SubResource("CapsuleShape2D_vaiti")
 [node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
 z_index = 5
 position = Vector2(1009, 368)
+metadata/_edit_lock_ = true
 
 [node name="BreakableWall" parent="." instance=ExtResource("17_6xe2p")]
 z_index = 8
@@ -967,5 +970,28 @@ position = Vector2(274, 393)
 animation = "first_elevator"
 
 [node name="MovingPlataform2" parent="." instance=ExtResource("22_sxj84")]
-position = Vector2(-68, 440)
+position = Vector2(-63, 428)
 animation = "second_elevator"
+_id = 1
+_on = false
+
+[node name="laver2" parent="." instance=ExtResource("23_ril6c")]
+z_index = 5
+position = Vector2(-1387, -88)
+broken = false
+_id = 2
+
+[node name="laver" parent="." instance=ExtResource("23_ril6c")]
+z_index = 5
+position = Vector2(17, 392)
+_id = 1
+
+[node name="stick_laver" parent="." instance=ExtResource("24_ck20o")]
+z_index = 5
+position = Vector2(-70, 411)
+
+[node name="MovingPlataform3" parent="." instance=ExtResource("22_sxj84")]
+position = Vector2(1158, 267)
+animation = "second_elevator"
+_id = 2
+_on = false

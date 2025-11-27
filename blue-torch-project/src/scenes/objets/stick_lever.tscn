@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqtku1pf3731h"]
+
+[ext_resource type="Script" uid="uid://dx1bibyhj6rr7" path="res://src/scripts/objects/stick_lever.gd" id="1_ha475"]
+[ext_resource type="Texture2D" uid="uid://ccuinapnqjmb1" path="res://_assets/sprites/items/lever_sprite.png" id="2_ltimg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od41h"]
+size = Vector2(16, 11)
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_ha475")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_od41h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ltimg")
+hframes = 4
+frame = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

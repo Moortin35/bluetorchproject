@@ -1,7 +1,5 @@
 extends Level
 
-var npc = null
-
 func _ready() -> void:
 	level_data = LevelManager.get_level_by_id(level_id)
 	player.camera_2d.limit_right = 1792

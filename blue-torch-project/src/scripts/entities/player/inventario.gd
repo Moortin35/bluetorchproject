@@ -3,12 +3,15 @@ extends Node2D
 class_name inventory
 
 @onready var keys : int = 0
+@onready var items = []
 
-func add_a_key():
-	keys += 1
 	
-func remove_a_key():
-	keys -= 1
+func add_item(item):
+	items.append(item)
 	
-func do_i_have_keys():
-	return keys > 0
+func remove_item(item):
+	items.erase(item)
+	
+func do_i_have(item):
+	return items.has(item)
+	

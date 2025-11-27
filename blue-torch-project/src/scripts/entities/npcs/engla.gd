@@ -7,9 +7,13 @@ func _ready() -> void:
 	super._ready()
 	icon = "talk"
 	animated_sprite_2d.play("idle")
-	get_parent().npc = self
+	GlobalSignals.key_taken.connect(_on_key_taken)
 	
 func _process(_delta: float) -> void:
 	if can_i_interact():
 		AudioControler.play_aaa()
 		DialogueManager.show_dialogue_balloon(ENGLA)
+		
+func _on_key_taken():
+	queue_free()  
+		
