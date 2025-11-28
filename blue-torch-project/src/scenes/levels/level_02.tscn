@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=69 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="2_flerx"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://56lusswsfrwy" path="res://src/scenes/obstacles/fireball.tscn" id="21_sxj84"]
 [ext_resource type="PackedScene" uid="uid://b6po4c8kkyxmp" path="res://src/scenes/objets/moving_plataform.tscn" id="22_sxj84"]
 [ext_resource type="PackedScene" uid="uid://calqybio8yhng" path="res://src/scenes/objets/lever.tscn" id="23_ril6c"]
-[ext_resource type="PackedScene" uid="uid://cqtku1pf3731h" path="res://src/scenes/objets/stick_lever.tscn" id="24_ck20o"]
+[ext_resource type="PackedScene" uid="uid://cqtku1pf3731h" path="res://src/scenes/objets/broken_lever.tscn" id="24_ck20o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaiti"]
 texture = ExtResource("2_flerx")
@@ -626,7 +626,6 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-
 position = Vector2(644, 364)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
@@ -837,20 +836,20 @@ animation = "second_elevator"
 _id = 1
 _on = false
 
-[node name="laver2" parent="." instance=ExtResource("23_ril6c")]
+[node name="SecondLever" parent="." instance=ExtResource("23_ril6c")]
 z_index = 5
 position = Vector2(-1387, -88)
 broken = false
 _id = 2
 
-[node name="laver" parent="." instance=ExtResource("23_ril6c")]
+[node name="FirstLever" parent="." instance=ExtResource("23_ril6c")]
 z_index = 5
 position = Vector2(17, 392)
 _id = 1
 
-[node name="stick_laver" parent="." instance=ExtResource("24_ck20o")]
+[node name="BrokenLever" parent="." instance=ExtResource("24_ck20o")]
 z_index = 5
-position = Vector2(-70, 411)
+position = Vector2(-1373.62, 703.132)
 
 [node name="MovingPlataform3" parent="." instance=ExtResource("22_sxj84")]
 position = Vector2(1158, 267)

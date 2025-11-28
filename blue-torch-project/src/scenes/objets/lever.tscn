@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7avf"]
 size = Vector2(40, 22)
 
-[node name="lever" type="Area2D"]
+[node name="Lever" type="Area2D"]
 collision_mask = 8
 script = ExtResource("1_8crha")
 
