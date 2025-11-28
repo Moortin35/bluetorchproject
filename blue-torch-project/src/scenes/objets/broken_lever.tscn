@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqtku1pf3731h"]
+[gd_scene load_steps=5 format=3 uid="uid://cqtku1pf3731h"]
 
 [ext_resource type="Script" uid="uid://dx1bibyhj6rr7" path="res://src/scripts/objects/stick_lever.gd" id="1_ha475"]
 [ext_resource type="Texture2D" uid="uid://ccuinapnqjmb1" path="res://_assets/sprites/items/lever_sprite.png" id="2_ltimg"]
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="3_nhcw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_od41h"]
 size = Vector2(16, 11)
@@ -18,5 +19,15 @@ shape = SubResource("RectangleShape2D_od41h")
 texture = ExtResource("2_ltimg")
 hframes = 4
 frame = 3
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.180762, 0.188672)
+color = Color(0.800319, 0.951877, 0.909885, 1)
+energy = 2.0
+range_layer_min = -1
+range_layer_max = 10
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("3_nhcw1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
