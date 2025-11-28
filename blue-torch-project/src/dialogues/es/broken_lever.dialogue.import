@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://caynhvjg3i00s"
+path="res://.godot/imported/broken_lever.dialogue-2aa1c440d9be94c644197100b87b8a45.tres"
+
+[deps]
+
+source_file="res://src/dialogues/es/broken_lever.dialogue"
+dest_files=["res://.godot/imported/broken_lever.dialogue-2aa1c440d9be94c644197100b87b8a45.tres"]
+
+[params]
+
+defaults=true

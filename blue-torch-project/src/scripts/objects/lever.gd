@@ -4,7 +4,7 @@ extends interactive
 @export var broken = true
 @export var _id = 0
 
-const PALANCA_ROTA = preload("res://src/dialogues/es/palanca_rota.dialogue")
+const BROKEN_LEVER = preload("res://src/dialogues/es/broken_lever.dialogue")
 var on = false
 
 
@@ -23,13 +23,13 @@ func _process(_delta: float) -> void:
 				broken = false
 				player.player_inventory.remove_item('lever')
 				sprite_2d.frame = 0
-				DialogueManager.show_dialogue_balloon(PALANCA_ROTA,"arreglar")
+				DialogueManager.show_dialogue_balloon(BROKEN_LEVER,"fixed")
 			else:
-				DialogueManager.show_dialogue_balloon(PALANCA_ROTA,"rota")
+				DialogueManager.show_dialogue_balloon(BROKEN_LEVER,"broken")
 		else:
-			mover_palanca()
+			use_lever()
 			
-func mover_palanca():
+func use_lever():
 	if on:
 		on = false
 		sprite_2d.frame = 0
@@ -38,7 +38,7 @@ func mover_palanca():
 		on = true
 		sprite_2d.frame = 1
 		print("se prendio")
-	GlobalSignals.emit_signal("the_lever_moved",_id,on)
+	GlobalSignals.emit_signal("pulled_lever",_id,on)
 		
 		
 	

@@ -630,7 +630,7 @@ level_id = 1
 START_POS_LEVEL = Vector2(26, 640)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-position = Vector2(1181.36, 150.091)
+position = Vector2(1197.36, 151.267)
 
 [node name="Obstacles" type="Node2D" parent="."]
 

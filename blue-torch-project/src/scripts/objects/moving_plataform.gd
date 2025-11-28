@@ -7,7 +7,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalSignals.the_lever_moved.connect(_on_elevator)
+	GlobalSignals.pulled_lever.connect(_on_elevator)
 	if _on:
 		animation_player.play(animation)
 	
