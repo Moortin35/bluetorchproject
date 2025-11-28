@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://chpybd1xtq2dx"]
+
+[ext_resource type="PackedScene" uid="uid://t0dt8bho730v" path="res://src/scenes/effects/fire_bowl_particles.tscn" id="1_s05wi"]
+[ext_resource type="Texture2D" uid="uid://vyibjnw6lct6" path="res://_assets/sprites/objets/fire_bowl.png" id="1_upk8h"]
+[ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="3_ojj13"]
+
+[sub_resource type="Curve" id="Curve_ojj13"]
+_data = [Vector2(0.0566038, 0.831461), 0.0, 0.0, 0, 0, Vector2(0.985849, 0.359551), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s05wi"]
+radius = 56.0089
+
+[node name="Fire_Bowl" type="Node2D"]
+
+[node name="fire_bowl_particles" parent="." instance=ExtResource("1_s05wi")]
+position = Vector2(0, -1)
+emission_sphere_radius = 10.0
+scale_amount_curve = SubResource("Curve_ojj13")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_s05wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_upk8h")
+
+[node name="PointLight2D_2" type="PointLight2D" parent="."]
+position = Vector2(3.8147e-06, -7.62939e-06)
+scale = Vector2(1.13301, 1.00293)
+range_layer_min = -1
+range_layer_max = 10
+texture = ExtResource("3_ojj13")
+texture_scale = 0.5

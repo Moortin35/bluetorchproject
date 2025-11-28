@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0dt8bho730v"]
+
+[ext_resource type="Texture2D" uid="uid://bwjlqsa76cite" path="res://_assets/effects/particle.png" id="1_qsepk"]
+
+[sub_resource type="Gradient" id="Gradient_78g6y"]
+offsets = PackedFloat32Array(0.311828, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0.741176, 1)
+
+[node name="fire_bowl_particles" type="CPUParticles2D"]
+amount = 300
+texture = ExtResource("1_qsepk")
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, -300)
+scale_amount_max = 5.0
+color = Color(0.270602, 0.255501, 0.608428, 1)
+color_ramp = SubResource("Gradient_78g6y")
