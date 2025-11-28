@@ -43,7 +43,7 @@ label_settings = SubResource("LabelSettings_q3cwv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="exit_button" type="Button" parent="MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
+[node name="next_level_button" type="Button" parent="MarginContainer/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
@@ -52,4 +52,4 @@ theme_override_fonts/font = ExtResource("2_m12ob")
 theme_override_font_sizes/font_size = 64
 text = "Continuar"
 
-[connection signal="pressed" from="MarginContainer/CenterContainer/PanelContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/PanelContainer/VBoxContainer/next_level_button" to="." method="_on_next_level_button_pressed"]

@@ -1,14 +1,9 @@
 extends CanvasLayer
 
-@onready var next_level: CanvasLayer = $"."
+@onready var exit_door: Area2D = $".."
 
-
-func _on_exit_button_pressed() -> void:
+func _on_next_level_button_pressed() -> void:
 	get_tree().paused = false
-	LevelManager.load_level(2)
+	LevelManager.load_level(exit_door.level_to_pass)
 	AudioControler.stop_music()
 	AudioControler.play_lvl1()
-
-func mostrar_menu():
-	next_level.show()
-	get_tree().paused = true

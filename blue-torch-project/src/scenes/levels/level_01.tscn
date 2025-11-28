@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=66 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/levels/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="5_vs2nq"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="6_a8w1q"]
 [ext_resource type="PackedScene" uid="uid://c0yd4nvhqc5h1" path="res://src/scenes/obstacles/8_spikes.tscn" id="6_srko8"]
-[ext_resource type="PackedScene" uid="uid://bn51wahv32b84" path="res://src/scenes/ui/next_level.tscn" id="6_tuy8k"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/objets/exit_door.tscn" id="7_38pcr"]
 [ext_resource type="PackedScene" uid="uid://cs77m84ku04el" path="res://src/scenes/obstacles/3_spikes.tscn" id="7_jxedu"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="8_jxedu"]
@@ -631,7 +630,7 @@ level_id = 1
 START_POS_LEVEL = Vector2(26, 640)
 
 [node name="Player" parent="." instance=ExtResource("3_jh75y")]
-position = Vector2(26, 640)
+position = Vector2(1181.36, 150.091)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -751,10 +750,8 @@ position = Vector2(1116, 160)
 color = Color(0, 0, 0, 1)
 
 [node name="ExitDoor" parent="." instance=ExtResource("7_38pcr")]
-z_index = 7
 position = Vector2(1240, 162)
-
-[node name="NextLevel" parent="." instance=ExtResource("6_tuy8k")]
+level_to_pass = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_1xr25")]
 visible = false

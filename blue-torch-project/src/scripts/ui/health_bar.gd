@@ -7,7 +7,7 @@ class_name Hud
 var texture_heart = preload("res://_assets/sprites/icons/heart_icon.png")
 var array_hearts: Array[TextureRect] = []
 
-func create_hearts(hearts_amount: int):
+func create_hearts(hearts_amount: float):
 	for i in hearts_amount:
 		var texture_rect = TextureRect.new()
 		texture_rect.custom_minimum_size = Vector2(48,48)
