@@ -829,7 +829,6 @@ z_index = 5
 tile_set = SubResource("TileSet_faiak")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
