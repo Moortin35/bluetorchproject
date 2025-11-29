@@ -69,6 +69,7 @@ animations = [{
 }]
 
 [node name="torch" type="Node2D"]
+z_index = 7
 script = ExtResource("1_bfogg")
 
 [node name="Light" type="PointLight2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b6po4c8kkyxmp"]
+[gd_scene load_steps=11 format=4 uid="uid://b6po4c8kkyxmp"]
 
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_kie7b"]
 [ext_resource type="Script" uid="uid://ciff5irptsq2q" path="res://src/scripts/objects/moving_plataform.gd" id="1_sxvwg"]
@@ -231,17 +231,35 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.3, 0.533333, 0.966667, 6, 6.16667, 6.43333, 7, 12),
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.566667, 0.966667, 6, 6.2, 6.43333, 7, 12),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1, 1), Vector2(-1, 1), Vector2(0, 0), Vector2(0, 0), Vector2(0, -548), Vector2(-1, -549), Vector2(1, -549), Vector2(0, -548), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5mj4h"]
+resource_name = "third_elevator"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.566667, 0.966667, 6, 6.2, 6.43333, 7, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(-1, 1), Vector2(0, 0), Vector2(0, 0), Vector2(0, -400), Vector2(-1, -401), Vector2(1, -401), Vector2(0, -400), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f0vn2"]
 _data = {
 &"RESET": SubResource("Animation_sxvwg"),
 &"first_elevator": SubResource("Animation_kie7b"),
-&"second_elevator": SubResource("Animation_f0vn2")
+&"second_elevator": SubResource("Animation_f0vn2"),
+&"third_elevator": SubResource("Animation_5mj4h")
 }
 
 [node name="MovingPlataform" type="Node2D"]
