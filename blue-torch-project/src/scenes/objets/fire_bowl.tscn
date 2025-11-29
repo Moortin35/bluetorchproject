@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://chpybd1xtq2dx"]
+[gd_scene load_steps=8 format=3 uid="uid://chpybd1xtq2dx"]
 
+[ext_resource type="Script" uid="uid://vxccr426nng0" path="res://src/scripts/objects/fire_bowl.gd" id="1_rlf18"]
 [ext_resource type="PackedScene" uid="uid://t0dt8bho730v" path="res://src/scenes/effects/fire_bowl_particles.tscn" id="1_s05wi"]
 [ext_resource type="Texture2D" uid="uid://vyibjnw6lct6" path="res://_assets/sprites/objets/fire_bowl.png" id="1_upk8h"]
+[ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_0yot2"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="3_ojj13"]
 
 [sub_resource type="Curve" id="Curve_ojj13"]
@@ -12,13 +14,55 @@ point_count = 2
 radius = 56.0089
 
 [node name="Fire_Bowl" type="Node2D"]
+script = ExtResource("1_rlf18")
 
-[node name="fire_bowl_particles" parent="." instance=ExtResource("1_s05wi")]
-position = Vector2(0, -1)
+[node name="particles" type="Node2D" parent="."]
+
+[node name="fire_bowl_particles5" parent="particles" instance=ExtResource("1_s05wi")]
+position = Vector2(0, -2)
+emitting = false
+amount = 20
 emission_sphere_radius = 10.0
 scale_amount_curve = SubResource("Curve_ojj13")
 
+[node name="fire_bowl_particles4" parent="particles" instance=ExtResource("1_s05wi")]
+position = Vector2(0, -1)
+emitting = false
+amount = 20
+emission_sphere_radius = 10.0
+scale_amount_curve = SubResource("Curve_ojj13")
+
+[node name="fire_bowl_particles3" parent="particles" instance=ExtResource("1_s05wi")]
+position = Vector2(0, -1)
+emitting = false
+amount = 20
+emission_sphere_radius = 10.0
+scale_amount_curve = SubResource("Curve_ojj13")
+
+[node name="fire_bowl_particles2" parent="particles" instance=ExtResource("1_s05wi")]
+position = Vector2(0, -2)
+emitting = false
+amount = 20
+emission_sphere_radius = 10.0
+scale_amount_curve = SubResource("Curve_ojj13")
+
+[node name="fire_bowl_particles" parent="particles" instance=ExtResource("1_s05wi")]
+position = Vector2(0, -1)
+emitting = false
+amount = 20
+emission_sphere_radius = 10.0
+scale_amount_curve = SubResource("Curve_ojj13")
+
+[node name="ready_particles" parent="." instance=ExtResource("2_0yot2")]
+position = Vector2(0, 1)
+amount = 70
+lifetime = 3.0
+gravity = Vector2(0, -80)
+color = Color(0.405916, 0.681541, 0.942105, 1)
+
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 2)
@@ -26,11 +70,19 @@ shape = SubResource("CircleShape2D_s05wi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_upk8h")
+metadata/_edit_lock_ = true
 
-[node name="PointLight2D_2" type="PointLight2D" parent="."]
-position = Vector2(3.8147e-06, -7.62939e-06)
+[node name="light" type="PointLight2D" parent="."]
+position = Vector2(3.8147e-06, -3.00001)
 scale = Vector2(1.13301, 1.00293)
 range_layer_min = -1
 range_layer_max = 10
 texture = ExtResource("3_ojj13")
-texture_scale = 0.5
+texture_scale = 0.01
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -802,7 +802,7 @@ metadata/_edit_lock_ = true
 position = Vector2(56, 100)
 
 [node name="Fire_Bowl2" parent="." instance=ExtResource("5_v8wyi")]
-position = Vector2(263, 100)
+position = Vector2(264, 100)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
