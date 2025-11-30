@@ -3,41 +3,40 @@ extends Node2D
 @onready var light: PointLight2D = $light
 @onready var particles: Node2D = $particles
 @onready var ready_particles: CPUParticles2D = $ready_particles
+@onready var light_2: PointLight2D = $light2
+
+signal i_finished
 
 var player_inside := false
 var contador := 0
-var limite := 50                  # tu límite
-var partes := 5                   # dividir en 5 secciones
-var incremento_luz := 0.02
+var limite := 60
+var partes := 5
+var incremento_luz := 0.01
 
 var tiempo_acumulado := 0.0
-var intervalo := 0.1              # velocidad del contador
+var intervalo := 0.15
 
-var siguiente_meta := 0           # se calculará en _ready()
-var indice_iteracion := 1         # 1 = primera iteración, 2 = segunda, etc.
+var siguiente_meta := 0
+var indice_iteracion := 1    
 
 func _ready():
 	siguiente_meta = limite / partes
 
 func _process(delta):
 	if player_inside and contador < limite:
+		light_2.show()
 		tiempo_acumulado += delta
-
 		if tiempo_acumulado >= intervalo:
 			tiempo_acumulado = 0.0
 			contador += 1
 			light.texture_scale += incremento_luz
-
-			# Aquí sigue avisando por cada fracción, si quieres mantenerlo:
 			if contador == siguiente_meta:
-				print("Iteración ", indice_iteracion, " alcanzada")
-				particles.get_child(indice_iteracion-1).emitting = true
+				particles.get_node(str(indice_iteracion)).emitting = true
 				indice_iteracion += 1
 				siguiente_meta += limite / partes
-
-			# Mensaje final al llegar al límite
 			if contador == limite:
-				print("Meta alcanzada")
+				light_2.hide()
+				i_finished.emit()
 				ready_particles.emitting = true
 				
 				
@@ -47,4 +46,5 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("player"):
+		light_2.hide()
 		player_inside = false

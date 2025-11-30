@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://bf0idwlilihbt"]
+
+[ext_resource type="Script" uid="uid://c8as1nj2dmwd3" path="res://src/scripts/objects/gate.gd" id="1_67uuo"]
+[ext_resource type="Texture2D" uid="uid://b85nf5m5b6lxe" path="res://_assets/sprites/objets/gate.png" id="2_hb1il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6j0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txhdw"]
+atlas = ExtResource("2_hb1il")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g7mk"]
+atlas = ExtResource("2_hb1il")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv862"]
+atlas = ExtResource("2_hb1il")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12jk4"]
+atlas = ExtResource("2_hb1il")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwmh2"]
+atlas = ExtResource("2_hb1il")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tstw"]
+atlas = ExtResource("2_hb1il")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_niixx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txhdw")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g7mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv862")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12jk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwmh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tstw")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Gate" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_67uuo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v6j0o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
+sprite_frames = SubResource("SpriteFrames_niixx")
+animation = &"open"
+autoplay = "close"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://chpybd1xtq2dx"]
+[gd_scene load_steps=9 format=3 uid="uid://chpybd1xtq2dx"]
 
 [ext_resource type="Script" uid="uid://vxccr426nng0" path="res://src/scripts/objects/fire_bowl.gd" id="1_rlf18"]
 [ext_resource type="PackedScene" uid="uid://t0dt8bho730v" path="res://src/scenes/effects/fire_bowl_particles.tscn" id="1_s05wi"]
 [ext_resource type="Texture2D" uid="uid://vyibjnw6lct6" path="res://_assets/sprites/objets/fire_bowl.png" id="1_upk8h"]
 [ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_0yot2"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="3_ojj13"]
+[ext_resource type="Texture2D" uid="uid://dvp68gk4uc678" path="res://_assets/effects/ring-light.png" id="6_jgubd"]
 
 [sub_resource type="Curve" id="Curve_ojj13"]
 _data = [Vector2(0.0566038, 0.831461), 0.0, 0.0, 0, 0, Vector2(0.985849, 0.359551), 0.0, 0.0, 0, 0]
@@ -18,45 +19,53 @@ script = ExtResource("1_rlf18")
 
 [node name="particles" type="Node2D" parent="."]
 
-[node name="fire_bowl_particles5" parent="particles" instance=ExtResource("1_s05wi")]
+[node name="5" parent="particles" instance=ExtResource("1_s05wi")]
 position = Vector2(0, -2)
 emitting = false
-amount = 20
+amount = 40
 emission_sphere_radius = 10.0
 scale_amount_curve = SubResource("Curve_ojj13")
+color = Color(0, 0.168627, 1, 1)
 
-[node name="fire_bowl_particles4" parent="particles" instance=ExtResource("1_s05wi")]
+[node name="4" parent="particles" instance=ExtResource("1_s05wi")]
 position = Vector2(0, -1)
 emitting = false
 amount = 20
 emission_sphere_radius = 10.0
 scale_amount_curve = SubResource("Curve_ojj13")
+color = Color(0, 0.168627, 1, 1)
 
-[node name="fire_bowl_particles3" parent="particles" instance=ExtResource("1_s05wi")]
+[node name="3" parent="particles" instance=ExtResource("1_s05wi")]
 position = Vector2(0, -1)
 emitting = false
-amount = 20
+amount = 8
 emission_sphere_radius = 10.0
 scale_amount_curve = SubResource("Curve_ojj13")
+color = Color(0, 0.168627, 1, 1)
 
-[node name="fire_bowl_particles2" parent="particles" instance=ExtResource("1_s05wi")]
+[node name="2" parent="particles" instance=ExtResource("1_s05wi")]
 position = Vector2(0, -2)
 emitting = false
-amount = 20
+amount = 8
 emission_sphere_radius = 10.0
 scale_amount_curve = SubResource("Curve_ojj13")
+color = Color(0, 0.168627, 1, 1)
 
-[node name="fire_bowl_particles" parent="particles" instance=ExtResource("1_s05wi")]
+[node name="1" parent="particles" instance=ExtResource("1_s05wi")]
 position = Vector2(0, -1)
 emitting = false
-amount = 20
+amount = 1
 emission_sphere_radius = 10.0
 scale_amount_curve = SubResource("Curve_ojj13")
+color = Color(0, 0.168627, 1, 1)
 
 [node name="ready_particles" parent="." instance=ExtResource("2_0yot2")]
 position = Vector2(0, 1)
 amount = 70
-lifetime = 3.0
+lifetime = 2.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(10, 300)
 gravity = Vector2(0, -80)
 color = Color(0.405916, 0.681541, 0.942105, 1)
 
@@ -71,6 +80,16 @@ shape = SubResource("CircleShape2D_s05wi")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_upk8h")
 metadata/_edit_lock_ = true
+
+[node name="light2" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-4.29153e-06, 2)
+scale = Vector2(33.4347, 33.4347)
+energy = 3.0
+range_layer_min = -1
+range_layer_max = 10
+texture = ExtResource("6_jgubd")
+texture_scale = 0.01
 
 [node name="light" type="PointLight2D" parent="."]
 position = Vector2(3.8147e-06, -3.00001)

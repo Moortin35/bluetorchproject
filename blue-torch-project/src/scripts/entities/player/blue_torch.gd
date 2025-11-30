@@ -13,8 +13,8 @@ var dead_color: Color = Color(1, 2, 10)
 var target_color: Color = normal_color
 
 #tamaño de luz
-var normal_escala: float = 0.5
-var scaled_dash_cooldown: float = 0.3
+var normal_escala: float = 0.3
+var scaled_dash_cooldown: float = 0.2
 var dead_escala = 0
 var target_escala: float = normal_escala
 
