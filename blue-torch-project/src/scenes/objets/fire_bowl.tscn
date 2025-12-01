@@ -12,7 +12,7 @@ _data = [Vector2(0.0566038, 0.831461), 0.0, 0.0, 0, 0, Vector2(0.985849, 0.35955
 point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s05wi"]
-radius = 56.0089
+radius = 48.0
 
 [node name="Fire_Bowl" type="Node2D"]
 script = ExtResource("1_rlf18")
@@ -84,8 +84,7 @@ metadata/_edit_lock_ = true
 [node name="light2" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(-4.29153e-06, 2)
-scale = Vector2(33.4347, 33.4347)
-energy = 1.5
+scale = Vector2(27.9635, 28.5714)
 range_layer_min = -1
 range_layer_max = 10
 texture = ExtResource("6_jgubd")
@@ -94,6 +93,8 @@ texture_scale = 0.01
 [node name="light" type="PointLight2D" parent="."]
 position = Vector2(3.8147e-06, -3.00001)
 scale = Vector2(1.13301, 1.00293)
+color = Color(0.258824, 0.501961, 0.905882, 1)
+energy = 1.5
 range_layer_min = -1
 range_layer_max = 10
 texture = ExtResource("3_ojj13")

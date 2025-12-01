@@ -776,7 +776,7 @@ script = ExtResource("1_h8f8y")
 level_id = 3
 
 [node name="Player" parent="." instance=ExtResource("2_xk343")]
-position = Vector2(25, 142)
+position = Vector2(26, 141)
 
 [node name="Boss" parent="." instance=ExtResource("7_w6d1w")]
 position = Vector2(286, 119)
@@ -807,13 +807,13 @@ tile_set = SubResource("TileSet_mqmd6")
 metadata/_edit_lock_ = true
 
 [node name="Fire_Bowl" parent="." instance=ExtResource("5_v8wyi")]
-position = Vector2(56, 100)
+position = Vector2(56, 76)
 
 [node name="Fire_Bowl2" parent="." instance=ExtResource("5_v8wyi")]
-position = Vector2(264, 100)
+position = Vector2(264, 76)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.0962048, 0.0962047, 0.0962047, 1)
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_dkxww")]
 visible = false
@@ -829,6 +829,13 @@ min_x = 16.0
 max_x = 327.0
 
 [node name="brick" parent="derrumbe" instance=ExtResource("10_n300k")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24, 146)
+scale = Vector2(1.13393, 1.02662)
+texture = ExtResource("3_fbaaq")
+region_enabled = true
+region_rect = Rect2(289, 149, 14, 27)
 
 [connection signal="spawn_bricks" from="Boss" to="derrumbe" method="_on_boss_spawn_bricks"]
 [connection signal="i_finished" from="Fire_Bowl" to="Boss" method="_on_fire_bowl_i_finished"]
