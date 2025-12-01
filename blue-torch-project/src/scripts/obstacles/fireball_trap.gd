@@ -4,11 +4,14 @@ extends Node2D
 @export var fire_rate: float = 1.5              
 @export var fireball_speed: float = 300.0
 @export var fireball_scene: PackedScene
-@export var fire_offset: float = 0.0           
+@export var fire_offset: float = 0.0
+@export var _on = true
+@export var _id = 0      
 
 var origin_position: Vector2
 
 func _ready():
+	GlobalSignals.pulled_lever.connect(_on_elevator)
 	origin_position = global_position
 	_start_firing()
 
@@ -18,7 +21,8 @@ func _start_firing() -> void:
 
 	# Disparo infinito con intervalo fijo
 	while true:
-		spawn_fireball()
+		if _on:
+			spawn_fireball()
 		await get_tree().create_timer(fire_rate).timeout
 
 func spawn_fireball() -> void:
@@ -33,3 +37,8 @@ func spawn_fireball() -> void:
 	fireball.speed = fireball_speed
 	fireball.max_distance = max_distance
 	fireball.start_position = global_position
+	
+func _on_elevator(id,on):
+	if _id == id:
+		print(on)
+		_on = !on

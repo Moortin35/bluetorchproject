@@ -18,9 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/obstacles/spike.tscn" id="16_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://dffar240roj74" path="res://src/scenes/objets/breakable_wall.tscn" id="17_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="17_883it"]
-[ext_resource type="PackedScene" uid="uid://d0unqqvb1goyg" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
+[ext_resource type="PackedScene" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="18_xwimy"]
-[ext_resource type="PackedScene" uid="uid://b1tkip4u2piot" path="res://src/scenes/obstacles/6_spikes.tscn" id="19_ck20o"]
+[ext_resource type="PackedScene" path="res://src/scenes/obstacles/6_spikes.tscn" id="19_ck20o"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/objets/exit_door.tscn" id="21_d8e8b"]
@@ -986,6 +986,7 @@ max_distance = 1800.0
 fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
+_id = 2
 
 [node name="fireball_trap2" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -109)
@@ -993,6 +994,7 @@ max_distance = 1800.0
 fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
+_id = 2
 
 [node name="fireball_trap3" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -147)
@@ -1001,6 +1003,7 @@ fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 fire_offset = 1.5
+_id = 2
 
 [node name="fireball_trap4" parent="." instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -167)
@@ -1009,6 +1012,7 @@ fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 fire_offset = 1.5
+_id = 2
 
 [node name="MovingPlataform1" parent="." instance=ExtResource("22_sxj84")]
 position = Vector2(274, 393)
