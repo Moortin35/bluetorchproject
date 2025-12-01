@@ -337,22 +337,22 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_0bcc8")
 }, {
-"duration": 0.5,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_1ias8")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_82jv3")
 }, {
-"duration": 0.5,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_36yvc")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_5am2v")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_bt3kl")
 }],
 "loop": false,
@@ -490,6 +490,8 @@ animation = &"lose track"
 sprite_frames = SubResource("SpriteFrames_q2hko")
 animation = &"death"
 autoplay = "idle"
+frame = 5
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -507,7 +509,7 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ghv56")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("10_qd5d8")]
-default_state = NodePath("charge")
+default_state = NodePath("idle")
 
 [node name="idle" type="Node" parent="StateMachine"]
 script = ExtResource("11_ew71p")
@@ -526,6 +528,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Timer_slam" type="Timer" parent="."]
+wait_time = 0.75
 one_shot = true
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

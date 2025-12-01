@@ -11,7 +11,8 @@ var player_inside := false
 var contador := 0
 var limite := 60
 var partes := 5
-var incremento_luz := 0.01
+var incremento_luz := 0.02
+
 
 var tiempo_acumulado := 0.0
 var intervalo := 0.15

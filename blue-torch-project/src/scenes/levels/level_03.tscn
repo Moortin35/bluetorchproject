@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://cmhgdrrurf4nd"]
+[gd_scene load_steps=54 format=4 uid="uid://cmhgdrrurf4nd"]
 
 [ext_resource type="Script" uid="uid://dh8mp6grmkt6i" path="res://src/scripts/levels/level_03.gd" id="1_h8f8y"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="2_xk343"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="6_dkxww"]
 [ext_resource type="PackedScene" uid="uid://bf0idwlilihbt" path="res://src/scenes/objets/gate.tscn" id="7_mqmd6"]
 [ext_resource type="PackedScene" uid="uid://bpsntwgoxd5ny" path="res://src/scenes/entities/enemies/boss.tscn" id="7_w6d1w"]
+[ext_resource type="Script" uid="uid://45ftgfatv13v" path="res://src/scripts/obstacles/derrumbe.gd" id="9_w6d1w"]
+[ext_resource type="PackedScene" uid="uid://b35u7lrfmoncu" path="res://src/scenes/objets/brick.tscn" id="10_n300k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fbaaq"]
 texture = ExtResource("4_fbaaq")
@@ -777,7 +779,7 @@ level_id = 3
 position = Vector2(25, 142)
 
 [node name="Boss" parent="." instance=ExtResource("7_w6d1w")]
-position = Vector2(182, 33)
+position = Vector2(286, 119)
 scale = Vector2(2.5, 2.5)
 
 [node name="tile map" type="Node2D" parent="."]
@@ -819,6 +821,16 @@ visible = false
 [node name="Gate" parent="." instance=ExtResource("7_mqmd6")]
 position = Vector2(162, 128)
 
+[node name="derrumbe" type="Node2D" parent="."]
+script = ExtResource("9_w6d1w")
+brick_scene = ExtResource("10_n300k")
+y_pos = 16.0
+min_x = 16.0
+max_x = 327.0
+
+[node name="brick" parent="derrumbe" instance=ExtResource("10_n300k")]
+
+[connection signal="spawn_bricks" from="Boss" to="derrumbe" method="_on_boss_spawn_bricks"]
 [connection signal="i_finished" from="Fire_Bowl" to="Boss" method="_on_fire_bowl_i_finished"]
 [connection signal="i_finished" from="Fire_Bowl" to="Gate" method="_on_fire_bowl_i_finished"]
 [connection signal="i_finished" from="Fire_Bowl2" to="Boss" method="_on_fire_bowl_2_i_finished"]

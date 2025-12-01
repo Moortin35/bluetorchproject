@@ -3,7 +3,6 @@ var levels : Array[LevelData]
 var main_scene : Node2D = null
 var loaded_level : Level = null
 
-
 func unload_level() -> void:
 	if is_instance_valid(loaded_level):
 		loaded_level.queue_free()
@@ -35,3 +34,6 @@ func get_level_by_id(level_id : int) -> LevelData :
 			level_returning = level
 			
 	return level_returning
+
+var shaking: bool = false
+var original_pos: Vector2

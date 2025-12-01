@@ -4,13 +4,15 @@ extends CharacterBody2D
 @onready var hitbox: Area2D = $Hitbox
 
 @onready var direction = -1
-@onready var charge_speed = 100
+@onready var charge_speed = 159
 
 @onready var interactions: AnimatedSprite2D = $interactions
 var fade_tween: Tween
 var base_pos: Vector2
 
 var health = 2
+
+signal spawn_bricks
 
 @onready var state_machine: StateMachine = $StateMachine
 
@@ -56,3 +58,7 @@ func _on_fire_bowl_2_i_finished() -> void:
 	health -= 1
 	if health == 0:
 		state_machine.change_to('death')
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and health > 0:
+		body.take_damage(1, self)

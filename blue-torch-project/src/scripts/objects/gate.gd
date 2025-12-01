@@ -9,6 +9,7 @@ var bowl_2 = false
 func _ready():
 	super._ready()
 	icon = "interact"
+	show_icon = false
 
 func _process(_delta: float) -> void:
 	if bowl_1 and  bowl_2:
@@ -19,9 +20,11 @@ func _process(_delta: float) -> void:
 func _on_fire_bowl_i_finished() -> void:
 	bowl_1 = true
 	if bowl_2:
+		show_icon = true
 		animated_sprite_2d.play("open")
 
 func _on_fire_bowl_2_i_finished() -> void:
 	bowl_2 = true
 	if bowl_1:
+		show_icon = true
 		animated_sprite_2d.play("open")

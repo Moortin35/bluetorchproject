@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b35u7lrfmoncu"]
+
+[ext_resource type="Script" uid="uid://6s8psiwolno0" path="res://src/scripts/objects/brick.gd" id="1_1g6ap"]
+[ext_resource type="Texture2D" uid="uid://cewjcyl420426" path="res://_assets/textures/objects/bricks.png" id="1_e48au"]
+[ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="2_1g6ap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88y52"]
+size = Vector2(9, 14)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+z_index = 5
+script = ExtResource("1_1g6ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e48au")
+hframes = 3
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_88y52")
+
+[node name="DangerZone" parent="." instance=ExtResource("2_1g6ap")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_88y52")

@@ -21,6 +21,7 @@ LevelManager="*res://src/scripts/manager/level_manager.gd"
 AudioControler="*res://src/scenes/sound/audio_controler.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalSignals="*res://src/scripts/manager/global_signals.gd"
+Globals="*res://src/scripts/manager/globals.gd"
 
 [dialogue_manager]
 

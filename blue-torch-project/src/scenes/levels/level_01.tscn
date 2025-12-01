@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://bom54ocao6cya"]
+[gd_scene load_steps=67 format=4 uid="uid://bom54ocao6cya"]
 
 [ext_resource type="Script" uid="uid://d0j3ukhefbbbs" path="res://src/scripts/levels/level_01.gd" id="1_fg8s7"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="3_jh75y"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://3rgoirw1vqcy" path="res://_assets/textures/parallax/level01/parallax_jailsmg_level01.png" id="12_vjvdn"]
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/textures/parallax/level01/parallax_jailsfg_level01.png" id="13_1xr25"]
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="16_1xr25"]
+[ext_resource type="PackedScene" uid="uid://b35u7lrfmoncu" path="res://src/scenes/objets/brick.tscn" id="17_srko8"]
 [ext_resource type="PackedScene" uid="uid://cw06x6b7cbgtv" path="res://src/scenes/entities/npcs/odd_man.tscn" id="17_vs2nq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srko8"]
@@ -748,6 +749,9 @@ position = Vector2(1116, 160)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment"]
 color = Color(0, 0, 0, 1)
+
+[node name="Ladrillo" parent="Enviroment" instance=ExtResource("17_srko8")]
+position = Vector2(1198, 77)
 
 [node name="ExitDoor" parent="." instance=ExtResource("7_38pcr")]
 position = Vector2(1240, 162)
