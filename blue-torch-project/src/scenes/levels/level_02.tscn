@@ -964,6 +964,9 @@ position = Vector2(-849, 712)
 [node name="6Spikes2" parent="Obstacles/Spikes/Group3" instance=ExtResource("19_ck20o")]
 position = Vector2(-992, 712)
 
+[node name="4Spikes" parent="Obstacles/Spikes" instance=ExtResource("17_ril6c")]
+position = Vector2(1136, 360)
+
 [node name="Enviroment" type="Node2D" parent="."]
 
 [node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
@@ -1044,6 +1047,3 @@ _id = 1
 [node name="BrokenLever" parent="." instance=ExtResource("24_ck20o")]
 z_index = 5
 position = Vector2(-1373.62, 703.132)
-
-[node name="4Spikes" parent="." instance=ExtResource("17_ril6c")]
-position = Vector2(1136, 360)
