@@ -13,7 +13,10 @@ config_version=5
 config/name="Blue Torch Project"
 run/main_scene="uid://c4ht5nop5g0df"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0.0142752, 0.0142752, 0.0142752, 1)
+boot_splash/image="uid://ch6vqicbowamv"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
