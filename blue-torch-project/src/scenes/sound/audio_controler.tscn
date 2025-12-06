@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bpa2ff3ld2ox7" path="res://_assets/sounds/effects/AAAAAAAA.mp3" id="9_ddx3r"]
 [ext_resource type="AudioStream" uid="uid://dxku6tbsx7pov" path="res://_assets/sounds/effects/SkeletonHit01.wav" id="12_gwjb1"]
 [ext_resource type="AudioStream" uid="uid://fupaoc4pjes6" path="res://_assets/sounds/effects/SkeletonHit02.wav" id="13_7m4up"]
-[ext_resource type="AudioStream" uid="uid://cuiu1jpd767c8" path="res://_assets/sounds/effects/lever.mp3" id="14_7m4up"]
+[ext_resource type="AudioStream" uid="uid://bowkg0c45xpjv" path="res://_assets/sounds/effects/lever.wav" id="14_w0x8u"]
 [ext_resource type="AudioStream" uid="uid://dqy7e5lytm3ua" path="res://_assets/sounds/effects/pick_lever.mp3" id="15_w0x8u"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_8tmch"]
@@ -97,10 +97,10 @@ pitch_scale = 0.8
 [node name="environment_sound" type="Node" parent="."]
 
 [node name="lever_pull" type="AudioStreamPlayer" parent="environment_sound"]
-stream = ExtResource("14_7m4up")
-volume_db = 10.0
-pitch_scale = 1.5
+stream = ExtResource("14_w0x8u")
+volume_db = -5.0
 
 [node name="lever_pick" type="AudioStreamPlayer" parent="environment_sound"]
 stream = ExtResource("15_w0x8u")
-pitch_scale = 1.7
+volume_db = 15.0
+pitch_scale = 1.5
