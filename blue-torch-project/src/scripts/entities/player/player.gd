@@ -45,7 +45,7 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed("interact"):
-	#	AudioControler.play_land()
+	#	.play_land()
 	blue_torch.update(delta)
 	if DialogueManager.is_dialoge_active:
 		velocity += get_gravity() * delta

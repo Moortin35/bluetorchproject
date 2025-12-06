@@ -30,14 +30,13 @@ func _process(_delta: float) -> void:
 			use_lever()
 			
 func use_lever():
+	AudioControler.lever()
 	if on:
 		on = false
 		sprite_2d.frame = 0
-		print("se apago")
 	else:
 		on = true
 		sprite_2d.frame = 1
-		print("se prendio")
 	GlobalSignals.emit_signal("pulled_lever",_id,on)
 		
 		

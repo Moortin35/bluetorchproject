@@ -38,3 +38,19 @@ func play_open_dor():
 	
 func play_aaa():
 	$aaa.play()
+	
+func play_step_skeleton():
+	var steps = [$skeleton_sound/step_sk1,$skeleton_sound/step_sk2]
+	var step = steps[randi() % steps.size()]
+	step.play()
+	
+func slam():
+	$skeleton_sound/hit_1.play()
+	$skeleton_sound/hit_2.play()
+
+func lever():
+	$environment_sound/lever_pull.play()
+
+func pick_lever():
+	$environment_sound/lever_pick.play()
+	
