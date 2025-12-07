@@ -829,72 +829,71 @@ z_index = 5
 tile_map_data = PackedByteArray("AAACAAsAAAALAA0AAAACAAwAAAALAA0AAAACAA0AAAALAA0AAAACAA4AAAALAA0AAAAIAAsAAAALAA0AAAAIAAwAAAALAA0AAAAIAA4AAAALAA0AAAAIAA0AAAALAA0AAAAIAA8AAAALAA0AAAAIABAAAAALAA0AAAAIABEAAAALAA0AAAAEAAsAAAANABEAAAAFAAsAAAAOABEAAAAGAAsAAAAPABEAAAAHAAsAAAAQABEAAAA9APr/AAANAA0AAAA/APr/AAANAA8AAABAAPr/AAAQAA8AAAA/APj/AAAHAA4AAAA/APn/AAAHAA8AAABAAPj/AAAIAA4AAABAAPn/AAAIAA8AAABBAPj/AAAJAA4AAABBAPn/AAAJAA8AAABBAPr/AAAHABIAAABCAPr/AAAIABIAAABjAPb/AAAKAA8AAABjAPf/AAAKABAAAABkAPb/AAALAA8AAABkAPf/AAALABAAAABlAPb/AAAMAA8AAABlAPf/AAAMABAAAABdAPT/AAAKAA8AAABdAPX/AAAKABAAAABeAPT/AAALAA8AAABeAPX/AAALABAAAABfAPT/AAAMAA8AAABfAPX/AAAMABAAAABYAPb/AAAKAA8AAABYAPf/AAAKABAAAABZAPb/AAALAA8AAABZAPf/AAALABAAAABaAPb/AAAMAA8AAABaAPf/AAAMABAAAABPAPX/AAAKAA8AAABPAPb/AAAKABAAAABQAPX/AAALAA8AAABQAPb/AAALABAAAABRAPX/AAAMAA8AAABRAPb/AAAMABAAAABQAPT/AAALAA4AAABQAPP/AAALAA4AAABQAPL/AAALAA4AAABZAPX/AAALAA4AAABZAPT/AAALAA4AAABZAPP/AAALAA4AAABZAPL/AAALAA4AAABeAPP/AAALAA4AAABeAPL/AAALAA4AAABkAPX/AAALAA4AAABkAPT/AAALAA4AAABkAPP/AAALAA4AAABkAPL/AAALAA4AAAArAPr/AAANAAwAAAAqAPr/AAANAA0AAAArAPn/AAANAA0AAAApAPr/AAANAA8AAAAmAPr/AAANAA8AAAAlAPr/AAAQAA8AAAAnAPr/AAAIABAAAAAoAPr/AAAJABAAAAAkAPr/AAAJABAAAACn/ywAAAANAA0AAACp/ywAAAAQAAwAAACr/ywAAAAHABIAAACs/ywAAAAIABIAAADF/ywAAAAHABIAAADG/ywAAAAIABIAAACu/ywAAAAOAA8AAACv/ywAAAAQAA8AAACn/ysAAAAQAA8AAACs/ykAAAAEABYAAACz/ykAAAADABYAAAC0/ykAAAAEABYAAAC7/ykAAAADABYAAAC8/ykAAAAEABYAAAD//ykAAAADABYAAAAAACkAAAAEABYAAAADACkAAAADABYAAAAEACkAAAAEABYAAAAHACkAAAADABYAAAAIACkAAAAEABYAAAALACkAAAADABYAAAAMACkAAAAEABYAAAABABUAAAADABYAAAACABUAAAAEABYAAAAIABUAAAADABYAAAAJABUAAAAEABYAAABQAAoAAAADABYAAABRAAoAAAAEABYAAAA=")
 tile_set = SubResource("TileSet_faiak")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
+z_index = 5
+position = Vector2(1009, 368)
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Enviroment"]
 color = Color(0, 0, 0, 1)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Enviroment"]
 layer = -1
 offset = Vector2(-1440, -832)
 transform = Transform2D(1, 0, 0, 1, -1440, -832)
 
-[node name="ParallaxLayer_BG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer_BG" type="ParallaxLayer" parent="Enviroment/ParallaxBackground"]
 position = Vector2(1, 0)
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(0, 720)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_BG"]
+[node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_BG"]
 position = Vector2(640, 360)
 texture = ExtResource("5_0afxd")
 metadata/_edit_lock_ = true
 
-[node name="ParallaxLayer_PBG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer_PBG" type="ParallaxLayer" parent="Enviroment/ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(1280, 720)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PBG"]
+[node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_PBG"]
 position = Vector2(640, 360)
 texture = ExtResource("6_ctanu")
 metadata/_edit_lock_ = true
 
-[node name="ParallaxLayer_PMG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer_PMG" type="ParallaxLayer" parent="Enviroment/ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1280, 720)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PMG"]
+[node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_PMG"]
 position = Vector2(640, 360)
 texture = ExtResource("7_hhctk")
 metadata/_edit_lock_ = true
 
-[node name="ParallaxLayer_PFG" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer_PFG" type="ParallaxLayer" parent="Enviroment/ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1280, 720)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_PFG"]
+[node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_PFG"]
 position = Vector2(640, 360)
 texture = ExtResource("8_wbvwm")
 metadata/_edit_lock_ = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Enviroment/ParallaxBackground"]
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="PauseMenu" parent="." instance=ExtResource("11_kpnwg")]
-visible = false
+[node name="NPCS" type="Node2D" parent="."]
 
-[node name="Engla" parent="." instance=ExtResource("12_7u1p2")]
+[node name="Engla" parent="NPCS" instance=ExtResource("12_7u1p2")]
 z_index = 8
 position = Vector2(320, 368)
-
-[node name="PrisonDoor" parent="." instance=ExtResource("13_0afxd")]
-position = Vector2(368, 360)
-
-[node name="key" parent="." instance=ExtResource("14_ctanu")]
-z_index = 8
-position = Vector2(1048, 604)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -967,23 +966,9 @@ position = Vector2(-992, 712)
 [node name="4Spikes" parent="Obstacles/Spikes" instance=ExtResource("17_ril6c")]
 position = Vector2(1136, 360)
 
-[node name="Enviroment" type="Node2D" parent="."]
+[node name="FireballsTraps" type="Node2D" parent="Obstacles"]
 
-[node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
-z_index = 5
-position = Vector2(1009, 368)
-metadata/_edit_lock_ = true
-
-[node name="ExitDoor" parent="." instance=ExtResource("21_d8e8b")]
-position = Vector2(1720, -94)
-level_to_pass = 3
-
-[node name="BreakableWall" parent="." instance=ExtResource("17_6xe2p")]
-z_index = 8
-position = Vector2(968, 584)
-broken = false
-
-[node name="fireball_trap" parent="." instance=ExtResource("20_s325v")]
+[node name="fireball_trap" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -90)
 max_distance = 1200.0
 fire_rate = 3.0
@@ -991,7 +976,7 @@ fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 _id = 2
 
-[node name="fireball_trap2" parent="." instance=ExtResource("20_s325v")]
+[node name="fireball_trap2" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -109)
 max_distance = 1200.0
 fire_rate = 3.0
@@ -999,7 +984,7 @@ fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
 _id = 2
 
-[node name="fireball_trap3" parent="." instance=ExtResource("20_s325v")]
+[node name="fireball_trap3" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -147)
 max_distance = 1200.0
 fire_rate = 3.0
@@ -1008,7 +993,7 @@ fireball_scene = ExtResource("21_sxj84")
 fire_offset = 1.5
 _id = 2
 
-[node name="fireball_trap4" parent="." instance=ExtResource("20_s325v")]
+[node name="fireball_trap4" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 position = Vector2(-1416, -167)
 max_distance = 1200.0
 fire_rate = 3.0
@@ -1017,33 +1002,58 @@ fireball_scene = ExtResource("21_sxj84")
 fire_offset = 1.5
 _id = 2
 
-[node name="MovingPlataform1" parent="." instance=ExtResource("22_sxj84")]
+[node name="Elevators" type="Node2D" parent="."]
+
+[node name="MovingPlataform1" parent="Elevators" instance=ExtResource("22_sxj84")]
 position = Vector2(274, 393)
 animation = "first_elevator"
 
-[node name="MovingPlataform2" parent="." instance=ExtResource("22_sxj84")]
+[node name="MovingPlataform2" parent="Elevators" instance=ExtResource("22_sxj84")]
 position = Vector2(-63, 428)
 animation = "second_elevator"
 _id = 1
 _on = false
 
-[node name="MovingPlataform" parent="." instance=ExtResource("22_sxj84")]
+[node name="MovingPlataform" parent="Elevators" instance=ExtResource("22_sxj84")]
 position = Vector2(1148, 313)
 animation = "third_elevator"
 _id = 2
 _on = false
 
-[node name="SecondLever" parent="." instance=ExtResource("23_ril6c")]
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="BrokenLever" parent="Objects" instance=ExtResource("24_ck20o")]
+z_index = 5
+position = Vector2(-1373.62, 703.132)
+
+[node name="FirstLever" parent="Objects" instance=ExtResource("23_ril6c")]
+z_index = 5
+position = Vector2(17, 392)
+_id = 1
+
+[node name="SecondLever" parent="Objects" instance=ExtResource("23_ril6c")]
 z_index = 5
 position = Vector2(-1387, -88)
 broken = false
 _id = 2
 
-[node name="FirstLever" parent="." instance=ExtResource("23_ril6c")]
-z_index = 5
-position = Vector2(17, 392)
-_id = 1
+[node name="BreakableWall" parent="Objects" instance=ExtResource("17_6xe2p")]
+z_index = 8
+position = Vector2(968, 584)
+broken = false
 
-[node name="BrokenLever" parent="." instance=ExtResource("24_ck20o")]
-z_index = 5
-position = Vector2(-1373.62, 703.132)
+[node name="ExitDoor" parent="Objects" instance=ExtResource("21_d8e8b")]
+position = Vector2(1720, -94)
+level_to_pass = 3
+
+[node name="key" parent="Objects" instance=ExtResource("14_ctanu")]
+z_index = 8
+position = Vector2(1048, 604)
+
+[node name="PrisonDoor" parent="Objects" instance=ExtResource("13_0afxd")]
+position = Vector2(368, 360)
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("11_kpnwg")]
+visible = false
