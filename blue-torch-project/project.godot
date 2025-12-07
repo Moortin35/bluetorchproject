@@ -14,7 +14,7 @@ config/name="Blue Torch Project"
 run/main_scene="uid://c4ht5nop5g0df"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.0142752, 0.0142752, 0.0142752, 1)
-boot_splash/image="uid://ch6vqicbowamv"
+boot_splash/image="uid://ny1s4n8onhbv"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=3000
 
@@ -34,6 +34,7 @@ runtime/balloon_path="res://src/scenes/ui/balloon.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [editor_plugins]
