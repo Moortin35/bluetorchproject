@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://vyibjnw6lct6" path="res://_assets/sprites/objets/fire_bowl.png" id="1_upk8h"]
 [ext_resource type="PackedScene" uid="uid://cbtu0t0s03k7s" path="res://src/scenes/effects/jump_particles.tscn" id="2_0yot2"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="3_ojj13"]
-[ext_resource type="Texture2D" uid="uid://dvp68gk4uc678" path="res://_assets/effects/ring-light.png" id="6_jgubd"]
+[ext_resource type="Texture2D" uid="uid://dvp68gk4uc678" path="res://_assets/effects/ring_light.png" id="6_jgubd"]
 
 [sub_resource type="Curve" id="Curve_ojj13"]
 _data = [Vector2(0.0566038, 0.831461), 0.0, 0.0, 0, 0, Vector2(0.985849, 0.359551), 0.0, 0.0, 0, 0]

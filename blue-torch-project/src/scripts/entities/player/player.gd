@@ -198,4 +198,3 @@ func stop_icon() -> void:
 		interactions.hide()
 		interactions.position = base_pos
 	)
-	

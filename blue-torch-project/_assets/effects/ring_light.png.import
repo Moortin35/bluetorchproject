@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvp68gk4uc678"
-path="res://.godot/imported/ring-light.png-4484b89aebe43ec8d80ba6144797c862.ctex"
+path="res://.godot/imported/ring_light.png-1930510fcb6e4eba0e7a80eea101749d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_assets/effects/ring-light.png"
-dest_files=["res://.godot/imported/ring-light.png-4484b89aebe43ec8d80ba6144797c862.ctex"]
+source_file="res://_assets/effects/ring_light.png"
+dest_files=["res://.godot/imported/ring_light.png-1930510fcb6e4eba0e7a80eea101749d.ctex"]
 
 [params]
 
