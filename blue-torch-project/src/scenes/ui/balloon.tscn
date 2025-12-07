@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cis5d2hhv0deo"]
+[gd_scene load_steps=30 format=3 uid="uid://cis5d2hhv0deo"]
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
 [ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_2ej3a"]
@@ -86,9 +86,29 @@ default_font_size = 30
 default_font = ExtResource("2_2ej3a")
 default_font_size = 25
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ej3a"]
+atlas = ExtResource("4_s4bk5")
+region = Rect2(0, 0, 179, 179)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_csua0"]
 atlas = ExtResource("4_s4bk5")
 region = Rect2(0, 0, 155, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3q3a"]
+atlas = ExtResource("5_v8wqk")
+region = Rect2(0, 0, 179, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4bk5"]
+atlas = ExtResource("5_v8wqk")
+region = Rect2(179, 0, 179, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8wqk"]
+atlas = ExtResource("5_v8wqk")
+region = Rect2(358, 0, 179, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf3dx"]
+atlas = ExtResource("5_v8wqk")
+region = Rect2(537, 0, 179, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcvi8"]
 atlas = ExtResource("5_v8wqk")
@@ -114,10 +134,35 @@ region = Rect2(0, 0, 179, 179)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2ej3a")
+}],
+"loop": true,
+"name": &"dama_desconocida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_csua0")
 }],
 "loop": true,
 "name": &"engla",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_f3q3a")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_s4bk5")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_v8wqk")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_qf3dx")
+}],
+"loop": true,
+"name": &"gerda",
 "speed": 5.0
 }, {
 "frames": [{
@@ -221,7 +266,7 @@ seconds_per_step = 0.04
 position = Vector2(164.4, 575.4)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_jxja2")
-animation = &"maiden"
+animation = &"gerda"
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
