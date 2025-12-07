@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://cis5d2hhv0deo"]
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
-[ext_resource type="FontFile" uid="uid://qt3tmt8oufwf" path="res://_assets/fonts/alagard.ttf" id="2_2ej3a"]
+[ext_resource type="FontFile" uid="uid://cn7jex8fpcep4" path="res://_assets/fonts/mirage_gothic/Mirage final.ttf" id="2_2ej3a"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
 [ext_resource type="Texture2D" uid="uid://b5giasihachky" path="res://_assets/images/portraits/engla_portrait.png" id="4_s4bk5"]
 [ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/gerda_portrait.png" id="5_v8wqk"]
@@ -80,11 +80,11 @@ bg_color = Color(0, 0.0431373, 0.196078, 1)
 
 [sub_resource type="Theme" id="Theme_3c1ei"]
 default_font = ExtResource("2_2ej3a")
-default_font_size = 30
+default_font_size = 32
 
 [sub_resource type="Theme" id="Theme_5qeb6"]
 default_font = ExtResource("2_2ej3a")
-default_font_size = 25
+default_font_size = 30
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ej3a"]
 atlas = ExtResource("4_s4bk5")
@@ -239,12 +239,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0kj6u")
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 theme_override_constants/separation = 16
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
+custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 1
@@ -253,11 +253,14 @@ bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
+vertical_alignment = 2
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_f3q3a")]
 unique_name_in_owner = true
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_5qeb6")
 text = "Dialogue..."
 seconds_per_step = 0.04

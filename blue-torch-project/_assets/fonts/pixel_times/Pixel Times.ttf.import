@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://b4l8ftiv8h2kw"
+path="res://.godot/imported/Pixel Times.ttf-f23d9f0f5b693259b9dabfb68de5a169.fontdata"
+
+[deps]
+
+source_file="res://_assets/fonts/pixel_times/Pixel Times.ttf"
+dest_files=["res://.godot/imported/Pixel Times.ttf-f23d9f0f5b693259b9dabfb68de5a169.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
