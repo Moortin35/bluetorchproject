@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7l4whthwunco"]
+
+[ext_resource type="Script" uid="uid://ceaobcebxnxfe" path="res://src/scripts/ui/splash_screen.gd" id="1_4hfig"]
+[ext_resource type="Texture2D" uid="uid://whv75e2134qn" path="res://_assets/images/logo/logo.png" id="1_ua1b0"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hfig")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_ua1b0")
+stretch_mode = 5
