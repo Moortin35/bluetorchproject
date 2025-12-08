@@ -13,7 +13,7 @@ class_name Player
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var player_inventory: inventory = $inventory
 @onready var health_bar: Hud = $HealthBar
-
+#start_pos : 
 
 @export var health : float = 3.0
 

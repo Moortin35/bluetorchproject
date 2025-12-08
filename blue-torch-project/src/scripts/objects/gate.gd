@@ -4,6 +4,7 @@ extends interactive
 var bowl_1 = false
 var bowl_2 = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var end_test: CanvasLayer = $"../UI/EndTest"
 
 
 func _ready():
@@ -14,7 +15,7 @@ func _ready():
 func _process(_delta: float) -> void:
 	if bowl_1 and  bowl_2:
 		if can_i_interact() and player != null: 
-			print("ganaste pe")
+			end_test.show()
 		
 
 func _on_fire_bowl_i_finished() -> void:
