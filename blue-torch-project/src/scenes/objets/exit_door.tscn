@@ -16,7 +16,7 @@ script = ExtResource("1_vk3cm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_iwswa")
 region_enabled = true
-region_rect = Rect2(289, 149, 14, 27)
+region_rect = Rect2(273, 149, 14, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hd22w")

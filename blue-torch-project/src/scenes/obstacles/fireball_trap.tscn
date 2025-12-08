@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://biyflpw4cu28f" path="res://_assets/sprites/objets/fireball trap.png" id="2_jg7jb"]
 
 [node name="fireball_trap" type="Node2D"]
+z_index = 7
 script = ExtResource("1_4gvpj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
