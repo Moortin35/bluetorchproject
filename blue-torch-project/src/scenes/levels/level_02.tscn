@@ -830,7 +830,6 @@ tile_map_data = PackedByteArray("AAACAAsAAAALAA0AAAACAAwAAAALAA0AAAACAA0AAAALAA0
 tile_set = SubResource("TileSet_faiak")
 
 [node name="Enviroment" type="Node2D" parent="."]
-visible = false
 
 [node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
 z_index = 5
