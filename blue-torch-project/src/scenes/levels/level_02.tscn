@@ -830,6 +830,7 @@ tile_map_data = PackedByteArray("AAACAAsAAAALAA0AAAACAAwAAAALAA0AAAACAA0AAAALAA0
 tile_set = SubResource("TileSet_faiak")
 
 [node name="Enviroment" type="Node2D" parent="."]
+visible = false
 
 [node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
 z_index = 5
@@ -1024,7 +1025,7 @@ _on = false
 
 [node name="BrokenLever" parent="Objects" instance=ExtResource("24_ck20o")]
 z_index = 5
-position = Vector2(-1373.62, 703.132)
+position = Vector2(-1384, 700)
 
 [node name="FirstLever" parent="Objects" instance=ExtResource("23_ril6c")]
 z_index = 5
