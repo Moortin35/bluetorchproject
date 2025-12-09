@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="2_vedj8"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="3_pdbas"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_88wpe"]
-size = Vector2(12, 7)
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7b5i"]
+radius = 6.0208
 
 [node name="Spike" type="Node2D"]
 script = ExtResource("1_a1ks0")
@@ -20,4 +20,4 @@ region_rect = Rect2(64, 272, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
 position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_88wpe")
+shape = SubResource("CircleShape2D_s7b5i")

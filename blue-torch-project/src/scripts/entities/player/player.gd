@@ -154,10 +154,6 @@ func _on_invulnerability_timer_timeout():
 	animated_sprite_2d.modulate.a = 1.0
 
 func reset_player() -> void:
-	var lv3 = LevelManager.loaded_level.level_id
-	if lv3 == 3:
-		LevelManager.load_level(3)
-		pass
 	AudioControler.play_lvl1()
 	collision_shape_2d.disabled = false
 	global_position = LevelManager.loaded_level.START_POS_LEVEL
