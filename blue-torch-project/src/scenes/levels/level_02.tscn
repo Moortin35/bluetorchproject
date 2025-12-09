@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/obstacles/spike.tscn" id="16_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://dffar240roj74" path="res://src/scenes/objets/breakable_wall.tscn" id="17_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="17_883it"]
-[ext_resource type="PackedScene" uid="uid://d0unqqvb1goyg" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
+[ext_resource type="PackedScene" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="18_xwimy"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]

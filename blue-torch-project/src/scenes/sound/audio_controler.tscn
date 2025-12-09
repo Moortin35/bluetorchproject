@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://drm5webfkqe2n" path="res://_assets/sounds/effects/landing-01.mp3" id="4_ydqou"]
 [ext_resource type="AudioStream" uid="uid://ddfk0vwuolwjj" path="res://_assets/sounds/effects/walk-02.mp3" id="5_iul6b"]
 [ext_resource type="AudioStream" uid="uid://davyyl2fk50t2" path="res://_assets/sounds/music/level_1_theme.mp3" id="5_ner2v"]
-[ext_resource type="AudioStream" uid="uid://dxvcwcqkcoaui" path="res://_assets/sounds/effects/pick_key.mp3" id="7_d11m5"]
+[ext_resource type="AudioStream" uid="uid://curldbr2mpwn6" path="res://_assets/sounds/effects/pick_key.wav" id="7_w0x8u"]
 [ext_resource type="AudioStream" uid="uid://bon6rynr4dwad" path="res://_assets/sounds/effects/door_and_key_open.mp3" id="8_3uxce"]
 [ext_resource type="AudioStream" uid="uid://bpa2ff3ld2ox7" path="res://_assets/sounds/effects/AAAAAAAA.mp3" id="9_ddx3r"]
 [ext_resource type="AudioStream" uid="uid://dxku6tbsx7pov" path="res://_assets/sounds/effects/SkeletonHit01.wav" id="12_gwjb1"]
@@ -63,9 +63,8 @@ pitch_scale = 0.39
 max_polyphony = 4
 
 [node name="pick_key" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_d11m5")
-volume_db = 12.782
-pitch_scale = 2.0
+stream = ExtResource("7_w0x8u")
+volume_db = 5.0
 
 [node name="open_door" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_3uxce")
