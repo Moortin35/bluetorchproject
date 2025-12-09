@@ -621,7 +621,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(648, 368)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(648, 368)
+position = Vector2(-647.62, -105.769)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

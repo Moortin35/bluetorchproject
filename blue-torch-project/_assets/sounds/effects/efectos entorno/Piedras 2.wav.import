@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7i8mn7c3lmim"
+path="res://.godot/imported/Piedras 2.wav-4c51d91557f08d5534e06ada94f92cde.sample"
+
+[deps]
+
+source_file="res://_assets/sounds/effects/efectos entorno/Piedras 2.wav"
+dest_files=["res://.godot/imported/Piedras 2.wav-4c51d91557f08d5534e06ada94f92cde.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -12,5 +12,7 @@ func _integrate_forces(state):
 	for i in range(state.get_contact_count()):
 		var collider = state.get_contact_collider_object(i)
 		if collider is TileMapLayer or collider is CharacterBody2D:
+			if(collider is TileMapLayer):
+				AudioControler.brick_destroy()
 			queue_free()
 			

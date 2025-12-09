@@ -54,3 +54,6 @@ func lever():
 func pick_lever():
 	$environment_sound/lever_pick.play()
 	
+func brick_destroy():
+	$environment_sound/brick_destroy.play()
+	

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cggy6fn5jllgm"]
+
+[ext_resource type="Script" uid="uid://dan4eja5axsk" path="res://src/scripts/obstacles/area_trigger.gd" id="1_ddqk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72pr7"]
+size = Vector2(31, 50)
+
+[node name="Area_Trigger" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_ddqk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_72pr7")
+debug_color = Color(6.44952e-06, 0.856346, 0.425434, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

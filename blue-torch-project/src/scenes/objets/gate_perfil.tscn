@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://5hhu3pyqlxsy"]
+
+[ext_resource type="Script" uid="uid://c5rkkl7lty3f0" path="res://src/scripts/objects/gate_perfil.gd" id="1_0a6wl"]
+[ext_resource type="Texture2D" uid="uid://boi4h4yjo6ed2" path="res://_assets/sprites/objets/gate_perfil.png" id="2_sj7pl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muowi"]
+size = Vector2(8, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bknxp"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fod5r"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km8cw"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcm01"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf7n2"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a6wl"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jw73t"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bknxp")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_fod5r")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_km8cw")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hcm01")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tf7n2")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a6wl")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="gate_perfil" type="Node2D"]
+script = ExtResource("1_0a6wl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_muowi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jw73t")
+animation = &"close"
+autoplay = "open"

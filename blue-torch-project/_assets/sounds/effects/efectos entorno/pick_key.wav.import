@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c433pdpf5dgu"
+path="res://.godot/imported/pick_key.wav-f1563177babd3f9b2774e44ad46f97df.sample"
+
+[deps]
+
+source_file="res://_assets/sounds/effects/efectos entorno/pick_key.wav"
+dest_files=["res://.godot/imported/pick_key.wav-f1563177babd3f9b2774e44ad46f97df.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

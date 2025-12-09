@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://56lusswsfrwy"]
+[gd_scene load_steps=9 format=3 uid="uid://56lusswsfrwy"]
 
 [ext_resource type="Texture2D" uid="uid://c8xdtao8d381u" path="res://_assets/sprites/objets/fireball.png" id="1_767fg"]
 [ext_resource type="Script" uid="uid://cvnrypt16w0wc" path="res://src/scripts/obstacles/fireball.gd" id="1_vrmy1"]
 [ext_resource type="PackedScene" uid="uid://behbluvl72ya1" path="res://src/scenes/effects/fire_particles.tscn" id="2_uyx1c"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="4_7abl2"]
+[ext_resource type="PackedScene" uid="uid://dt1jx4fov43wk" path="res://src/scenes/effects/explosion.tscn" id="5_ir7ek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrmy1"]
 radius = 3.16228
@@ -50,5 +51,11 @@ range_layer_max = 10
 texture = ExtResource("4_7abl2")
 texture_scale = 0.5
 metadata/_edit_lock_ = true
+
+[node name="explosion" parent="." instance=ExtResource("5_ir7ek")]
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

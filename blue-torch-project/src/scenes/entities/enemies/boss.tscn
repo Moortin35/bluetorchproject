@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://bpsntwgoxd5ny"]
+[gd_scene load_steps=78 format=3 uid="uid://bpsntwgoxd5ny"]
 
 [ext_resource type="Script" uid="uid://7qj1k10p30d1" path="res://src/scripts/entities/enemies/boss/boss.gd" id="1_tgxye"]
 [ext_resource type="Texture2D" uid="uid://ckevq02xlwq2t" path="res://_assets/sprites/icons/question_mark.png" id="2_qd5d8"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://sllpoqiffm2f" path="res://src/scripts/entities/enemies/boss/states/charge.gd" id="12_ew71p"]
 [ext_resource type="Script" uid="uid://dxccs5bcjlbxo" path="res://src/scripts/entities/enemies/boss/states/slam.gd" id="13_hpwuy"]
 [ext_resource type="Script" uid="uid://cbit7b6whqaky" path="res://src/scripts/entities/enemies/boss/states/death.gd" id="14_rsibv"]
+[ext_resource type="Script" uid="uid://3fmedgkgrobo" path="res://src/scripts/entities/enemies/boss/states/pause.gd" id="15_qqx65"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bm4g"]
 atlas = ExtResource("2_qd5d8")
@@ -509,7 +510,7 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ghv56")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("10_qd5d8")]
-default_state = NodePath("idle")
+default_state = NodePath("pause")
 
 [node name="idle" type="Node" parent="StateMachine"]
 script = ExtResource("11_ew71p")
@@ -522,6 +523,9 @@ script = ExtResource("13_hpwuy")
 
 [node name="death" type="Node" parent="StateMachine"]
 script = ExtResource("14_rsibv")
+
+[node name="pause" type="Node" parent="StateMachine"]
+script = ExtResource("15_qqx65")
 
 [node name="Timer_idle" type="Timer" parent="."]
 wait_time = 2.0
