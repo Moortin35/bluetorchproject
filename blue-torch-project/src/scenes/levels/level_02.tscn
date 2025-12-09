@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://x4wkxi64sqa4" path="res://src/scenes/obstacles/spike.tscn" id="16_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://dffar240roj74" path="res://src/scenes/objets/breakable_wall.tscn" id="17_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://c4y1mdxe4chqb" path="res://src/scenes/obstacles/saw.tscn" id="17_883it"]
-[ext_resource type="PackedScene" uid="uid://d0unqqvb1goyg" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
+[ext_resource type="PackedScene" path="res://src/scenes/obstacles/4_spikes.tscn" id="17_ril6c"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="18_xwimy"]
-[ext_resource type="PackedScene" uid="uid://b1tkip4u2piot" path="res://src/scenes/obstacles/6_spikes.tscn" id="19_ck20o"]
+[ext_resource type="PackedScene" path="res://src/scenes/obstacles/6_spikes.tscn" id="19_ck20o"]
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/objets/exit_door.tscn" id="21_d8e8b"]
@@ -622,7 +622,7 @@ level_id = 2
 START_POS_LEVEL = Vector2(644, 364)
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(644, 364)
+position = Vector2(31.2072, -121.403)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -646,7 +646,15 @@ tile_set = SubResource("TileSet_faiak")
 
 [node name="Enviroment" type="Node2D" parent="."]
 
+[node name="torch3" parent="Enviroment" instance=ExtResource("19_vaiti")]
+z_index = 5
+position = Vector2(417.117, 368.313)
+
 [node name="torch" parent="Enviroment" instance=ExtResource("19_vaiti")]
+z_index = 5
+position = Vector2(1155.87, 672.526)
+
+[node name="torch2" parent="Enviroment" instance=ExtResource("19_vaiti")]
 z_index = 5
 position = Vector2(1009, 368)
 metadata/_edit_lock_ = true
@@ -784,7 +792,7 @@ metadata/_edit_group_ = true
 [node name="FireballTrap" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 z_index = 0
 position = Vector2(-1256, -90)
-max_distance = 1200.0
+max_distance = 1080.0
 fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
@@ -793,7 +801,7 @@ _id = 2
 [node name="FireballTrap2" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 z_index = 0
 position = Vector2(-1256, -109)
-max_distance = 1200.0
+max_distance = 1080.0
 fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
@@ -802,7 +810,7 @@ _id = 2
 [node name="FireballTrap3" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 z_index = 0
 position = Vector2(-1256, -147)
-max_distance = 1200.0
+max_distance = 1080.0
 fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")
@@ -812,7 +820,7 @@ _id = 2
 [node name="FireballTrap4" parent="Obstacles/FireballsTraps" instance=ExtResource("20_s325v")]
 z_index = 0
 position = Vector2(-1256, -167)
-max_distance = 1200.0
+max_distance = 1080.0
 fire_rate = 3.0
 fireball_speed = 230.0
 fireball_scene = ExtResource("21_sxj84")

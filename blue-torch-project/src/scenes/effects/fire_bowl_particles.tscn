@@ -7,6 +7,7 @@ offsets = PackedFloat32Array(0.311828, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0.741176, 1)
 
 [node name="fire_bowl_particles" type="CPUParticles2D"]
+z_index = 7
 amount = 300
 texture = ExtResource("1_qsepk")
 lifetime = 0.5

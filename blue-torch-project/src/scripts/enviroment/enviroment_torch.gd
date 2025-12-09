@@ -4,8 +4,8 @@ extends Node2D
 @onready var animation_torch: AnimatedSprite2D = $AnimationTorch
 @onready var flicker_timer: Timer = $FlickerTimer
 
-var base_energy: float = 0.8
-var flicker_range: float = 0.4
+var base_energy: float = 0.9
+var flicker_range: float = 0.1
 
 func _ready() -> void:
 	flicker_timer.timeout.connect(_on_flicker_timer_timeout)

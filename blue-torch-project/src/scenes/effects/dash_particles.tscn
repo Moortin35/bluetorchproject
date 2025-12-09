@@ -12,6 +12,7 @@ _data = [Vector2(0, 0.202247), 0.0, 0.0, 0, 0, Vector2(1, 0.011236), 0.0, 0.0, 0
 point_count = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = 7
 emitting = false
 amount = 45
 texture = ExtResource("1_6ddoh")

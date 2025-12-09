@@ -11,6 +11,7 @@ _data = [Vector2(0, 0.110968), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = 7
 amount = 1
 texture = ExtResource("1_3vbpm")
 preprocess = 0.97
