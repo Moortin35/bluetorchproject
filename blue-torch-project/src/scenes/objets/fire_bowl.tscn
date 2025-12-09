@@ -20,6 +20,7 @@ script = ExtResource("1_rlf18")
 [node name="particles" type="Node2D" parent="."]
 
 [node name="5" parent="particles" instance=ExtResource("1_s05wi")]
+z_index = 0
 position = Vector2(0, -2)
 emitting = false
 amount = 40
@@ -28,6 +29,7 @@ scale_amount_curve = SubResource("Curve_ojj13")
 color = Color(0, 0.168627, 1, 1)
 
 [node name="4" parent="particles" instance=ExtResource("1_s05wi")]
+z_index = 0
 position = Vector2(0, -1)
 emitting = false
 amount = 20
@@ -36,6 +38,7 @@ scale_amount_curve = SubResource("Curve_ojj13")
 color = Color(0, 0.168627, 1, 1)
 
 [node name="3" parent="particles" instance=ExtResource("1_s05wi")]
+z_index = 0
 position = Vector2(0, -1)
 emitting = false
 amount = 8
@@ -44,6 +47,7 @@ scale_amount_curve = SubResource("Curve_ojj13")
 color = Color(0, 0.168627, 1, 1)
 
 [node name="2" parent="particles" instance=ExtResource("1_s05wi")]
+z_index = 0
 position = Vector2(0, -2)
 emitting = false
 amount = 8
@@ -52,6 +56,7 @@ scale_amount_curve = SubResource("Curve_ojj13")
 color = Color(0, 0.168627, 1, 1)
 
 [node name="1" parent="particles" instance=ExtResource("1_s05wi")]
+z_index = 0
 position = Vector2(0, -1)
 emitting = false
 amount = 1
@@ -60,6 +65,7 @@ scale_amount_curve = SubResource("Curve_ojj13")
 color = Color(0, 0.168627, 1, 1)
 
 [node name="ready_particles" parent="." instance=ExtResource("2_0yot2")]
+z_index = 5
 position = Vector2(0, 1)
 amount = 70
 lifetime = 2.5
