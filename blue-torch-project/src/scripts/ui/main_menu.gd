@@ -7,6 +7,7 @@ class_name MainMenu
 
 func _ready() -> void:
 	AudioControler.play_music()
+	AudioControler.stop_lvl_music()
 	animated_torch.play()
 
 func _on_play_button_pressed() -> void:

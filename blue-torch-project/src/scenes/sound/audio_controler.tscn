@@ -45,6 +45,7 @@ stream = SubResource("AudioStreamWAV_ydqou")
 
 [node name="lvl_theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ner2v")
+volume_db = -5.0
 
 [node name="land" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ner2v")

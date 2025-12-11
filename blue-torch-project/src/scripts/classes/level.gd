@@ -11,12 +11,13 @@ class_name Level
 var level_data : LevelData
 
 func _ready() -> void:
-	print("prendo la musica del lvl")
-	AudioControler.play_lvl_music(music_level)
+	if music_level != null:
+		AudioControler.play_lvl_music(music_level)
 
 func reset_lvl():
 	if full_reset:
 		LevelManager.load_level(level_id)
 	else:
-		AudioControler.play_lvl_music(music_level)
+		if music_level != null:
+			AudioControler.play_lvl_music(music_level)
 		
