@@ -1,5 +1,9 @@
 extends Level
 
+@onready var gate_perfil: Node2D = $gate_perfil
+@onready var boss: CharacterBody2D = $Boss
+
+
 func _ready() -> void:
 	level_data = LevelManager.get_level_by_id(level_id)
 	player.camera_2d.limit_right = 336
@@ -9,4 +13,7 @@ func _ready() -> void:
 
 func _on_area_trigger_area_trigger() -> void:
 	var tween := create_tween()
-	tween.tween_property(player.camera_2d, "limit_left", -16, 0.5) # 1 segundo de transición
+	tween.tween_property(player.camera_2d, "limit_left", -16, 0.5)
+	gate_perfil.close()
+	boss.state_machine.change_to('idle')
+	

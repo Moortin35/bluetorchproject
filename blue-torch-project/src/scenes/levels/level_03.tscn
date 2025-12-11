@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="6_dkxww"]
 [ext_resource type="PackedScene" uid="uid://bf0idwlilihbt" path="res://src/scenes/objets/gate.tscn" id="7_mqmd6"]
 [ext_resource type="PackedScene" uid="uid://bpsntwgoxd5ny" path="res://src/scenes/entities/enemies/boss.tscn" id="7_w6d1w"]
-[ext_resource type="Script" path="res://src/scripts/obstacles/brick_collapse.gd" id="9_w6d1w"]
+[ext_resource type="Script" uid="uid://45ftgfatv13v" path="res://src/scripts/obstacles/brick_collapse.gd" id="9_w6d1w"]
 [ext_resource type="PackedScene" uid="uid://b35u7lrfmoncu" path="res://src/scenes/objets/brick.tscn" id="10_n300k"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="11_vqegp"]
 [ext_resource type="Texture2D" uid="uid://dd75evj7wmeb8" path="res://_assets/textures/tilemap/frame_tileset.png" id="12_8y5hb"]
@@ -845,7 +845,6 @@ separacion_min = 16.0
 [node name="UI" type="Node2D" parent="."]
 
 [node name="EndTest" parent="UI" instance=ExtResource("12_y1k1v")]
-visible = false
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_dkxww")]
 visible = false
@@ -864,5 +863,3 @@ position = Vector2(-8.00366, 136.424)
 [connection signal="i_finished" from="FireBowlRight" to="Boss" method="_on_fire_bowl_2_i_finished"]
 [connection signal="i_finished" from="FireBowlRight" to="Gate" method="_on_fire_bowl_2_i_finished"]
 [connection signal="area_trigger" from="Area_Trigger" to="." method="_on_area_trigger_area_trigger"]
-[connection signal="area_trigger" from="Area_Trigger" to="Boss" method="_on_area_trigger_area_trigger"]
-[connection signal="area_trigger" from="Area_Trigger" to="gate_perfil" method="_on_area_trigger_area_trigger"]

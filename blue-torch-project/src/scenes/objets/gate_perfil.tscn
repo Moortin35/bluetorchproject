@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5hhu3pyqlxsy"]
+[gd_scene load_steps=17 format=3 uid="uid://5hhu3pyqlxsy"]
 
 [ext_resource type="Script" uid="uid://c5rkkl7lty3f0" path="res://src/scripts/objects/gate_perfil.gd" id="1_0a6wl"]
 [ext_resource type="Texture2D" uid="uid://boi4h4yjo6ed2" path="res://_assets/sprites/objets/gate_perfil.png" id="2_sj7pl"]
@@ -25,6 +25,30 @@ region = Rect2(16, 0, 16, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tf7n2"]
 atlas = ExtResource("2_sj7pl")
 region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj7pl"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muowi"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw73t"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apjks"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_274ve"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kny46"]
+atlas = ExtResource("2_sj7pl")
+region = Rect2(64, 0, 16, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0a6wl"]
 atlas = ExtResource("2_sj7pl")
@@ -54,10 +78,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sj7pl")
+}],
+"loop": false,
+"name": &"close_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_muowi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jw73t")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_apjks")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_274ve")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_kny46")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0a6wl")
 }],
-"loop": true,
-"name": &"open",
+"loop": false,
+"name": &"open_idle",
 "speed": 5.0
 }]
 
@@ -73,4 +125,6 @@ shape = SubResource("RectangleShape2D_muowi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jw73t")
 animation = &"close"
-autoplay = "open"
+autoplay = "open_idle"
+frame = 4
+frame_progress = 1.0
