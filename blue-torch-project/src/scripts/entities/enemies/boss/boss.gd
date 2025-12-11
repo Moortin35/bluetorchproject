@@ -63,6 +63,5 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and health > 0:
 		body.take_damage(1, self)
 
-
-func _on_area_trigger_area_trigger() -> void:
-	state_machine.change_to('slam')
+func emit_spawn_bricks(ammount):
+	spawn_bricks.emit(ammount)

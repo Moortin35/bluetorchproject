@@ -5,23 +5,24 @@ extends Node2D
 @onready var ready_particles: CPUParticles2D = $ready_particles
 @onready var light_2: PointLight2D = $light2
 
+@onready var player_inside := false
+@onready var contador := 0
+@onready var limite : float = 60.0
+@onready var partes : float= 5.0
+@onready var incremento_luz := 0.02
+
+
+@onready var tiempo_acumulado := 0.0
+@onready var intervalo := 0.15
+
+@onready var siguiente_meta := 0.0
+@onready var indice_iteracion := 1    
+
 signal i_finished
 
-var player_inside := false
-var contador := 0
-var limite := 60
-var partes := 5
-var incremento_luz := 0.02
-
-
-var tiempo_acumulado := 0.0
-var intervalo := 0.15
-
-var siguiente_meta := 0
-var indice_iteracion := 1    
 
 func _ready():
-	siguiente_meta = limite / partes
+	siguiente_meta =  int(limite / partes)
 
 func _process(delta):
 	if player_inside and contador < limite:
@@ -34,7 +35,7 @@ func _process(delta):
 			if contador == siguiente_meta:
 				particles.get_node(str(indice_iteracion)).emitting = true
 				indice_iteracion += 1
-				siguiente_meta += limite / partes
+				siguiente_meta += float(limite) / partes
 			if contador == limite:
 				light_2.hide()
 				i_finished.emit()

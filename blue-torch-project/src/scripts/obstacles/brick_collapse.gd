@@ -1,16 +1,15 @@
 extends Node2D
 
-@export var brick_scene: PackedScene #Escena del ladrillo
-@export var amount: int = 5 #Cantidad de ladrillos
-@export var y_pos: float = -100 #Altura fija
-@export var min_x: float = 0 #Límite izquierdo
-@export var max_x: float = 1024 #Límite derecho
-@export var separacion_min: float = 10 #Separación mínima en píxeles
+@export var brick_scene: PackedScene 
+@export var y_pos: float = -100 
+@export var min_x: float = 0 
+@export var max_x: float = 1024 
+@export var separacion_min: float = 10 
 
-func spawn_bricks(specific_amount = amount):
+
+func _on_boss_spawn_bricks(amount) -> void:
 	Globals.camera.trigger_shake()
 	var positions_x = []
-	amount = specific_amount
 	for i in range(amount):
 		var x_valid = false
 		var random_x = 0.0
@@ -29,7 +28,3 @@ func spawn_bricks(specific_amount = amount):
 		var brick = brick_scene.instantiate()
 		brick.position = Vector2(random_x, y_pos)
 		get_parent().add_child(brick)
-
-
-func _on_boss_spawn_bricks(amount) -> void:
-	spawn_bricks(amount)

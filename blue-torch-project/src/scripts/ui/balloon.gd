@@ -164,8 +164,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	if dialogue_label.is_typing:
 		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
 		var skip_button_was_pressed: bool = event.is_action_pressed(skip_action)
-		var interact_input: bool = Input.is_action_just_pressed("interact")
-		if mouse_was_clicked or skip_button_was_pressed or interact_input:
+		if mouse_was_clicked or skip_button_was_pressed or Input.is_action_just_pressed("interact"):
 			get_viewport().set_input_as_handled()
 			dialogue_label.skip_typing()
 			return
@@ -176,12 +175,11 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	# When there are no response options the balloon itself is the clickable thing
 	get_viewport().set_input_as_handled()
 	
-	var interact_input: bool = Input.is_action_just_pressed("interact")
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		next(dialogue_line.next_id)
 	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
-	elif interact_input and get_viewport().gui_get_focus_owner() == balloon:
+	elif Input.is_action_just_pressed("interact") and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
 
 

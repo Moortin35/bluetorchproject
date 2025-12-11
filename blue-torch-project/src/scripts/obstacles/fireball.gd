@@ -42,6 +42,6 @@ func _explode() -> void:
 	
 func _hide_fire_ball():
 	sprite_2d.hide()
-	collision_shape_2d.disabled = true
+	collision_shape_2d.set_deferred("disabled", true)
 	cpu_particles_2d.hide()
 	#light.hide()
