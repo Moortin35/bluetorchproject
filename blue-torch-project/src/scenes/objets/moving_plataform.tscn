@@ -1,7 +1,24 @@
-[gd_scene load_steps=11 format=4 uid="uid://b6po4c8kkyxmp"]
+[gd_scene load_steps=14 format=4 uid="uid://b6po4c8kkyxmp"]
 
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_kie7b"]
 [ext_resource type="Script" uid="uid://ciff5irptsq2q" path="res://src/scripts/objects/moving_plataform.gd" id="1_sxvwg"]
+[ext_resource type="Texture2D" uid="uid://bl8cnkq3ntrdj" path="res://_assets/sprites/objets/gear.png" id="3_f0vn2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mj4h"]
+texture = ExtResource("1_kie7b")
+4:15/0 = 0
+3:16/0 = 0
+3:17/0 = 0
+2:18/0 = 0
+2:19/0 = 0
+1:20/0 = 0
+1:21/0 = 0
+0:22/0 = 0
+0:23/0 = 0
+3:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i7i2c"]
+sources/0 = SubResource("TileSetAtlasSource_5mj4h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxvwg"]
 texture = ExtResource("1_kie7b")
@@ -202,6 +219,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gear1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gear2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_kie7b"]
 resource_name = "first_elevator"
@@ -218,6 +259,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 296), Vector2(-1, 295), Vector2(1, 295), Vector2(0, 296), Vector2(0, 296), Vector2(0, 0), Vector2(1, -1), Vector2(-1, -1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gear1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.96667, 4, 6.9, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -18.8496, -18.8496, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gear2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.96667, 4, 6.9, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 18.8496, 18.8496, 0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_f0vn2"]
@@ -236,10 +301,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1, 1), Vector2(-1, 1), Vector2(0, 0), Vector2(0, 0), Vector2(0, -548), Vector2(-1, -549), Vector2(1, -549), Vector2(0, -548), Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gear1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667, 6, 7, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 25.1327, 25.1327, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gear2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.966667, 6, 7, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -25.1327, -25.1327, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_5mj4h"]
 resource_name = "third_elevator"
-length = 12.0
+length = 8.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -248,10 +337,34 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.3, 0.566667, 0.966667, 6, 6.2, 6.43333, 7, 12),
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.566667, 0.966667, 4.00833, 4.16667, 4.39167, 4.93333, 8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1, 1), Vector2(-1, 1), Vector2(0, 0), Vector2(0, 0), Vector2(0, -400), Vector2(-1, -401), Vector2(1, -401), Vector2(0, -400), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gear1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667, 4, 4.96667, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 18.8496, 18.8496, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gear2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.966667, 4, 4.95833, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -18.8496, -18.8496, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f0vn2"]
@@ -267,14 +380,26 @@ script = ExtResource("1_sxvwg")
 
 [node name="Plataform" type="AnimatableBody2D" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Plataform"]
-position = Vector2(1, 0)
-tile_map_data = PackedByteArray("AAD+/9//AAAEAA8AAAD+/+D/AAAEAA8AAAD+/+H/AAAEAA8AAAD+/+L/AAAEAA8AAAD+/+P/AAAEAA8AAAD+/+T/AAAEAA8AAAD+/+X/AAAEAA8AAAD+/+b/AAAEAA8AAAD+/+f/AAAEAA8AAAD+/+j/AAAEAA8AAAD+/+n/AAAEAA8AAAD+/+r/AAAEAA8AAAD+/+v/AAAEAA8AAAD+/+z/AAAEAA8AAAD+/+3/AAAEAA8AAAD+/+7/AAAEAA8AAAD+/+//AAAEAA8AAAD+//D/AAAEAA8AAAD+//H/AAAEAA8AAAD+//L/AAAEAA8AAAD+//P/AAAEAA8AAAD+//T/AAAEAA8AAAD+//X/AAAEAA8AAAD+//b/AAAEAA8AAAD+//f/AAAEAA8AAAD+//j/AAAEAA8AAAD+//n/AAAEAA8AAAD+//r/AAAEAA8AAAD+//v/AAAEAA8AAAD+//z/AAAEAA8AAAD+//3/AAAEAA8AAAD+//7/AAAEAA8AAAD+////AAAEAA8AAAD+/wAAAAAEAA0AAAAAAN//AAAEAA8AAAAAAOD/AAAEAA8AAAAAAOH/AAAEAA8AAAAAAOL/AAAEAA8AAAAAAOP/AAAEAA8AAAAAAOT/AAAEAA8AAAAAAOX/AAAEAA8AAAAAAOb/AAAEAA8AAAAAAOf/AAAEAA8AAAAAAOj/AAAEAA8AAAAAAOn/AAAEAA8AAAAAAOr/AAAEAA8AAAAAAOv/AAAEAA8AAAAAAOz/AAAEAA8AAAAAAO3/AAAEAA8AAAAAAO7/AAAEAA8AAAAAAO//AAAEAA8AAAAAAPD/AAAEAA8AAAAAAPH/AAAEAA8AAAAAAPL/AAAEAA8AAAAAAPP/AAAEAA8AAAAAAPT/AAAEAA8AAAAAAPX/AAAEAA8AAAAAAPb/AAAEAA8AAAAAAPf/AAAEAA8AAAAAAPj/AAAEAA8AAAAAAPn/AAAEAA8AAAAAAPr/AAAEAA8AAAAAAPv/AAAEAA8AAAAAAPz/AAAEAA8AAAAAAP3/AAAEAA8AAAAAAP7/AAAEAA8AAAAAAP//AAAEAA8AAAAAAAAAAAAGAA0AAAD+/93/AAAEAA8AAAD+/97/AAAEAA8AAAD//wAAAAAFAA0AAAAAAN3/AAAEAA8AAAAAAN7/AAAEAA8AAAAAANz/AAAEAA8AAAAAANv/AAAEAA8AAAAAANr/AAAEAA8AAAAAANn/AAAEAA8AAAAAANj/AAAEAA8AAAAAANf/AAAEAA8AAAAAANb/AAAEAA8AAAAAANX/AAAEAA8AAAAAANT/AAAEAA8AAAAAANP/AAAEAA8AAAAAANL/AAAEAA8AAAAAANH/AAAEAA8AAAAAAND/AAAEAA8AAAAAAM//AAAEAA8AAAAAAM7/AAAEAA8AAAAAAM3/AAAEAA8AAAAAAMz/AAAEAA8AAAAAAMv/AAAEAA8AAAAAAMr/AAAEAA8AAAAAAMn/AAAEAA8AAAD+/9z/AAAEAA8AAAD+/9v/AAAEAA8AAAD+/9r/AAAEAA8AAAD+/9n/AAAEAA8AAAD+/9j/AAAEAA8AAAD+/9f/AAAEAA8AAAD+/9b/AAAEAA8AAAD+/9X/AAAEAA8AAAD+/9T/AAAEAA8AAAD+/9P/AAAEAA8AAAD+/9L/AAAEAA8AAAD+/9H/AAAEAA8AAAD+/9D/AAAEAA8AAAD+/8//AAAEAA8AAAD+/87/AAAEAA8AAAD+/83/AAAEAA8AAAD+/8z/AAAEAA8AAAD+/8v/AAAEAA8AAAD+/8r/AAAEAA8AAAD+/8n/AAAEAA8AAAD+/8j/AAAEAA8AAAAAAMj/AAAEAA8AAAAAAMf/AAAEAA8AAAAAAMb/AAAEAA8AAAD+/8f/AAAEAA8AAAD+/8b/AAAEAA8AAAA=")
+[node name="chains" type="TileMapLayer" parent="Plataform"]
+position = Vector2(1, -1)
+tile_map_data = PackedByteArray("AAD+////AAAEAA8AAAD+//7/AAAEAA8AAAD+//3/AAAEAA8AAAD+//z/AAAEAA8AAAD+//v/AAAEAA8AAAD+//r/AAAEAA8AAAD+//n/AAAEAA8AAAD+//j/AAAEAA8AAAD+//f/AAAEAA8AAAD+//b/AAAEAA8AAAD+//X/AAAEAA8AAAD+//T/AAAEAA8AAAD+//P/AAAEAA8AAAD+//L/AAAEAA8AAAD+//H/AAAEAA8AAAD+//D/AAAEAA8AAAD+/+//AAAEAA8AAAD+/+7/AAAEAA8AAAD+/+3/AAAEAA8AAAD+/+z/AAAEAA8AAAD+/+v/AAAEAA8AAAD+/+r/AAAEAA8AAAD+/+n/AAAEAA8AAAD+/+j/AAAEAA8AAAD+/+f/AAAEAA8AAAD+/+b/AAAEAA8AAAD+/+X/AAAEAA8AAAD+/+T/AAAEAA8AAAD+/+P/AAAEAA8AAAD+/+L/AAAEAA8AAAD+/+H/AAAEAA8AAAD+/+D/AAAEAA8AAAD+/9//AAAEAA8AAAD+/97/AAAEAA8AAAD+/93/AAAEAA8AAAD+/9z/AAAEAA8AAAD+/9v/AAAEAA8AAAD+/9r/AAAEAA8AAAD+/9n/AAAEAA8AAAD+/9j/AAAEAA8AAAD+/9f/AAAEAA8AAAD+/9b/AAAEAA8AAAD+/9X/AAAEAA8AAAD+/9T/AAAEAA8AAAD+/9P/AAAEAA8AAAD+/9L/AAAEAA8AAAD+/9H/AAAEAA8AAAD+/9D/AAAEAA8AAAD+/8//AAAEAA8AAAD+/87/AAAEAA8AAAD+/83/AAAEAA8AAAD+/8z/AAAEAA8AAAD+/8v/AAAEAA8AAAD+/8r/AAAEAA8AAAD+/8n/AAAEAA8AAAD+/8j/AAAEAA8AAAD+/8f/AAAEAA8AAAD+/8b/AAAEAA8AAAAAAMb/AAAEAA8AAAAAAMf/AAAEAA8AAAAAAMj/AAAEAA8AAAAAAMn/AAAEAA8AAAAAAMr/AAAEAA8AAAAAAMv/AAAEAA8AAAAAAMz/AAAEAA8AAAAAAM3/AAAEAA8AAAAAAM7/AAAEAA8AAAAAAM//AAAEAA8AAAAAAND/AAAEAA8AAAAAANH/AAAEAA8AAAAAANL/AAAEAA8AAAAAANP/AAAEAA8AAAAAANT/AAAEAA8AAAAAANX/AAAEAA8AAAAAANb/AAAEAA8AAAAAANf/AAAEAA8AAAAAANj/AAAEAA8AAAAAANn/AAAEAA8AAAAAANr/AAAEAA8AAAAAANv/AAAEAA8AAAAAANz/AAAEAA8AAAAAAN3/AAAEAA8AAAAAAN7/AAAEAA8AAAAAAN//AAAEAA8AAAAAAOD/AAAEAA8AAAAAAOH/AAAEAA8AAAAAAOL/AAAEAA8AAAAAAOP/AAAEAA8AAAAAAOT/AAAEAA8AAAAAAOX/AAAEAA8AAAAAAOb/AAAEAA8AAAAAAOf/AAAEAA8AAAAAAOj/AAAEAA8AAAAAAOn/AAAEAA8AAAAAAOr/AAAEAA8AAAAAAOv/AAAEAA8AAAAAAOz/AAAEAA8AAAAAAO3/AAAEAA8AAAAAAO7/AAAEAA8AAAAAAO//AAAEAA8AAAAAAPD/AAAEAA8AAAAAAPH/AAAEAA8AAAAAAPL/AAAEAA8AAAAAAPP/AAAEAA8AAAAAAPT/AAAEAA8AAAAAAPX/AAAEAA8AAAAAAPb/AAAEAA8AAAAAAPf/AAAEAA8AAAAAAPj/AAAEAA8AAAAAAPn/AAAEAA8AAAAAAPr/AAAEAA8AAAAAAPv/AAAEAA8AAAAAAPz/AAAEAA8AAAAAAP3/AAAEAA8AAAAAAP7/AAAEAA8AAAAAAP//AAAEAA8AAAA=")
+tile_set = SubResource("TileSet_i7i2c")
+
+[node name="gear1" type="Sprite2D" parent="Plataform"]
+position = Vector2(15, 1)
+texture = ExtResource("3_f0vn2")
+
+[node name="gear2" type="Sprite2D" parent="Plataform"]
+position = Vector2(-29, 1)
+texture = ExtResource("3_f0vn2")
+
+[node name="base" type="TileMapLayer" parent="Plataform"]
+position = Vector2(1, -2)
+tile_map_data = PackedByteArray("AAD+/wAAAAAEAA0AAAD//wAAAAAFAA0AAAAAAAAAAAAGAA0AAAA=")
 tile_set = SubResource("TileSet_f0vn2")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plataform"]
-position = Vector2(-8, 3)
+position = Vector2(-8, 1)
 shape = SubResource("RectangleShape2D_kie7b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plataform"]

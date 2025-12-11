@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=71 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
 [ext_resource type="AudioStream" uid="uid://cuqyw2kbpjsac" path="res://_assets/sounds/music/level_2_theme .wav" id="2_d8e8b"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://btuyl2ejyb18v" path="res://src/scenes/enviroment/enviroment_torch.tscn" id="19_vaiti"]
 [ext_resource type="PackedScene" uid="uid://bfmvj4ru26snn" path="res://src/scenes/obstacles/fireball_trap.tscn" id="20_s325v"]
 [ext_resource type="PackedScene" uid="uid://cdhjgpkwifpco" path="res://src/scenes/objets/exit_door.tscn" id="21_d8e8b"]
+[ext_resource type="PackedScene" uid="uid://npvs43c1up21" path="res://src/scenes/objets/boss_sing.tscn" id="21_daec4"]
 [ext_resource type="PackedScene" uid="uid://56lusswsfrwy" path="res://src/scenes/obstacles/fireball.tscn" id="21_sxj84"]
 [ext_resource type="PackedScene" uid="uid://b6po4c8kkyxmp" path="res://src/scenes/objets/moving_plataform.tscn" id="22_sxj84"]
 [ext_resource type="PackedScene" uid="uid://calqybio8yhng" path="res://src/scenes/objets/lever.tscn" id="23_ril6c"]
@@ -623,7 +624,7 @@ START_POS_LEVEL = Vector2(648, 368)
 music_level = ExtResource("2_d8e8b")
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
-position = Vector2(648.471, 367.355)
+position = Vector2(648.051, 367.934)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -850,6 +851,12 @@ _id = 2
 _on = false
 
 [node name="Objects" type="Node2D" parent="."]
+
+[node name="boss_sing" parent="Objects" instance=ExtResource("21_daec4")]
+position = Vector2(-1235.06, -95.7756)
+
+[node name="boss_sing" parent="Objects/boss_sing" instance=ExtResource("21_daec4")]
+position = Vector2(2328.06, 415.776)
 
 [node name="BrokenLever" parent="Objects" instance=ExtResource("24_ck20o")]
 z_index = 5

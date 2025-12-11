@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://npvs43c1up21"]
+
+[ext_resource type="Texture2D" uid="uid://bsiq78hkdsg11" path="res://_assets/sprites/objets/boss_sign.png" id="1_gri3l"]
+
+[node name="boss_sing" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gri3l")
