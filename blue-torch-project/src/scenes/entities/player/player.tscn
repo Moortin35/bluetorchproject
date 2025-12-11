@@ -47,7 +47,7 @@ region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gf154"]
 atlas = ExtResource("4_oknxn")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iahkn"]
 atlas = ExtResource("3_30a0n")
@@ -79,16 +79,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.6,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_7265o")
 }, {
-"duration": 0.6,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_aomop")
 }, {
-"duration": 0.6,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_0aevd")
 }, {
-"duration": 0.6,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_gf154")
 }],
 "loop": true,
@@ -530,11 +530,11 @@ script = ExtResource("2_iahkn")
 metadata/_edit_lock_ = true
 
 [node name="interactions" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(0, -19)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ppq54")
-animation = &"interact"
+animation = &"key"
+frame_progress = 0.892659
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
