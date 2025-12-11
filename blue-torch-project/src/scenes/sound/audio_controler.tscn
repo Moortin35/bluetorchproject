@@ -43,7 +43,7 @@ stream = SubResource("AudioStreamWAV_ydqou")
 
 [node name="sfx_player" type="AudioStreamPlayer" parent="."]
 
-[node name="lvl_1_theme" type="AudioStreamPlayer" parent="."]
+[node name="lvl_theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ner2v")
 
 [node name="land" type="AudioStreamPlayer" parent="."]

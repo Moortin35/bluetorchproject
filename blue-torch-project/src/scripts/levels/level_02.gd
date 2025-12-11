@@ -2,6 +2,7 @@ extends Level
 
 
 func _ready() -> void:
+	super._ready()
 	level_data = LevelManager.get_level_by_id(level_id)
 	player.camera_2d.limit_right = 1792
 	player.camera_2d.limit_bottom =736

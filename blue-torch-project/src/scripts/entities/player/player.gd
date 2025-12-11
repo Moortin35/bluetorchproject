@@ -134,8 +134,9 @@ func update_animation_player() -> void:
 func handle_danger() -> void:
 	if !is_dead:
 		is_dead = true
+		AudioControler.stop_lvl_music()
 		AudioControler.play_sfx(preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
-		AudioControler.stop_lvl1()
+		
 		can_control = false
 		velocity.y = 0
 		velocity.x = 0
@@ -154,7 +155,7 @@ func _on_invulnerability_timer_timeout():
 	animated_sprite_2d.modulate.a = 1.0
 
 func reset_player() -> void:
-	AudioControler.play_lvl1()
+	owner.reset_lvl()
 	collision_shape_2d.disabled = false
 	global_position = LevelManager.loaded_level.START_POS_LEVEL
 	is_dead = false

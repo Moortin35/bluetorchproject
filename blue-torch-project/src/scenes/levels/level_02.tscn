@@ -1,6 +1,7 @@
-[gd_scene load_steps=69 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=70 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
+[ext_resource type="AudioStream" uid="uid://cuqyw2kbpjsac" path="res://_assets/sounds/music/level_2_theme .wav" id="2_d8e8b"]
 [ext_resource type="Texture2D" uid="uid://dl1mjkldyierf" path="res://_assets/textures/tilemap/foreground_tileset.png" id="2_flerx"]
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="4_7u1p2"]
 [ext_resource type="Texture2D" uid="uid://byonh4eknqji4" path="res://_assets/textures/parallax/level01/parallax_bg_level01.png" id="5_0afxd"]
@@ -619,6 +620,7 @@ height = 1188.0
 script = ExtResource("1_flerx")
 level_id = 2
 START_POS_LEVEL = Vector2(648, 368)
+music_level = ExtResource("2_d8e8b")
 
 [node name="Player" parent="." instance=ExtResource("9_6xe2p")]
 position = Vector2(648.471, 367.355)

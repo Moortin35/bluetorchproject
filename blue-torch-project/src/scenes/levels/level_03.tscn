@@ -1,6 +1,7 @@
-[gd_scene load_steps=59 format=4 uid="uid://cmhgdrrurf4nd"]
+[gd_scene load_steps=60 format=4 uid="uid://cmhgdrrurf4nd"]
 
 [ext_resource type="Script" uid="uid://dh8mp6grmkt6i" path="res://src/scripts/levels/level_03.gd" id="1_h8f8y"]
+[ext_resource type="AudioStream" uid="uid://cuqyw2kbpjsac" path="res://_assets/sounds/music/level_2_theme .wav" id="2_g5mf3"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="2_xk343"]
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="3_fbaaq"]
 [ext_resource type="Texture2D" uid="uid://ddrc7j4ryfbfh" path="res://_assets/textures/tilemap/background_tileset.png" id="4_fbaaq"]
@@ -782,6 +783,8 @@ sources/0 = SubResource("TileSetAtlasSource_aiwc2")
 script = ExtResource("1_h8f8y")
 level_id = 3
 START_POS_LEVEL = Vector2(-376, 144)
+full_reset = true
+music_level = ExtResource("2_g5mf3")
 
 [node name="Player" parent="." instance=ExtResource("2_xk343")]
 position = Vector2(-376, 144)
@@ -845,6 +848,7 @@ separacion_min = 16.0
 [node name="UI" type="Node2D" parent="."]
 
 [node name="EndTest" parent="UI" instance=ExtResource("12_y1k1v")]
+visible = false
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_dkxww")]
 visible = false

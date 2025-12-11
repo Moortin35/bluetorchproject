@@ -4,7 +4,9 @@ extends Level
 @onready var boss: CharacterBody2D = $Boss
 
 
+
 func _ready() -> void:
+	super._ready()
 	level_data = LevelManager.get_level_by_id(level_id)
 	player.camera_2d.limit_right = 336
 	player.camera_2d.limit_bottom =176

@@ -6,14 +6,12 @@ class_name MainMenu
 
 
 func _ready() -> void:
-	AudioControler.stop_lvl1()
 	AudioControler.play_music()
 	animated_torch.play()
 
 func _on_play_button_pressed() -> void:
 	LevelManager.load_level(1)
 	AudioControler.stop_music()
-	AudioControler.play_lvl1()
 	deactivate()
 
 
