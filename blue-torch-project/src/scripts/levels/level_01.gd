@@ -1,5 +1,6 @@
 extends Level
 @onready var gate_perfil: Node2D = $gate_perfil
+#pos_fall_maiden (-720, 388)
 
 func _ready() -> void:
 	super._ready()
