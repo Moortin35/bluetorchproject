@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://b35u7lrfmoncu"]
+[gd_scene load_steps=10 format=3 uid="uid://b35u7lrfmoncu"]
 
 [ext_resource type="Script" uid="uid://6s8psiwolno0" path="res://src/scripts/objects/brick.gd" id="1_1g6ap"]
 [ext_resource type="Texture2D" uid="uid://cewjcyl420426" path="res://_assets/textures/objects/bricks.png" id="1_e48au"]
 [ext_resource type="PackedScene" uid="uid://c2b1ae7sl0pe5" path="res://src/scenes/obstacles/danger_zone.tscn" id="2_1g6ap"]
+[ext_resource type="Texture2D" uid="uid://d3eyat7yqraoi" path="res://_assets/effects/brick/piece_brick_4.png" id="4_duac4"]
+[ext_resource type="Texture2D" uid="uid://dy6et6ss35ohr" path="res://_assets/effects/brick/piece_brick_3.png" id="5_5uqab"]
+[ext_resource type="Texture2D" uid="uid://bltguf3y3xfjv" path="res://_assets/effects/brick/piece_brick_2.png" id="6_8pld4"]
+[ext_resource type="Texture2D" uid="uid://0qabvskioqc3" path="res://_assets/effects/brick/piece_brick_1.png" id="7_gwxm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88y52"]
-size = Vector2(9, 14)
+size = Vector2(11, 13.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ny7o"]
+size = Vector2(7, 10.75)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 z_index = 5
@@ -16,11 +23,57 @@ texture = ExtResource("1_e48au")
 hframes = 3
 frame = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_88y52")
-
 [node name="DangerZone" parent="." instance=ExtResource("2_1g6ap")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
-position = Vector2(-0.5, 0)
+[node name="dangerZoneColision" type="CollisionShape2D" parent="DangerZone"]
 shape = SubResource("RectangleShape2D_88y52")
+debug_color = Color(0.976471, 0, 0, 0.419608)
+
+[node name="particles_brick" type="Node2D" parent="."]
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="particles_brick"]
+emitting = false
+amount = 1
+texture = ExtResource("4_duac4")
+one_shot = true
+direction = Vector2(2, -3)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="particles_brick"]
+emitting = false
+amount = 1
+texture = ExtResource("5_5uqab")
+one_shot = true
+direction = Vector2(-2, -3)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="particles_brick"]
+emitting = false
+amount = 1
+texture = ExtResource("6_8pld4")
+one_shot = true
+direction = Vector2(2, -5)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="particles_brick"]
+emitting = false
+amount = 1
+texture = ExtResource("7_gwxm4")
+one_shot = true
+direction = Vector2(-2, -5)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ny7o")
