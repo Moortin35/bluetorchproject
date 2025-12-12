@@ -22,3 +22,7 @@ Gerda: Es mi deber proseguir. Debo hallar la salida de esta lúgubre prisión.
 Odd Man: ¡Ja! Nadie escapa de la prisión de la torre de Dunharr el Oscuro.
 Odd Man: Pero haz lo que tú consideres correcto...Doncella de la Antorcha Azul.
 => END
+~ finish_talk
+Odd Man: ¡Jajajaja!
+Gerda: ...
+=> END

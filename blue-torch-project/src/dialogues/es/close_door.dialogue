@@ -5,5 +5,8 @@ Gerda: ¿Quién sois vos?
 Dama Desconocida: La puerta se cerró.
 Dama Desconocida: Si quieres llegar a donde estoy, vas a tener que encontrar una llave en tu lado de la prisión.
 Gerda: ¿Me diréis vuestro nombre?
-Dama Desconocida: ¡Solo si logras alcanzarme! 
+Dama Desconocida: ¡Solo si logras alcanzarme!
+=> END
+~ finish_talk
+Engla: ¡Ve rápido...te esperaré aquí!
 => END

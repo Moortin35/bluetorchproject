@@ -7,6 +7,7 @@ extends interactive
 @onready var open_door: Sprite2D = $OpenDoor
 const CLOSE_DOOR = preload("res://src/dialogues/es/close_door.dialogue")
 @onready var interactive_area: CollisionShape2D = $InteractiveArea
+var talk_finished : bool = false
 
 func _ready():
 	super._ready()
@@ -23,7 +24,11 @@ func _process(_delta: float) -> void:
 			player.player_inventory.remove_item("key")
 			o_door()
 		else:
-			DialogueManager.show_dialogue_balloon(CLOSE_DOOR)	
+			if !talk_finished:
+				DialogueManager.show_dialogue_balloon(CLOSE_DOOR, "start")
+				talk_finished = true
+			else:
+				DialogueManager.show_dialogue_balloon(CLOSE_DOOR, "finish_talk")
 
 func o_door():
 	door_sprites.play("open")
