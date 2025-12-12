@@ -49,7 +49,7 @@ Este videojuego fue realizado en el marco de la diplomatura de desarrollo de vid
  [Crystal Heart Love by Tio D](https://www.freepik.com/premium-vector/8-bit-pixels-crystal-heart-love-icon-game-assets-vector-illustrations_26268680.htm) 
 
  - Background de cielo
- [Cloudscape from Craftpix.net](https://craftpix.net/freebies/free-seamless-pixel-art-cloudscape-for-game-projects/?utm_campaign=SocialNetwork&utm_source=Twitter&utm_medium=free-seamless-pixel-art-cloudscape-for-game-projects)
+ [Free Sky with Clouds Pixel Art Backgrounds Pack 3 from Craftpix.net](https://craftpix.net/freebies/free-sky-with-clouds-pixel-art-backgrounds-pack-3/)
 
 ## Licencia
 
