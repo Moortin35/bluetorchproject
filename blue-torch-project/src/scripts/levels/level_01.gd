@@ -1,4 +1,5 @@
 extends Level
+@onready var gate_perfil: Node2D = $gate_perfil
 
 func _ready() -> void:
 	super._ready()
@@ -8,3 +9,7 @@ func _ready() -> void:
 	player.camera_2d.limit_left = -816
 	player.camera_2d.limit_top = -670
 	
+
+
+func _on_fire_bowl_i_finished() -> void:
+	gate_perfil.open()

@@ -7,7 +7,7 @@ extends Node2D
 
 @onready var player_inside := false
 @onready var contador := 0
-@onready var limite : float = 60.0
+@export var limite : float = 60.0
 @onready var partes : float= 5.0
 @onready var incremento_luz := 0.02
 

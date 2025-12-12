@@ -10,7 +10,7 @@ func _ready() -> void:
 		animated_sprite_2d.play("open_idle")
 	else:
 		collision_shape_2d.position.y = 0
-		animated_sprite_2d.play("cloese_idle")
+		animated_sprite_2d.play("close_idle")
 
 func close() -> void:
 	collision_shape_2d.position.y = 0
