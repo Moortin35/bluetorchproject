@@ -137,7 +137,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
-text = "Creditos"
+text = "Créditos"
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)

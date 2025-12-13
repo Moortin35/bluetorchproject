@@ -143,7 +143,7 @@ vertical_alignment = 1
 [node name="Label6" type="Label" parent="ColorRect/CenterContainer"]
 visible = false
 layout_mode = 2
-text = "“Has fallado en proteger a mi campeón, 
+text = "\"Has fallado en proteger a mi campeón, 
 ahora estarás destinada a cargar con el alma 
 del caballero al que juraste proteger. 
 Derrota al rey oscuro, lleva el alma a lo más alto de la torre, 
@@ -151,7 +151,7 @@ y enciende el fuego sagrado.
 Sólo así se detendrá la corrupción. 
 Es por esto que, debido a la misión que te he encomendado, 
 la gente comenzará a llamarte: 
-La Dama de la Antorcha Azul”"
+La Dama de la Antorcha Azul\""
 label_settings = SubResource("LabelSettings_ths2u")
 horizontal_alignment = 1
 vertical_alignment = 1
