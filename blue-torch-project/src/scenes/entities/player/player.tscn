@@ -578,6 +578,7 @@ metadata/_edit_lock_ = true
 range_layer_min = -1
 range_layer_max = 10
 texture = ExtResource("8_1hd0g")
+texture_scale = 0.5
 metadata/_edit_lock_ = true
 
 [node name="FlickerTimer" type="Timer" parent="BlueTorch"]
