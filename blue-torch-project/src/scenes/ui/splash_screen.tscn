@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7l4whthwunco"]
+[gd_scene load_steps=9 format=3 uid="uid://c7l4whthwunco"]
 
 [ext_resource type="Script" uid="uid://cbvqmixdv7hvc" path="res://src/scripts/ui/splash_screen.gd" id="1_4hfig"]
 [ext_resource type="FontFile" uid="uid://b4l8ftiv8h2kw" path="res://_assets/fonts/pixel_times/Pixel Times.ttf" id="2_oqkr3"]
@@ -29,6 +29,13 @@ font = ExtResource("2_oqkr3")
 font_size = 40
 font_color = Color(0.768627, 0.788235, 0.811765, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_s11fx"]
+line_spacing = 4.0
+paragraph_spacing = 4.0
+font = ExtResource("2_oqkr3")
+font_size = 43
+font_color = Color(0.768627, 0.788235, 0.811765, 1)
+
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -47,17 +54,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3353.0
-offset_right = 3353.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="Label0" type="Label" parent="ColorRect/CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label0" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 1
@@ -66,7 +78,7 @@ label_settings = SubResource("LabelSettings_4hfig")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label1" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label1" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 1
@@ -75,13 +87,13 @@ label_settings = SubResource("LabelSettings_8ja5m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Logo" type="TextureRect" parent="ColorRect/CenterContainer"]
+[node name="Logo" type="TextureRect" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 texture = ExtResource("3_oqkr3")
 stretch_mode = 3
 
-[node name="Label2" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 text = "Alejándose de las responsabilidades familiares 
@@ -95,7 +107,7 @@ label_settings = SubResource("LabelSettings_oqkr3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label3" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 text = "De la noche a la mañana 
@@ -109,7 +121,7 @@ label_settings = SubResource("LabelSettings_ths2u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label4" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 text = "El reino de Erdsunna, bendecido por la diosa del sol
@@ -125,7 +137,7 @@ label_settings = SubResource("LabelSettings_ths2u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label5" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 text = "Siendo la primera batalla de Gerda, 
@@ -140,7 +152,7 @@ label_settings = SubResource("LabelSettings_ths2u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label6" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 text = "\"Has fallado en proteger a mi campeón, 
@@ -156,7 +168,7 @@ label_settings = SubResource("LabelSettings_ths2u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="ColorRect/CenterContainer"]
+[node name="Label7" type="Label" parent="ColorRect/MarginContainer/CenterContainer"]
 visible = false
 layout_mode = 2
 text = "Cuando la diosa desapareció, 
@@ -167,5 +179,15 @@ y su fiel escudo, se defendió de aquella criatura,
 que la arrojó a las alcantarillas, 
 terminando en lo más bajo de la torre: las prisiones."
 label_settings = SubResource("LabelSettings_ths2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkipLabel" type="Label" parent="ColorRect/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Mantén Esc para saltar"
+label_settings = SubResource("LabelSettings_s11fx")
 horizontal_alignment = 1
 vertical_alignment = 1

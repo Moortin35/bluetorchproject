@@ -3,17 +3,20 @@ extends Control
 @export var fade_in_time : float = 1.5
 @export var fade_out_time : float = 1.5
 @export var out_time : float = 0.5
-
-@onready var label_0: Label = $ColorRect/CenterContainer/Label0
-@onready var logo: TextureRect = $ColorRect/CenterContainer/Logo
-@onready var label_2: Label = $ColorRect/CenterContainer/Label2
-@onready var label_3: Label = $ColorRect/CenterContainer/Label3
-@onready var label_4: Label = $ColorRect/CenterContainer/Label4
-@onready var label_5: Label = $ColorRect/CenterContainer/Label5
-@onready var label_6: Label = $ColorRect/CenterContainer/Label6
-@onready var label_7: Label = $ColorRect/CenterContainer/Label7
+@onready var label_0: Label = $ColorRect/MarginContainer/CenterContainer/Label0
+@onready var skip_label: Label = $ColorRect/MarginContainer/SkipLabel
+@onready var logo: TextureRect = $ColorRect/MarginContainer/CenterContainer/Logo
+@onready var label_2: Label = $ColorRect/MarginContainer/CenterContainer/Label2
+@onready var label_3: Label = $ColorRect/MarginContainer/CenterContainer/Label3
+@onready var label_4: Label = $ColorRect/MarginContainer/CenterContainer/Label4
+@onready var label_5: Label = $ColorRect/MarginContainer/CenterContainer/Label5
+@onready var label_6: Label = $ColorRect/MarginContainer/CenterContainer/Label6
+@onready var label_7: Label = $ColorRect/MarginContainer/CenterContainer/Label7
 
 var can_skip: bool = true
+var current_tween: Tween = null
+var skip_current: bool = false
+var esc_press_time: float = 0.0
 
 func fade(screen : Control, pause_time : float) -> void:	
 	if screen == null:
@@ -23,21 +26,29 @@ func fade(screen : Control, pause_time : float) -> void:
 	screen.visible = true	
 	screen.modulate = Color(1, 1, 1, 0)
 	
-	var tween = create_tween()
-	tween.tween_interval(in_time)
-	tween.tween_property(screen, "modulate:a", 1.0, fade_in_time)
-	tween.tween_interval(pause_time)
-	tween.tween_property(screen, "modulate:a", 0.0, fade_out_time)
-	tween.tween_interval(out_time)
+	current_tween = create_tween()
+	current_tween.tween_interval(in_time)
+	current_tween.tween_property(screen, "modulate:a", 1.0, fade_in_time)
+	current_tween.tween_interval(pause_time)
+	current_tween.tween_property(screen, "modulate:a", 0.0, fade_out_time)
+	current_tween.tween_interval(out_time)
 	
-	await tween.finished
+	await current_tween.finished
+	
+	# Si se solicitó skip durante este fade, terminar inmediatamente
+	if skip_current:
+		skip_current = false
+		screen.modulate = Color(1, 1, 1, 0)
 	
 	screen.visible = false
+	current_tween = null
 	
 func _ready() -> void:
-
+	# Asegurarse de que el nodo pueda recibir input
+	set_process_input(true)
 	
 	label_0.visible = false
+	skip_label.visible = false
 	logo.visible = false
 	label_2.visible = false
 	label_3.visible = false
@@ -48,22 +59,44 @@ func _ready() -> void:
 	
 	
 	await fade(label_0, 2.0)
+	if skip_current: return
 	await fade(logo, 2.0)
+	if skip_current: return
+	fade(skip_label, 4.0)
 	await fade(label_2, 12.0)
+	if skip_current: return
 	await fade(label_3, 12.0)
+	if skip_current: return
 	await fade(label_4, 12.0)
+	if skip_current: return
 	await fade(label_5, 12.0)
+	if skip_current: return
 	await fade(label_6, 12.0)
+	if skip_current: return
 	await fade(label_7, 12.0)
 	
 	get_tree().change_scene_to_file("res://src/scenes/main.tscn")
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("salir_menu"):
+		esc_press_time += delta
+		if esc_press_time >= 1.5:
+			skip_to_main()
+	else:
+		esc_press_time = 0.0
 	
+func skip_current_label():
+	if current_tween and current_tween.is_valid():
+		# En vez de kill(), aceleramos el tween para que termine instantáneamente
+		current_tween.set_speed_scale(1000.0)
+		
 func skip_to_main():
 	if can_skip:
-		can_skip = false  # Evitar múltiples llamadas
+		can_skip = false
+		if current_tween and current_tween.is_valid():
+			current_tween.kill()
 		get_tree().change_scene_to_file("res://src/scenes/main.tscn")
 
-func _input(event):
-	# Detectar cualquier tecla, clic o botón de gamepad
-	if event.is_pressed():
-		skip_to_main()
+func _unhandled_input(event):
+	if event.is_action_pressed("interact"):
+		skip_current_label()
