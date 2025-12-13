@@ -35,7 +35,6 @@ func fade(screen : Control, pause_time : float) -> void:
 	
 	await current_tween.finished
 	
-	# Si se solicitó skip durante este fade, terminar inmediatamente
 	if skip_current:
 		skip_current = false
 		screen.modulate = Color(1, 1, 1, 0)
@@ -44,7 +43,6 @@ func fade(screen : Control, pause_time : float) -> void:
 	current_tween = null
 	
 func _ready() -> void:
-	# Asegurarse de que el nodo pueda recibir input
 	set_process_input(true)
 	
 	label_0.visible = false
@@ -87,7 +85,6 @@ func _process(delta: float) -> void:
 	
 func skip_current_label():
 	if current_tween and current_tween.is_valid():
-		# En vez de kill(), aceleramos el tween para que termine instantáneamente
 		current_tween.set_speed_scale(1000.0)
 		
 func skip_to_main():
