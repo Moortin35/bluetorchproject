@@ -5,10 +5,15 @@ extends Control
 @export var out_time : float = 0.5
 
 @onready var label_0: Label = $ColorRect/CenterContainer/Label0
-@onready var label_1: Label = $ColorRect/CenterContainer/Label1
+@onready var logo: TextureRect = $ColorRect/CenterContainer/Logo
 @onready var label_2: Label = $ColorRect/CenterContainer/Label2
 @onready var label_3: Label = $ColorRect/CenterContainer/Label3
 @onready var label_4: Label = $ColorRect/CenterContainer/Label4
+@onready var label_5: Label = $ColorRect/CenterContainer/Label5
+@onready var label_6: Label = $ColorRect/CenterContainer/Label6
+@onready var label_7: Label = $ColorRect/CenterContainer/Label7
+
+var can_skip: bool = true
 
 func fade(screen : Control, pause_time : float) -> void:	
 	if screen == null:
@@ -33,18 +38,32 @@ func _ready() -> void:
 
 	
 	label_0.visible = false
-	label_1.visible = false
+	logo.visible = false
 	label_2.visible = false
 	label_3.visible = false
 	label_4.visible = false
+	label_5.visible = false
+	label_6.visible = false
+	label_7.visible = false
+	
 	
 	await fade(label_0, 2.0)
-	await fade(label_1, 2.0)
-	await fade(label_2, 10.0)
-	await fade(label_3, 10.0)
-	await fade(label_4, 10.0)
+	await fade(logo, 2.0)
+	await fade(label_2, 12.0)
+	await fade(label_3, 12.0)
+	await fade(label_4, 12.0)
+	await fade(label_5, 12.0)
+	await fade(label_6, 12.0)
+	await fade(label_7, 12.0)
+	
 	get_tree().change_scene_to_file("res://src/scenes/main.tscn")
 	
+func skip_to_main():
+	if can_skip:
+		can_skip = false  # Evitar múltiples llamadas
+		get_tree().change_scene_to_file("res://src/scenes/main.tscn")
+
 func _input(event):
-	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://main.tscn")
+	# Detectar cualquier tecla, clic o botón de gamepad
+	if event.is_pressed():
+		skip_to_main()

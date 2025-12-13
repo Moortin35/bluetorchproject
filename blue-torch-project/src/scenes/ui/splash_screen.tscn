@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7l4whthwunco"]
+[gd_scene load_steps=8 format=3 uid="uid://c7l4whthwunco"]
 
 [ext_resource type="Script" uid="uid://cbvqmixdv7hvc" path="res://src/scripts/ui/splash_screen.gd" id="1_4hfig"]
 [ext_resource type="FontFile" uid="uid://b4l8ftiv8h2kw" path="res://_assets/fonts/pixel_times/Pixel Times.ttf" id="2_oqkr3"]
+[ext_resource type="Texture2D" uid="uid://ny1s4n8onhbv" path="res://_assets/images/logo/Logo.png" id="3_oqkr3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4hfig"]
 line_spacing = 4.0
@@ -36,7 +37,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4hfig")
-in_time = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -58,6 +58,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label0" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
 text = "Team Blue Torch presenta"
@@ -66,6 +67,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label1" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
 text = "Blue Torch"
@@ -73,7 +75,14 @@ label_settings = SubResource("LabelSettings_8ja5m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Logo" type="TextureRect" parent="ColorRect/CenterContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_oqkr3")
+stretch_mode = 3
+
 [node name="Label2" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
 layout_mode = 2
 text = "Alejándose de las responsabilidades familiares 
 y en busca de su propio destino, 
@@ -87,6 +96,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
 layout_mode = 2
 text = "De la noche a la mañana 
 el mundo se sumió bajo una profunda corrupción. 
@@ -100,6 +110,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
 layout_mode = 2
 text = "El reino de Erdsunna, bendecido por la diosa del sol
  y guiado por Sir Lothar el Refulgente,
@@ -110,6 +121,51 @@ text = "El reino de Erdsunna, bendecido por la diosa del sol
 se libró una feroz batalla
  en las tierras que rodeaban la siniestra torre.
 "
+label_settings = SubResource("LabelSettings_ths2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
+layout_mode = 2
+text = "Siendo la primera batalla de Gerda, 
+ésta se acobardó por un instante y dejó 
+que hirieran a su caballero, 
+que no era más ni nada menos, 
+que el joven Sir Lothar. 
+Esto provocó la muerte del noble, y su propia perdición. 
+Cuando la doncella despertó entre los restos del combate, 
+la diosa Sunna se le apareció y le impuso un castigo:"
+label_settings = SubResource("LabelSettings_ths2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
+layout_mode = 2
+text = "“Has fallado en proteger a mi campeón, 
+ahora estarás destinada a cargar con el alma 
+del caballero al que juraste proteger. 
+Derrota al rey oscuro, lleva el alma a lo más alto de la torre, 
+y enciende el fuego sagrado. 
+Sólo así se detendrá la corrupción. 
+Es por esto que, debido a la misión que te he encomendado, 
+la gente comenzará a llamarte: 
+La Dama de la Antorcha Azul”"
+label_settings = SubResource("LabelSettings_ths2u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="ColorRect/CenterContainer"]
+visible = false
+layout_mode = 2
+text = "Cuando la diosa desapareció, 
+la doncella alcanzó a divisar un horror de otro plano 
+que se cernía detrás de ella. 
+Empuñando la antorcha con el alma de Sir Lothar, 
+y su fiel escudo, se defendió de aquella criatura, 
+que la arrojó a las alcantarillas, 
+terminando en lo más bajo de la torre: las prisiones."
 label_settings = SubResource("LabelSettings_ths2u")
 horizontal_alignment = 1
 vertical_alignment = 1
