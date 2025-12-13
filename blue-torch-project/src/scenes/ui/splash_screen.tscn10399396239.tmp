@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7l4whthwunco"]
+
+[ext_resource type="Script" uid="uid://cbvqmixdv7hvc" path="res://src/scripts/ui/splash_screen.gd" id="1_4hfig"]
+[ext_resource type="Texture2D" uid="uid://ny1s4n8onhbv" path="res://_assets/images/logo/logo.png" id="1_ua1b0"]
+[ext_resource type="FontFile" uid="uid://bmucgu0cc26ru" path="res://_assets/fonts/Jacquard_24/Jacquard24-Regular.ttf" id="3_oqkr3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ja5m"]
+font = ExtResource("3_oqkr3")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_oqkr3"]
+font = ExtResource("3_oqkr3")
+font_size = 50
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hfig")
+in_time = 3.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3353.0
+offset_right = 3353.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_ua1b0")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Alejándose de las responsabilidades familiares 
+y en busca de su propio destino, 
+la joven Gerda soñaba con convertirse en caballera. 
+Comenzó desde lo más bajo, como una de las pocas 
+doncellas escuderas del reino, 
+bajo el mando del campeón de la diosa del sol: Sir Lothar. 
+Sin embargo, no todo salió como tenía planeado."
+label_settings = SubResource("LabelSettings_8ja5m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+text = "De la noche a la mañana el mundo se sumió bajo una profunda corrupción. 
+El rey de la nación vecina: Dunharr el Oscuro, 
+en su perversidad abrió siniestros portales hacia otro plano, 
+trayendo horrores inimaginables 
+y una profunda oscuridad que alcanzó incluso a los mismos dioses."
+label_settings = SubResource("LabelSettings_oqkr3")
+horizontal_alignment = 1
+vertical_alignment = 1
