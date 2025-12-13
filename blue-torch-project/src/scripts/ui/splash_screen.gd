@@ -43,4 +43,8 @@ func _ready() -> void:
 	await fade(label_2, 10.0)
 	await fade(label_3, 10.0)
 	await fade(label_4, 10.0)
+	get_tree().change_scene_to_file("res://src/scenes/main.tscn")
 	
+func _input(event):
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://main.tscn")
