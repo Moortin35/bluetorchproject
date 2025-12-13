@@ -3,6 +3,7 @@ extends Control
 class_name MainMenu
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var animated_torch: AnimatedSprite2D = $AnimatedTorch
+@onready var credits: CanvasLayer = $Credits
 
 
 func _ready() -> void:
@@ -15,6 +16,9 @@ func _on_play_button_pressed() -> void:
 	AudioControler.stop_music()
 	deactivate()
 
+func _on_credits_button_pressed() -> void:
+	canvas_layer.hide()
+	credits.show()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
@@ -34,3 +38,9 @@ func activate() -> void:
 	set_process_unhandled_input(true)
 	set_process_input(true)
 	set_physics_process(true)
+
+#Credits
+
+func _on_back_button_pressed() -> void:
+	credits.hide()
+	canvas_layer.show()

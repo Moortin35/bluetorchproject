@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dn6jhou77r6nf"]
+[gd_scene load_steps=15 format=3 uid="uid://dn6jhou77r6nf"]
 
 [ext_resource type="Script" uid="uid://yjlyxc7f03e2" path="res://src/scripts/ui/main_menu.gd" id="1_ttmq8"]
 [ext_resource type="Texture2D" uid="uid://djqgreatjk2qf" path="res://_assets/images/backgrounds/wall.png" id="2_6trx7"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bmucgu0cc26ru" path="res://_assets/fonts/Jacquard_24/Jacquard24-Regular.ttf" id="4_x2oeq"]
 [ext_resource type="Texture2D" uid="uid://dbyxv6a8yvgfc" path="res://_assets/images/menu/menu_animation.png" id="4_yl70w"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="5_x2oeq"]
+[ext_resource type="FontFile" uid="uid://b4l8ftiv8h2kw" path="res://_assets/fonts/pixel_times/Pixel Times.ttf" id="7_yl70w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4ql8"]
 atlas = ExtResource("4_yl70w")
@@ -48,6 +49,13 @@ font = ExtResource("4_x2oeq")
 font_size = 128
 font_color = Color(0, 0.0110781, 0.176115, 1)
 outline_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_6trx7"]
+font = ExtResource("7_yl70w")
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -122,6 +130,15 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Iniciar"
 
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_loxbe")
+theme_override_font_sizes/font_size = 72
+text = "Creditos"
+
 [node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
@@ -132,5 +149,52 @@ theme_override_font_sizes/font_size = 72
 text = "Salir
 "
 
+[node name="Credits" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Credits/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 512)
+layout_mode = 2
+text = "Autores:
+Desarrollador y Efectos - Miguel Miloro
+Artista 2D y Escritora - Melani L. Rodriguez
+Productor de Sonido - Christian O. Gentile
+Desarrollador y Game Designer - Martín N. Delgado
+
+Profesor:
+Tobias Q. Moscatelli
+
+Este videojuego fue creado en el marco 
+de la diplomatura de desarrollo de videojuegos
+de la Universidad Nacional de Quilmes."
+label_settings = SubResource("LabelSettings_6trx7")
+
+[node name="BackButton" type="Button" parent="Credits/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_loxbe")
+theme_override_font_sizes/font_size = 72
+text = "Volver al Menú"
+
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Credits/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
