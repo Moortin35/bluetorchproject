@@ -18,7 +18,7 @@ func update():
 		can_play_sound = false
 		AudioControler.play_land()
 		can_double_jump = true
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("saltar"):
 		can_play_sound = true
 		character.state = self
 		if character.is_on_floor():
