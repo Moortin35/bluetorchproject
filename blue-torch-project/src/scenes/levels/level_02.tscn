@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://dyac7lgotvqq"]
+[gd_scene load_steps=76 format=4 uid="uid://dyac7lgotvqq"]
 
 [ext_resource type="Script" uid="uid://d34ntt7wbrvsr" path="res://src/scripts/levels/level_02.gd" id="1_flerx"]
 [ext_resource type="AudioStream" uid="uid://cuqyw2kbpjsac" path="res://_assets/sounds/music/level_2_theme .wav" id="2_d8e8b"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dn3wjblbki3ia" path="res://_assets/textures/parallax/level01/parallax_jailsbg_level01.png" id="6_ctanu"]
 [ext_resource type="Texture2D" uid="uid://ddrc7j4ryfbfh" path="res://_assets/textures/tilemap/background_tileset.png" id="6_daec4"]
 [ext_resource type="Texture2D" uid="uid://3rgoirw1vqcy" path="res://_assets/textures/parallax/level01/parallax_jailsmg_level01.png" id="7_hhctk"]
+[ext_resource type="Shader" uid="uid://byr1d4l24nqqh" path="res://src/shaders/blur.gdshader" id="8_qlcop"]
 [ext_resource type="Texture2D" uid="uid://ckuftxjpde1xh" path="res://_assets/textures/parallax/level01/parallax_jailsfg_level01.png" id="8_wbvwm"]
 [ext_resource type="PackedScene" uid="uid://432fmegl2y15" path="res://src/scenes/entities/player/player.tscn" id="9_6xe2p"]
 [ext_resource type="PackedScene" uid="uid://os6t8vie50h5" path="res://src/scenes/ui/pause_menu.tscn" id="11_kpnwg"]
@@ -613,6 +614,22 @@ texture = ExtResource("6_daec4")
 [sub_resource type="TileSet" id="TileSet_faiak"]
 sources/0 = SubResource("TileSetAtlasSource_hv2x8")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_faiak"]
+shader = ExtResource("8_qlcop")
+shader_parameter/amount = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlcop"]
+shader = ExtResource("8_qlcop")
+shader_parameter/amount = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hv2x8"]
+shader = ExtResource("8_qlcop")
+shader_parameter/amount = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dw3qr"]
+shader = ExtResource("8_qlcop")
+shader_parameter/amount = 0.6
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vaiti"]
 radius = 9.0
 height = 1188.0
@@ -676,6 +693,7 @@ motion_mirroring = Vector2(0, 720)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_BG"]
+material = SubResource("ShaderMaterial_faiak")
 position = Vector2(640, 360)
 texture = ExtResource("5_0afxd")
 metadata/_edit_lock_ = true
@@ -686,6 +704,7 @@ motion_mirroring = Vector2(1280, 720)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_PBG"]
+material = SubResource("ShaderMaterial_qlcop")
 position = Vector2(640, 360)
 texture = ExtResource("6_ctanu")
 metadata/_edit_lock_ = true
@@ -696,6 +715,7 @@ motion_mirroring = Vector2(1280, 720)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_PMG"]
+material = SubResource("ShaderMaterial_hv2x8")
 position = Vector2(640, 360)
 texture = ExtResource("7_hhctk")
 metadata/_edit_lock_ = true
@@ -706,6 +726,7 @@ motion_mirroring = Vector2(1280, 720)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Enviroment/ParallaxBackground/ParallaxLayer_PFG"]
+material = SubResource("ShaderMaterial_dw3qr")
 position = Vector2(640, 360)
 texture = ExtResource("8_wbvwm")
 metadata/_edit_lock_ = true
