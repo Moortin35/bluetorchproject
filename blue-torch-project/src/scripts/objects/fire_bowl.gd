@@ -19,10 +19,13 @@ extends Node2D
 @onready var indice_iteracion := 1    
 
 signal i_finished
-
+@export var is_small = false
 
 func _ready():
 	siguiente_meta =  int(limite / partes)
+	if is_small:
+		for particle in particles.get_children():
+			particle.lifetime = 0.3
 
 func _process(delta):
 	if player_inside and contador < limite:

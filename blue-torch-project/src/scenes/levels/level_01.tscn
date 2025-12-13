@@ -765,10 +765,10 @@ visible = false
 position = Vector2(151, 600)
 
 [node name="Fire_Bowl" parent="." instance=ExtResource("21_bcxre")]
-z_index = 6
 position = Vector2(-29.1462, 631.065)
 scale = Vector2(0.5, 0.5)
 limite = 30.0
+is_small = true
 
 [node name="gate_perfil" parent="." instance=ExtResource("22_smn8e")]
 z_index = 6

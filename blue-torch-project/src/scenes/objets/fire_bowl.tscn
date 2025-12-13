@@ -15,6 +15,7 @@ point_count = 2
 radius = 48.0
 
 [node name="Fire_Bowl" type="Node2D"]
+z_index = 6
 script = ExtResource("1_rlf18")
 
 [node name="particles" type="Node2D" parent="."]
@@ -65,7 +66,7 @@ scale_amount_curve = SubResource("Curve_ojj13")
 color = Color(0, 0.168627, 1, 1)
 
 [node name="ready_particles" parent="." instance=ExtResource("2_0yot2")]
-z_index = 5
+z_index = 0
 position = Vector2(0, 1)
 amount = 70
 lifetime = 2.5
