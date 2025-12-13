@@ -48,8 +48,11 @@ Este videojuego fue realizado en el marco de la diplomatura de desarrollo de vid
  - Inspiración para UI de Corazones
  [Crystal Heart Love by Tio D](https://www.freepik.com/premium-vector/8-bit-pixels-crystal-heart-love-icon-game-assets-vector-illustrations_26268680.htm) 
 
- - Background de cielo
+ - Background de Cielo
  [Free Sky with Clouds Pixel Art Backgrounds Pack 3 from Craftpix.net](https://craftpix.net/freebies/free-sky-with-clouds-pixel-art-backgrounds-pack-3/)
+
+ - Background de Pared de Ladrillos
+ [Dungeon brick wall background by Cat Sopelka](https://cat-sopelka.itch.io/dungeon-brick-wall)
 
 ## Licencia
 
