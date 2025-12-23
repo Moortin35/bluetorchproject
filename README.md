@@ -12,7 +12,7 @@ Este videojuego fue realizado en el marco de la diplomatura de desarrollo de vid
 
 - Desarrollador y Game Designer [@BlueSkywrath](https://itch.io/profile/blueskywrath)
 
-- Artista 2D y Escritora [@Nøva](https://itch.io/profile/bett-champion)
+- Artista 2D y Escritora [@Nøva](https://itch.io/profile/sleepy-robot-labs))
 
 - Productor de Sonido [@Impresto](https://linktr.ee/ImprestoOficial)
 
