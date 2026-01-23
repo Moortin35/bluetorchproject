@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dyakuf6jk364e" path="res://_assets/sprites/player/run.png" id="8_qh5pu"]
 [ext_resource type="Script" uid="uid://cpcnmrat71jim" path="res://src/scripts/entities/player/blue_torch.gd" id="9_ddkw8"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="9_qh5pu"]
-[ext_resource type="Script" path="res://src/scripts/entities/player/camera_2d.gd" id="13_jasd0"]
+[ext_resource type="Script" uid="uid://d1naaw8v0slh3" path="res://src/scripts/entities/player/camera_2d.gd" id="13_jasd0"]
 [ext_resource type="Script" uid="uid://doiumbw0yno5n" path="res://src/scripts/entities/player/movement.gd" id="15_lgfv5"]
 [ext_resource type="Script" uid="uid://dj87gqlepj207" path="res://src/scripts/entities/player/jump.gd" id="16_cmfkv"]
 [ext_resource type="Script" uid="uid://dd2vogeb5diji" path="res://src/scripts/entities/player/dash.gd" id="17_n5fdq"]

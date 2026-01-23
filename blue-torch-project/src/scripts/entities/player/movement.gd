@@ -45,8 +45,7 @@ func stop_movement():
 
 func play_step_sound(velocity):
 	if character.is_on_floor() and abs(velocity.x) > 10:
-		var sound = step_sounds[randi() % step_sounds.size()]
-		AudioControler.play_sfx(sound)
+		AudioController2.play_sfx_alt(step_sounds, "Player")
 		
 func animation():
 	character.play_anim("walk")

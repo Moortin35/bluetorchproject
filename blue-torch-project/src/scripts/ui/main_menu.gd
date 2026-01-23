@@ -14,13 +14,21 @@ func _ready() -> void:
 func _on_play_button_pressed() -> void:
 	LevelManager.load_level(1)
 	AudioControler.stop_music()
+	AudioControler.play_ui_start()
 	deactivate()
+	
+func _on_button_mouse_entered() -> void:
+	AudioControler.play_ui_hover()
+	
+	
 
 func _on_credits_button_pressed() -> void:
+	AudioControler.play_ui_enter()
 	canvas_layer.hide()
 	credits.show()
 
 func _on_quit_button_pressed() -> void:
+	AudioControler.play_ui_enter()
 	get_tree().quit()
 
 func deactivate() -> void:
@@ -42,5 +50,6 @@ func activate() -> void:
 #Credits
 
 func _on_back_button_pressed() -> void:
+	AudioControler.play_ui_back()
 	credits.hide()
 	canvas_layer.show()

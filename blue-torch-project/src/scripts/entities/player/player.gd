@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+const DEATH_SFX := preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav")
+
 @onready var movement: Movement = $"state_set/Movement" as Movement
 @onready var jump: Jump = $"state_set/Jump" as Jump
 @onready var dash: Dash = $"state_set/Dash" as Dash
@@ -22,6 +24,7 @@ var fade_tween: Tween
 var base_pos: Vector2
 
 const KNOCKBACK_DURATION = 0.2 
+
 
 var direction = 0
 var last_direction = 1
@@ -135,7 +138,7 @@ func handle_danger() -> void:
 	if !is_dead:
 		is_dead = true
 		AudioControler.stop_lvl_music()
-		AudioControler.play_sfx(preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav"))
+		AudioController2.play_sfx(DEATH_SFX, "SFX")
 		
 		can_control = false
 		velocity.y = 0

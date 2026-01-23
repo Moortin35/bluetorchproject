@@ -194,7 +194,10 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Volver al Menú"
 
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Credits/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

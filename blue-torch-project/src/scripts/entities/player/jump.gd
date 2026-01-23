@@ -4,6 +4,10 @@ class_name Jump
 #animacion
 @export var jump_particles : PackedScene
 
+const JUMP_SFX := preload("res://_assets/sounds/effects/jump-01.mp3")
+const LAND_SFX := preload("res://_assets/sounds/effects/landing-01.mp3")
+const LAND_2_SFX := preload("res://_assets/sounds/effects/landing-02.mp3")
+
 #logica
 const JUMP_VELOCITY = -300.0
 var can_double_jump := true
@@ -16,17 +20,17 @@ func setup(character2D: CharacterBody2D):
 func update():
 	if can_play_sound and character.is_on_floor():
 		can_play_sound = false
-		AudioControler.play_land()
+		AudioController2.play_sfx_alt([LAND_SFX, LAND_2_SFX], "Player")
 		can_double_jump = true
 	if Input.is_action_just_pressed("saltar"):
 		can_play_sound = true
 		character.state = self
 		if character.is_on_floor():
-			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))
+			AudioController2.play_sfx(JUMP_SFX, "Player")
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
 		elif can_double_jump:
-			AudioControler.play_sfx(preload("res://_assets/sounds/effects/jump-01.mp3"))
+			AudioController2.play_sfx(JUMP_SFX, "Player")
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
 			can_double_jump = false
