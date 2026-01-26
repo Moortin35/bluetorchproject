@@ -21,11 +21,10 @@ boot_splash/minimum_display_time=3000
 [autoload]
 
 LevelManager="*res://src/scripts/manager/level_manager.gd"
-AudioControler="*res://src/scenes/sound/audio_controller.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalSignals="*res://src/scripts/manager/global_signals.gd"
 Globals="*res://src/scripts/manager/globals.gd"
-AudioController2="*res://src/scripts/manager/audio_controller_2.gd"
+AudioController="*res://src/scripts/manager/audio_controller.gd"
 
 [dialogue_manager]
 

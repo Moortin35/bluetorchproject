@@ -29,7 +29,7 @@ func update(delta):
 			
 func start_dash() -> void:
 	spawn_dash_particles()
-	AudioController2.play_sfx(DASH_SFX, "Player")
+	AudioController.play_sfx(DASH_SFX, "Reverb")
 	is_dashing = true
 	can_dash = false
 	character.velocity.x = character.last_direction * DASH_SPEED

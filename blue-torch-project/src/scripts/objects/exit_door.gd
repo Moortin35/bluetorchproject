@@ -10,5 +10,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if can_i_interact():
 		next_level.show()
-		AudioControler.play_lvl_music(END_LEVEL_MUSIC)
+		AudioController.play_music(END_LEVEL_MUSIC)
 		player.can_control = false

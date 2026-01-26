@@ -13,6 +13,8 @@ extends Control
 @onready var label_6: Label = $ColorRect/MarginContainer/CenterContainer/Label6
 @onready var label_7: Label = $ColorRect/MarginContainer/CenterContainer/Label7
 
+const MUSIC_MENU := preload("res://_assets/sounds/music/main_theme.mp3")
+
 var can_skip: bool = true
 var current_tween: Tween = null
 var skip_current: bool = false
@@ -54,6 +56,8 @@ func _ready() -> void:
 	label_5.visible = false
 	label_6.visible = false
 	label_7.visible = false
+	
+	AudioController.play_music(MUSIC_MENU)
 	
 	
 	await fade(label_0, 2.0)

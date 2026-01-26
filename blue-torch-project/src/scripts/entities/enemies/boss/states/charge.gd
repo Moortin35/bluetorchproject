@@ -10,7 +10,7 @@ func on_physics_process(delta: float) -> void:
 	if controlled_node.is_on_floor():
 		step_timer -= delta
 		if step_timer <= 0.0:
-			AudioControler.play_step_skeleton()
+			AudioController.play_sfx(SFX_SKELETON_STEP)
 			step_timer = step_interval
 	else:
 		step_timer = 0.0
@@ -20,7 +20,7 @@ func on_physics_process(delta: float) -> void:
 		controlled_node.direction *= -1
 		controlled_node.emit_spawn_bricks(3)
 		controlled_node.animated_sprite.flip_h = controlled_node.direction < 0
-		AudioControler.slam()
+		AudioController.play_sfx(SFX_SLAM)
 		state_machine.change_to("idle")
 	controlled_node.velocity.y += gravity * delta
 	controlled_node.move_and_slide()

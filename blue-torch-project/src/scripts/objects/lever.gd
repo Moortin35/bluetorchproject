@@ -5,8 +5,9 @@ extends interactive
 @export var _id = 0
 
 const BROKEN_LEVER = preload("res://src/dialogues/es/broken_lever.dialogue")
-var on = false
+const SFX_LEVER := preload("res://_assets/sounds/effects/lever.mp3")
 
+var on = false
 
 func _ready() -> void:
 	super._ready()
@@ -30,7 +31,7 @@ func _process(_delta: float) -> void:
 			use_lever()
 			
 func use_lever():
-	AudioControler.lever()
+	AudioController.play_sfx(SFX_LEVER, "Reverb")
 	if on:
 		on = false
 		sprite_2d.frame = 0

@@ -7,6 +7,12 @@ extends RigidBody2D
 
 @onready var particles_brick: Node2D = $particles_brick
 
+const SFX_BRICKS := [
+	preload("res://_assets/sounds/effects/efectos entorno/Piedras 1.wav"),
+	preload("res://_assets/sounds/effects/efectos entorno/Piedras 2.wav"),
+	preload("res://_assets/sounds/effects/efectos entorno/Piedras 3.wav"),
+	preload("res://_assets/sounds/effects/efectos entorno/Piedras 3-1.wav")
+]
 
 func _ready():
 	gravity_scale = 0.4
@@ -19,7 +25,7 @@ func _integrate_forces(state):
 		var collider = state.get_contact_collider_object(i)
 		if collider is TileMapLayer or collider is CharacterBody2D:
 			if(collider is TileMapLayer):
-				AudioControler.brick_destroy()
+				AudioController.play_sfx_alt(SFX_BRICKS)
 			_hide_brick()
 			emit_all_particles()
 			await get_tree().create_timer(1).timeout

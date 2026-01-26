@@ -137,8 +137,8 @@ func update_animation_player() -> void:
 func handle_danger() -> void:
 	if !is_dead:
 		is_dead = true
-		AudioControler.stop_lvl_music()
-		AudioController2.play_sfx(DEATH_SFX, "SFX")
+		AudioController.stop_music()
+		AudioController.play_sfx(DEATH_SFX, "SFX")
 		
 		can_control = false
 		velocity.y = 0

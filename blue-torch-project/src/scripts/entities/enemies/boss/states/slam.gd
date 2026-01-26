@@ -16,7 +16,7 @@ func on_physics_process(delta: float) -> void:
 
 func _on_timer_slam_timeout() -> void:
 	controlled_node.emit_spawn_bricks(5)
-	AudioControler.slam()
+	AudioController.play_sfx(SFX_SLAM)
 	state_machine.change_to("idle")
 	timer_start = false
 

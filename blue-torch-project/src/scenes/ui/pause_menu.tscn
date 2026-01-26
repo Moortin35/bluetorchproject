@@ -82,6 +82,9 @@ theme_override_fonts/font = ExtResource("1_glk6x")
 theme_override_font_sizes/font_size = 72
 text = "Salir"
 
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonContinue" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonContinue" to="." method="_on_button_continue_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonRestart" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/BoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

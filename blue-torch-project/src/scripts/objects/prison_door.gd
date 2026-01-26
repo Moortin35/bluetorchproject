@@ -9,6 +9,8 @@ const CLOSE_DOOR = preload("res://src/dialogues/es/close_door.dialogue")
 @onready var interactive_area: CollisionShape2D = $InteractiveArea
 var talk_finished : bool = false
 
+const SFX_OPEN_DOOR := preload("res://_assets/sounds/effects/door_and_key_open.mp3")
+
 func _ready():
 	super._ready()
 	icon = "key"
@@ -35,7 +37,7 @@ func o_door():
 	interactive_area.disabled = true
 	collision_shape_close.disabled = true
 	open_door.show()
-	AudioControler.play_open_dor()
+	AudioController.play_sfx(SFX_OPEN_DOOR, "Reverb")
 	
 func c_door():
 	door_sprites.play("close")

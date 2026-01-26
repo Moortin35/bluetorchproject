@@ -20,17 +20,17 @@ func setup(character2D: CharacterBody2D):
 func update():
 	if can_play_sound and character.is_on_floor():
 		can_play_sound = false
-		AudioController2.play_sfx_alt([LAND_SFX, LAND_2_SFX], "Player")
+		AudioController.play_sfx_alt([LAND_SFX, LAND_2_SFX], "Reverb")
 		can_double_jump = true
 	if Input.is_action_just_pressed("saltar"):
 		can_play_sound = true
 		character.state = self
 		if character.is_on_floor():
-			AudioController2.play_sfx(JUMP_SFX, "Player")
+			AudioController.play_sfx(JUMP_SFX, "Reverb")
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
 		elif can_double_jump:
-			AudioController2.play_sfx(JUMP_SFX, "Player")
+			AudioController.play_sfx(JUMP_SFX, "Reverb")
 			spawn_jump_particles()
 			character.velocity.y = JUMP_VELOCITY
 			can_double_jump = false
