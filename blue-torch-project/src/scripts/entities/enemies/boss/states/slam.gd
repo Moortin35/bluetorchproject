@@ -4,6 +4,9 @@ var gravity:float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer_slam: Timer = $"../../Timer_slam"
 var timer_start = false
 
+const SFX_SKELETON_SLAM := preload("res://_assets/sounds/effects/SkeletonHit01.wav")
+
+
 func on_physics_process(delta: float) -> void:
 	controlled_node.velocity.x = 0
 	controlled_node.animated_sprite.play("attack_2")
@@ -16,7 +19,7 @@ func on_physics_process(delta: float) -> void:
 
 func _on_timer_slam_timeout() -> void:
 	controlled_node.emit_spawn_bricks(5)
-	AudioController.play_sfx(SFX_SLAM)
+	AudioController.play_sfx(SFX_SKELETON_SLAM)
 	state_machine.change_to("idle")
 	timer_start = false
 
