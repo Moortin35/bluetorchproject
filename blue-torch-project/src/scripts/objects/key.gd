@@ -1,6 +1,6 @@
 extends Area2D
 
-const SFX_PICK_KEY := preload("res://_assets/sounds/effects/pick_key.mp3")
+const SFX_PICK_KEY := preload("res://_assets/sounds/sfx/environment/keys_01.wav")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

@@ -2,10 +2,10 @@ extends CanvasLayer
 
 @onready var margin_container: MarginContainer = $MarginContainer
 
-const SFX_UI_START := preload("res://_assets/sounds/effects/ui/start.wav")
-const SFX_UI_ENTER := preload("res://_assets/sounds/effects/ui/enter.wav")
-const SFX_UI_BACK := preload("res://_assets/sounds/effects/ui/back.wav")
-const SFX_UI_HOVER := preload("res://_assets/sounds/effects/ui/hover.wav")
+const SFX_UI_START := preload("res://_assets/sounds/sfx/ui/start.wav")
+const SFX_UI_ENTER := preload("res://_assets/sounds/sfx/ui/enter.wav")
+const SFX_UI_BACK := preload("res://_assets/sounds/sfx/ui/back.wav")
+const SFX_UI_HOVER := preload("res://_assets/sounds/sfx/ui/hover.wav")
 
 func resume():
 	get_tree().paused = false

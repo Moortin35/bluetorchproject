@@ -193,4 +193,5 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
 	if not letter in ["."," "]:
 		talk_sound.pitch_scale = randf_range(0.9,1.1)
+		talk_sound.bus = "Dialogue"
 		talk_sound.play()

@@ -10,7 +10,7 @@ var is_dashing = false
 @onready var dash_cooldown: Timer = $"../../dashCooldown"
 @export var dash_particles : PackedScene
 
-const DASH_SFX := preload("res://_assets/sounds/effects/dash-01.mp3")
+const SFX_DASH := preload("res://_assets/sounds/sfx/characters/player_dash_01.wav")
 
 func _ready() -> void:
 	dash_cooldown.timeout.connect(on_timer_timeout)
@@ -29,7 +29,7 @@ func update(delta):
 			
 func start_dash() -> void:
 	spawn_dash_particles()
-	AudioController.play_sfx(DASH_SFX, "Reverb")
+	AudioController.play_sfx(SFX_DASH, "Reverb")
 	is_dashing = true
 	can_dash = false
 	character.velocity.x = character.last_direction * DASH_SPEED

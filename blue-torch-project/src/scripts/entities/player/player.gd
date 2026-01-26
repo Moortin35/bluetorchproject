@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-const DEATH_SFX := preload("res://_assets/sounds/effects/Muerte PRUEBA ESTA SI AHRRE.wav")
+const SFX_DEATH := preload("res://_assets/sounds/sfx/characters/player_death_fall_01.wav")
 
 @onready var movement: Movement = $"state_set/Movement" as Movement
 @onready var jump: Jump = $"state_set/Jump" as Jump
@@ -138,7 +138,7 @@ func handle_danger() -> void:
 	if !is_dead:
 		is_dead = true
 		AudioController.stop_music()
-		AudioController.play_sfx(DEATH_SFX, "SFX")
+		AudioController.play_sfx(SFX_DEATH, "SFX")
 		
 		can_control = false
 		velocity.y = 0

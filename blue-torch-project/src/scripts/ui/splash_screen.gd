@@ -13,7 +13,7 @@ extends Control
 @onready var label_6: Label = $ColorRect/MarginContainer/CenterContainer/Label6
 @onready var label_7: Label = $ColorRect/MarginContainer/CenterContainer/Label7
 
-const MUSIC_MENU := preload("res://_assets/sounds/music/main_theme.mp3")
+const MUSIC_MENU := preload("res://_assets/sounds/music/main_theme.ogg")
 
 var can_skip: bool = true
 var current_tween: Tween = null

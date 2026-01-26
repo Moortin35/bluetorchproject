@@ -2,12 +2,12 @@ extends StateBase
 
 var gravity:float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-const SFX_SKELETON_STEP := [
-	preload("res://_assets/sounds/effects/SkeletonWalk01.wav"),
-	preload("res://_assets/sounds/effects/SkeletonWalk02.wav")
+const SFX_SKELETON_STEP: Array[AudioStream] = [
+	preload("res://_assets/sounds/sfx/characters/skeleton_step_01.wav"),
+	preload("res://_assets/sounds/sfx/characters/skeleton_step_02.wav")
 ]
 
-const SFX_SKELETON_SLAM := preload("res://_assets/sounds/effects/SkeletonHit01.wav")
+const SFX_SKELETON_SLAM := preload("res://_assets/sounds/sfx/characters/skeleton_hit_01.wav")
 
 var step_interval := 0.45
 var step_timer := 0.0

@@ -9,7 +9,7 @@ const CLOSE_DOOR = preload("res://src/dialogues/es/close_door.dialogue")
 @onready var interactive_area: CollisionShape2D = $InteractiveArea
 var talk_finished : bool = false
 
-const SFX_OPEN_DOOR := preload("res://_assets/sounds/effects/door_and_key_open.mp3")
+const SFX_OPEN_DOOR := preload("res://_assets/sounds/sfx/environment/door_key_open.wav")
 
 func _ready():
 	super._ready()

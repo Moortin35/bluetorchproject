@@ -5,7 +5,7 @@ extends interactive
 @export var _id = 0
 
 const BROKEN_LEVER = preload("res://src/dialogues/es/broken_lever.dialogue")
-const SFX_LEVER := preload("res://_assets/sounds/effects/lever.mp3")
+const SFX_LEVER := preload("res://_assets/sounds/sfx/environment/lever_01.wav")
 
 var on = false
 

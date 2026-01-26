@@ -2,7 +2,7 @@ extends interactive
 
 @onready var next_level: CanvasLayer = $NextLevel
 @export var level_to_pass: int
-const END_LEVEL_MUSIC = preload("res://_assets/sounds/music/end_level_music.wav")
+const END_LEVEL_MUSIC = preload("res://_assets/sounds/music/level_finished.ogg")
 func _ready() -> void:
 	super._ready()
 	icon = "interact"

@@ -8,10 +8,9 @@ extends RigidBody2D
 @onready var particles_brick: Node2D = $particles_brick
 
 const SFX_BRICKS := [
-	preload("res://_assets/sounds/effects/efectos entorno/Piedras 1.wav"),
-	preload("res://_assets/sounds/effects/efectos entorno/Piedras 2.wav"),
-	preload("res://_assets/sounds/effects/efectos entorno/Piedras 3.wav"),
-	preload("res://_assets/sounds/effects/efectos entorno/Piedras 3-1.wav")
+	preload("res://_assets/sounds/sfx/environment/brick_fall_01.wav"),
+	preload("res://_assets/sounds/sfx/environment/brick_fall_02.wav"),
+	preload("res://_assets/sounds/sfx/environment/brick_fall_03.wav"),
 ]
 
 func _ready():

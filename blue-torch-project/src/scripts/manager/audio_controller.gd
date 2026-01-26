@@ -10,7 +10,6 @@ var current_sfx_index := 0
 func _ready():
 	add_child(music_player)
 	music_player.bus = "Music"
-
 	for i in sfx_player_count:
 		var p := AudioStreamPlayer.new()
 		p.bus = "SFX"
@@ -25,6 +24,7 @@ func play_music(stream: AudioStream, force_restart: bool = false):
 	if force_restart:
 		music_player.play()
 		
+
 func stop_music():
 	music_player.stop()
 
