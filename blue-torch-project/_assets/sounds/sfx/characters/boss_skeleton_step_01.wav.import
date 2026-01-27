@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://m35qbyamprs5"
-path="res://.godot/imported/skeleton_step_01.wav-4f83b0848256d348531e99711ef7b9e9.sample"
+path="res://.godot/imported/boss_skeleton_step_01.wav-f07602332245660af04393e214fba394.sample"
 
 [deps]
 
-source_file="res://_assets/sounds/sfx/characters/skeleton_step_01.wav"
-dest_files=["res://.godot/imported/skeleton_step_01.wav-4f83b0848256d348531e99711ef7b9e9.sample"]
+source_file="res://_assets/sounds/sfx/characters/boss_skeleton_step_01.wav"
+dest_files=["res://.godot/imported/boss_skeleton_step_01.wav-f07602332245660af04393e214fba394.sample"]
 
 [params]
 

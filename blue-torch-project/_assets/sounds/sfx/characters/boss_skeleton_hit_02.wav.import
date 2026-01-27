@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfgfdmj4qew2r"
-path="res://.godot/imported/skeleton_hit_02.wav-b58f003f6deef5b2f118dc9d7053c35f.sample"
+path="res://.godot/imported/boss_skeleton_hit_02.wav-96e930579b78851c68bacbfa73b89b80.sample"
 
 [deps]
 
-source_file="res://_assets/sounds/sfx/characters/skeleton_hit_02.wav"
-dest_files=["res://.godot/imported/skeleton_hit_02.wav-b58f003f6deef5b2f118dc9d7053c35f.sample"]
+source_file="res://_assets/sounds/sfx/characters/boss_skeleton_hit_02.wav"
+dest_files=["res://.godot/imported/boss_skeleton_hit_02.wav-96e930579b78851c68bacbfa73b89b80.sample"]
 
 [params]
 

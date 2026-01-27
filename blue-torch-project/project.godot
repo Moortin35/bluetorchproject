@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Blue Torch Project"
 run/main_scene="uid://c7l4whthwunco"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.0142752, 0.0142752, 0.0142752, 1)
 boot_splash/image="uid://ny1s4n8onhbv"
 config/icon="res://icon.svg"

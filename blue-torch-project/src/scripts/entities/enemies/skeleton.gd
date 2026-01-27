@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
+const SFX_STEPS: Array[AudioStream] = [
+	preload("res://_assets/sounds/sfx/characters/npc_skeleton_step_01.wav"),
+	preload("res://_assets/sounds/sfx/characters/npc_skeleton_step_02.wav")
+]
+
 @onready var ray_cast: RayCast2D = $RayCast2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var detection_field: Area2D = $DetectionField
 @onready var hitbox: Area2D = $Hitbox
 
@@ -121,8 +127,14 @@ func _on_detection_field_body_exited(body: Node2D) -> void:
 	await get_tree().create_timer(1).timeout
 	stop_icon()
 	confused = false
+
+# Sonidos de pasos
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if animated_sprite.frame == 0 or animated_sprite.frame == 4:
+		audio_stream_player.stream = SFX_STEPS.pick_random()
+		audio_stream_player.play()
 	
-		
+
 func play_icon(icon: String) -> void:
 	if fade_tween and fade_tween.is_running():
 		fade_tween.kill()

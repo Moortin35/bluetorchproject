@@ -514,6 +514,13 @@ collision_mask = 8
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectionField"]
 polygon = PackedVector2Array(-2, -8, -2, -6, -180, 31, -180, -29)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1042.0
+attenuation = 4.4382796
+panning_strength = 1.44
+bus = &"Reverb"
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="DetectionField" to="." method="_on_detection_field_body_entered"]
 [connection signal="body_exited" from="DetectionField" to="." method="_on_detection_field_body_exited"]
