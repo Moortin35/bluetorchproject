@@ -7,7 +7,7 @@ extends RigidBody2D
 
 @onready var particles_brick: Node2D = $particles_brick
 
-const SFX_BRICKS := [
+const SFX_BRICKS: Array[AudioStream] = [
 	preload("res://_assets/sounds/sfx/environment/brick_fall_01.wav"),
 	preload("res://_assets/sounds/sfx/environment/brick_fall_02.wav"),
 	preload("res://_assets/sounds/sfx/environment/brick_fall_03.wav"),

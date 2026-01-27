@@ -44,3 +44,10 @@ func play_sfx_alt(streams: Array[AudioStream], bus := "SFX"):
 		return
 	var choice: AudioStream = streams.pick_random()
 	play_sfx(choice, bus)
+	
+func play_sfx_looped(stream: AudioStream, bus := "SFX"):
+	var player := AudioStreamPlayer.new()
+	player.stream = stream
+	player.bus = bus
+	player.play()
+	return player

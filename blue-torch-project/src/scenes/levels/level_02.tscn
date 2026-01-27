@@ -863,13 +863,11 @@ animation = "first_elevator"
 position = Vector2(-63, 428)
 animation = "second_elevator"
 _id = 1
-_on = false
 
 [node name="MovingPlataform" parent="Elevators" instance=ExtResource("22_sxj84")]
 position = Vector2(1148, 313)
 animation = "third_elevator"
 _id = 2
-_on = false
 
 [node name="Objects" type="Node2D" parent="."]
 
