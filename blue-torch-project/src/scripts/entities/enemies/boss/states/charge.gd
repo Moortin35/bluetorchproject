@@ -3,11 +3,14 @@ extends StateBase
 var gravity:float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const SFX_SKELETON_STEP: Array[AudioStream] = [
-	preload("res://_assets/sounds/sfx/characters/skeleton_step_01.wav"),
-	preload("res://_assets/sounds/sfx/characters/skeleton_step_02.wav")
+	preload("res://_assets/sounds/sfx/characters/boss_skeleton_step_01.wav"),
+	preload("res://_assets/sounds/sfx/characters/boss_skeleton_step_02.wav")
 ]
 
-const SFX_SKELETON_SLAM := preload("res://_assets/sounds/sfx/characters/skeleton_hit_01.wav")
+const SFX_SKELETON_SLAM: Array[AudioStream] = [
+	preload("res://_assets/sounds/sfx/characters/boss_skeleton_hit_01.wav"),
+	preload("res://_assets/sounds/sfx/characters/boss_skeleton_hit_02.wav")
+]
 
 var step_interval := 0.45
 var step_timer := 0.0
@@ -27,7 +30,7 @@ func on_physics_process(delta: float) -> void:
 		controlled_node.direction *= -1
 		controlled_node.emit_spawn_bricks(3)
 		controlled_node.animated_sprite.flip_h = controlled_node.direction < 0
-		AudioController.play_sfx(SFX_SKELETON_SLAM)
+		AudioController.play_sfx_alt(SFX_SKELETON_SLAM)
 		state_machine.change_to("idle")
 	controlled_node.velocity.y += gravity * delta
 	controlled_node.move_and_slide()

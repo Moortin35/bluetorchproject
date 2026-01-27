@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://5hhu3pyqlxsy"]
+[gd_scene format=3 uid="uid://5hhu3pyqlxsy"]
 
 [ext_resource type="Script" uid="uid://c5rkkl7lty3f0" path="res://src/scripts/objects/gate_perfil.gd" id="1_0a6wl"]
 [ext_resource type="Texture2D" uid="uid://boi4h4yjo6ed2" path="res://_assets/sprites/objets/gate_perfil.png" id="2_sj7pl"]
@@ -113,18 +113,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="gate_perfil" type="Node2D"]
+[node name="gate_perfil" type="Node2D" unique_id=1084660292]
 script = ExtResource("1_0a6wl")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=446399805]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1993165634]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_muowi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2037746438]
 sprite_frames = SubResource("SpriteFrames_jw73t")
 animation = &"close"
 autoplay = "open_idle"
-frame = 4
-frame_progress = 1.0

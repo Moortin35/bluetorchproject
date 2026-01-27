@@ -4,7 +4,7 @@ var gravity:float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer_slam: Timer = $"../../Timer_slam"
 var timer_start = false
 
-const SFX_SKELETON_SLAM := preload("res://_assets/sounds/sfx/characters/skeleton_hit_01.wav")
+const SFX_SKELETON_SLAM := preload("res://_assets/sounds/sfx/characters/boss_skeleton_hit_01.wav")
 
 
 func on_physics_process(delta: float) -> void:

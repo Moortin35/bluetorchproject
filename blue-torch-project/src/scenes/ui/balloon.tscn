@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cis5d2hhv0deo"]
+[gd_scene format=3 uid="uid://cis5d2hhv0deo"]
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
 [ext_resource type="FontFile" uid="uid://b4l8ftiv8h2kw" path="res://_assets/fonts/pixel_times/Pixel Times.ttf" id="2_2ej3a"]
@@ -191,11 +191,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=2023347067]
 layer = 15
 script = ExtResource("1_7sbj5")
 
-[node name="Balloon" type="Control" parent="."]
+[node name="Balloon" type="Control" parent="." unique_id=529501518]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -205,7 +205,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon"]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1861981595]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -216,32 +216,32 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_top = 400
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=88042638]
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_pprdg")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1050765954]
 layout_mode = 2
 theme_override_constants/margin_right = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1775704265]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 84
 
-[node name="Panel" type="Panel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1820226240]
 custom_minimum_size = Vector2(172, 172)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0kj6u")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=347192566]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1849314534]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
@@ -256,7 +256,7 @@ fit_content = true
 scroll_active = false
 vertical_alignment = 2
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_f3q3a")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1537765635 instance=ExtResource("3_f3q3a")]
 unique_name_in_owner = true
 texture_filter = 1
 clip_contents = false
@@ -267,13 +267,13 @@ theme = SubResource("Theme_5qeb6")
 text = "Dialogue..."
 seconds_per_step = 0.04
 
-[node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon"]
+[node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon" unique_id=627179949]
 position = Vector2(164.4, 575.4)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_jxja2")
 animation = &"gerda"
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=1341357166 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -294,11 +294,11 @@ alignment = 1
 script = ExtResource("7_e3jod")
 response_template = NodePath("ResponseExample")
 
-[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
+[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=39712341]
 layout_mode = 2
 text = "Response example"
 
-[node name="TalkSound" type="AudioStreamPlayer" parent="."]
+[node name="TalkSound" type="AudioStreamPlayer" parent="." unique_id=1743247884]
 stream = ExtResource("8_2ej3a")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

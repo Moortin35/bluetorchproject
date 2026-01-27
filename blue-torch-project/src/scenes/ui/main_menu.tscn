@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dn6jhou77r6nf"]
+[gd_scene format=3 uid="uid://dn6jhou77r6nf"]
 
 [ext_resource type="Script" uid="uid://yjlyxc7f03e2" path="res://src/scripts/ui/main_menu.gd" id="1_ttmq8"]
 [ext_resource type="Texture2D" uid="uid://djqgreatjk2qf" path="res://_assets/images/backgrounds/wall.png" id="2_6trx7"]
@@ -57,7 +57,7 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1559222715]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,12 +69,12 @@ size_flags_vertical = 3
 script = ExtResource("1_ttmq8")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1944985006]
 position = Vector2(639, 354)
 scale = Vector2(1.3, 0.865)
 texture = ExtResource("2_6trx7")
 
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" unique_id=401684430]
 position = Vector2(273.846, -13.8729)
 scale = Vector2(0.703297, 1.05785)
 color = Color(0.239861, 0.492031, 1, 1)
@@ -85,19 +85,19 @@ shadow_enabled = true
 texture = ExtResource("5_x2oeq")
 texture_scale = 3.19
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Sprite2D"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Sprite2D" unique_id=1957696174]
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="AnimatedTorch" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedTorch" type="AnimatedSprite2D" parent="." unique_id=973931108]
 position = Vector2(650, 436)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_tgi66")
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=857416661]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=758456961]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -109,19 +109,19 @@ theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=585452590]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 32
 
-[node name="Titulo" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Titulo" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1875216595]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Blue Torch"
 label_settings = SubResource("LabelSettings_ttmq8")
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1856267547]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -130,7 +130,7 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Iniciar"
 
-[node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=200386404]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -139,7 +139,7 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Créditos"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=255841503]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -149,10 +149,10 @@ theme_override_font_sizes/font_size = 72
 text = "Salir
 "
 
-[node name="Credits" type="CanvasLayer" parent="."]
+[node name="Credits" type="CanvasLayer" parent="." unique_id=1439981534]
 visible = false
 
-[node name="MarginContainer" type="MarginContainer" parent="Credits"]
+[node name="MarginContainer" type="MarginContainer" parent="Credits" unique_id=1720699558]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -164,11 +164,11 @@ theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 48
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer" unique_id=678941919]
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="Label" type="Label" parent="Credits/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Credits/MarginContainer/VBoxContainer" unique_id=1456595815]
 custom_minimum_size = Vector2(0, 512)
 layout_mode = 2
 text = "Autores:
@@ -185,7 +185,7 @@ de la diplomatura de desarrollo de videojuegos
 de la Universidad Nacional de Quilmes."
 label_settings = SubResource("LabelSettings_6trx7")
 
-[node name="BackButton" type="Button" parent="Credits/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="Credits/MarginContainer/VBoxContainer" unique_id=660317607]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 0
