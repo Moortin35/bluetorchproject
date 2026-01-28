@@ -3,21 +3,28 @@ extends Node2D
 @export var speed: float = 300.0
 @export var max_distance: float = 600.0
 var start_position: Vector2
+var exploded := false
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 @onready var explosion: CPUParticles2D = $explosion
 @onready var light: PointLight2D = $Light
+@onready var sound: AudioStreamPlayer2D = $Sound
+
+const SFX_FIREBALL := preload("res://_assets/sounds/sfx/environment/fireball.wav")
+const SFX_FIREBALL_OFF := preload("res://_assets/sounds/sfx/environment/fireball_off.wav")
 
 
 func _ready() -> void:
 	start_position = global_position
+	sound.stream = SFX_FIREBALL
+	sound.play()
 
 
 func _process(delta: float) -> void:
 	position.x += speed * delta
-
+	
 	if abs(global_position.x - start_position.x) >= max_distance:
 		_explode()
 
@@ -29,8 +36,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _explode() -> void:
+	if exploded:
+		return
+	exploded = true
+	AudioController.play_sfx_2d(SFX_FIREBALL_OFF,global_position,"Reverb")
 	_hide_fire_ball()
-
+	
 	explosion.emitting = true
 	speed = 0
 
@@ -45,3 +56,4 @@ func _hide_fire_ball():
 	collision_shape_2d.set_deferred("disabled", true)
 	cpu_particles_2d.hide()
 	#light.hide()
+	

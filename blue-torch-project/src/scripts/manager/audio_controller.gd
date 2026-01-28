@@ -5,6 +5,10 @@ extends Node
 var sfx_players: Array[AudioStreamPlayer] = []
 var current_sfx_index := 0
 
+# 2D Audio Properties
+var attenuation := 4.42
+var max_distance := 1042
+
 var music_bus_index = AudioServer.get_bus_index("Music")
 var dialogue_bus_index = AudioServer.get_bus_index("Dialogue")
 var sfx_bus_index = AudioServer.get_bus_index("SFX")
@@ -53,6 +57,21 @@ func play_sfx_alt(streams: Array[AudioStream], bus := "SFX"):
 		return
 	var choice: AudioStream = streams.pick_random()
 	play_sfx(choice, bus)
+	
+func play_sfx_2d(	stream: AudioStream, global_pos: Vector2, bus: String = "SFX"
+) -> void:
+	if stream == null:
+		return
+
+	var player := AudioStreamPlayer2D.new()
+	player.stream = stream
+	player.bus = bus
+	player.global_position = global_pos
+	player.finished.connect(player.queue_free)
+	player.attenuation = attenuation
+	player.max_distance = max_distance
+	get_tree().current_scene.add_child(player)
+	player.play()
 
 func set_ui_volume(db: float):
 	AudioServer.set_bus_volume_db(ui_bus_index, (db))
