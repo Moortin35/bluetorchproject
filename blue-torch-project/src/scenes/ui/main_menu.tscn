@@ -249,7 +249,7 @@ theme = SubResource("Theme_w4ql8")
 max_value = 1.0
 step = 0.05
 page = 0.1
-value = 1.0
+value = 0.9
 allow_greater = true
 
 [node name="SFX" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=857278319]
@@ -270,7 +270,7 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.05
 page = 0.1
-value = 1.0
+value = 0.9
 allow_greater = true
 
 [node name="Dialogue" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=1843029038]
@@ -291,7 +291,7 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.05
 page = 0.1
-value = 1.0
+value = 0.9
 allow_greater = true
 
 [node name="UI" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=588224677]

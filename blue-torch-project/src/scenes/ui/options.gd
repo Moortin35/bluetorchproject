@@ -21,12 +21,17 @@ func _on_music_volume_slider_value_changed(value: float) -> void:
 	
 func _on_sfx_volume_slider_value_changed(value: float) -> void:
 	AudioController.set_sfx_volume(linear_to_db(value))
-	AudioController.play_sfx(SFX_PLAYER_STEP, "SFX")
+	if (visible):
+		AudioController.play_sfx(SFX_PLAYER_STEP, "SFX")
 	
 func _on_dialogue_volume_slider_value_changed(value: float) -> void:
+	
 	AudioController.set_dialogue_volume(linear_to_db(value))
-	AudioController.play_sfx(SFX_DIALOGUE, "Dialogue")
+	if (visible):
+		AudioController.play_sfx(SFX_DIALOGUE, "Dialogue")
 	
 func _on_ui_volume_slider_value_changed(value: float) -> void:
+	
 	AudioController.set_ui_volume(linear_to_db(value))
-	AudioController.play_sfx(SFX_UI_HOVER, "UI")
+	if (visible):
+		AudioController.play_sfx(SFX_UI_HOVER, "UI")

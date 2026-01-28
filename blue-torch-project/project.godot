@@ -22,6 +22,10 @@ boot_splash/image="uid://ny1s4n8onhbv"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=3000
 
+[audio]
+
+buses/default_bus_layout="uid://bs3puy2ag5h26"
+
 [autoload]
 
 LevelManager="*res://src/scripts/manager/level_manager.gd"

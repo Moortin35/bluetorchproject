@@ -13,7 +13,7 @@ var exploded := false
 @onready var sound: AudioStreamPlayer2D = $Sound
 
 const SFX_FIREBALL := preload("res://_assets/sounds/sfx/environment/fireball.wav")
-const SFX_FIREBALL_OFF := preload("res://_assets/sounds/sfx/environment/fireball_off.wav")
+const SFX_FIREBALL_EXPLOSION := preload("res://_assets/sounds/sfx/environment/fireball_explosion.wav")
 
 
 func _ready() -> void:
@@ -39,7 +39,7 @@ func _explode() -> void:
 	if exploded:
 		return
 	exploded = true
-	AudioController.play_sfx_2d(SFX_FIREBALL_OFF,global_position,"Reverb")
+	AudioController.play_sfx_2d(SFX_FIREBALL_EXPLOSION,global_position,"Reverb")
 	_hide_fire_ball()
 	
 	explosion.emitting = true
