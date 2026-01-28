@@ -5,6 +5,14 @@ extends Node
 var sfx_players: Array[AudioStreamPlayer] = []
 var current_sfx_index := 0
 
+var music_bus_index = AudioServer.get_bus_index("Music")
+var dialogue_bus_index = AudioServer.get_bus_index("Dialogue")
+var sfx_bus_index = AudioServer.get_bus_index("SFX")
+
+var music_bus_volume: float = 0.0
+var sfx_bus_volume: float = 0.0
+var dialogue_bus_volume: float = 0.0
+
 @onready var music_player := AudioStreamPlayer.new()
 
 func _ready():
@@ -24,7 +32,6 @@ func play_music(stream: AudioStream, force_restart: bool = false):
 	if force_restart:
 		music_player.play()
 		
-
 func stop_music():
 	music_player.stop()
 
@@ -45,9 +52,14 @@ func play_sfx_alt(streams: Array[AudioStream], bus := "SFX"):
 	var choice: AudioStream = streams.pick_random()
 	play_sfx(choice, bus)
 	
-func play_sfx_looped(stream: AudioStream, bus := "SFX"):
-	var player := AudioStreamPlayer.new()
-	player.stream = stream
-	player.bus = bus
-	player.play()
-	return player
+func set_music_volume(db: float):
+	AudioServer.set_bus_volume_db(music_bus_index, (db))
+	music_bus_volume = db
+	
+func set_sfx_volume(db: float):
+	AudioServer.set_bus_volume_db(sfx_bus_index, (db))
+	sfx_bus_volume = db
+	
+func set_dialogue_volume(db: float):
+	AudioServer.set_bus_volume_db(dialogue_bus_index, (db))
+	dialogue_bus_volume = db

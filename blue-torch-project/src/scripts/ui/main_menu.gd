@@ -4,6 +4,7 @@ class_name MainMenu
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var animated_torch: AnimatedSprite2D = $AnimatedTorch
 @onready var credits: CanvasLayer = $Credits
+@onready var options: CanvasLayer = $Options
 
 const MUSIC_MENU := preload("res://_assets/sounds/music/main_theme.ogg")
 const SFX_UI_START := preload("res://_assets/sounds/sfx/ui/start.wav")
@@ -28,6 +29,11 @@ func _on_credits_button_pressed() -> void:
 	canvas_layer.hide()
 	credits.show()
 
+func _on_options_button_pressed() -> void:
+	AudioController.play_sfx(SFX_UI_ENTER, "UI")
+	canvas_layer.hide()
+	options.show()
+
 func _on_quit_button_pressed() -> void:
 	AudioController.play_sfx(SFX_UI_ENTER, "UI")
 	get_tree().quit()
@@ -35,6 +41,7 @@ func _on_quit_button_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	AudioController.play_sfx(SFX_UI_BACK, "UI")
 	credits.hide()
+	options.hide()
 	canvas_layer.show()
 	
 func deactivate() -> void:
