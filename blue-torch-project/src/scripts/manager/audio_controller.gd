@@ -8,10 +8,12 @@ var current_sfx_index := 0
 var music_bus_index = AudioServer.get_bus_index("Music")
 var dialogue_bus_index = AudioServer.get_bus_index("Dialogue")
 var sfx_bus_index = AudioServer.get_bus_index("SFX")
+var ui_bus_index = AudioServer.get_bus_index("UI")
 
 var music_bus_volume: float = 0.0
 var sfx_bus_volume: float = 0.0
 var dialogue_bus_volume: float = 0.0
+var ui_bus_volume: float = 0.0
 
 @onready var music_player := AudioStreamPlayer.new()
 
@@ -51,7 +53,11 @@ func play_sfx_alt(streams: Array[AudioStream], bus := "SFX"):
 		return
 	var choice: AudioStream = streams.pick_random()
 	play_sfx(choice, bus)
-	
+
+func set_ui_volume(db: float):
+	AudioServer.set_bus_volume_db(ui_bus_index, (db))
+	ui_bus_volume = db
+
 func set_music_volume(db: float):
 	AudioServer.set_bus_volume_db(music_bus_index, (db))
 	music_bus_volume = db

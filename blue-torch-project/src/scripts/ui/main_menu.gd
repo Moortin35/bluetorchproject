@@ -1,7 +1,7 @@
 extends Control
 
 class_name MainMenu
-@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var canvas_layer: CanvasLayer = $Main
 @onready var animated_torch: AnimatedSprite2D = $AnimatedTorch
 @onready var credits: CanvasLayer = $Credits
 @onready var options: CanvasLayer = $Options

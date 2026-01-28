@@ -102,9 +102,9 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_tgi66")
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=857416661]
+[node name="Main" type="CanvasLayer" parent="." unique_id=857416661]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=758456961]
+[node name="MarginContainer" type="MarginContainer" parent="Main" unique_id=758456961]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -116,19 +116,19 @@ theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=585452590]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/MarginContainer" unique_id=585452590]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 32
 
-[node name="Titulo" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1875216595]
+[node name="Titulo" type="Label" parent="Main/MarginContainer/VBoxContainer" unique_id=1875216595]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Blue Torch"
 label_settings = SubResource("LabelSettings_ttmq8")
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1856267547]
+[node name="PlayButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=1856267547]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -137,7 +137,7 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Iniciar"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1714127047]
+[node name="OptionsButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=1714127047]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -146,7 +146,7 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Opciones"
 
-[node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=200386404]
+[node name="CreditsButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=200386404]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -155,7 +155,7 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Créditos"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=255841503]
+[node name="QuitButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=255841503]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -249,7 +249,8 @@ theme = SubResource("Theme_w4ql8")
 max_value = 1.0
 step = 0.05
 page = 0.1
-value = 0.9
+value = 1.0
+allow_greater = true
 
 [node name="SFX" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=857278319]
 layout_mode = 2
@@ -269,7 +270,8 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.05
 page = 0.1
-value = 0.9
+value = 1.0
+allow_greater = true
 
 [node name="Dialogue" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=1843029038]
 layout_mode = 2
@@ -289,7 +291,29 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.05
 page = 0.1
+value = 1.0
+allow_greater = true
+
+[node name="UI" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=588224677]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Label" type="Label" parent="Options/MarginContainer/Sliders/UI" unique_id=578732631]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Interfaz"
+label_settings = SubResource("LabelSettings_yl70w")
+vertical_alignment = 1
+
+[node name="Slider" type="HSlider" parent="Options/MarginContainer/Sliders/UI" unique_id=524950047]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+page = 0.1
 value = 0.9
+allow_greater = true
 
 [node name="BackButton" type="Button" parent="Options/MarginContainer/Sliders" unique_id=186033595]
 custom_minimum_size = Vector2(256, 0)
@@ -300,17 +324,18 @@ theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
 text = "Volver al Menú"
 
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Main/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Main/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Main/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Main/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Credits/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="Options/MarginContainer/Sliders/Music/Slider" to="Options" method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="Options/MarginContainer/Sliders/SFX/Slider" to="Options" method="_on_sfx_volume_slider_value_changed"]
 [connection signal="value_changed" from="Options/MarginContainer/Sliders/Dialogue/Slider" to="Options" method="_on_dialogue_volume_slider_value_changed"]
+[connection signal="value_changed" from="Options/MarginContainer/Sliders/UI/Slider" to="Options" method="_on_ui_volume_slider_value_changed"]
 [connection signal="mouse_entered" from="Options/MarginContainer/Sliders/BackButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Options/MarginContainer/Sliders/BackButton" to="." method="_on_back_button_pressed"]
