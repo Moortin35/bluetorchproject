@@ -1,9 +1,13 @@
 extends Node
 
-@export var sfx_player_count := 8
+var sfx_player_count := 8
+var sfx_player_2d_count := 8
 
 var sfx_players: Array[AudioStreamPlayer] = []
 var current_sfx_index := 0
+
+var sfx_players_2d: Array[AudioStreamPlayer2D] = []
+var current_sfx_2d_index := 0
 
 # 2D Audio Properties
 var attenuation := 4.42
@@ -29,6 +33,13 @@ func _ready():
 		p.bus = "SFX"
 		add_child(p)
 		sfx_players.append(p)
+	for i in sfx_player_2d_count:
+		var p := AudioStreamPlayer2D.new()
+		p.bus = "SFX"
+		p.attenuation = attenuation
+		p.max_distance = max_distance
+		add_child(p)
+		sfx_players_2d.append(p)
 
 func play_music(stream: AudioStream, force_restart: bool = false):
 	if music_player.stream != stream:
@@ -46,10 +57,22 @@ func _get_player(bus: String) -> AudioStreamPlayer:
 	current_sfx_index = (current_sfx_index + 1) % sfx_players.size()
 	player.bus = bus
 	return player
+	
+func _get_player_2d(bus: String) -> AudioStreamPlayer2D:
+	var player := sfx_players_2d[current_sfx_2d_index]
+	current_sfx_2d_index = (current_sfx_2d_index + 1) % sfx_players_2d.size()
+	player.bus = bus
+	return player
 
 func play_sfx(stream: AudioStream, bus := "SFX"):
 	var player := _get_player(bus)
 	player.stream = stream
+	player.play()
+	
+func play_sfx_2d(stream: AudioStream, global_pos: Vector2, bus := "SFX"):
+	var player := _get_player_2d(bus)
+	player.stream = stream
+	player.global_position = global_pos
 	player.play()
 
 func play_sfx_alt(streams: Array[AudioStream], bus := "SFX"):
@@ -57,21 +80,12 @@ func play_sfx_alt(streams: Array[AudioStream], bus := "SFX"):
 		return
 	var choice: AudioStream = streams.pick_random()
 	play_sfx(choice, bus)
-	
-func play_sfx_2d(	stream: AudioStream, global_pos: Vector2, bus: String = "SFX"
-) -> void:
-	if stream == null:
-		return
 
-	var player := AudioStreamPlayer2D.new()
-	player.stream = stream
-	player.bus = bus
-	player.global_position = global_pos
-	player.finished.connect(player.queue_free)
-	player.attenuation = attenuation
-	player.max_distance = max_distance
-	get_tree().current_scene.add_child(player)
-	player.play()
+func play_sfx_2d_alt(streams: Array[AudioStream], global_pos: Vector2, bus := "SFX"):
+	if streams.is_empty():
+		return
+	var choice: AudioStream = streams.pick_random()
+	play_sfx_2d(choice, global_pos, bus)
 
 func set_ui_volume(db: float):
 	AudioServer.set_bus_volume_db(ui_bus_index, (db))

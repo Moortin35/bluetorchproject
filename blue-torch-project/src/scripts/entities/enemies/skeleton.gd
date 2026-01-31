@@ -7,7 +7,6 @@ const SFX_STEPS: Array[AudioStream] = [
 
 @onready var ray_cast: RayCast2D = $RayCast2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var detection_field: Area2D = $DetectionField
 @onready var hitbox: Area2D = $Hitbox
 
@@ -131,8 +130,7 @@ func _on_detection_field_body_exited(body: Node2D) -> void:
 # Sonidos de pasos
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite.frame == 0 or animated_sprite.frame == 4:
-		audio_stream_player.stream = SFX_STEPS.pick_random()
-		audio_stream_player.play()
+		AudioController.play_sfx_2d_alt(SFX_STEPS, global_position, "Reverb")
 	
 
 func play_icon(icon: String) -> void:

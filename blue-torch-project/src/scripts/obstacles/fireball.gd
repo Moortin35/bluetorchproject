@@ -21,19 +21,15 @@ func _ready() -> void:
 	sound.stream = SFX_FIREBALL
 	sound.play()
 
-
 func _process(delta: float) -> void:
 	position.x += speed * delta
-	
 	if abs(global_position.x - start_position.x) >= max_distance:
 		_explode()
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.take_damage(1.0, self)
 		_explode()
-
 
 func _explode() -> void:
 	if exploded:
@@ -41,13 +37,10 @@ func _explode() -> void:
 	exploded = true
 	AudioController.play_sfx_2d(SFX_FIREBALL_EXPLOSION,global_position,"Reverb")
 	_hide_fire_ball()
-	
 	explosion.emitting = true
 	speed = 0
-
 	var tween := create_tween()
 	tween.tween_property(light, "energy", 0.0, 0.2)
-
 	await tween.finished
 	queue_free()
 	
