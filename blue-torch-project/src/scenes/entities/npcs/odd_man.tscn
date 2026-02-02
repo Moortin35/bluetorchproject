@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw06x6b7cbgtv"]
+[gd_scene format=3 uid="uid://cw06x6b7cbgtv"]
 
 [ext_resource type="Script" uid="uid://dmiesgqr0vbuc" path="res://src/scripts/entities/npcs/odd_man.gd" id="1_arw11"]
 [ext_resource type="Texture2D" uid="uid://ra7utot7d0g4" path="res://_assets/sprites/npcs/odd_man/odd_man.png" id="1_y1ppy"]
@@ -45,23 +45,23 @@ size = Vector2(72, 93)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arw11"]
 size = Vector2(34, 48)
 
-[node name="hood_guy" type="Area2D"]
+[node name="hood_guy" type="Area2D" unique_id=1878280963]
 collision_mask = 8
 script = ExtResource("1_arw11")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=10396250]
 sprite_frames = SubResource("SpriteFrames_e3wx7")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.923692
 
-[node name="InteractiveArea" type="CollisionShape2D" parent="."]
+[node name="InteractiveArea" type="CollisionShape2D" parent="." unique_id=965305367]
 position = Vector2(-14, 0)
 shape = SubResource("RectangleShape2D_tk28n")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1844977056]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2138062562]
 shape = SubResource("RectangleShape2D_arw11")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

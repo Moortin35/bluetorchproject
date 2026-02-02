@@ -9,7 +9,6 @@ extends CanvasLayer
 @onready var animated_portraits: AnimatedSprite2D = $Balloon/AnimatedPortraits
 
 @onready var panel: Panel = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel
-@onready var talk_sound: AudioStreamPlayer = $TalkSound
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -27,6 +26,14 @@ var will_hide_balloon: bool = false
 var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
+
+var dialogue_sounds: Dictionary = {
+	"maiden": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
+	"gerda": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
+	"odd_man": preload("res://_assets/sounds/sfx/dialogue/dialogue_odd_man.wav"),
+	"default": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
+}
+@onready var sound_player = AudioStreamPlayer.new()
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -65,7 +72,9 @@ func _ready() -> void:
 		responses_menu.next_action = next_action
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
+	sound_player.max_polyphony = 4
 	add_child(mutation_cooldown)
+	add_child(sound_player)
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -101,11 +110,16 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	var pj_portrait = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_")
-	if animated_portraits.sprite_frames.has_animation(pj_portrait) :
+	var character = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_")
+	var sound = dialogue_sounds[character]
+	if sound != null:
+		sound_player.stream = sound
+	else:
+		sound_player.stream = dialogue_sounds["default"]
+	if animated_portraits.sprite_frames.has_animation(character) :
 		panel.show()
 		animated_portraits.show()
-		animated_portraits.play(pj_portrait)
+		animated_portraits.play(character)
 	else:
 		animated_portraits.hide()
 		panel.hide()
@@ -186,12 +200,10 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-
 #endregion
-
 
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
 	if not letter in ["."," "]:
-		talk_sound.pitch_scale = randf_range(0.9,1.1)
-		talk_sound.bus = "Dialogue"
-		talk_sound.play()
+		sound_player.pitch_scale = randf_range(0.95,1.05)
+		sound_player.bus = "Dialogue"
+		sound_player.play()
