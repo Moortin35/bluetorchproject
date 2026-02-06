@@ -28,12 +28,19 @@ var locals: Dictionary = {}
 var _locale: String = TranslationServer.get_locale()
 
 var dialogue_sounds: Dictionary = {
+	# Por defecto
+	"default": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
+	
+	# Gerda
 	"maiden": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
 	"gerda": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
+	
+	# Odd Man
 	"odd_man": preload("res://_assets/sounds/sfx/dialogue/dialogue_odd_man.wav"),
-	"default": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
-	"dama_desconocida": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
-	"engla": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
+	
+	# Engla
+	"dama_desconocida": preload("res://_assets/sounds/sfx/dialogue/dialogue_engla.wav"),
+	"engla": preload("res://_assets/sounds/sfx/dialogue/dialogue_engla.wav"),
 }
 @onready var sound_player = AudioStreamPlayer.new()
 
@@ -113,11 +120,8 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	var character = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_")
-	var sound = dialogue_sounds[character]
-	if sound != null:
-		sound_player.stream = sound
-	else:
-		sound_player.stream = dialogue_sounds["default"]
+	var sound = dialogue_sounds.get(character, dialogue_sounds.get("default"))
+	sound_player.stream = sound
 	if animated_portraits.sprite_frames.has_animation(character) :
 		panel.show()
 		animated_portraits.show()
@@ -207,5 +211,5 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
 	if not letter in ["."," "]:
 		sound_player.pitch_scale = randf_range(0.95,1.05)
-		sound_player.bus = "Dialoguee"
+		sound_player.bus = "Dialogue"
 		sound_player.play()
