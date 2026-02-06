@@ -32,6 +32,8 @@ var dialogue_sounds: Dictionary = {
 	"gerda": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
 	"odd_man": preload("res://_assets/sounds/sfx/dialogue/dialogue_odd_man.wav"),
 	"default": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
+	"dama_desconocida": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
+	"engla": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
 }
 @onready var sound_player = AudioStreamPlayer.new()
 
@@ -205,5 +207,5 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
 	if not letter in ["."," "]:
 		sound_player.pitch_scale = randf_range(0.95,1.05)
-		sound_player.bus = "Dialogue"
+		sound_player.bus = "Dialoguee"
 		sound_player.play()
