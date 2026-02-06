@@ -762,6 +762,11 @@ position = Vector2(918, 890)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vaiti")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacles/FallZone" unique_id=422652786]
+position = Vector2(-475, 890)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vaiti")
+
 [node name="Spikes" type="Node2D" parent="Obstacles" unique_id=1053530428]
 
 [node name="Group1" type="Node2D" parent="Obstacles/Spikes" unique_id=184971123]
