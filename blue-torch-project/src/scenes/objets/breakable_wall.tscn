@@ -1,7 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dffar240roj74"]
+[gd_scene format=3 uid="uid://dffar240roj74"]
 
 [ext_resource type="Texture2D" uid="uid://cs5asa4uo5gva" path="res://_assets/textures/objects/broken_wall.png" id="1_ftfmi"]
 [ext_resource type="Script" uid="uid://ihnqohwsrml8" path="res://src/scripts/objects/breakable_wall.gd" id="1_olhef"]
+[ext_resource type="Texture2D" uid="uid://blg5j6adhe3tr" path="res://_assets/effects/broken_wall/broken_wall_1.png" id="2_i3fj1"]
+[ext_resource type="Texture2D" uid="uid://bd40yy4mygdrs" path="res://_assets/effects/broken_wall/broken_wall_2.png" id="3_f65nf"]
+[ext_resource type="Texture2D" uid="uid://r2scsm2a5t4b" path="res://_assets/effects/broken_wall/broken_wall_3.png" id="4_70cba"]
+[ext_resource type="Texture2D" uid="uid://4p536lgj1ldh" path="res://_assets/effects/broken_wall/broken_wall_4.png" id="5_kqthf"]
+[ext_resource type="Texture2D" uid="uid://dvt86pwsafswd" path="res://_assets/effects/broken_wall/broken_wall_5.png" id="6_v0dy7"]
+[ext_resource type="Texture2D" uid="uid://cl0csyyi6e3nh" path="res://_assets/effects/broken_wall/broken_wall_6.png" id="7_mqthn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olhef"]
 atlas = ExtResource("1_ftfmi")
@@ -39,27 +45,101 @@ size = Vector2(16, 3.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olhef"]
 size = Vector2(47, 69)
 
-[node name="BreakableWall" type="Area2D"]
+[node name="BreakableWall" type="Area2D" unique_id=1717043545]
 z_index = 5
 collision_mask = 8
 script = ExtResource("1_olhef")
 broken = true
 
-[node name="WallSprites" type="AnimatedSprite2D" parent="."]
+[node name="particles" type="Node2D" parent="." unique_id=2132352626]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="particles" unique_id=795277691]
+emitting = false
+amount = 1
+texture = ExtResource("2_i3fj1")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(-0.1, 0)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="particles" unique_id=636384060]
+emitting = false
+amount = 1
+texture = ExtResource("3_f65nf")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(-0.1, 0)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="particles" unique_id=896516793]
+emitting = false
+amount = 1
+texture = ExtResource("4_70cba")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(-0.1, 0)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="particles" unique_id=1686918744]
+emitting = false
+amount = 1
+texture = ExtResource("5_kqthf")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(-0.1, 0)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="particles" unique_id=165146157]
+emitting = false
+amount = 1
+texture = ExtResource("6_v0dy7")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(-0.1, 0)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="particles" unique_id=1456059511]
+emitting = false
+amount = 1
+texture = ExtResource("7_mqthn")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(-0.1, 0)
+spread = 0.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+
+[node name="WallSprites" type="AnimatedSprite2D" parent="." unique_id=806455291]
 sprite_frames = SubResource("SpriteFrames_l7kcf")
 animation = &"collapsed"
 autoplay = "default"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=472888216]
 
-[node name="CollisionShapeDefault" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShapeDefault" type="CollisionShape2D" parent="StaticBody2D" unique_id=394832756]
 shape = SubResource("RectangleShape2D_2p6ri")
 
-[node name="CollisionShapeCollapsed" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShapeCollapsed" type="CollisionShape2D" parent="StaticBody2D" unique_id=235373446]
 position = Vector2(0, 21.875)
 shape = SubResource("RectangleShape2D_6bijg")
 
-[node name="DebrisSprite" type="Sprite2D" parent="."]
+[node name="DebrisSprite" type="Sprite2D" parent="." unique_id=1948286863]
 visible = false
 position = Vector2(16, 35)
 texture = ExtResource("1_ftfmi")
@@ -67,7 +147,7 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(64, 41, 16, 7)
 
-[node name="InteractiveArea" type="CollisionShape2D" parent="."]
+[node name="InteractiveArea" type="CollisionShape2D" parent="." unique_id=2112693664]
 position = Vector2(15.5, 10.5)
 shape = SubResource("RectangleShape2D_olhef")
 
