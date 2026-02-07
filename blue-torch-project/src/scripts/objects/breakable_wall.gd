@@ -6,6 +6,7 @@ extends interactive
 @onready var collision_shape_collapsed: CollisionShape2D = $StaticBody2D/CollisionShapeCollapsed
 @onready var debris_sprite: Sprite2D = $DebrisSprite
 @onready var interactive_area: CollisionShape2D = $InteractiveArea
+@onready var particles: Node2D = $particles
 
 func _ready():
 	super._ready()
@@ -26,9 +27,14 @@ func broken_wall():
 	interactive_area.disabled = true
 	collision_shape_default.disabled = true
 	debris_sprite.show()
+	emit_all_particles()
 	
 func unbroken_wall():
 	wall_sprites.play("default")
 	interactive_area.disabled = false
 	collision_shape_default.disabled = false
 	debris_sprite.hide()
+	
+func emit_all_particles():
+	for child in particles.get_children():
+		child.emitting = true
