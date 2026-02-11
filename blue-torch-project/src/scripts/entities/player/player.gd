@@ -165,6 +165,7 @@ func reset_player() -> void:
 	health = 3.0
 	health_bar.create_hearts(health)
 	can_control = true
+	animated_sprite_2d.flip_h = false
 	
 func play_icon(icon: String) -> void:
 	if fade_tween and fade_tween.is_running():
