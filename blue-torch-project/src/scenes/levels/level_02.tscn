@@ -679,6 +679,7 @@ position = Vector2(1009, 368)
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment" unique_id=1765703095]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Enviroment" unique_id=229386410]
@@ -732,6 +733,7 @@ texture = ExtResource("8_wbvwm")
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment/ParallaxBackground" unique_id=1255271956]
+visible = false
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
@@ -851,17 +853,17 @@ _id = 2
 [node name="Elevators" type="Node2D" parent="." unique_id=1915061925]
 
 [node name="MovingPlataform1" parent="Elevators" unique_id=1850474149 instance=ExtResource("22_sxj84")]
-position = Vector2(274, 393)
+position = Vector2(264, 390)
 animation = "first_elevator"
 
 [node name="MovingPlataform2" parent="Elevators" unique_id=1413565113 instance=ExtResource("22_sxj84")]
-position = Vector2(-63, 428)
+position = Vector2(-72, 433)
 animation = "second_elevator"
 _id = 1
 _on = false
 
 [node name="MovingPlataform" parent="Elevators" unique_id=698374303 instance=ExtResource("22_sxj84")]
-position = Vector2(1148, 313)
+position = Vector2(1144, 331)
 animation = "third_elevator"
 _id = 2
 _on = false
