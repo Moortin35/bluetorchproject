@@ -209,7 +209,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 #endregion
 
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
-	if not letter in ["."," "]:
+	if not letter in ["."," ",","]:
 		sound_player.pitch_scale = randf_range(0.95,1.05)
 		sound_player.bus = "Dialogue"
 		sound_player.play()

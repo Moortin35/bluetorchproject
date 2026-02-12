@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bpsntwgoxd5ny"]
+[gd_scene format=3 uid="uid://bpsntwgoxd5ny"]
 
 [ext_resource type="Script" uid="uid://7qj1k10p30d1" path="res://src/scripts/entities/enemies/boss/boss.gd" id="1_tgxye"]
 [ext_resource type="Texture2D" uid="uid://ckevq02xlwq2t" path="res://_assets/sprites/icons/question_mark.png" id="2_qd5d8"]
@@ -474,20 +474,20 @@ size = Vector2(10, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghv56"]
 size = Vector2(10, 27)
 
-[node name="Boss" type="CharacterBody2D"]
+[node name="Boss" type="CharacterBody2D" unique_id=1612716595]
 z_index = 8
 scale = Vector2(2, 2)
 floor_snap_length = 2.0
 script = ExtResource("1_tgxye")
 
-[node name="interactions" type="AnimatedSprite2D" parent="."]
+[node name="interactions" type="AnimatedSprite2D" parent="." unique_id=360969370]
 visible = false
 position = Vector2(0, -19)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_75fpd")
 animation = &"lose track"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=906357764]
 sprite_frames = SubResource("SpriteFrames_q2hko")
 animation = &"death"
 autoplay = "idle"
@@ -495,43 +495,43 @@ frame = 5
 frame_progress = 1.0
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299982447]
 position = Vector2(-5.96046e-08, 3)
 shape = SubResource("RectangleShape2D_fpf0g")
 one_way_collision = true
 one_way_collision_margin = 0.0
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." unique_id=563193800]
 collision_layer = 2
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=542075582]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ghv56")
 
-[node name="StateMachine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("10_qd5d8")]
+[node name="StateMachine" parent="." unique_id=630731076 node_paths=PackedStringArray("default_state") instance=ExtResource("10_qd5d8")]
 default_state = NodePath("pause")
 
-[node name="idle" type="Node" parent="StateMachine"]
+[node name="idle" type="Node" parent="StateMachine" unique_id=589648204]
 script = ExtResource("11_ew71p")
 
-[node name="charge" type="Node" parent="StateMachine"]
+[node name="charge" type="Node" parent="StateMachine" unique_id=1423030142]
 script = ExtResource("12_ew71p")
 
-[node name="slam" type="Node" parent="StateMachine"]
+[node name="slam" type="Node" parent="StateMachine" unique_id=504261009]
 script = ExtResource("13_hpwuy")
 
-[node name="death" type="Node" parent="StateMachine"]
+[node name="death" type="Node" parent="StateMachine" unique_id=1511898936]
 script = ExtResource("14_rsibv")
 
-[node name="pause" type="Node" parent="StateMachine"]
+[node name="pause" type="Node" parent="StateMachine" unique_id=410107003]
 script = ExtResource("15_qqx65")
 
-[node name="Timer_idle" type="Timer" parent="."]
+[node name="Timer_idle" type="Timer" parent="." unique_id=105052089]
 wait_time = 2.0
 one_shot = true
 
-[node name="Timer_slam" type="Timer" parent="."]
+[node name="Timer_slam" type="Timer" parent="." unique_id=392627370]
 wait_time = 0.75
 one_shot = true
 

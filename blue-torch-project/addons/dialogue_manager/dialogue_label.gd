@@ -26,7 +26,7 @@ signal finished_typing()
 @export var seconds_per_step: float = 0.02
 
 ## Automatically have a brief pause when these characters are encountered.
-@export var pause_at_characters: String = ".?!"
+@export var pause_at_characters: String = ".?!,"
 
 ## Don't auto pause if the character after the pause is one of these.
 @export var skip_pause_at_character_if_followed_by: String = ")\""
