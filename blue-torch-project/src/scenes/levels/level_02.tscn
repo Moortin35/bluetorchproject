@@ -672,6 +672,7 @@ position = Vector2(417.117, 368.313)
 [node name="torch" parent="Enviroment" unique_id=942452323 instance=ExtResource("19_vaiti")]
 z_index = 5
 position = Vector2(1155.87, 672.526)
+radius = 1.0
 
 [node name="torch2" parent="Enviroment" unique_id=638245052 instance=ExtResource("19_vaiti")]
 z_index = 5
@@ -762,6 +763,11 @@ position = Vector2(918, 890)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vaiti")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacles/FallZone" unique_id=422652786]
+position = Vector2(-475, 890)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vaiti")
+
 [node name="Spikes" type="Node2D" parent="Obstacles" unique_id=1053530428]
 
 [node name="Group1" type="Node2D" parent="Obstacles/Spikes" unique_id=184971123]
@@ -846,17 +852,17 @@ _id = 2
 [node name="Elevators" type="Node2D" parent="." unique_id=1915061925]
 
 [node name="MovingPlataform1" parent="Elevators" unique_id=1850474149 instance=ExtResource("22_sxj84")]
-position = Vector2(274, 393)
+position = Vector2(264, 390)
 animation = "first_elevator"
 
 [node name="MovingPlataform2" parent="Elevators" unique_id=1413565113 instance=ExtResource("22_sxj84")]
-position = Vector2(-63, 428)
+position = Vector2(-72, 433)
 animation = "second_elevator"
 _id = 1
 _on = false
 
 [node name="MovingPlataform" parent="Elevators" unique_id=698374303 instance=ExtResource("22_sxj84")]
-position = Vector2(1148, 313)
+position = Vector2(1144, 331)
 animation = "third_elevator"
 _id = 2
 _on = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://b6po4c8kkyxmp"]
+[gd_scene format=4 uid="uid://b6po4c8kkyxmp"]
 
 [ext_resource type="Texture2D" uid="uid://bu851ulx83itb" path="res://_assets/textures/tilemap/middleground_tileset.png" id="1_kie7b"]
 [ext_resource type="Script" uid="uid://ciff5irptsq2q" path="res://src/scripts/objects/moving_plataform.gd" id="1_sxvwg"]
 [ext_resource type="Texture2D" uid="uid://bl8cnkq3ntrdj" path="res://_assets/sprites/objets/gear.png" id="3_f0vn2"]
 [ext_resource type="AudioStream" uid="uid://bnyrbv1lmgqi1" path="res://_assets/sounds/sfx/environment/elevator.wav" id="4_5mj4h"]
+[ext_resource type="Texture2D" uid="uid://d38ktbry30hcl" path="res://_assets/textures/objects/elevator_base.png" id="4_i7i2c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mj4h"]
 texture = ExtResource("1_kie7b")
@@ -204,7 +205,7 @@ texture = ExtResource("1_kie7b")
 sources/0 = SubResource("TileSetAtlasSource_sxvwg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kie7b"]
-size = Vector2(48, 4)
+size = Vector2(64, 4)
 
 [sub_resource type="Animation" id="Animation_sxvwg"]
 length = 0.001
@@ -505,39 +506,40 @@ _data = {
 &"third_elevator": SubResource("Animation_5mj4h")
 }
 
-[node name="MovingPlataform" type="Node2D"]
+[node name="MovingPlataform" type="Node2D" unique_id=328969523]
 script = ExtResource("1_sxvwg")
 
-[node name="Plataform" type="AnimatableBody2D" parent="."]
+[node name="Plataform" type="AnimatableBody2D" parent="." unique_id=629837053]
 
-[node name="chains" type="TileMapLayer" parent="Plataform"]
-position = Vector2(1, -1)
-tile_map_data = PackedByteArray("AAD+////AAAEAA8AAAD+//7/AAAEAA8AAAD+//3/AAAEAA8AAAD+//z/AAAEAA8AAAD+//v/AAAEAA8AAAD+//r/AAAEAA8AAAD+//n/AAAEAA8AAAD+//j/AAAEAA8AAAD+//f/AAAEAA8AAAD+//b/AAAEAA8AAAD+//X/AAAEAA8AAAD+//T/AAAEAA8AAAD+//P/AAAEAA8AAAD+//L/AAAEAA8AAAD+//H/AAAEAA8AAAD+//D/AAAEAA8AAAD+/+//AAAEAA8AAAD+/+7/AAAEAA8AAAD+/+3/AAAEAA8AAAD+/+z/AAAEAA8AAAD+/+v/AAAEAA8AAAD+/+r/AAAEAA8AAAD+/+n/AAAEAA8AAAD+/+j/AAAEAA8AAAD+/+f/AAAEAA8AAAD+/+b/AAAEAA8AAAD+/+X/AAAEAA8AAAD+/+T/AAAEAA8AAAD+/+P/AAAEAA8AAAD+/+L/AAAEAA8AAAD+/+H/AAAEAA8AAAD+/+D/AAAEAA8AAAD+/9//AAAEAA8AAAD+/97/AAAEAA8AAAD+/93/AAAEAA8AAAD+/9z/AAAEAA8AAAD+/9v/AAAEAA8AAAD+/9r/AAAEAA8AAAD+/9n/AAAEAA8AAAD+/9j/AAAEAA8AAAD+/9f/AAAEAA8AAAD+/9b/AAAEAA8AAAD+/9X/AAAEAA8AAAD+/9T/AAAEAA8AAAD+/9P/AAAEAA8AAAD+/9L/AAAEAA8AAAD+/9H/AAAEAA8AAAD+/9D/AAAEAA8AAAD+/8//AAAEAA8AAAD+/87/AAAEAA8AAAD+/83/AAAEAA8AAAD+/8z/AAAEAA8AAAD+/8v/AAAEAA8AAAD+/8r/AAAEAA8AAAD+/8n/AAAEAA8AAAD+/8j/AAAEAA8AAAD+/8f/AAAEAA8AAAD+/8b/AAAEAA8AAAAAAMb/AAAEAA8AAAAAAMf/AAAEAA8AAAAAAMj/AAAEAA8AAAAAAMn/AAAEAA8AAAAAAMr/AAAEAA8AAAAAAMv/AAAEAA8AAAAAAMz/AAAEAA8AAAAAAM3/AAAEAA8AAAAAAM7/AAAEAA8AAAAAAM//AAAEAA8AAAAAAND/AAAEAA8AAAAAANH/AAAEAA8AAAAAANL/AAAEAA8AAAAAANP/AAAEAA8AAAAAANT/AAAEAA8AAAAAANX/AAAEAA8AAAAAANb/AAAEAA8AAAAAANf/AAAEAA8AAAAAANj/AAAEAA8AAAAAANn/AAAEAA8AAAAAANr/AAAEAA8AAAAAANv/AAAEAA8AAAAAANz/AAAEAA8AAAAAAN3/AAAEAA8AAAAAAN7/AAAEAA8AAAAAAN//AAAEAA8AAAAAAOD/AAAEAA8AAAAAAOH/AAAEAA8AAAAAAOL/AAAEAA8AAAAAAOP/AAAEAA8AAAAAAOT/AAAEAA8AAAAAAOX/AAAEAA8AAAAAAOb/AAAEAA8AAAAAAOf/AAAEAA8AAAAAAOj/AAAEAA8AAAAAAOn/AAAEAA8AAAAAAOr/AAAEAA8AAAAAAOv/AAAEAA8AAAAAAOz/AAAEAA8AAAAAAO3/AAAEAA8AAAAAAO7/AAAEAA8AAAAAAO//AAAEAA8AAAAAAPD/AAAEAA8AAAAAAPH/AAAEAA8AAAAAAPL/AAAEAA8AAAAAAPP/AAAEAA8AAAAAAPT/AAAEAA8AAAAAAPX/AAAEAA8AAAAAAPb/AAAEAA8AAAAAAPf/AAAEAA8AAAAAAPj/AAAEAA8AAAAAAPn/AAAEAA8AAAAAAPr/AAAEAA8AAAAAAPv/AAAEAA8AAAAAAPz/AAAEAA8AAAAAAP3/AAAEAA8AAAAAAP7/AAAEAA8AAAAAAP//AAAEAA8AAAA=")
+[node name="chains" type="TileMapLayer" parent="Plataform" unique_id=783343972]
+tile_map_data = PackedByteArray("AAD+////AAAEAA8AAAD+//7/AAAEAA8AAAD+//3/AAAEAA8AAAD+//z/AAAEAA8AAAD+//v/AAAEAA8AAAD+//r/AAAEAA8AAAD+//n/AAAEAA8AAAD+//j/AAAEAA8AAAD+//f/AAAEAA8AAAD+//b/AAAEAA8AAAD+//X/AAAEAA8AAAD+//T/AAAEAA8AAAD+//P/AAAEAA8AAAD+//L/AAAEAA8AAAD+//H/AAAEAA8AAAD+//D/AAAEAA8AAAD+/+//AAAEAA8AAAD+/+7/AAAEAA8AAAD+/+3/AAAEAA8AAAD+/+z/AAAEAA8AAAD+/+v/AAAEAA8AAAD+/+r/AAAEAA8AAAD+/+n/AAAEAA8AAAD+/+j/AAAEAA8AAAD+/+f/AAAEAA8AAAD+/+b/AAAEAA8AAAD+/+X/AAAEAA8AAAD+/+T/AAAEAA8AAAD+/+P/AAAEAA8AAAD+/+L/AAAEAA8AAAD+/+H/AAAEAA8AAAD+/+D/AAAEAA8AAAD+/9//AAAEAA8AAAD+/97/AAAEAA8AAAD+/93/AAAEAA8AAAD+/9z/AAAEAA8AAAD+/9v/AAAEAA8AAAD+/9r/AAAEAA8AAAD+/9n/AAAEAA8AAAD+/9j/AAAEAA8AAAD+/9f/AAAEAA8AAAD+/9b/AAAEAA8AAAD+/9X/AAAEAA8AAAD+/9T/AAAEAA8AAAD+/9P/AAAEAA8AAAD+/9L/AAAEAA8AAAD+/9H/AAAEAA8AAAD+/9D/AAAEAA8AAAD+/8//AAAEAA8AAAD+/87/AAAEAA8AAAD+/83/AAAEAA8AAAD+/8z/AAAEAA8AAAD+/8v/AAAEAA8AAAD+/8r/AAAEAA8AAAD+/8n/AAAEAA8AAAD+/8j/AAAEAA8AAAD+/8f/AAAEAA8AAAD+/8b/AAAEAA8AAAABAP//AAAEAA8AAAABAP7/AAAEAA8AAAABAP3/AAAEAA8AAAABAPz/AAAEAA8AAAABAPv/AAAEAA8AAAABAPr/AAAEAA8AAAABAPn/AAAEAA8AAAABAPj/AAAEAA8AAAABAPf/AAAEAA8AAAABAPb/AAAEAA8AAAABAPX/AAAEAA8AAAABAPT/AAAEAA8AAAABAPP/AAAEAA8AAAABAPL/AAAEAA8AAAABAPH/AAAEAA8AAAABAPD/AAAEAA8AAAABAO//AAAEAA8AAAABAO7/AAAEAA8AAAABAO3/AAAEAA8AAAABAOz/AAAEAA8AAAABAOv/AAAEAA8AAAABAOr/AAAEAA8AAAABAOn/AAAEAA8AAAABAOj/AAAEAA8AAAABAOf/AAAEAA8AAAABAOb/AAAEAA8AAAABAOX/AAAEAA8AAAABAOT/AAAEAA8AAAABAOP/AAAEAA8AAAABAOL/AAAEAA8AAAABAOH/AAAEAA8AAAABAOD/AAAEAA8AAAABAN//AAAEAA8AAAABAN7/AAAEAA8AAAABAN3/AAAEAA8AAAABANz/AAAEAA8AAAABANv/AAAEAA8AAAABANr/AAAEAA8AAAABANn/AAAEAA8AAAABANj/AAAEAA8AAAABANf/AAAEAA8AAAABANb/AAAEAA8AAAABANX/AAAEAA8AAAABANT/AAAEAA8AAAABANP/AAAEAA8AAAABANL/AAAEAA8AAAABANH/AAAEAA8AAAABAND/AAAEAA8AAAABAM//AAAEAA8AAAABAM7/AAAEAA8AAAABAM3/AAAEAA8AAAABAMz/AAAEAA8AAAABAMv/AAAEAA8AAAABAMr/AAAEAA8AAAABAMn/AAAEAA8AAAABAMj/AAAEAA8AAAABAMf/AAAEAA8AAAABAMb/AAAEAA8AAAA=")
 tile_set = SubResource("TileSet_i7i2c")
 
-[node name="gear1" type="Sprite2D" parent="Plataform"]
-position = Vector2(15, 1)
+[node name="gear1" type="Sprite2D" parent="Plataform" unique_id=1711389851]
+position = Vector2(30, 0)
 texture = ExtResource("3_f0vn2")
 
-[node name="gear2" type="Sprite2D" parent="Plataform"]
-position = Vector2(-29, 1)
+[node name="gear2" type="Sprite2D" parent="Plataform" unique_id=2076008446]
+position = Vector2(-30, 0)
 texture = ExtResource("3_f0vn2")
 
-[node name="base" type="TileMapLayer" parent="Plataform"]
+[node name="elevator_base" type="Sprite2D" parent="Plataform" unique_id=1703009090]
+texture = ExtResource("4_i7i2c")
+
+[node name="base" type="TileMapLayer" parent="Plataform" unique_id=852285288]
+visible = false
 position = Vector2(1, -2)
-tile_map_data = PackedByteArray("AAD+/wAAAAAEAA0AAAD//wAAAAAFAA0AAAAAAAAAAAAGAA0AAAA=")
+tile_map_data = PackedByteArray("AAD+/wAAAAAFAA0AAAD//wAAAAAFAA0AAAAAAAAAAAAFAA0AAAD9/wAAAAAFAA0AAAABAAAAAAAFAA0AAAA=")
 tile_set = SubResource("TileSet_f0vn2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataform"]
-position = Vector2(-8, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataform" unique_id=900892660]
+visible = false
 shape = SubResource("RectangleShape2D_kie7b")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataform"]
-libraries = {
-&"": SubResource("AnimationLibrary_f0vn2")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataform" unique_id=869280799]
+libraries/ = SubResource("AnimationLibrary_f0vn2")
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="Plataform"]
+[node name="Sound" type="AudioStreamPlayer2D" parent="Plataform" unique_id=78285014]
 rotation = -0.005672511
 stream = ExtResource("4_5mj4h")
 max_distance = 664.0

@@ -49,6 +49,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed("interact"):
 	#	.play_land()
+
 	blue_torch.update(delta)
 	if DialogueManager.is_dialoge_active:
 		velocity += get_gravity() * delta
@@ -68,6 +69,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, delta * 800)
 		knockback_timer -= delta
 	else:
+		
 		idle.update()
 		direction = Input.get_axis("ui_left", "ui_right")
 		if direction != 0:
@@ -76,10 +78,11 @@ func _physics_process(delta: float) -> void:
 			movement.update(delta,velocity)
 			velocity += get_gravity() * delta
 			jump.update()
+		update_animation_player()
 		dash.update(delta)
+	update_animation_player()
 	move_and_slide()
 	
-	update_animation_player()
 
 func take_damage(amount : float, source : Node2D = null) -> void:
 	if !is_dead and !invulnerable:
@@ -165,6 +168,8 @@ func reset_player() -> void:
 	health = 3.0
 	health_bar.create_hearts(health)
 	can_control = true
+	last_direction = 1
+	animated_sprite_2d.flip_h = false
 	
 func play_icon(icon: String) -> void:
 	if fade_tween and fade_tween.is_running():
