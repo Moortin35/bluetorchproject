@@ -8,7 +8,7 @@ extends CanvasLayer
 @export var skip_action: StringName = &"ui_cancel"
 @onready var animated_portraits: AnimatedSprite2D = $Balloon/AnimatedPortraits
 
-@onready var panel: Panel = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel
+@onready var panel_container: PanelContainer = $Balloon/MarginContainer/PanelContainer
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -123,12 +123,12 @@ func apply_dialogue_line() -> void:
 	var sound = dialogue_sounds.get(character, dialogue_sounds.get("default"))
 	sound_player.stream = sound
 	if animated_portraits.sprite_frames.has_animation(character) :
-		panel.show()
+		panel_container.show()
 		animated_portraits.show()
 		animated_portraits.play(character)
 	else:
 		animated_portraits.hide()
-		panel.hide()
+		panel_container.hide()
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
