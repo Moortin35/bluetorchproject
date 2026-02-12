@@ -672,6 +672,7 @@ position = Vector2(417.117, 368.313)
 [node name="torch" parent="Enviroment" unique_id=942452323 instance=ExtResource("19_vaiti")]
 z_index = 5
 position = Vector2(1155.87, 672.526)
+radius = 1.0
 
 [node name="torch2" parent="Enviroment" unique_id=638245052 instance=ExtResource("19_vaiti")]
 z_index = 5
@@ -679,7 +680,6 @@ position = Vector2(1009, 368)
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment" unique_id=1765703095]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Enviroment" unique_id=229386410]
@@ -733,7 +733,6 @@ texture = ExtResource("8_wbvwm")
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Enviroment/ParallaxBackground" unique_id=1255271956]
-visible = false
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
