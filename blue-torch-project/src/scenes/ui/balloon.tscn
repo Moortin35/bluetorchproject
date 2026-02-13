@@ -217,20 +217,21 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2ej3a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Balloon/MarginContainer/PanelContainer" unique_id=1056218290]
-position = Vector2(611, 108)
+position = Vector2(611, 93)
+scale = Vector2(1.14, 1.14)
 texture = ExtResource("2_f3q3a")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1050765954]
 layout_mode = 2
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 75
-theme_override_constants/margin_right = 275
+theme_override_constants/margin_left = 380
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = 235
 theme_override_constants/margin_bottom = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=347192566]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 9
+theme_override_constants/separation = 12
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1849314534]
 unique_name_in_owner = true
@@ -269,8 +270,7 @@ text = "Dialogue..."
 seconds_per_step = 0.05
 
 [node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon" unique_id=627179949]
-position = Vector2(340, 639.00006)
-scale = Vector2(0.9, 0.9)
+position = Vector2(293.00003, 631.00006)
 sprite_frames = SubResource("SpriteFrames_jxja2")
 animation = &"gerda"
 
