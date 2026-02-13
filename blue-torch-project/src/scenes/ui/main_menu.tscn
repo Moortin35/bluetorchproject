@@ -6,8 +6,11 @@
 [ext_resource type="FontFile" uid="uid://bmucgu0cc26ru" path="res://_assets/fonts/Jacquard_24/Jacquard24-Regular.ttf" id="4_x2oeq"]
 [ext_resource type="Texture2D" uid="uid://dbyxv6a8yvgfc" path="res://_assets/images/menu/menu_animation.png" id="4_yl70w"]
 [ext_resource type="Texture2D" uid="uid://drh4blynxm1fq" path="res://_assets/effects/light_1.png" id="5_x2oeq"]
+[ext_resource type="Texture2D" uid="uid://4nfg3wk32afq" path="res://_assets/images/ui/button_background.png" id="7_dd50b"]
 [ext_resource type="FontFile" uid="uid://b4l8ftiv8h2kw" path="res://_assets/fonts/pixel_times/Pixel Times.ttf" id="7_yl70w"]
 [ext_resource type="Script" uid="uid://cpi0otgflw50p" path="res://src/scenes/ui/options.gd" id="8_w4ql8"]
+[ext_resource type="Texture2D" uid="uid://c2g6dscw6jkm6" path="res://_assets/images/ui/slider_foreground.png" id="10_s2t38"]
+[ext_resource type="Texture2D" uid="uid://cxgaph5d3n1vn" path="res://_assets/images/ui/slider_background.png" id="11_tgi66"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4ql8"]
 atlas = ExtResource("4_yl70w")
@@ -51,6 +54,29 @@ font_size = 128
 font_color = Color(0, 0.0110781, 0.176115, 1)
 outline_size = 18
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd50b"]
+texture = ExtResource("7_dd50b")
+
+[sub_resource type="ImageTexture" id="ImageTexture_bpdy7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s2t38"]
+load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgi66"]
+texture = SubResource("CompressedTexture2D_s2t38")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kw0eb"]
+load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_044b3"]
+texture = SubResource("CompressedTexture2D_kw0eb")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pkenp"]
+load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fshqk"]
+texture = SubResource("CompressedTexture2D_pkenp")
+
 [sub_resource type="LabelSettings" id="LabelSettings_6trx7"]
 font = ExtResource("7_yl70w")
 font_size = 32
@@ -63,6 +89,15 @@ font = ExtResource("7_yl70w")
 font_size = 37
 
 [sub_resource type="Theme" id="Theme_w4ql8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kw0eb"]
+texture = ExtResource("11_tgi66")
+texture_margin_left = 280.0
+texture_margin_top = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_044b3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkenp"]
 
 [node name="MainMenu" type="Control" unique_id=1559222715]
 layout_mode = 3
@@ -103,6 +138,7 @@ sprite_frames = SubResource("SpriteFrames_tgi66")
 metadata/_edit_lock_ = true
 
 [node name="Main" type="CanvasLayer" parent="." unique_id=857416661]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Main" unique_id=758456961]
 anchors_preset = 15
@@ -129,39 +165,44 @@ text = "Blue Torch"
 label_settings = SubResource("LabelSettings_ttmq8")
 
 [node name="PlayButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=1856267547]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_dd50b")
 text = "Iniciar"
+icon = SubResource("ImageTexture_bpdy7")
 
 [node name="OptionsButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=1714127047]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_tgi66")
 text = "Opciones"
 
 [node name="CreditsButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=200386404]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_044b3")
 text = "Créditos"
 
 [node name="QuitButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=255841503]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_fshqk")
 text = "Salir
 "
 
@@ -211,7 +252,6 @@ theme_override_font_sizes/font_size = 72
 text = "Volver al Menú"
 
 [node name="Options" type="CanvasLayer" parent="." unique_id=1228742390]
-visible = false
 script = ExtResource("8_w4ql8")
 
 [node name="MarginContainer" type="MarginContainer" parent="Options" unique_id=1579155588]
@@ -246,6 +286,13 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme = SubResource("Theme_w4ql8")
+theme_override_icons/grabber = ExtResource("10_s2t38")
+theme_override_icons/grabber_highlight = ExtResource("10_s2t38")
+theme_override_icons/grabber_disabled = ExtResource("10_s2t38")
+theme_override_icons/tick = ExtResource("10_s2t38")
+theme_override_styles/slider = SubResource("StyleBoxTexture_kw0eb")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_044b3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pkenp")
 max_value = 1.0
 step = 0.05
 page = 0.1
@@ -267,6 +314,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_w4ql8")
+theme_override_icons/grabber = ExtResource("10_s2t38")
+theme_override_icons/grabber_highlight = ExtResource("10_s2t38")
+theme_override_icons/grabber_disabled = ExtResource("10_s2t38")
+theme_override_icons/tick = ExtResource("10_s2t38")
+theme_override_styles/slider = SubResource("StyleBoxTexture_kw0eb")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_044b3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pkenp")
 max_value = 1.0
 step = 0.05
 page = 0.1
@@ -288,6 +343,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_w4ql8")
+theme_override_icons/grabber = ExtResource("10_s2t38")
+theme_override_icons/grabber_highlight = ExtResource("10_s2t38")
+theme_override_icons/grabber_disabled = ExtResource("10_s2t38")
+theme_override_icons/tick = ExtResource("10_s2t38")
+theme_override_styles/slider = SubResource("StyleBoxTexture_kw0eb")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_044b3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pkenp")
 max_value = 1.0
 step = 0.05
 page = 0.1
@@ -309,6 +372,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_w4ql8")
+theme_override_icons/grabber = ExtResource("10_s2t38")
+theme_override_icons/grabber_highlight = ExtResource("10_s2t38")
+theme_override_icons/grabber_disabled = ExtResource("10_s2t38")
+theme_override_icons/tick = ExtResource("10_s2t38")
+theme_override_styles/slider = SubResource("StyleBoxTexture_kw0eb")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_044b3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pkenp")
 max_value = 1.0
 step = 0.05
 page = 0.1
