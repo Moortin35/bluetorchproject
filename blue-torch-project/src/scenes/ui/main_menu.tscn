@@ -138,7 +138,6 @@ sprite_frames = SubResource("SpriteFrames_tgi66")
 metadata/_edit_lock_ = true
 
 [node name="Main" type="CanvasLayer" parent="." unique_id=857416661]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Main" unique_id=758456961]
 anchors_preset = 15
@@ -252,6 +251,7 @@ theme_override_font_sizes/font_size = 72
 text = "Volver al Menú"
 
 [node name="Options" type="CanvasLayer" parent="." unique_id=1228742390]
+visible = false
 script = ExtResource("8_w4ql8")
 
 [node name="MarginContainer" type="MarginContainer" parent="Options" unique_id=1579155588]
