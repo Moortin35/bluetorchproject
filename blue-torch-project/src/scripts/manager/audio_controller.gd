@@ -13,11 +13,13 @@ var current_sfx_2d_index := 0
 var attenuation := 4.42
 var max_distance := 1042
 
+var master_bus_index = AudioServer.get_bus_index("Master")
 var music_bus_index = AudioServer.get_bus_index("Music")
 var dialogue_bus_index = AudioServer.get_bus_index("Dialogue")
 var sfx_bus_index = AudioServer.get_bus_index("SFX")
 var ui_bus_index = AudioServer.get_bus_index("UI")
 
+var master_bus_volume: float = 0.0
 var music_bus_volume: float = 0.0
 var sfx_bus_volume: float = 0.0
 var dialogue_bus_volume: float = 0.0
@@ -86,6 +88,10 @@ func play_sfx_2d_alt(streams: Array[AudioStream], global_pos: Vector2, bus := "S
 		return
 	var choice: AudioStream = streams.pick_random()
 	play_sfx_2d(choice, global_pos, bus)
+
+func set_master_volume(db: float):
+	AudioServer.set_bus_volume_db(master_bus_index, (db))
+	master_bus_volume = db
 
 func set_ui_volume(db: float):
 	AudioServer.set_bus_volume_db(ui_bus_index, (db))
