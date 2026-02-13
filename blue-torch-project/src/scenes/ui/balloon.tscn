@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://y1yygl0yjrjl" path="res://src/scripts/ui/balloon.gd" id="1_7sbj5"]
 [ext_resource type="FontFile" uid="uid://b4l8ftiv8h2kw" path="res://_assets/fonts/pixel_times/Pixel Times.ttf" id="2_2ej3a"]
-[ext_resource type="Texture2D" uid="uid://brdtwwbbpguqx" path="res://_assets/ui/ui_balloon_placeholder.png" id="2_f3q3a"]
+[ext_resource type="Texture2D" uid="uid://j4057fqcfh0f" path="res://_assets/images/ui/dialogue_background.png" id="2_f3q3a"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_f3q3a"]
 [ext_resource type="Texture2D" uid="uid://b5giasihachky" path="res://_assets/images/portraits/engla_portrait.png" id="4_s4bk5"]
 [ext_resource type="Texture2D" uid="uid://b3jj3hidnj58a" path="res://_assets/images/portraits/gerda_portrait.png" id="5_v8wqk"]
@@ -207,6 +207,7 @@ offset_top = -600.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_top = 400
+theme_override_constants/margin_bottom = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=88042638]
 clip_children = 2
@@ -222,21 +223,16 @@ texture = ExtResource("2_f3q3a")
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1050765954]
 layout_mode = 2
 theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 90
-theme_override_constants/margin_right = 250
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 275
 theme_override_constants/margin_bottom = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1775704265]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 84
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=347192566]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=347192566]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 16
+theme_override_constants/separation = 9
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1849314534]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1849314534]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
@@ -245,14 +241,21 @@ layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 1
 theme = SubResource("Theme_3c1ei")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
 vertical_alignment = 2
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1537765635 instance=ExtResource("3_f3q3a")]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2144582245]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 3
+
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1537765635 instance=ExtResource("3_f3q3a")]
 unique_name_in_owner = true
 texture_filter = 1
 clip_contents = false
@@ -260,13 +263,13 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_5qeb6")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "Dialogue..."
 seconds_per_step = 0.05
 
 [node name="AnimatedPortraits" type="AnimatedSprite2D" parent="Balloon" unique_id=627179949]
-position = Vector2(340, 630)
+position = Vector2(340, 639.00006)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_jxja2")
 animation = &"gerda"
@@ -297,5 +300,5 @@ layout_mode = 2
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
