@@ -26,3 +26,12 @@ func open() -> void:
 	animated_sprite_2d.play("open")
 	AudioController.play_sfx(SFX_GATE_OPEN, "Reverb")
 	
+
+
+func _on_lever_pull_lever() -> void:
+	if is_open:
+		close()
+		is_open = false
+	else:
+		open()
+		is_open = true

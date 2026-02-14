@@ -1,5 +1,6 @@
 extends interactive
 
+signal pull_lever
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @export var broken = true
 @export var _id = 0
@@ -32,13 +33,14 @@ func _process(_delta: float) -> void:
 			
 func use_lever():
 	AudioController.play_sfx(SFX_LEVER, "Reverb")
+	pull_lever.emit()
 	if on:
 		on = false
 		sprite_2d.frame = 0
 	else:
 		on = true
 		sprite_2d.frame = 1
-	GlobalSignals.emit_signal("pulled_lever",_id,on)
+		GlobalSignals.emit_signal("pulled_lever",_id,on)
 		
 		
 	

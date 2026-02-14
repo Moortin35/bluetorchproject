@@ -2,6 +2,7 @@ extends Area2D
 
 class_name interactive
 
+@export var icon_visible = true
 @onready var icon : String
 @onready var is_player_close = false
 @onready var player = null
@@ -14,13 +15,15 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player and show_icon:
-		body.play_icon(icon)
+		if icon_visible:
+			body.play_icon(icon)
 		is_player_close = true
 		player = body
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
-		body.stop_icon()
+		if icon_visible:
+			body.stop_icon()
 		is_player_close = false
 		player = null
 		
