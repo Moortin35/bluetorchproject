@@ -316,22 +316,62 @@ theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 48
 metadata/_edit_use_anchors_ = true
 
-[node name="Sliders" type="VBoxContainer" parent="Options/MarginContainer" unique_id=1395045468]
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/MarginContainer" unique_id=503090607]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 28
 
-[node name="Music" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=495071559]
+[node name="AudioLabel" type="Label" parent="Options/MarginContainer/VBoxContainer" unique_id=1335327364]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Volumen"
+label_settings = SubResource("LabelSettings_s2t38")
+vertical_alignment = 1
+
+[node name="AudioControls" type="VBoxContainer" parent="Options/MarginContainer/VBoxContainer" unique_id=1395045468]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Master" type="HBoxContainer" parent="Options/MarginContainer/VBoxContainer/AudioControls" unique_id=1067166586]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="Label" type="Label" parent="Options/MarginContainer/Sliders/Music" unique_id=1807805133]
+[node name="Label" type="Label" parent="Options/MarginContainer/VBoxContainer/AudioControls/Master" unique_id=1828839557]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "General"
+label_settings = SubResource("LabelSettings_yl70w")
+vertical_alignment = 1
+
+[node name="Slider" type="HSlider" parent="Options/MarginContainer/VBoxContainer/AudioControls/Master" unique_id=493107515]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_w4ql8")
+theme_override_icons/grabber = ExtResource("10_s2t38")
+theme_override_icons/grabber_highlight = ExtResource("10_s2t38")
+theme_override_icons/grabber_disabled = ExtResource("10_s2t38")
+theme_override_icons/tick = ExtResource("10_s2t38")
+theme_override_styles/slider = SubResource("StyleBoxTexture_kw0eb")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_044b3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_pkenp")
+max_value = 1.0
+step = 0.05
+page = 0.1
+value = 0.9
+allow_greater = true
+
+[node name="Music" type="HBoxContainer" parent="Options/MarginContainer/VBoxContainer/AudioControls" unique_id=495071559]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Label" type="Label" parent="Options/MarginContainer/VBoxContainer/AudioControls/Music" unique_id=1807805133]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Música"
 label_settings = SubResource("LabelSettings_yl70w")
 vertical_alignment = 1
 
-[node name="Slider" type="HSlider" parent="Options/MarginContainer/Sliders/Music" unique_id=810601745]
+[node name="Slider" type="HSlider" parent="Options/MarginContainer/VBoxContainer/AudioControls/Music" unique_id=810601745]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -349,18 +389,18 @@ page = 0.1
 value = 0.9
 allow_greater = true
 
-[node name="SFX" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=857278319]
+[node name="SFX" type="HBoxContainer" parent="Options/MarginContainer/VBoxContainer/AudioControls" unique_id=857278319]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="Label" type="Label" parent="Options/MarginContainer/Sliders/SFX" unique_id=315396518]
+[node name="Label" type="Label" parent="Options/MarginContainer/VBoxContainer/AudioControls/SFX" unique_id=315396518]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Efectos"
 label_settings = SubResource("LabelSettings_yl70w")
 vertical_alignment = 1
 
-[node name="Slider" type="HSlider" parent="Options/MarginContainer/Sliders/SFX" unique_id=1034857788]
+[node name="Slider" type="HSlider" parent="Options/MarginContainer/VBoxContainer/AudioControls/SFX" unique_id=1034857788]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -378,18 +418,18 @@ page = 0.1
 value = 0.9
 allow_greater = true
 
-[node name="Dialogue" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=1843029038]
+[node name="Dialogue" type="HBoxContainer" parent="Options/MarginContainer/VBoxContainer/AudioControls" unique_id=1843029038]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="Label" type="Label" parent="Options/MarginContainer/Sliders/Dialogue" unique_id=1743981956]
+[node name="Label" type="Label" parent="Options/MarginContainer/VBoxContainer/AudioControls/Dialogue" unique_id=1743981956]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Diálogo"
 label_settings = SubResource("LabelSettings_yl70w")
 vertical_alignment = 1
 
-[node name="Slider" type="HSlider" parent="Options/MarginContainer/Sliders/Dialogue" unique_id=1320932963]
+[node name="Slider" type="HSlider" parent="Options/MarginContainer/VBoxContainer/AudioControls/Dialogue" unique_id=1320932963]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -407,18 +447,18 @@ page = 0.1
 value = 0.9
 allow_greater = true
 
-[node name="UI" type="HBoxContainer" parent="Options/MarginContainer/Sliders" unique_id=588224677]
+[node name="UI" type="HBoxContainer" parent="Options/MarginContainer/VBoxContainer/AudioControls" unique_id=588224677]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="Label" type="Label" parent="Options/MarginContainer/Sliders/UI" unique_id=578732631]
+[node name="Label" type="Label" parent="Options/MarginContainer/VBoxContainer/AudioControls/UI" unique_id=578732631]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Interfaz"
 label_settings = SubResource("LabelSettings_yl70w")
 vertical_alignment = 1
 
-[node name="Slider" type="HSlider" parent="Options/MarginContainer/Sliders/UI" unique_id=524950047]
+[node name="Slider" type="HSlider" parent="Options/MarginContainer/VBoxContainer/AudioControls/UI" unique_id=524950047]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -442,8 +482,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxTexture_151jt")
-text = "Volver al Menú"
+text = "Atrás"
 
 [connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Main/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
@@ -454,9 +493,10 @@ text = "Volver al Menú"
 [connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Main/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Credits/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="value_changed" from="Options/MarginContainer/Sliders/Music/Slider" to="Options" method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="Options/MarginContainer/Sliders/SFX/Slider" to="Options" method="_on_sfx_volume_slider_value_changed"]
-[connection signal="value_changed" from="Options/MarginContainer/Sliders/Dialogue/Slider" to="Options" method="_on_dialogue_volume_slider_value_changed"]
-[connection signal="value_changed" from="Options/MarginContainer/Sliders/UI/Slider" to="Options" method="_on_ui_volume_slider_value_changed"]
-[connection signal="mouse_entered" from="Options/MarginContainer/Sliders/BackButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Options/MarginContainer/Sliders/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/AudioControls/Master/Slider" to="Options" method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/AudioControls/Music/Slider" to="Options" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/AudioControls/SFX/Slider" to="Options" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/AudioControls/Dialogue/Slider" to="Options" method="_on_dialogue_volume_slider_value_changed"]
+[connection signal="value_changed" from="Options/MarginContainer/VBoxContainer/AudioControls/UI/Slider" to="Options" method="_on_ui_volume_slider_value_changed"]
+[connection signal="mouse_entered" from="Options/MarginContainer/BackButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Options/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
