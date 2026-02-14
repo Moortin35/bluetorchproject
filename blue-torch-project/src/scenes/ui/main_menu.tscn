@@ -195,7 +195,6 @@ sprite_frames = SubResource("SpriteFrames_tgi66")
 metadata/_edit_lock_ = true
 
 [node name="Main" type="CanvasLayer" parent="." unique_id=857416661]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Main" unique_id=758456961]
 anchors_preset = 15
@@ -260,6 +259,7 @@ text = "Salir
 "
 
 [node name="Credits" type="CanvasLayer" parent="." unique_id=1439981534]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Credits" unique_id=1720699558]
 anchors_preset = 15
