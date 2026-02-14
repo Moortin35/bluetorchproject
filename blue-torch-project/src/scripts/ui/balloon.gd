@@ -10,6 +10,9 @@ extends CanvasLayer
 
 @onready var panel_container: PanelContainer = $Balloon/MarginContainer/PanelContainer
 
+@onready var dialogue_player: AudioStreamPlayer = $DialoguePlayer
+
+
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -26,23 +29,6 @@ var will_hide_balloon: bool = false
 var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
-
-var dialogue_sounds: Dictionary = {
-	# Por defecto
-	"default": preload("res://_assets/sounds/sfx/dialogue/dialogue_default_01.wav"),
-	
-	# Gerda
-	"maiden": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
-	"gerda": preload("res://_assets/sounds/sfx/dialogue/dialogue_gerda.wav"),
-	
-	# Odd Man
-	"odd_man": preload("res://_assets/sounds/sfx/dialogue/dialogue_odd_man.wav"),
-	
-	# Engla
-	"dama_desconocida": preload("res://_assets/sounds/sfx/dialogue/dialogue_engla.wav"),
-	"engla": preload("res://_assets/sounds/sfx/dialogue/dialogue_engla.wav"),
-}
-@onready var sound_player = AudioStreamPlayer.new()
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -81,9 +67,9 @@ func _ready() -> void:
 		responses_menu.next_action = next_action
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
-	sound_player.max_polyphony = 4
+
 	add_child(mutation_cooldown)
-	add_child(sound_player)
+
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -120,8 +106,9 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	var character = tr(dialogue_line.character, "dialogue").to_lower().replace(" ", "_")
-	var sound = dialogue_sounds.get(character, dialogue_sounds.get("default"))
-	sound_player.stream = sound
+	dialogue_player.set_character(character)
+	
+
 	if animated_portraits.sprite_frames.has_animation(character) :
 		panel_container.show()
 		animated_portraits.show()
@@ -210,6 +197,4 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
 	if not letter in ["."," ",","]:
-		sound_player.pitch_scale = randf_range(0.95,1.05)
-		sound_player.bus = "Dialogue"
-		sound_player.play()
+		dialogue_player.play()
