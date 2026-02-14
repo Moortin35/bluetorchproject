@@ -56,6 +56,13 @@ outline_size = 18
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd50b"]
 texture = ExtResource("7_dd50b")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 15.0
+expand_margin_left = 27.0
+expand_margin_right = 27.0
+axis_stretch_horizontal = 1
 
 [sub_resource type="ImageTexture" id="ImageTexture_bpdy7"]
 
@@ -64,25 +71,58 @@ load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2a
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgi66"]
 texture = SubResource("CompressedTexture2D_s2t38")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kw0eb"]
 load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_044b3"]
 texture = SubResource("CompressedTexture2D_kw0eb")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 15.0
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+axis_stretch_horizontal = 1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pkenp"]
 load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fshqk"]
 texture = SubResource("CompressedTexture2D_pkenp")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 15.0
+expand_margin_left = 55.0
+expand_margin_right = 55.0
+axis_stretch_horizontal = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_6trx7"]
+line_spacing = 0.0
 font = ExtResource("7_yl70w")
 font_size = 32
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tgi66"]
+load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkenp"]
+texture = SubResource("CompressedTexture2D_tgi66")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 15.0
+expand_margin_left = 27.0
+expand_margin_right = 27.0
+axis_stretch_horizontal = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_s2t38"]
 font = ExtResource("2_loxbe")
@@ -102,6 +142,19 @@ texture_margin_top = 8.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_044b3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkenp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_044b3"]
+load_path = "res://.godot/imported/button_background.png-f2184681c332e2858c42b2afc4bf6889.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_151jt"]
+texture = SubResource("CompressedTexture2D_044b3")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 15.0
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+axis_stretch_horizontal = 1
 
 [node name="MainMenu" type="Control" unique_id=1559222715]
 layout_mode = 3
@@ -142,6 +195,7 @@ sprite_frames = SubResource("SpriteFrames_tgi66")
 metadata/_edit_lock_ = true
 
 [node name="Main" type="CanvasLayer" parent="." unique_id=857416661]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Main" unique_id=758456961]
 anchors_preset = 15
@@ -168,7 +222,6 @@ text = "Blue Torch"
 label_settings = SubResource("LabelSettings_ttmq8")
 
 [node name="PlayButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=1856267547]
-custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -179,7 +232,6 @@ text = "Iniciar"
 icon = SubResource("ImageTexture_bpdy7")
 
 [node name="OptionsButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=1714127047]
-custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -189,7 +241,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tgi66")
 text = "Opciones"
 
 [node name="CreditsButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=200386404]
-custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -199,7 +250,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_044b3")
 text = "Créditos"
 
 [node name="QuitButton" type="Button" parent="Main/MarginContainer/VBoxContainer" unique_id=255841503]
-custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -210,7 +260,6 @@ text = "Salir
 "
 
 [node name="Credits" type="CanvasLayer" parent="." unique_id=1439981534]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Credits" unique_id=1720699558]
 anchors_preset = 15
@@ -232,26 +281,30 @@ theme_override_constants/separation = 32
 custom_minimum_size = Vector2(0, 512)
 layout_mode = 2
 text = "Autores:
+
+Productor, Desarrollador y Game Designer - Martín N. Delgado
+
+Productor de Música y Desarrollador - Emmanuel Mayor
+
 Desarrollador y Efectos - Miguel Miloro
+
 Artista 2D y Escritora - Melani L. Rodriguez
-Productor de Sonido - Christian O. Gentile
-Desarrollador y Game Designer - Martín N. Delgado
 
-Profesor:
-Tobías Q. Moscatelli
+Productor SFX - Christian O. Gentile
 
-Este videojuego fue creado en el marco 
-de la diplomatura de desarrollo de videojuegos
-de la Universidad Nacional de Quilmes."
+Arte 2D y Conceptual, UI - Luciana Velasco Leiva
+
+Game Design y UI -Sofía Arancibia
+"
 label_settings = SubResource("LabelSettings_6trx7")
 
 [node name="BackButton" type="Button" parent="Credits/MarginContainer/VBoxContainer" unique_id=660317607]
-custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkenp")
 text = "Volver al Menú"
 
 [node name="Options" type="CanvasLayer" parent="." unique_id=1228742390]
@@ -431,12 +484,12 @@ value = 0.9
 allow_greater = true
 
 [node name="BackButton" type="Button" parent="Options/MarginContainer" unique_id=186033595]
-custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_fonts/font = ExtResource("2_loxbe")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_151jt")
 text = "Atrás"
 
 [connection signal="mouse_entered" from="Main/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_button_mouse_entered"]
